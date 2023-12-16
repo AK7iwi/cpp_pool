@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/16 14:24:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/16 19:07:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,23 @@
 void Contact::setContactInfo() 
 {
     std::cout << "Enter first name: ";
+	// std::cin >> firstName;
     std::getline(std::cin, firstName);
 
     std::cout << "Enter last name: ";
+	// std::cin >> lastName;
     std::getline(std::cin, lastName);
 
     std::cout << "Enter nickname: ";
+	// std::cin >> nickname;
     std::getline(std::cin, nickname);
 
     std::cout << "Enter phone number: ";
+	// std::cin >> phoneNumber;
     std::getline(std::cin, phoneNumber);
 
     std::cout << "Enter darkest secret: ";
+	// std::cin >> darkestSecret;
     std::getline(std::cin, darkestSecret);
 }
 

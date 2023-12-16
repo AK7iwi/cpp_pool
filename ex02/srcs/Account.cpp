@@ -1,34 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 13:33:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/16 18:35:26 by mfeldman         ###   ########.fr       */
+/*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
+/*   Updated: 2023/12/16 19:25:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
-
-#include <iostream>
-
-class Contact 
-{
-	private:
-		std::string firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string darkestSecret;
-
-    public:
-		// Function to set contact information
-    	void setContactInfo();
-    	// Function to display contact information
-    	void displayContact(int index) const;
-};
-
-#endif
+#include "Account.hpp"

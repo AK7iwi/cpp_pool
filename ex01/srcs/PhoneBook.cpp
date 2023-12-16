@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/16 14:22:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:30:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void PhoneBook::addContact()
 }
 
 // Function to search and display a contact from the phonebook
-void PhoneBook::searchContact() const {
+void PhoneBook::searchContact() const 
+{
     if (currentContacts == 0) {
         std::cout << "Phonebook is empty." << std::endl;
         return;
     }
-
     // Display header
     std::cout << "|" << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"

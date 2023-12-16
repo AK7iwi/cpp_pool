@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/16 14:43:23 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/16 18:35:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 int main() 
 {
     PhoneBook phoneBook;
-    std::string command;
 
+    std::string command;
     while (true) 
 	{
         std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
         std::cin >> command;
-
         if (command == "ADD")
             phoneBook.addContact();
 		else if (command == "SEARCH")
