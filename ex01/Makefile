@@ -11,6 +11,9 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			$(CC) -o $(NAME) $(SRCS) $(CFLAGS)
 
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 				$(RM) $(OBJS)
 				 
