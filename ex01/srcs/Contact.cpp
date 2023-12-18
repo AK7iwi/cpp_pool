@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/18 20:39:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:13:53 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void Contact::display_contact(int index) const
 			  << "First Name:" << _first_name << "\n"
 			  << "Last Name:" << _last_name << "\n"
 			  << "Nickname:" << _nickname << "\n"
+			  << "Phone Number:" << _phone_number << "\n"
 			  << "Darkest Secret:" << _darkest_secret << "\n"
 			  << std::endl;
 }
