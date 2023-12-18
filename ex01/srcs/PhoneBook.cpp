@@ -6,14 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/18 21:22:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:47:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook() : _current_contact(0) {}
+PhoneBook::PhoneBook() : _current_contact(0), flag(0) {}
 
 PhoneBook::PhoneBook(const PhoneBook &cpy)
 {
@@ -59,22 +59,32 @@ void PhoneBook::add_contact()
     }
 }
 
-void PhoneBook::search_contact() const 
+void PhoneBook::search_contact() 
 {
     if (_current_contact == 0)
 	{
         std::cout << "Phonebook is empty." << std::endl;
         return;
     }
-
+	else if (_current_contact == 8)
+		flag = 1;
+	
     std::cout << "|" << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
               << std::setw(10) << "Last Name" << "|"
               << std::setw(10) << "Nickname" << "|" 
 			  << std::endl;
 	
-	for (int i = 0; i < 8; ++i)
-    	_contacts[i].display_phonebook(i);
+	if(flag == 1)
+	{
+		for (int i = 0; i < 8; ++i)
+    		_contacts[i].display_phonebook(i);
+	}
+	else
+	{
+		for (int i = 0; i < _current_contact; ++i)
+    		_contacts[i].display_phonebook(i);
+	}
 		
     int index;
     std::cout << "Enter the index of the contact to display: ";
