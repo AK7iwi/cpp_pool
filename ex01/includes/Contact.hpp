@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/16 23:31:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/18 20:33:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@ class Contact
 		Contact();
 		Contact(const Contact &cpy);
 		Contact	&operator=(const Contact &rhs);
-		
 		virtual ~Contact();
 
-		// Function to set contact information
-    	void setContactInfo();
+    	void set_contact_info();
+    	void display_phonebook (int index) const;
+		void display_contact (int index) const;
 		
-    	// Function to display contact information
-    	void displayContact(int index) const;
-
 	private:
-		std::string _firstName;
-		std::string _lastName;
+		std::string _first_name;
+		std::string _last_name;
 		std::string _nickname;
-		std::string _phoneNumber;
-		std::string _darkestSecret;
+		std::string _phone_number;
+		std::string _darkest_secret;
 };
