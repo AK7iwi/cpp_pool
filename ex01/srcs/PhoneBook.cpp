@@ -6,14 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/18 21:47:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:03:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook() : _current_contact(0), flag(0) {}
+PhoneBook::PhoneBook() : _current_contact(0), flag(false) {}
 
 PhoneBook::PhoneBook(const PhoneBook &cpy)
 {
@@ -67,7 +67,7 @@ void PhoneBook::search_contact()
         return;
     }
 	else if (_current_contact == 8)
-		flag = 1;
+		flag = true;
 	
     std::cout << "|" << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
@@ -75,7 +75,7 @@ void PhoneBook::search_contact()
               << std::setw(10) << "Nickname" << "|" 
 			  << std::endl;
 	
-	if(flag == 1)
+	if(flag == true)
 	{
 		for (int i = 0; i < 8; ++i)
     		_contacts[i].display_phonebook(i);
@@ -90,7 +90,7 @@ void PhoneBook::search_contact()
     std::cout << "Enter the index of the contact to display: ";
     std::cin >> index;
 
-    if (index >= 0 && index < _current_contact)
+    if ((index >= 0 && index < _current_contact) || (flag && index < 7)) 
 	{
         std::cout << "Contact Information:" << "\n"
 				  << std::endl;
