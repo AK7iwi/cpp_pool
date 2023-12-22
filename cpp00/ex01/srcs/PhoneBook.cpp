@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/22 14:02:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/22 16:31:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void PhoneBook::search_contact()
     std::cout << "Enter the index of the contact to display: ";
     std::cin >> index;
 
-    if ((std::floor(index) == index) && ((index >= 0 && index < _current_contact) || (flag && index <= 7)))
+    if (((index >= 0 && index < _current_contact) || (flag && index <= 7)))
 	{
         std::cout << "Contact Information:" << "\n"
 				  << std::endl;
