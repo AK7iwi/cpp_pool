@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/20 18:45:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:58:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iomanip>
 #include <stdint.h>
+#include <cmath>
 #include "Contact.hpp"
 
 class PhoneBook 

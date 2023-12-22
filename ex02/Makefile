@@ -1,8 +1,8 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
-NAME 	= phonebook
-SRCS	= srcs/Account.cpp srcs/main.cpp
+NAME 	= account
+SRCS	= srcs/Account.cpp srcs/tests.cpp
 
 OBJS 	= $(SRCS:.cpp=.o)
 
