@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/30 01:29:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/30 19:19:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ void Account::_displayTimestamp(void)
 	std::cout << ltm->tm_hour << ltm->tm_min << ltm->tm_sec << "] ";
 }
 
-int Account::getNbAccounts(void) { return _nbAccounts; }
+int Account::getNbAccounts(void) {return _nbAccounts;}
 
-int Account::getTotalAmount(void) { return _totalAmount; }
+int Account::getTotalAmount(void) {return _totalAmount;}
 
-int Account::getNbDeposits(void) { return _totalNbDeposits; }
+int Account::getNbDeposits(void) {return _totalNbDeposits;}
 
-int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
+int Account::getNbWithdrawals(void) {return _totalNbWithdrawals;}
 
-int Account::checkAmount(void) const { return _amount; }
+int Account::checkAmount(void) const {return _amount;}
 
 void Account::displayAccountsInfos(void)
 {
@@ -94,7 +94,7 @@ bool Account::makeWithdrawal(int withdrawal)
 		_totalAmount -= withdrawal;
 		_nbWithdrawals++;
 		_totalNbWithdrawals++;
-		std::cout << withdrawal 
+		std::cout << withdrawal
 				  << ";amount:" << checkAmount()
 				  << ";nb_withdrawals:" << _nbWithdrawals 
 				  << std::endl;
@@ -106,7 +106,6 @@ bool Account::makeWithdrawal(int withdrawal)
 		return false;
 	}
 }
-
 
 void Account::displayStatus(void) const
 {

@@ -1,24 +1,22 @@
 CC				= c++ 
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I./includes
-CPPFLAGS        = -std=c++98
-NAME 	= zombie
-SRCS	= srcs/Account.cpp srcs/tests.cpp
+CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
+NAME 			= zombie
+SRCS			= srcs/main.cpp srcs/newZombie.cpp srcs/newZombie.cpp srcs/randomChump.cpp srcs/Zombie.cpp 
+OBJS 			= $(SRCS:.cpp=.o)
 
-OBJS 	= $(SRCS:.cpp=.o)
+all:			$(NAME)
 
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(SRCS) $(CFLAGS) $(CPPFLAGS)
+$(NAME):		$(OBJS)
+				$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+				$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 				$(RM) $(OBJS)
 				 
-fclean:	 		clean
+fclean:			clean
 				$(RM) $(NAME)
 	
 re:				fclean all

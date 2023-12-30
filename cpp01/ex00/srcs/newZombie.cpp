@@ -6,13 +6,10 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/30 01:50:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/30 19:38:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name )
-{
-	
-}
+Zombie* newZombie(std::string name) {return new Zombie(name);}
