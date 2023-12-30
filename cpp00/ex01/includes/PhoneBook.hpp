@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/22 13:58:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:04:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <iomanip>
 #include <stdint.h>
 #include <cmath>
+#include <cstdlib>
+#include <cctype>
+#include <cstring>
 #include "Contact.hpp"
 
 class PhoneBook 

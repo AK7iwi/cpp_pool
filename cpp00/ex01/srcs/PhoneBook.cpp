@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/24 17:46:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:06:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ void PhoneBook::add_contact()
 
 void PhoneBook::search_contact() 
 {
-    int index;
-	
     if (_current_contact == 0)
 	{
         std::cout << "Phonebook is empty." << std::endl;
@@ -89,11 +87,14 @@ void PhoneBook::search_contact()
 	}
 		
     std::cout << "Enter the index of the contact to display: ";
-    std::cin >> index;
-
-    if ((index >= 0 && index < _current_contact) || (flag && index <= 7))
+	std::string input;
+	std::cin >> input;
+	int index = std::atoi(input.c_str());
+	
+	if (((index >= 0 && index < _current_contact) || (flag && index <= 7)) 
+		&& (std::isdigit(input[0])) && (std::strlen(input.c_str()) == 1))
 	{
-        std::cout << "Contact Information:" << std::endl;
+        std::cout << "Contact Information:" << "\n" << std::endl;
         _contacts[index].display_contact(index);
     }
 	else
