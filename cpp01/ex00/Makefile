@@ -2,15 +2,15 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes
 CPPFLAGS        = -std=c++98
-NAME 	= phonebook
-SRCS	= srcs/Contact.cpp srcs/PhoneBook.cpp srcs/main.cpp
+NAME 	= zombie
+SRCS	= srcs/Account.cpp srcs/tests.cpp
 
 OBJS 	= $(SRCS:.cpp=.o)
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(SRCS) $(CFLAGS) $(CPPLAGS)
+			$(CC) -o $(NAME) $(SRCS) $(CFLAGS) $(CPPFLAGS)
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

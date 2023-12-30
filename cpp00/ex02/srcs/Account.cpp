@@ -6,11 +6,9 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/24 18:33:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:29:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Account.hpp"
 
 #include "Account.hpp"
 #include <iostream>
@@ -55,6 +53,8 @@ int Account::getTotalAmount(void) { return _totalAmount; }
 int Account::getNbDeposits(void) { return _totalNbDeposits; }
 
 int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
+
+int Account::checkAmount(void) const { return _amount; }
 
 void Account::displayAccountsInfos(void)
 {
@@ -107,7 +107,6 @@ bool Account::makeWithdrawal(int withdrawal)
 	}
 }
 
-int Account::checkAmount(void) const { return _amount; }
 
 void Account::displayStatus(void) const
 {
