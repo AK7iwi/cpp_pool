@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:32 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/30 19:46:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/04 19:22:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie	&Zombie::operator=(const Zombie &rhs)
 	return (*this);
 }
 
-Zombie::~Zombie() { std::cout << _name << "is destroyed" << std::endl;}
+Zombie::~Zombie() { std::cout << _name << " is destroyed" << std::endl;}
 
 void Zombie::announce() const
 {

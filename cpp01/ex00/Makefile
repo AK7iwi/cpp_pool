@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
 NAME 			= zombie
-SRCS			= srcs/main.cpp srcs/newZombie.cpp srcs/newZombie.cpp srcs/randomChump.cpp srcs/Zombie.cpp 
+SRCS			= srcs/main.cpp srcs/newZombie.cpp srcs/randomChump.cpp srcs/Zombie.cpp 
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
