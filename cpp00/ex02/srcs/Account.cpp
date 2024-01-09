@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/04 19:00:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:19:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,6 @@ Account::~Account(void)
 	_nbAccounts--;
 	_totalAmount -= _amount;
 }
-
-// void Account::_displayTimestamp(void) 
-// {
-// 	time_t now = time(0);
-// 	tm *ltm = localtime(&now);
-// 	std::cout << "[" << 1900 + ltm->tm_year << ltm->tm_mon + 1 << ltm->tm_mday << "_";
-// 	std::cout << ltm->tm_hour << ltm->tm_min << ltm->tm_sec << "] ";
-// }
 
 void Account::_displayTimestamp(void) 
 {
