@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 13:33:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:33:19 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/10 12:46:53 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/10 13:09:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include <iostream>
 
-int	main() 
+int main()
 {
-    PhoneBook	phone_book;
-    std::string command;
+    std::string str = "HI THIS IS BRAIN";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-    while (true) 
-	{	
-        std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-        std::cin >> command;
-        
-		if (command == "ADD") 			{ phone_book.add_contact(); }
-		else if (command == "SEARCH")	{ phone_book.search_contact(); }
-        else if (command == "EXIT")		{ std::cout << "Exiting phonebook. Goodbye!" << std::endl; break; }
-        else							{ std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl; }
-    }
+    std::cout << &str << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl << std::endl;
+
+    std::cout << str << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
 }
