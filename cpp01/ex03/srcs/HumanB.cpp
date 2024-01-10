@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:46:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 14:39:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:14:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB() {}
+HumanB::HumanB(std::string name): _name(name) {}
 
 HumanB::HumanB(const HumanB &cpy) 
 {
@@ -25,9 +25,19 @@ HumanB	&HumanB::operator=(const HumanB &rhs)
 	if (this != &rhs)
 	{
 		_name = rhs._name;
-		_weapon_a = rhs._weapon_a;
+		_weapon_b = rhs._weapon_b;
 	}
 	return (*this);
 }
 
 HumanB::~HumanB() {}
+
+void	HumanB::attack() const 
+{
+	std::cout << _name 
+			  << "attacks with their" 
+			  << _weapon_b 
+			  << std::endl;
+}
+
+void	HumanB::setWeapon(Weapon weapon) {_weapon_b = weapon;}

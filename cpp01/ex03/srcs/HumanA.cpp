@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:38 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 14:39:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:13:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA() {}
+HumanA::HumanA(std::string name, Weapon weapon): _name(name), _weapon_a(weapon) {}
 
 HumanA::HumanA(const HumanA &cpy) 
 {
@@ -32,3 +32,11 @@ HumanA	&HumanA::operator=(const HumanA &rhs)
 }
 
 HumanA::~HumanA() {}
+
+void	HumanA::attack() const 
+{
+	std::cout << _name 
+	          << "attacks with their" 
+			  << _weapon_a
+			  << std::endl;
+}
