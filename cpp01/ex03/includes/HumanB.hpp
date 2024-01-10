@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 14:21:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:43:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class HumanB 
 {
     public:
-		HumanB();
+		HumanB(std::string name);
 		HumanB(const HumanB &cpy);
 		HumanB	&operator=(const HumanB &rhs);
 		virtual ~HumanB();
