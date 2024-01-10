@@ -1,8 +1,8 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
-NAME 			= ex02
-SRCS			= main.cpp
+NAME 			= ex03
+SRCS			= srcs/main.cpp srcs/Weapon.cpp srcs/HumanA.cpp srcs/HumanB.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
