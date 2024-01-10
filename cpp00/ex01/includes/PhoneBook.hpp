@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:30:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:28:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ class PhoneBook
 	private:
 		Contact	_contacts[8];
 		uint8_t	_current_contact;
-		bool	flag;
+		bool	_flag;
 };

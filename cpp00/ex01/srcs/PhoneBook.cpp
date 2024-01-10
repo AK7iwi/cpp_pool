@@ -6,19 +6,20 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:30:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:31:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-PhoneBook::PhoneBook() : _current_contact(0), flag(false) {}
+PhoneBook::PhoneBook() : _current_contact(0), _flag(false) {}
 
 PhoneBook::PhoneBook(const PhoneBook &cpy)
 {
 	uint8_t i = 0;
 	_current_contact = cpy._current_contact;
+	_flag = cpy._flag;
 	while(i < 8)
 	{
 		_contacts[i] = cpy._contacts[i];
@@ -32,6 +33,7 @@ PhoneBook &PhoneBook::operator=(const PhoneBook &rhs)
 	if (this != &rhs)
 	{
 		_current_contact = rhs._current_contact;
+		_flag = rhs._flag;
 		while(i < 8)
 		{
 			_contacts[i] = rhs._contacts[i];
@@ -67,7 +69,7 @@ void	PhoneBook::search_contact()
         return;
     }
 	else if (_current_contact == 8)
-		flag = true;
+		_flag = true;
 	
     std::cout << "|" << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
@@ -75,7 +77,7 @@ void	PhoneBook::search_contact()
               << std::setw(10) << "Nickname" << "|" 
 			  << std::endl;
 	
-	if (flag == true)
+	if (_flag == true)
 	{
 		for (int i = 0; i < 8; ++i)
     		_contacts[i].display_phonebook(i);
@@ -91,7 +93,7 @@ void	PhoneBook::search_contact()
 	std::cin >> input;
 	int index = std::atoi(input.c_str());
 	
-	if (((index >= 0 && index < _current_contact) || (flag && index <= 7)) 
+	if (((index >= 0 && index < _current_contact) || (_flag && index <= 7)) 
 		&& (std::isdigit(input[0])) && (std::strlen(input.c_str()) == 1))
 	{
         std::cout << "Contact Information:" << "\n" << std::endl;

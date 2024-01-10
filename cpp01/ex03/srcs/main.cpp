@@ -6,7 +6,10 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:44:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 13:44:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:20:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
