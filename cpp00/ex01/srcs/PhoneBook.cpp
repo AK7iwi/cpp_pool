@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/30 01:06:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 08:30:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void PhoneBook::add_contact()
     }
 }
 
-void PhoneBook::search_contact() 
+void PhoneBook::search_contact()
 {
     if (_current_contact == 0)
 	{
@@ -75,7 +75,7 @@ void PhoneBook::search_contact()
               << std::setw(10) << "Nickname" << "|" 
 			  << std::endl;
 	
-	if(flag == true)
+	if (flag == true)
 	{
 		for (int i = 0; i < 8; ++i)
     		_contacts[i].display_phonebook(i);
@@ -85,7 +85,7 @@ void PhoneBook::search_contact()
 		for (int i = 0; i < _current_contact; ++i)
     		_contacts[i].display_phonebook(i);
 	}
-		
+	
     std::cout << "Enter the index of the contact to display: ";
 	std::string input;
 	std::cin >> input;

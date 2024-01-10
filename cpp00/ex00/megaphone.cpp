@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:34:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/30 15:12:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:27:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,4 @@ int main(int argc, char **argv)
             std::cout << (char)std::toupper(argv[i][j]);	
 	}
 	std::cout << std::endl;
-	return (0);
 }
