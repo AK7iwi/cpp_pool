@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 08:30:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:30:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ PhoneBook &PhoneBook::operator=(const PhoneBook &rhs)
 
 PhoneBook::~PhoneBook() {}
 
-void PhoneBook::add_contact() 
+void	PhoneBook::add_contact() 
 {
     if (_current_contact < 8) 
 	{
@@ -59,7 +59,7 @@ void PhoneBook::add_contact()
     }
 }
 
-void PhoneBook::search_contact()
+void	PhoneBook::search_contact()
 {
     if (_current_contact == 0)
 	{

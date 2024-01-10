@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2023/12/22 13:14:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:30:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Contact	&Contact::operator=(const Contact &rhs)
 
 Contact::~Contact() {}
 
-void Contact::set_contact_info()
+void	Contact::set_contact_info()
 {
     std::cout << "Enter first name: ";
 	std::cin >> _first_name;
@@ -57,7 +57,7 @@ void Contact::set_contact_info()
 	std::cin >> _darkest_secret;
 }
 
-void Contact::display_phonebook(int index) const 
+void	Contact::display_phonebook(int index) const 
 {
     std::cout << "|"
 			  << std::setw(10) << index << "|"
@@ -67,7 +67,7 @@ void Contact::display_phonebook(int index) const
 			  << std::endl;
 }
 
-void Contact::display_contact(int index) const 
+void	Contact::display_contact(int index) const 
 {
     std::cout << "Index: " << index << "\n"
 			  << "First Name: " << _first_name << "\n"

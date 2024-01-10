@@ -6,14 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:34:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 09:27:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:29:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int i;
 	int j;
