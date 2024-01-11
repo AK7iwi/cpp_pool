@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 10:42:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:28:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void FileReplacer::replace_and_save()
 {
 	std::ifstream input_file(_filename.c_str());
     
-    if (!input_file.is_open()) {
+    if (!input_file.is_open()) 
+	{
         std::cout << "Error: Unable to open input file: " << _filename << std::endl;
         return;
     }

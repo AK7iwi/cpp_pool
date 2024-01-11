@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:39:01 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 10:23:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:40:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class FileReplacer
 		FileReplacer &operator=(const FileReplacer &rhs);
 		virtual ~FileReplacer();
 
-    void replace_and_save();
+    	void replace_and_save();
 
 	private:
     	std::string _filename;
