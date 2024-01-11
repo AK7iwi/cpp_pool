@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 13:39:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:41:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ int main(int argc, char **argv)
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == argv[1])
-			level = i;	
+			level = i + 1;	
 	}
-	
 	switch(level)
 	{
 		case 1:
