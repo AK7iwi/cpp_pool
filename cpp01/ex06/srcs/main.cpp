@@ -5,26 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 10:52:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 12:29:01 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/11 13:39:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main(int argc, char **argv)
 {
-	Harl	harl;
+	if (argc != 2)
+	{
+		std::cout << "Invalid level or to much paramaters" << std::endl;
+		return (0);
+	}
+	Harl harl;
+	uint8_t level;
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR" };
 
-	harl.complain("DEBUG");
-	std::cout << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == argv[1])
+			level = i;	
+	}
 	
-	harl.complain("INFO");
-	std::cout << std::endl;
-	
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	
-	harl.complain("ERROR");
-	std::cout << std::endl;
+	switch(level)
+	{
+		case 1:
+			harl._debug();
+			break;
+		case 2:
+			harl._info();
+			break;
+		case 3:
+			harl._warning();
+			break;
+		case 4:
+			harl._error();
+			break;
+		default:
+    		std::cout << "Invalid level" << std::endl;
+			break;
+	}
 }

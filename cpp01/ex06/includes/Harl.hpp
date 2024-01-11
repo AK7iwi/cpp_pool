@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 10:52:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 12:29:01 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/11 12:48:46 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/11 13:40:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#pragma once
+#include <iostream>
+#include <stdint.h>
 
-int main(void)
+class Harl
 {
-	Harl	harl;
-
-	harl.complain("DEBUG");
-	std::cout << std::endl;
-	
-	harl.complain("INFO");
-	std::cout << std::endl;
-	
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	
-	harl.complain("ERROR");
-	std::cout << std::endl;
-}
+	public:
+		Harl();
+		Harl(const Harl &cpy);
+		Harl &operator=(const Harl &rhs);
+		virtual ~Harl();
+			
+		void	_debug() const;
+		void	_info() const;
+		void	_warning() const;
+		void	_error() const;
+		
+	private:
+};

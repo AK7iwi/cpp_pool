@@ -1,7 +1,7 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
-NAME 			= Harl
+NAME 			= harlFilter
 SRCS			= srcs/main.cpp srcs/Harl.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 
