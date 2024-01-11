@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 16:19:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/11 08:10:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class HumanB
 		virtual ~HumanB();
 
 		void	attack() const;
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon &weapon);
 		
 	private:
 		std::string _name;
-		Weapon _weapon_b;
+		Weapon *_weapon_b;
 
 };
