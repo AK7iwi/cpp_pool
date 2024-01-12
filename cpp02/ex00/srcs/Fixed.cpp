@@ -6,21 +6,34 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 14:58:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/12 12:20:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+const int Fixed::_store = 8;
 
-Fixed::Fixed() {}
+Fixed::Fixed(): _fixed_point(0) { std::cout << "Default constructor called" << std::endl;}
 	
-Fixed::Fixed(const Fixed &cpy) { (void)cpy ;}
+Fixed::Fixed(const Fixed &cpy)
+{ 
+	_fixed_point = cpy._fixed_point;
+	std::cout << "Copy constructor called" << std::endl;
+}
 
 Fixed	&Fixed::operator=(const Fixed &rhs)
 {	
-	if (this != &rhs) {(void)rhs;}
+	if (this != &rhs)
+	{ 
+		_fixed_point = rhs._fixed_point;
+		std::cout << "Copy assignment operator called" << std::endl;
+	}
 	return (*this);
 }
 
-Fixed::~Fixed() {}
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
+
+int		Fixed::getRawBits( void ) const { return(_fixed_point); }
+
+void	Fixed::setRawBits( int const raw ) { _fixed_point = raw ;}

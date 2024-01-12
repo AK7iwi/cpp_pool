@@ -6,12 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:46:39 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 14:52:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:58:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
 
 int main( void )
 {

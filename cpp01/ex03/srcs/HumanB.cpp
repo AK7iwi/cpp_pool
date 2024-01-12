@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:46:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 09:10:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:53:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): _name(name), _weapon_b(NULL) {}
+HumanB::HumanB(std::string name) : _name(name), _weapon_b(NULL) {}
 
 HumanB::HumanB(const HumanB &cpy)
 {

@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:38 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 15:28:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/12 11:53:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon): _name(name), _weapon_a(weapon) {}
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon_a(weapon) {}
 
 HumanA::HumanA(const HumanA &cpy): _weapon_a(cpy._weapon_a) { _name = cpy._name; }
 
