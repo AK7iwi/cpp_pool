@@ -6,11 +6,9 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 13:58:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/12 14:27:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Fixed.hpp"
 
 #include "Fixed.hpp"
 
@@ -48,3 +46,13 @@ int		Fixed::getRawBits( void ) const
 }
 
 void	Fixed::setRawBits( int const raw ) { _fixed_point = raw ;}
+
+int toInt( void ) const
+{
+	
+}
+
+float toFloat( void ) const
+{
+	
+}
