@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 13:41:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:43:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,4 @@ int		Fixed::getRawBits( void ) const
 	return(_fixed_point); 
 }
 
-void	Fixed::setRawBits( int const raw ) { _fixed_point = raw ;}
+void	Fixed::setRawBits( int const raw ) { _fixed_point = raw ; }

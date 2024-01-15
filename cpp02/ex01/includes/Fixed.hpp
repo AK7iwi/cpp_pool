@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 14:29:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:56:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 class Fixed
 {
 	public:
-		Fixed(const int , const float );
+		Fixed();
+		Fixed(const int integer);
+		Fixed(const float floater);
 		Fixed(const Fixed &cpy);
 		Fixed &operator=(const Fixed &rhs);
 		virtual ~Fixed();

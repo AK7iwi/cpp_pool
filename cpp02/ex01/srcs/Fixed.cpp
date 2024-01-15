@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 14:27:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/15 16:57:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,16 @@ const int Fixed::_store = 8;
 Fixed::Fixed(): _fixed_point(0) 
 { 
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int integer): _fixed_point(0) 
+{ 
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float floater): _fixed_point(0) 
+{ 
+	std::cout << "Float constructor called" << std::endl;
 }
 	
 Fixed::Fixed(const Fixed &cpy)
@@ -32,7 +42,6 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 	{ 
 		_fixed_point = rhs._fixed_point;
 		std::cout << "Copy assignment operator called" << std::endl;
-		rhs.getRawBits();
 	}
 	return (*this);
 }
