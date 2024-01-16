@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 13:12:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/16 21:01:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ class Fixed
 		
 	private:
 		int _fixed_point;
-		static const int _store;
+		static const int _nb_fractional_bits;
 };
