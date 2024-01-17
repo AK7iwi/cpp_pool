@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:50:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:55:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 const int Fixed::_nb_fractional_bits = 8;
 
-Fixed::Fixed(): _fixed_point(0) 
-{ 
-	std::cout << "Default constructor called" << std::endl;
-}
+Fixed::Fixed(): _fixed_point(0) { std::cout << "Default constructor called" << std::endl; }
 
 Fixed::Fixed(const int &integer): _fixed_point(integer) 
 { 
