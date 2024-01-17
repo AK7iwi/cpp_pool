@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:14:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:44:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,15 @@ Fixed::Fixed(const float &floater): _fixed_point(floater)
 { 
 	std::cout << "Float constructor called" << std::endl;
 }
+
 Fixed::Fixed(const Fixed &cpy)
 { 
 	_fixed_point = cpy._fixed_point;
 	std::cout << "Copy constructor called" << std::endl;
 	cpy.getRawBits();
 }
+
+Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
 
 Fixed	&Fixed::operator=(const Fixed &rhs)
 {	
@@ -44,8 +47,6 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 	}
 	return (*this);
 }
-
-Fixed::~Fixed() { std::cout << "Destructor called" << std::endl; }
 
 int		Fixed::getRawBits( void ) const 
 {

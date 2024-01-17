@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:53:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 12:45:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:42:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ Harl::Harl() {}
 	
 Harl::Harl(const Harl &cpy) { (void)cpy ;}
 
+Harl::~Harl() {}
+
 Harl	&Harl::operator=(const Harl &rhs)
 {	
 	if (this != &rhs) {(void)rhs;}
 	return (*this);
 }
-
-Harl::~Harl() {}
 
 void Harl::complain(std::string level)
 {

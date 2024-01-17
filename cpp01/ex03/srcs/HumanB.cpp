@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:46:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 11:53:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:43:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ HumanB::HumanB(const HumanB &cpy)
 	_weapon_b = cpy._weapon_b;
 }
 
+HumanB::~HumanB() {}
+
 HumanB	&HumanB::operator=(const HumanB &rhs)
 {	
 	if (this != &rhs)
@@ -29,8 +31,6 @@ HumanB	&HumanB::operator=(const HumanB &rhs)
 	}
 	return (*this);
 }
-
-HumanB::~HumanB() {}
 
 void	HumanB::attack() const 
 {

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 13:38:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:39:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ Harl::Harl() {}
 	
 Harl::Harl(const Harl &cpy) { (void)cpy ;}
 
+Harl::~Harl() {}
+
 Harl	&Harl::operator=(const Harl &rhs)
 {	
 	if (this != &rhs) {(void)rhs;}
 	return (*this);
 }
 
-Harl::~Harl() {}
 
 void Harl::_debug() const { std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl; }
 

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:30:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:40:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ Contact::Contact(const Contact &cpy)
 	_darkest_secret = cpy._darkest_secret;
 }
 
+Contact::~Contact() {}
+
 Contact	&Contact::operator=(const Contact &rhs)
 {	
 	if (this != &rhs)
@@ -36,8 +38,6 @@ Contact	&Contact::operator=(const Contact &rhs)
 	}
 	return (*this);
 }
-
-Contact::~Contact() {}
 
 void	Contact::set_contact_info()
 {

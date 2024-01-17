@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 11:28:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:39:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ FileReplacer::FileReplacer(const FileReplacer &cpy)
 	_s2 = cpy._s2;
 }
 
+FileReplacer::~FileReplacer() {}
+
 FileReplacer	&FileReplacer::operator=(const FileReplacer &rhs)
 {	
 	if (this != &rhs)
@@ -33,7 +35,6 @@ FileReplacer	&FileReplacer::operator=(const FileReplacer &rhs)
 	return (*this);
 }
 
-FileReplacer::~FileReplacer() {}
 
 void FileReplacer::replace_and_save()
 {

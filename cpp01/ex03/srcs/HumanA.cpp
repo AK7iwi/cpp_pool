@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:38 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/12 11:53:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:37:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon_a(weapon) {}
 
 HumanA::HumanA(const HumanA &cpy): _weapon_a(cpy._weapon_a) { _name = cpy._name; }
+
+HumanA::~HumanA() {}
 
 HumanA	&HumanA::operator=(const HumanA &rhs)
 {	
@@ -26,7 +28,6 @@ HumanA	&HumanA::operator=(const HumanA &rhs)
 	return (*this);
 }
 
-HumanA::~HumanA() {}
 
 void	HumanA::attack() const 
 {
