@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/16 21:01:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:00:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(const Fixed &cpy);
+		~Fixed();
 		Fixed &operator=(const Fixed &rhs);
-		virtual ~Fixed();
 
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );

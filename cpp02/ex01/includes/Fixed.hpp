@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 13:05:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:00:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Fixed
 		Fixed(const int &integer);
 		Fixed(const float &floater);
 		Fixed(const Fixed &cpy);
+		~Fixed();
 		Fixed &operator=(const Fixed &rhs);
-		virtual ~Fixed();
 
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
