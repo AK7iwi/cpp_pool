@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:34:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:43:34 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,4 @@ class Fixed
 		static const int	_nb_fractional_bits;
 };
 
-std::ostream& operator<<( std::ostream& os, Fixed const& i );
+std::ostream	&operator<<( std::ostream& os, Fixed const& i );
