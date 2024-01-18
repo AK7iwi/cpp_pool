@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:30:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:21:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int Account::getNbWithdrawals(void) {return _totalNbWithdrawals;}
 
 int Account::checkAmount(void) const {return _amount;}
 
-void Account::displayAccountsInfos(void)
+void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts()

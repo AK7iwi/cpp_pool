@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 13:54:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:34:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class PhoneBook
 	public:
 		
 		PhoneBook();
-		PhoneBook(const PhoneBook &cpy);
+		PhoneBook(PhoneBook const &cpy);
 		~PhoneBook();
-		PhoneBook &operator=(const PhoneBook &rhs);
+		PhoneBook	&operator=(PhoneBook const &rhs);
 
     	void	add_contact();
     	void	search_contact();

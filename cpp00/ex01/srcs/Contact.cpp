@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:40:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:37:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Contact::Contact() {}
 
-Contact::Contact(const Contact &cpy)
+Contact::Contact(Contact const &cpy)
 {
 	_first_name = cpy._first_name;
 	_last_name = cpy._last_name;
@@ -26,7 +26,7 @@ Contact::Contact(const Contact &cpy)
 
 Contact::~Contact() {}
 
-Contact	&Contact::operator=(const Contact &rhs)
+Contact	&Contact::operator=(Contact const &rhs)
 {	
 	if (this != &rhs)
 	{
