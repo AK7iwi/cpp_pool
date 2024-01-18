@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 14:00:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:34:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ class Fixed
 {
 	public:
 		Fixed();
-		Fixed(const Fixed &cpy);
+		Fixed(Fixed const &cpy);
 		~Fixed();
-		Fixed &operator=(const Fixed &rhs);
+		Fixed	&operator=(Fixed const &rhs);
 
-		int getRawBits( void ) const;
-		void setRawBits( int const raw );
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 		
 	private:
-		int _fixed_point;
-		static const int _nb_fractional_bits;
+		int					_fixed_point;
+		static const int	_nb_fractional_bits;
 };

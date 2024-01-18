@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 13:22:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:29:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	PhoneBook::search_contact()
     std::cout << "Enter the index of the contact to display: ";
 	std::string input;
 	std::cin >> input;
-	int index = std::atoi(input.c_str());
+	int	index = std::atoi(input.c_str());
 	
 	if (((index >= 0 && index < _current_contact) || (_flag && index <= 7)) 
 		&& (std::isdigit(input[0])) && (std::strlen(input.c_str()) == 1))

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:54:24 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 13:59:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:27:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ class Zombie
 {
     public:
 		Zombie();
-		Zombie(const Zombie &cpy);
+		Zombie(Zombie const &cpy);
 		~Zombie();
-		Zombie	&operator=(const Zombie &rhs);
+		Zombie	&operator=(Zombie const &rhs);
 
     	void	announce() const;
 		void	set_name(std::string name);

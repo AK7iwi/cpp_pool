@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:39:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:09:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 FileReplacer::FileReplacer(const std::string &filename, const std::string &s1, const std::string &s2)
 	: _filename(filename), _s1(s1), _s2(s2) {}
 	
-FileReplacer::FileReplacer(const FileReplacer &cpy)
+FileReplacer::FileReplacer(FileReplacer const &cpy)
 {
 	_filename = cpy._filename;
 	_s1 = cpy._s1;
@@ -24,7 +24,7 @@ FileReplacer::FileReplacer(const FileReplacer &cpy)
 
 FileReplacer::~FileReplacer() {}
 
-FileReplacer	&FileReplacer::operator=(const FileReplacer &rhs)
+FileReplacer	&FileReplacer::operator=(FileReplacer const &rhs)
 {	
 	if (this != &rhs)
 	{

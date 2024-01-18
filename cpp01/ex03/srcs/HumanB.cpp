@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:46:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:43:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:07:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string name) : _name(name), _weapon_b(NULL) {}
 
-HumanB::HumanB(const HumanB &cpy)
+HumanB::HumanB(HumanB const &cpy)
 {
 	_name = cpy._name;
 	_weapon_b = cpy._weapon_b;
@@ -22,7 +22,7 @@ HumanB::HumanB(const HumanB &cpy)
 
 HumanB::~HumanB() {}
 
-HumanB	&HumanB::operator=(const HumanB &rhs)
+HumanB	&HumanB::operator=(HumanB const &rhs)
 {	
 	if (this != &rhs)
 	{

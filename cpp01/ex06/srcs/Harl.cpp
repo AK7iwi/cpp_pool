@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/17 15:39:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:13:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Harl::Harl() {}
 	
-Harl::Harl(const Harl &cpy) { (void)cpy ;}
+Harl::Harl(Harl const &cpy) { (void)cpy ;}
 
 Harl::~Harl() {}
 
-Harl	&Harl::operator=(const Harl &rhs)
+Harl	&Harl::operator=(Harl const &rhs)
 {	
 	if (this != &rhs) {(void)rhs;}
 	return (*this);
