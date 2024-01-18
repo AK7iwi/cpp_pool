@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:32 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:37:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:45:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Zombie::Zombie(Zombie const &cpy) {_name = cpy._name;}
 
 Zombie::~Zombie() {std::cout << _name << " is destroyed" << std::endl;}
 
-Zombie	&Zombie::operator=(Zombie const &rhs) 
+Zombie&	Zombie::operator=(Zombie const &rhs) 
 {	
-	if (this != &rhs) { _name = rhs._name;}
+	if (this != &rhs)
+		_name = rhs._name;
 	return (*this);
 }
 

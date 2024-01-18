@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:46 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:33:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:58:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ class Harl
 		Harl();
 		Harl(Harl const &cpy);
 		~Harl();
-		Harl	&operator=(Harl const &rhs);
+		Harl&	operator=(Harl const &rhs);
 			
 		void	_debug() const;
 		void	_info() const;
 		void	_warning() const;
 		void	_error() const;
-		
-	private:
 };

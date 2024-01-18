@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 13:29:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:43:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanA
 		HumanA(std::string name, Weapon &weapon);
 		HumanA(HumanA const &cpy);
 		~HumanA();
-		HumanA	&operator=(HumanA const &rhs);
+		HumanA&	operator=(HumanA const &rhs);
 
 		void	attack() const;
 		

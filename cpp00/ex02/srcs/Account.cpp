@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:21:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 12:21:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:38:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,11 @@ void	Account::_displayTimestamp(void)
 {
     time_t now = time(0);
     tm *ltm = localtime(&now);
+	
     std::cout << "[" << 1900 + ltm->tm_year;
-
-    if (ltm->tm_mon + 1 < 10) {
-        std::cout << "0";
-    }
+    if (ltm->tm_mon + 1 < 10) {std::cout << "0";}
     std::cout << ltm->tm_mon + 1;
-
-    if (ltm->tm_mday < 10) {
-        std::cout << "0";
-    }
+    if (ltm->tm_mday < 10) {std::cout << "0";}
     std::cout << ltm->tm_mday << "_";
     std::cout << ltm->tm_hour << ltm->tm_min << ltm->tm_sec << "] ";
 }

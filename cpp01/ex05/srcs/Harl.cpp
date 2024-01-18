@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:53:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:12:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:57:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Harl::Harl(Harl const &cpy) {(void)cpy;}
 
 Harl::~Harl() {}
 
-Harl	&Harl::operator=(Harl const &rhs)
+Harl&	Harl::operator=(Harl const &rhs)
 {	
-	if (this != &rhs) {(void)rhs;}
+	if (this != &rhs)
+		(void)rhs;
 	return (*this);
 }
 
@@ -44,4 +45,3 @@ void Harl::_info() {std::cout << "I cannot believe adding extra bacon costs more
 void Harl::_warning() {std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;}
 
 void Harl::_error() {std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;}
-

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 13:29:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:43:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class HumanB
 		HumanB(std::string name);
 		HumanB(HumanB const &cpy);
 		~HumanB();
-		HumanB	&operator=(HumanB const &rhs);
+		HumanB&	operator=(HumanB const &rhs);
 
 		void	attack() const;
 		void	setWeapon(Weapon &weapon);

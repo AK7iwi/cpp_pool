@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 12:37:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:45:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Contact::Contact(Contact const &cpy)
 
 Contact::~Contact() {}
 
-Contact	&Contact::operator=(Contact const &rhs)
+Contact&	Contact::operator=(Contact const &rhs)
 {	
 	if (this != &rhs)
 	{
@@ -41,7 +41,7 @@ Contact	&Contact::operator=(Contact const &rhs)
 
 void	Contact::set_contact_info()
 {
-    std::cout << "Enter first name: ";
+	std::cout << "Enter first name: ";
 	std::cin >> _first_name;
 
     std::cout << "Enter last name: ";

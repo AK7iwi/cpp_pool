@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:53:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:34:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:57:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Harl
 		Harl();
 		Harl(Harl const &cpy);
 		~Harl();
-		Harl	&operator=(Harl const &rhs);
+		Harl&	operator=(Harl const &rhs);
 		
 		void    complain(std::string level);
 		

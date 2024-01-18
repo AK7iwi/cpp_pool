@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:09:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:56:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FileReplacer.hpp"
 
-FileReplacer::FileReplacer(const std::string &filename, const std::string &s1, const std::string &s2)
+FileReplacer::FileReplacer(std::string const &filename, std::string const &s1, std::string const &s2)
 	: _filename(filename), _s1(s1), _s2(s2) {}
 	
 FileReplacer::FileReplacer(FileReplacer const &cpy)
@@ -24,7 +24,7 @@ FileReplacer::FileReplacer(FileReplacer const &cpy)
 
 FileReplacer::~FileReplacer() {}
 
-FileReplacer	&FileReplacer::operator=(FileReplacer const &rhs)
+FileReplacer&   FileReplacer::operator=(FileReplacer const &rhs)
 {	
 	if (this != &rhs)
 	{
@@ -36,7 +36,7 @@ FileReplacer	&FileReplacer::operator=(FileReplacer const &rhs)
 }
 
 
-void FileReplacer::replace_and_save()
+void    FileReplacer::replace_and_save()
 {
 	std::ifstream input_file(_filename.c_str());
     
@@ -51,7 +51,6 @@ void FileReplacer::replace_and_save()
     buffer << input_file.rdbuf();
     std::string content = buffer.str();
 
-    // Replace occurrences of s1 with s2 in the string
     size_t pos = 0;
     while ((pos = content.find(_s1, pos)) != std::string::npos)
 	{
@@ -59,9 +58,7 @@ void FileReplacer::replace_and_save()
         pos += _s2.length();
     }
 
-    // Create the output filename
     std::string output_filename = _filename + ".replace";
-
     // Open the output file
     std::ofstream output_file(output_filename.c_str());
 
@@ -71,8 +68,7 @@ void FileReplacer::replace_and_save()
         return;
     }
 
-    // Write the modified content to the output file
     output_file << content;
-
+    
     std::cout << "Replacement completed. Output saved to: " << output_filename << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:29:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:46:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,29 +18,25 @@ PhoneBook::PhoneBook() : _current_contact(0), _flag(false) {}
 PhoneBook::PhoneBook(PhoneBook const &cpy)
 {
 	uint8_t i = 0;
+	
 	_current_contact = cpy._current_contact;
 	_flag = cpy._flag;
-	while(i < 8)
-	{
+	while(i++ < 8)
 		_contacts[i] = cpy._contacts[i];
-		i++;
-	}
 }
 
 PhoneBook::~PhoneBook() {}
 
-PhoneBook	&PhoneBook::operator=(PhoneBook const &rhs) 
+PhoneBook&	PhoneBook::operator=(PhoneBook const &rhs) 
 {	
 	uint8_t i = 0;
+	
 	if (this != &rhs)
 	{
 		_current_contact = rhs._current_contact;
 		_flag = rhs._flag;
-		while(i < 8)
-		{
+		while(i++ < 8)
 			_contacts[i] = rhs._contacts[i];
-			i++;
-		}
 	}
 	return (*this);
 }
