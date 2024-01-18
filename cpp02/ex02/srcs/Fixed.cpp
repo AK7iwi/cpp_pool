@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 00:00:03 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/18 23:24:42 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/19 00:37:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,80 @@ Fixed&	Fixed::operator=(Fixed const &rhs)
 		_fixed_point = rhs._fixed_point;
 	return (*this);
 }
+
+bool Fixed::operator>(Fixed const &rhs) const {return (_fixed_point > rhs._fixed_point);}
+
+bool Fixed::operator<(Fixed const &rhs) const {return (_fixed_point < rhs._fixed_point);}
+
+bool Fixed::operator>=(Fixed const &rhs) const {return (_fixed_point >= rhs._fixed_point);}
+
+bool Fixed::operator<=(Fixed const &rhs) const {return (_fixed_point <= rhs._fixed_point);}
+
+bool Fixed::operator==(Fixed const &rhs) const {return (_fixed_point == rhs._fixed_point);}
+
+bool Fixed::operator!=(Fixed const &rhs ) const {return (_fixed_point != rhs._fixed_point);}
+
+Fixed Fixed::operator+(Fixed const &rhs) const
+{
+    Fixed result;
+    result._fixed_point = _fixed_point + rhs._fixed_point;
+    return (result);
+}
+
+Fixed Fixed::operator-(Fixed const &rhs) const
+{
+    Fixed result;
+    result._fixed_point = _fixed_point - rhs._fixed_point;
+    return (result);
+}
+
+Fixed Fixed::operator*(Fixed const &rhs) const
+{
+    Fixed result;
+    result._fixed_point = _fixed_point * rhs._fixed_point;
+    return (result);
+}
+
+Fixed Fixed::operator/(Fixed const &rhs) const
+{
+    Fixed result;
+    result._fixed_point = _fixed_point / rhs._fixed_point;
+    return (result);
+}
+
+Fixed &Fixed::operator++()
+{
+    _fixed_point += 1;
+    return (*this);
+}
+
+Fixed &Fixed::operator--()
+{
+    _fixed_point -= 1;
+    return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+    Fixed temp = *this;
+    _fixed_point += 1;
+    return temp;
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed temp = *this;
+    _fixed_point -= 1;
+    return temp;
+}
+
+Fixed&  Fixed::min(Fixed &a, Fixed &b) {return (a < b) ? a : b;}
+
+Fixed Fixed::min(Fixed const &a, Fixed const &b) {return (a < b) ? a : b;}
+
+Fixed& Fixed::max(Fixed &a, Fixed &b) {return (a > b) ? a : b;}
+
+Fixed Fixed::max(Fixed const &a, Fixed const &b) {return (a > b) ? a : b;}
 
 int		Fixed::get_fixed_point(void) const {return (_fixed_point);}
 
