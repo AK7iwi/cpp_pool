@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 14:43:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:45:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		Fixed::toInt(void) const {return (_fixed_point >> _nb_fractional_bits);}
 
 float	Fixed::toFloat(void) const {return (static_cast<float>(_fixed_point) / (1 << _nb_fractional_bits));}
 
-std::ostream	&operator<<(std::ostream& os, Fixed const& i)
+std::ostream	&operator<<(std::ostream &os, Fixed const &i)
 {
 	os << i.toFloat();
 	return os;
