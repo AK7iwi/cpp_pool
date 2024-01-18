@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 18:01:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/18 23:20:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int Fixed::_nb_fractional_bits = 8;
+int const Fixed::_nb_fractional_bits = 8;
 
 Fixed::Fixed(): _fixed_point(0) {std::cout << "Default constructor called" << std::endl;}
 	
