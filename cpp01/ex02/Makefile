@@ -3,18 +3,18 @@ RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
 NAME 			= ex02
 SRCS			= main.cpp
-OBJS 			= $(SRCS:.cpp=.o)
+rhsS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
+$(NAME):		$(rhsS)
+				$(CC) -o $(NAME) $(rhsS) $(CFLAGS)
 
 %.o: %.cpp
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(rhsS)
 				 
 fclean:			clean
 				$(RM) $(NAME)

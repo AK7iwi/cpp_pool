@@ -4,18 +4,18 @@ CFLAGS			= -Wall -Wextra -Werror -std=c++98
 NAME 			= megaphone
 SRCS			= megaphone.cpp
 
-OBJS			= $(SRCS:.cpp=.o)
+rhsS			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
+$(NAME):		$(rhsS)
+				$(CC) -o $(NAME) $(rhsS) $(CFLAGS)
 		
 %.o: %.cpp
 				$(CC) $(CFLAGS) -c $< -o $@
 
 clean:			
-				$(RM) $(OBJS)
+				$(RM) $(rhsS)
 				 
 fclean:	 		clean
 				$(RM) $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 00:00:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/19 21:57:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Fixed
 		~Fixed();
 		Fixed&  operator=(Fixed const &rhs);
 
-		int		get_fixed_point(void) const;
-		void	set_fixed_point(int const raw);
+		void	setRawBits(int const raw);
+		int		getRawBits(void) const;
 		
 	private:
-		int					_fixed_point;
+		int					__raw_bits;
 		static const int	_nb_fractional_bits;
 };
