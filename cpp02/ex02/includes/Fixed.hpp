@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 23:24:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 00:38:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/19 22:02:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ class Fixed
 		Fixed(Fixed const &cpy);
 		~Fixed();
 		Fixed&	operator=(Fixed const &rhs);
-
-		int		get_fixed_point(void) const;
-		void	set_fixed_point(int const raw);
-		int		toInt(void) const;
-		float	toFloat(void) const;
         
         bool    operator>(Fixed const &rhs) const;
         bool    operator<(Fixed const &rhs) const;
@@ -46,13 +41,18 @@ class Fixed
         Fixed&  operator--();
         Fixed   operator--(int);
 
-        static Fixed   min(Fixed &a, Fixed &b);
+        static Fixed&  min(Fixed &a, Fixed &b);
         static Fixed   min(Fixed const &a, Fixed const &b);
-        static Fixed   max(Fixed &a, Fixed &b);
+        static Fixed&  max(Fixed &a, Fixed &b);
         static Fixed   max(Fixed const &a, Fixed const &b);
+
+        int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		int		toInt(void) const;
+		float	toFloat(void) const;
     	
 	private:
-		int					_fixed_point;
+		int					_raw_bits;
 		static int const	_nb_fractional_bits;
 };
 
