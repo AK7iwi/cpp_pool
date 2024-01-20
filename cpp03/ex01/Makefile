@@ -1,8 +1,8 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
-NAME 			= ex00
-SRCS			= srcs/main.cpp srcs/ClapTrap.cpp
+NAME 			= ex01
+SRCS			= srcs/main.cpp srcs/ClapTrap.cpp srcs/ScavTrap.cpp
 rhsS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
