@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Diamond.hpp                                        :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:22 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:17:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 23:15:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
         ~DiamondTrap();
         DiamondTrap&	operator=(DiamondTrap const &rhs);
 
+        void    attack(const std::string& target);
         void    whoAmI();
 
     private:

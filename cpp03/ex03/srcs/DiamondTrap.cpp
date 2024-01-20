@@ -6,18 +6,18 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:27:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 23:18:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name) 
+DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap(), _name(name) 
 {
     std::cout << "Constructor called for DiamondTrap " << _name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &cpy) : ClapTrap(cpy._name)
+DiamondTrap::DiamondTrap(DiamondTrap const &cpy) :  ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap()
 {
     std::cout << "Copy constructor called for DiamondTrap " << _name << std::endl;
     _name = cpy._name;
@@ -28,7 +28,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &cpy) : ClapTrap(cpy._name)
 
 DiamondTrap::~DiamondTrap() {std::cout << "Destructor called for DiamondTrap " << _name << std::endl;}
 
-DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs) : ClapTrap(rhs._name)
+DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs)
 {	
     std::cout << "Copy assignment operator called for DiamondTrap" << std::endl;
 	if (this != &rhs)
@@ -39,6 +39,20 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs) : ClapTrap(rhs._name
         _attack_damage = rhs._attack_damage;
     }
 	return (*this);
+}
+
+void    DiamondTrap::attack(const std::string& target) 
+{
+    if (_hit_points != 0 && _energy_points != 0) 
+    {
+        std::cout << "DiamondTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+        _energy_points--;
+        return;
+    } 
+    if (_hit_points == 0)
+        std::cout << "DiamondTrap " << _name << " has no hits points left and can't attack!" << std::endl;
+    if (_energy_points == 0)
+        std::cout << "DiamondTrap " << _name << " has no energy points left and can't attack!" << std::endl;
 }
 
 void DiamondTrap::whoAmI() {std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;}
