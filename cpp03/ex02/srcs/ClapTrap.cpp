@@ -6,15 +6,15 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:34:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 22:39:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string const &name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) 
+ClapTrap::ClapTrap(const std::string &name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) 
 {
-    std::cout << "Default constructor called for ClapTrap " << _name << std::endl;
+    std::cout << "Constructor called for ClapTrap " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &cpy) 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(ClapTrap const &cpy)
     _attack_damage = cpy._attack_damage;
 }
 
-ClapTrap::~ClapTrap() {std::cout << "Destructor called for ClapTrap " << _name << std::endl;}
+ClapTrap::~ClapTrap() {std::cout << "Destructor called for ScavTrap " << _name << std::endl;}
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs) 
 {	
@@ -45,7 +45,7 @@ void    ClapTrap::attack(const std::string& target)
 {
     if (_hit_points != 0 && _energy_points != 0) 
     {
-        std::cout << "ClapTrap "<< _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
         _energy_points--;
         return;
     } 

@@ -6,13 +6,15 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 21:54:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 22:19:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
 
 int main() 
 {
@@ -39,6 +41,14 @@ int main()
     fragtrap.attack("ClapTrap3");
     fragtrap.takeDamage(15);
     fragtrap.beRepaired(8);
+
+    DiamondTrap diamondtrap("FragTrap");
+    diamondtrap.attack("FragTrap1");
+    diamondtrap.takeDamage(10);
+    diamondtrap.whoAmI();
+    diamondtrap.attack("ClapTrap3");
+    diamondtrap.takeDamage(15);
+    diamondtrap.beRepaired(8);
 
     return (0);
 }

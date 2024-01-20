@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:40:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 22:40:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) 
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) 
 {
     std::cout << "Constructor called for ScavTrap " << _name << std::endl;
     _hit_points = 100;
@@ -48,7 +48,7 @@ void    ScavTrap::attack(const std::string& target)
 {
     if (_hit_points != 0 && _energy_points != 0) 
     {
-        std::cout << "ScavTrap "<< _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+        std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
         _energy_points--;
         return;
     } 

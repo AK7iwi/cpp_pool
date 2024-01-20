@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 21:11:54 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/20 21:14:52 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/20 23:02:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class FragTrap : public ClapTrap 
 {
-	public:
-		Fixed();
-		Fixed(Fixed const &cpy);
-		~Fixed();
-		Fixed&  operator=(Fixed const &rhs);
+    public:
+        FragTrap(std::string const &name);
+        FragTrap(FragTrap const &cpy);
+        ~FragTrap();
+        FragTrap&	operator=(FragTrap const &rhs);
 
-		void	setRawBits(int const raw);
-		int		getRawBits(void) const;
-		
-	private:
-		int					_raw_bits;
-		static const int	_nb_fractional_bits;
+        void    attack(const std::string& target);
+        void    highFivesGuys();
 };

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Diamond.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 21:11:54 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/20 21:57:22 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/20 22:17:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class Fixed
+class DiamondTrap : public FragTrap, public ScavTrap 
 {
-	public:
-		Fixed();
-		Fixed(Fixed const &cpy);
-		~Fixed();
-		Fixed&  operator=(Fixed const &rhs);
+    public:
+    
+        DiamondTrap(std::string const &name);
+        DiamondTrap(DiamondTrap const &cpy);
+        ~DiamondTrap();
+        DiamondTrap&	operator=(DiamondTrap const &rhs);
 
-		void	setRawBits(int const raw);
-		int		getRawBits(void) const;
-		
-	private:
-		int					_raw_bits;
-		static const int	_nb_fractional_bits;
+        void    whoAmI();
+
+    private:
+        std::string     _name;
+        
+
+    
 };

@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 20:54:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 22:36:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) 
+ClapTrap::ClapTrap(std::string const &name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) 
 {
     std::cout << "Constructor called for ClapTrap " << _name << std::endl;
 }
@@ -44,28 +44,15 @@ ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs)
 void    ClapTrap::attack(const std::string& target) 
 {
     if (_hit_points != 0 && _energy_points != 0) 
-    {
-        std::cout << "ClapTrap "
-                  << _name 
-                  << " attacks " 
-                  << target 
-                  << ", causing " 
-                  << _attack_damage 
-                  << " points of damage!" 
-                  << std::endl;
+    { 
+        std::cout << "ClapTrap "<< _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
         _energy_points--;
         return;
     } 
     if (_hit_points == 0)
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " has no hits points left and can't attack!" 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " has no hits points left and can't attack!" << std::endl;
     if (_energy_points == 0)
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " has no energy points left and can't attack!" 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " has no energy points left and can't attack!" << std::endl;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount) 
@@ -73,18 +60,10 @@ void    ClapTrap::takeDamage(unsigned int amount)
     if (_hit_points > 0 && amount > 0) 
     {
         _hit_points = (amount >= _hit_points) ? 0 : _hit_points - amount;
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " takes " << amount 
-                  << " points of damage. Remaining Hit Points: " 
-                  << _hit_points 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage. Remaining Hit Points: " << _hit_points << std::endl;
     } 
     else
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " has no hit points left and can't take any more damage!" 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " has no hit points left and can't take any more damage!" << std::endl;
 }
 
 void    ClapTrap::beRepaired(unsigned int amount) 
@@ -92,24 +71,12 @@ void    ClapTrap::beRepaired(unsigned int amount)
     if (_hit_points != 0 && _energy_points != 0 && amount > 0) 
     {
         _hit_points += amount;
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " is repaired for " 
-                  << amount 
-                  << " points. Remaining Hit Points: " 
-                  << _hit_points 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " is repaired for " << amount << " points. Remaining Hit Points: " << _hit_points << std::endl;
         _energy_points--;
         return;
     } 
     if (_hit_points == 0)
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " has no hits points left and can't be repaired" 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " has no hits points left and can't be repaired" << std::endl;
     if (_energy_points == 0)
-        std::cout << "ClapTrap " 
-                  << _name 
-                  << " has no energy points left and can't be repaired!" 
-                  << std::endl;
+        std::cout << "ClapTrap " << _name << " has no energy points left and can't be repaired!" << std::endl;
 }
