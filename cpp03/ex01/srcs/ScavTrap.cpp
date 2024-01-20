@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 20:54:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 21:04:31 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 	return (*this);
 }
 
-void    ScavTrap::guardGate() {std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode." << std::endl;}
-
 void    ScavTrap::attack(const std::string& target) 
 {
     if (_hit_points != 0 && _energy_points != 0) 
@@ -72,3 +70,5 @@ void    ScavTrap::attack(const std::string& target)
                   << " has no energy points left and can't attack!" 
                   << std::endl;
 }
+
+void    ScavTrap::guardGate() {std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode." << std::endl;}
