@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:25:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 19:33:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 19:43:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	main()
 	player4 = player3;
 
 	player1.attack("player2");
-	player2.takeDamage(0);
-	player2.beRepaired(10);
-    player2.attack("Player3");
+	player2.takeDamage(20);
+    player2.attack("Player1");
+	player2.beRepaired(-5);
 	player3.takeDamage(20);
 	player4.attack("Player3");
 	player3.beRepaired(200);
