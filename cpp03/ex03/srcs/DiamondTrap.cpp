@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 23:29:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/20 23:46:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,5 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs)
     }
 	return (*this);
 }
-
-// void    DiamondTrap::attack(const std::string& target) 
-// {
-//     if (_hit_points != 0 && _energy_points != 0) 
-//     {
-//         std::cout << "DiamondTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-//         _energy_points--;
-//         return;
-//     } 
-//     if (_hit_points == 0)
-//         std::cout << "DiamondTrap " << _name << " has no hits points left and can't attack!" << std::endl;
-//     if (_energy_points == 0)
-//         std::cout << "DiamondTrap " << _name << " has no energy points left and can't attack!" << std::endl;
-// }
 
 void DiamondTrap::whoAmI() {std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;}
