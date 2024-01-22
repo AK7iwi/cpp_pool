@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:40:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:16:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(ScavTrap const &cpy) : ClapTrap(cpy._name)
 {
-    std::cout << "Copy constructor called for ScavTrap " << _name << std::endl;
+	std::cout << "Copy constructor called for ScavTrap " << _name << std::endl;
     _name = cpy._name;
     _hit_points = cpy._hit_points;
     _energy_points = cpy._energy_points;

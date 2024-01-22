@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:14:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 23:02:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:49:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class FragTrap : public ClapTrap
         FragTrap(FragTrap const &cpy);
         ~FragTrap();
         FragTrap&	operator=(FragTrap const &rhs);
-
-        void    attack(const std::string& target);
+		
         void    highFivesGuys();
 };
