@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 23:45:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:00:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ int main()
     claptrap.beRepaired(8);
 
     ScavTrap scavtrap("ScavTrap");
-    scavtrap.attack("ClapTrap1");
+    scavtrap.attack("ScavTrap1");
     scavtrap.takeDamage(10);
     scavtrap.guardGate();
-    scavtrap.attack("ClapTrap3");
+    scavtrap.attack("ScavTrap2");
     scavtrap.takeDamage(15);
     scavtrap.beRepaired(8);
 
-    return 0;
+    return (0);
 }
