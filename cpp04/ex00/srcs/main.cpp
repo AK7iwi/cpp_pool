@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 17:17:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:03:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,34 @@
 
 int main() 
 {
-  const Animal* animal = new Animal(); 
-  const Animal* dog = new Dog();
-  const Animal* cat = new Cat();
+	const Animal *animal = new Animal();
+	const Animal *dog = new Dog();
+	const Animal *cat = new Cat();
+	const Animal *bear = new Animal("Bear");
+	const WrongAnimal *wrong1 = new WrongAnimal();
+	const WrongAnimal *wrong2 = new WrongCat();
+	
+	
+	std::cout << "no_type:" << animal->getType() << std::endl;
+	std::cout << "no_type:" << wrong1->getType() << std::endl;
+	std::cout << dog->getType() << std::endl;
+	std::cout << cat->getType() << std::endl;
+	std::cout << bear->getType() << std::endl;
+	std::cout << wrong2->getType() << std::endl << std::endl;
 
-  std::cout << std::endl;
-  std::cout << animal->getType() << " " << std::endl;
-  std::cout << dog->getType() << " " << std::endl;
-  std::cout << cat->getType() << " " << std::endl;
-  std::cout << std::endl;
-  animal->makeSound();  
-  dog->makeSound();     
-  cat->makeSound();    
-  std::cout << std::endl;
 
-  delete animal;
-  delete dog;
-  delete cat;
+	animal->makeSound();
+	dog->makeSound();
+	cat->makeSound();
+	bear->makeSound();
 
-  const WrongAnimal* wrongAnimal = new WrongAnimal();
-  const WrongAnimal* wrongCat = new WrongCat();
-  WrongCat wc;
+	wrong1->makeSound();
+	wrong2->makeSound();
 
-  std::cout << std::endl;
-  std::cout << wrongAnimal->getType() << " " << std::endl;
-  std::cout << wrongCat->getType() << " " << std::endl;
-  std::cout << wc.getType() << " " << std::endl;
-  std::cout << std::endl;
-  wrongAnimal->makeSound();
-  wrongCat->makeSound();   
-  wc.makeSound();           
-  std::cout << std::endl;
-
-  delete wrongAnimal;
-  delete wrongCat;
+	delete animal;
+	delete dog;
+	delete cat;
+	delete bear;
+	delete wrong1;
+	delete wrong2;	
 }

@@ -6,63 +6,42 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 17:36:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:34:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
-#include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Cat.hpp"
 
-int main( void ) 
+int main()
 {
-  size_t         i;
-  const AAnimal* animals[4];
+	/* Does not compile */
+	// AAnimal test;
+	
+	std::cout << "constructor" << std::endl << std::endl;
+	const AAnimal *animalArr[4];
+	for (int i = 0; i < 4; i++) 
+	{
+		if (i < 2)
+			animalArr[i] = new Dog();
+		else
+			animalArr[i] = new Cat();
+	}
+	std::cout << std::endl << "destructor" << std::endl << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete animalArr[i];
+		
+	std::cout << std::endl << "deep copy" << std::endl << std::endl;
+	Dog basic;
+	{
+		Dog tmp = basic;
+		
+		basic.getBrain()->setIdeas(0, "basic");
+		tmp.getBrain()->setIdeas(0, "tmp");
 
-  std::cout << std::endl;
-  std::cout << "          [BIRTH]" << std::endl;
-  std::cout << std::endl;
-
-  for( i = 0; i < 4; ++i ) {
-    if( i < 2 ) {
-      animals[i] = new Cat();
-    } else {
-      animals[i] = new Dog();
-    }
-    std::cout << std::endl;
-  }
-
-  std::cout << "          [LIVE]" << std::endl;
-  std::cout << std::endl;
-
-  for( i = 0; i < 4; ++i ) {
-    std::cout << "AAnimal nᵒ" << i << ", a " << *animals[i] << " says: ";
-    animals[i]->makeSound();
-  }
-
-  std::cout << std::endl;
-  std::cout << "          [DEATH]" << std::endl;
-  std::cout << std::endl;
-
-  for( i = 0; i < 4; ++i ) {
-    delete animals[i];
-    std::cout << std::endl;
-  }
-
-  std::cout << std::endl;
-  std::cout << "Copy assignment operator and copy constructors" << std::endl;
-  std::cout << std::endl;
-  Cat* a = new Cat();
-  Cat* b = new Cat();
-  Cat* c = new Cat( *b );
-  std::cout << std::endl;
-  *b = *a = *c;
-  std::cout << std::endl;
-  
-  delete a;
-  delete b;
-  delete c;
-  return 0;
+		std::cout << basic.getBrain()->getIdeas(0) << std::endl;
+		std::cout << tmp.getBrain()->getIdeas(0) << std::endl;
+	}
+	std::cout << basic.getBrain()->getIdeas(0) << std::endl;
 }

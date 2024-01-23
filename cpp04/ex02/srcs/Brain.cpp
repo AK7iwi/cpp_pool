@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:59 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:03:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:11:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,7 @@ Brain&	Brain::operator=(Brain const &rhs)
 	}
 	return (*this);
 }
+
+std::string	Brain::getIdeas(uint8_t idx) const {return(_ideas[idx]);}
+
+void		Brain::setIdeas(uint8_t idx, std::string ideas) {_ideas[idx] = ideas;}

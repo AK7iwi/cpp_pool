@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:16:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:34:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,5 @@ Dog&	Dog::operator=(Dog const &rhs)
 }
 
 void Dog::makeSound() const {std::cout << "Waouf! Waouf!" << std::endl;}
+
+Brain	*Dog::getBrain() const {return(_brain);}
