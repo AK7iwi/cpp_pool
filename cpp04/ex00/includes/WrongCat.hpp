@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:58:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 13:11:47 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 14:10:55 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 14:16:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal 
+class WrongCat : public WrongAnimal 
 {
 	public:
-    	Cat();
-        Cat(Cat const &cpy);
-        ~Cat();
-		Cat&	operator=(Cat const &rhs);
+    	WrongCat();
+        WrongCat(WrongCat const &cpy);
+        ~WrongCat();
+		WrongCat&	operator=(WrongCat const &rhs);
 
 		void	makeSound(void) const;
 };
-
