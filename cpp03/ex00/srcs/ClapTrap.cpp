@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/22 13:37:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 08:27:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(ClapTrap const &cpy)
     _name = cpy._name;
     _hit_points = cpy._hit_points;
     _energy_points = cpy._energy_points;
-    _attack_damage = cpy._attack_damage;
+    _attack_damage = cpy._attack_damage; 
 }
 
 ClapTrap::~ClapTrap() {std::cout << "Destructor called for ClapTrap " << _name << std::endl;}

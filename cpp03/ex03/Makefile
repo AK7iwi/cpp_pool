@@ -1,6 +1,6 @@
 CC				= c++ 
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= ex03
 SRCS			= srcs/main.cpp srcs/ClapTrap.cpp srcs/ScavTrap.cpp srcs/FragTrap.cpp srcs/DiamondTrap.cpp
 OBJS 			= $(SRCS:.cpp=.o)
