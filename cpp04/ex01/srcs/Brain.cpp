@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:59 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 15:20:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:03:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 
 Brain::Brain() {std::cout << "Default constructor called for Brain" << std::endl;}
 
-Brain::Brain(std::string const &type) : _type(type) {std::cout << "Type default constructor called for Brain" << std::endl;}
-
-Brain::Brain(Brain const &cpy) : _type(cpy._type) 
+Brain::Brain(Brain const &cpy) 
 {
-	std::cout << "Copy constructor calledv for Animal" << std::endl;
+	std::cout << "Copy constructor calledv for Brain" << std::endl;
+	size_t i;
+ 	for(i = 0; i < 100; ++i)
+    	_ideas[i] = cpy._ideas[i];
 }
 
-Brain::~Brain() {std::cout << "Destructor called for Animal" << std::endl;}
+Brain::~Brain() {std::cout << "Destructor called for Brain" << std::endl;}
 
-Animal&	Animal::operator=(Animal const &rhs) 
+Brain&	Brain::operator=(Brain const &rhs) 
 {	
-    std::cout << "Copy assignment operator called for Animal" << std::endl;
+    std::cout << "Copy assignment operator called for Brain" << std::endl;
+	size_t i;
 	if (this != &rhs)
-		_type = rhs._type;
+	{
+		for(i = 0; i < 100; ++i)
+    		_ideas[i] = rhs._ideas[i];
+	}
 	return (*this);
 }
