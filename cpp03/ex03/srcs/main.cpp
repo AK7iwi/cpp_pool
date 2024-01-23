@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:19:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 08:00:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,15 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-
 int main() 
 {
-    ClapTrap claptrap("ClapTrap1");
-    claptrap.attack("ClapTrap2");
-    claptrap.takeDamage(5);
-    claptrap.beRepaired(3);
-    claptrap.attack("ClapTrap3");
-    claptrap.takeDamage(15);
-    claptrap.beRepaired(8);
-
-    ScavTrap scavtrap("ScavTrap");
-    scavtrap.attack("ScavTrap1");
-    scavtrap.takeDamage(10);
-    scavtrap.guardGate();
-    scavtrap.attack("ScavTrap2");
-    scavtrap.takeDamage(15);
-    scavtrap.beRepaired(8);
-
-    FragTrap fragtrap("FragTrap");
-    fragtrap.attack("FragTrap1");
-    fragtrap.takeDamage(10);
-    fragtrap.highFivesGuys();
-    fragtrap.attack("ClapTrap3");
-    fragtrap.takeDamage(15);
-    fragtrap.beRepaired(8);
-
-    DiamondTrap diamondtrap("FragTrap");
-    diamondtrap.attack("FragTrap1");
+    DiamondTrap diamondtrap("DiamondTrap");
+    diamondtrap.attack("DiamondTrap2");
     diamondtrap.takeDamage(10);
+	diamondtrap.beRepaired(10);
     diamondtrap.whoAmI();
-    diamondtrap.attack("ClapTrap3");
-    diamondtrap.takeDamage(15);
-    diamondtrap.beRepaired(8);
+	diamondtrap.guardGate();
+	diamondtrap.highFivesGuys();
 
     return (0);
 }

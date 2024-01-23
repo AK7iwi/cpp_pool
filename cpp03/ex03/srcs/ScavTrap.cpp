@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/20 22:42:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:40:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) 
+ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) 
 {
     std::cout << "Constructor called for ScavTrap " << _name << std::endl;
     _hit_points = 100;

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 06:44:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:59:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name) 
 {
     std::cout << "Constructor called for DiamondTrap " << _name << std::endl;
+	_hit_points = FragTrap::_hit_points;
+    _energy_points = ScavTrap::_energy_points;
+    _attack_damage = FragTrap::_attack_damage;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap const &cpy) :  ClapTrap(_name + "_clap_name"), FragTrap(_name), ScavTrap(_name)
+DiamondTrap::DiamondTrap(DiamondTrap const &cpy) :  ClapTrap(cpy._name + "_clap_name"), FragTrap(cpy._name), ScavTrap(cpy._name)
 {
     std::cout << "Copy constructor called for DiamondTrap " << _name << std::endl;
     _name = cpy._name;
@@ -41,4 +44,9 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs)
 	return (*this);
 }
 
+void DiamondTrap::attack( std::string const& target ) 
+{
+  ScavTrap::attack(target);
+  return;
+}
 void DiamondTrap::whoAmI() {std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;}

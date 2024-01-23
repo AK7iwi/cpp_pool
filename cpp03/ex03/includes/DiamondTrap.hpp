@@ -6,11 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:22 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 06:50:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:59:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
@@ -20,9 +21,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
     
         DiamondTrap(std::string const &name);
         DiamondTrap(DiamondTrap const &cpy);
-        virtual ~DiamondTrap();
+        ~DiamondTrap();
         DiamondTrap&	operator=(DiamondTrap const &rhs);
-
+		
+		void    attack(const std::string& target);
         void    whoAmI();
 
     private:

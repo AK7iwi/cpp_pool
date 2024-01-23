@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:15:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/22 15:50:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:39:44 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name) 
+FragTrap::FragTrap(std::string const &name) : ClapTrap(name) 
 {
     std::cout << "Constructor called for FragTrap " << _name << std::endl;
     _hit_points = 100;
