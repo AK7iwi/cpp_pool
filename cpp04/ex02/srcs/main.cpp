@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 17:18:55 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:36:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int main( void )
 {
   size_t         i;
   const AAnimal* animals[4];
-  /* AAnimal test; */
 
   std::cout << std::endl;
   std::cout << "          [BIRTH]" << std::endl;
@@ -61,6 +60,7 @@ int main( void )
   std::cout << std::endl;
   *b = *a = *c;
   std::cout << std::endl;
+  
   delete a;
   delete b;
   delete c;

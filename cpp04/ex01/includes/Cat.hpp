@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 15:04:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:39:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
         ~Cat();
 		Cat&	operator=(Cat const &rhs);
 
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const;
 	
 	private:
   		Brain* _brain;
