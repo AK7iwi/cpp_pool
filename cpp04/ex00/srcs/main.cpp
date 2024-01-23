@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 14:09:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:57:31 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main()
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-	return 0;
+	
+	return (0);
 }
