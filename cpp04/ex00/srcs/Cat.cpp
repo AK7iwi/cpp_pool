@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 11:54:48 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 11:01:23 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 12:26:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "Cat.hpp"
 
-int main() 
+Cat::Cat() 
 {
-    DiamondTrap diamondtrap("DiamondTrap");
-    diamondtrap.attack("DiamondTrap2");
-    diamondtrap.takeDamage(10);
-	diamondtrap.beRepaired(10);
-    diamondtrap.whoAmI();
-	diamondtrap.guardGate();
-	diamondtrap.highFivesGuys();
+    std::cout << "Default constructor called" << std::endl;
+}
 
-    return (0);
+Animal::Animal(Animal const &cpy)
+{
+    std::cout << "Copy constructor called" << std::endl;
+}
+
+Animal::~Animal() {std::cout << "Destructor called" << std::endl;}
+
+Animal&	Animal::operator=(Animal const &rhs) 
+{	
+    std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &rhs)
+		return (*this);
 }

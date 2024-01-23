@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 08:22:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 10:16:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ class ClapTrap
         unsigned int    _hit_points;
         unsigned int    _energy_points;
         unsigned int    _attack_damage;
-		
 };

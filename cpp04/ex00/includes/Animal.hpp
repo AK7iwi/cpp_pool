@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 11:54:48 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 10:58:37 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 11:51:31 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#pragma once
+#include <iostream>
+#include <string>
 
-int main() 
+class Animal 
 {
-    DiamondTrap diamondtrap("DiamondTrap");
-    diamondtrap.attack("DiamondTrap2");
-    diamondtrap.takeDamage(10);
-	diamondtrap.beRepaired(10);
-    diamondtrap.whoAmI();
-	diamondtrap.guardGate();
-	diamondtrap.highFivesGuys();
+	public:
+    	Animal();
+        Animal(Animal const &cpy);
+        virtual ~Animal();
+		Animal&	operator=(Animal const &rhs);
 
-    return (0);
-}
+		virtual void	makeSound(void) const;
+
+	protected:
+    	std::string _type;
+
+};

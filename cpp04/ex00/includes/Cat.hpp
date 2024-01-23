@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 11:54:48 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 10:58:35 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 11:56:44 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#pragma once
+#include <iostream>
+#include <string>
+#include "Animal.hpp"
 
-int main() 
+class Cat : public Animal 
 {
-    DiamondTrap diamondtrap("DiamondTrap");
-    diamondtrap.attack("DiamondTrap2");
-    diamondtrap.takeDamage(10);
-	diamondtrap.beRepaired(10);
-    diamondtrap.whoAmI();
-	diamondtrap.guardGate();
-	diamondtrap.highFivesGuys();
+	public:
+    	Cat();
+        Cat(Cat const &cpy);
+        virtual ~Cat();
+		Cat&	operator=(Cat const &rhs);
 
-    return (0);
-}
+		void	makeSound(void) const;
+};
+
