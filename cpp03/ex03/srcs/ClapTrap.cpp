@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/22 13:39:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:05:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(ClapTrap const &cpy)
     _attack_damage = cpy._attack_damage;
 }
 
-ClapTrap::~ClapTrap() {std::cout << "Destructor called for ScavTrap " << _name << std::endl;}
+ClapTrap::~ClapTrap() {std::cout << "Destructor called for ClapTrap " << _name << std::endl;}
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs) 
 {	
