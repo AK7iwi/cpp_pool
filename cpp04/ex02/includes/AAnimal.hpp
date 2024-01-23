@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:04:44 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 10:58:37 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 16:11:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
+#include <iostream>
+#include <string>
 
-int main()
+class AAnimal 
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-	return (0);
-}
+	public:
+    	AAnimal();
+		AAnimal(std::string const &type);
+        AAnimal(AAnimal const &cpy);
+        virtual ~AAnimal();
+		AAnimal&	operator=(AAnimal const &rhs);
+
+		virtual void	makeSound(void) const;
+		std::string		getType() const;
+
+	protected:
+    	std::string _type;
+};

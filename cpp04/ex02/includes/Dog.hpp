@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:04:44 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 10:58:40 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 16:11:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
+#include <iostream>
+#include <string>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-int main()
+class Dog : public AAnimal 
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-	return (0);
-}
+	public:
+    	Dog();
+        Dog(Dog const &cpy);
+        ~Dog();
+		Dog&	operator=(Dog const &rhs);
+
+		void	makeSound(void) const;
+
+	private:
+  		Brain* _brain;
+};

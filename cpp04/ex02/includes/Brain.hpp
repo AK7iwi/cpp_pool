@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:04:44 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/23 14:54:53 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/23 16:09:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#pragma once
+#include <iostream>
+#include <string>
+#include "AAnimal.hpp"
 
-int main()
+class Brain
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;
-	delete i;
-	return (0);
-}
+	public:
+    	Brain();
+        Brain(Brain const &cpy);
+        virtual ~Brain();
+		Brain&	operator=(Brain const &rhs);
+
+	private:
+		std::string     _ideas[100];
+};
