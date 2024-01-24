@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 19:03:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/24 09:29:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int main()
 	const Animal *bear = new Animal("Bear");
 	const WrongAnimal *wrong1 = new WrongAnimal();
 	const WrongAnimal *wrong2 = new WrongCat();
-	
-	
+		
 	std::cout << "no_type:" << animal->getType() << std::endl;
 	std::cout << "no_type:" << wrong1->getType() << std::endl;
 	std::cout << dog->getType() << std::endl;
@@ -33,12 +32,10 @@ int main()
 	std::cout << bear->getType() << std::endl;
 	std::cout << wrong2->getType() << std::endl << std::endl;
 
-
 	animal->makeSound();
 	dog->makeSound();
 	cat->makeSound();
 	bear->makeSound();
-
 	wrong1->makeSound();
 	wrong2->makeSound();
 

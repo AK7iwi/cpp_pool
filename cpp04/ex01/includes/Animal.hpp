@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 14:05:28 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/24 09:54:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <string>
+#include <stdint.h>
 
 class Animal 
 {
