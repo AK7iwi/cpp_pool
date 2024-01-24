@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/24 09:52:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:23:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 int main()
 {
 	std::cout << "constructor" << std::endl << std::endl;
+	
 	const Animal *animalArr[4];
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 4; i++) 
+	{
 		if (i < 2)
 			animalArr[i] = new Dog();
 		else

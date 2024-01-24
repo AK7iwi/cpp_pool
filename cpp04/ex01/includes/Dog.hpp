@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 19:19:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:12:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal
 	public:
     	Dog();
         Dog(Dog const &cpy);
-        ~Dog();
+        virtual ~Dog();
 		Dog&	operator=(Dog const &rhs);
 
 		Brain	*getBrain() const;

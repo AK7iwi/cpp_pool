@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 19:34:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:17:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 
 int main()
 {
-	/* Does not compile */
-	// AAnimal test;
-	
 	std::cout << "constructor" << std::endl << std::endl;
 	const AAnimal *animalArr[4];
 	for (int i = 0; i < 4; i++) 
