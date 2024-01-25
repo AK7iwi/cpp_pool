@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:54:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 19:19:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:14:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Brain
         virtual ~Brain();
 		Brain&	operator=(Brain const &rhs);
 
-		std::string	getIdeas(uint8_t idx) const;
-		void		setIdeas(uint8_t idx, std::string ideas);
+		std::string	get_ideas(uint8_t idx) const;
+		void		set_ideas(uint8_t idx, std::string ideas);
 
 	private:
 		std::string     _ideas[100];

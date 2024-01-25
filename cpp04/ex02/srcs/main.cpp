@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/24 10:17:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:23:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int main()
 	{
 		Dog tmp = basic;
 		
-		basic.getBrain()->setIdeas(0, "basic");
-		tmp.getBrain()->setIdeas(0, "tmp");
+		basic.get_brain()->set_ideas(0, "basic");
+		tmp.get_brain()->set_ideas(0, "tmp");
 
-		std::cout << basic.getBrain()->getIdeas(0) << std::endl;
-		std::cout << tmp.getBrain()->getIdeas(0) << std::endl;
+		std::cout << basic.get_brain()->get_ideas(0) << std::endl;
+		std::cout << tmp.get_brain()->get_ideas(0) << std::endl;
 	}
-	std::cout << basic.getBrain()->getIdeas(0) << std::endl;
+	std::cout << basic.get_brain()->get_ideas(0) << std::endl;
 }
