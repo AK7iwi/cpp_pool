@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:28:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ class Zombie
 		std::string	_name;
 };
 
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie*	new_zombie(std::string name);
+void	random_chump(std::string name);

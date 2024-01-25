@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:15:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 07:39:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:00:34 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,4 @@ FragTrap&	FragTrap::operator=(FragTrap const &rhs)
 	return (*this);
 }
 
-void FragTrap::highFivesGuys() {std::cout << "FragTrap " << _name << " requests a high five" << std::endl;}
+void FragTrap::high_fives_guys() {std::cout << "FragTrap " << _name << " requests a high five" << std::endl;}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:10:55 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/24 10:08:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:03:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class WrongCat : public WrongAnimal
         virtual ~WrongCat();
 		WrongCat&	operator=(WrongCat const &rhs);
 
-		void	makeSound(void) const;
+		void	make_sound(void) const;
 };

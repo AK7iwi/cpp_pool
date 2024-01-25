@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:45:38 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:35:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ void	HumanA::attack() const
 {
 	std::cout << _name 
 	          << " attacks with their " 
-			  << _weapon_a.getType()
+			  << _weapon_a.get_type()
 			  << std::endl;
 }

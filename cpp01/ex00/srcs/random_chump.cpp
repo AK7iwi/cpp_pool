@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   random_chump.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 14:10:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:07:42 by mfeldman         ###   ########.fr       */
+/*   Created: 2023/12/30 01:21:30 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/25 09:31:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <iostream>
-#include <string>
+#include "Zombie.hpp"
 
-class WrongAnimal
+void	random_chump(std::string name)
 {
-	public:
-    	WrongAnimal();
-		WrongAnimal(std::string const &type);
-        WrongAnimal(WrongAnimal const &cpy);
-        virtual ~WrongAnimal();
-		WrongAnimal&	operator=(WrongAnimal const &rhs);
-
-		void			make_sound(void) const;
-		std::string		get_type() const;
-
-	protected:
-  		std::string	_type;
-};
+	Zombie zombie(name);
+    zombie.announce();
+}

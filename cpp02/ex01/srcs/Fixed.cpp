@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:18 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/22 13:03:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:48:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,16 @@ Fixed&	Fixed::operator=(Fixed const &rhs)
 	return (*this);
 }
 
-int		Fixed::getRawBits(void) const {return (_raw_bits);}
+int		Fixed::get_raw_bits(void) const {return (_raw_bits);}
 
-void	Fixed::setRawBits(int const raw) {_raw_bits = raw;}
+void	Fixed::set_raw_bits(int const raw) {_raw_bits = raw;}
 
-int		Fixed::toInt(void) const {return (_raw_bits >> _nb_fractional_bits);}
+int		Fixed::to_int(void) const {return (_raw_bits >> _nb_fractional_bits);}
 
-float	Fixed::toFloat(void) const {return (static_cast<float>(_raw_bits) / static_cast<float>(1 << _nb_fractional_bits));}
+float	Fixed::to_float(void) const {return (static_cast<float>(_raw_bits) / static_cast<float>(1 << _nb_fractional_bits));}
 
 std::ostream&	operator<<(std::ostream &os, Fixed const &i)
 {
-	os << i.toFloat();
+	os << i.to_float();
 	return (os);
 }

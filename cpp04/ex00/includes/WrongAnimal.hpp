@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:10:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 16:39:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:06:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class WrongAnimal
         virtual ~WrongAnimal();
 		WrongAnimal&	operator=(WrongAnimal const &rhs);
 
-		void	makeSound(void) const;
-		std::string		getType() const;
+		void	make_sound(void) const;
+		std::string		get_type() const;
 
 	protected:
   		std::string	_type;

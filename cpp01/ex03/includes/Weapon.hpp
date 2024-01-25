@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:44:26 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:35:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Weapon
 		~Weapon();
 		Weapon&	operator=(Weapon const &rhs);
 		
-		std::string const&	getType() const;
-		void				setType(std::string type);
+		std::string const&	get_type() const;
+		void				set_type(std::string type);
 
 	private:
 		std::string	_type;

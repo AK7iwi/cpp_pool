@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:14:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 11:52:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:58:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ class FragTrap : public virtual ClapTrap
         virtual ~FragTrap();
         FragTrap&	operator=(FragTrap const &rhs);
 		
-        void    highFivesGuys();
+        void    high_fives_guys();
 }; 

@@ -1,7 +1,7 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
-NAME 			= ex01
+NAME 			= scavtrap
 SRCS			= srcs/main.cpp srcs/ClapTrap.cpp srcs/ScavTrap.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 

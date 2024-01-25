@@ -1,19 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 01:21:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 12:29:20 by mfeldman         ###   ########.fr       */
+/*   Created: 2023/12/30 01:21:27 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/25 09:29:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump(std::string name)
-{
-	Zombie zombie(name);
-    zombie.announce();
-}
+Zombie*	new_zombie(std::string name) {return new Zombie(name);}

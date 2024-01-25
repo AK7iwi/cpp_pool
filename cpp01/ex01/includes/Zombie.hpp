@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:54:24 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:32:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ class Zombie
 		std::string _name;
 };
 
-Zombie*	zombieHorde(int N, std::string name);
+Zombie*	zombie_horde(int N, std::string name);

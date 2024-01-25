@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/24 10:05:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:04:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ int main()
 	const WrongAnimal *wrong2 = new WrongCat();
 	WrongCat Chat;
 		
-	std::cout << "no_type:" << animal->getType() << std::endl;
-	std::cout << "no_type:" << wrong1->getType() << std::endl;
-	std::cout << dog->getType() << std::endl;
-	std::cout << cat->getType() << std::endl;
-	std::cout << bear->getType() << std::endl;
-	std::cout << wrong2->getType() << std::endl << std::endl;
+	std::cout << "no_type:" << animal->get_type() << std::endl;
+	std::cout << "no_type:" << wrong1->get_type() << std::endl;
+	std::cout << dog->get_type() << std::endl;
+	std::cout << cat->get_type() << std::endl;
+	std::cout << bear->get_type() << std::endl;
+	std::cout << wrong2->get_type() << std::endl << std::endl;
 
-	animal->makeSound();
-	dog->makeSound();
-	cat->makeSound();
-	bear->makeSound();
-	wrong1->makeSound();
-	wrong2->makeSound();
-	Chat.makeSound();
+	animal->make_sound();
+	dog->make_sound();
+	cat->make_sound();
+	bear->make_sound();
+	wrong1->make_sound();
+	wrong2->make_sound();
+	Chat.make_sound();
 
 	delete animal;
 	delete dog;

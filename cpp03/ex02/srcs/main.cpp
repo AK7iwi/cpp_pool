@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:19:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/23 07:07:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:55:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main()
 {
     FragTrap fragtrap("FragTrap");
     fragtrap.attack("FragTrap1");
-    fragtrap.takeDamage(10);
-    fragtrap.highFivesGuys();
+    fragtrap.take_damage(10);
+    fragtrap.high_fives_guys();
     fragtrap.attack("FragTrap3");
-    fragtrap.takeDamage(15);
-    fragtrap.beRepaired(8);
+    fragtrap.take_damage(15);
+    fragtrap.be_repaired(8);
 
     return (0);
 }
