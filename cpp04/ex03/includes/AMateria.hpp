@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 10:13:48 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/27 16:54:37 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/01/27 16:50:19 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/01/27 16:51:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+
+class AMateria
 {
     
-    return (0);
-}
+    protected:
+
+    public:
+        AMateria(std::string const & type);
+        
+    std::string const & getType() const; //Returns the materia type
+    virtual AMateria* clone() const = 0;
+    virtual void use(ICharacter& target);
+};
