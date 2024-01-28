@@ -6,10 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:50:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/27 16:51:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/01/28 22:09:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 
 class AMateria
 {
