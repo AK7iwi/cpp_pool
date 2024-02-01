@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 16:02:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:29:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Cure : public AMateria
 {
     public:
-        Cure(std::string const &type);
+        Cure();
 		Cure(Cure const &cpy);
         virtual ~Cure();
 		Cure&	operator=(Cure const &rhs);
