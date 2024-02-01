@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:59 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:15:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:40:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Brain::Brain() {std::cout << "Default constructor called for Brain" << std::endl
 
 Brain::Brain(Brain const &cpy) 
 {
-	std::cout << "Copy constructor calledv for Brain" << std::endl;
+	std::cout << "Copy constructor called for Brain" << std::endl;
 	size_t i;
  	for(i = 0; i < 100; ++i)
     	_ideas[i] = cpy._ideas[i];
