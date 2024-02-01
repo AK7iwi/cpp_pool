@@ -6,12 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:22 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:58:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:43:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 

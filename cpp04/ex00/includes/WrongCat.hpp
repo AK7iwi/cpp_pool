@@ -6,13 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:10:55 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:03:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:42:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal 

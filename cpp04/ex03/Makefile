@@ -2,8 +2,8 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= ex02
-SRCS			= srcs/main.cpp srcs/AAnimal.cpp srcs/Dog.cpp srcs/Cat.cpp \
-					srcs/WrongAnimal.cpp srcs/WrongCat.cpp srcs/Brain.cpp
+SRCS			= srcs/main.cpp srcs/AMateria.cpp srcs/ICharacter.cpp srcs/IMateriaSource.cpp 
+					srcs/Character.cpp srcs/Cure.cpp srcs/Ice.cpp srcs/MateriaSource.cpp \
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)

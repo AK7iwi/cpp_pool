@@ -6,13 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:54:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:14:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:42:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <string>
 #include "Animal.hpp"
 
 class Brain
