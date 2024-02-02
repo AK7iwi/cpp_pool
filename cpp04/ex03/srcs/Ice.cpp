@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:54:28 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 18:29:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:15:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,7 @@ Ice&	Ice::operator=(Ice const &rhs)
 		_type = rhs._type;
 	return (*this);
 }
+
+Ice*	Ice::clone() const {return(new Ice());}
+
+void 	Ice::use(ICharacter& target) {std::cout << "* shoots an ice bolt at " << target.get_name() << " *" << std::endl;}

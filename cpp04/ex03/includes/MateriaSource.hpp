@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:58:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 12:22:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:18:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,4 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(MateriaSource const &cpy);
         virtual ~MateriaSource();
 		MateriaSource&	operator=(MateriaSource const &rhs);
-    
-	protected:
 };

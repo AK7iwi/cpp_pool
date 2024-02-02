@@ -6,18 +6,17 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:21:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:25:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
 
 int main()
 {
-	std::cout << "constructor" << std::endl << std::endl;
+	std::cout << "Constructor" << std::endl << std::endl;
 	
 	const Animal *animalArr[4];
 	for (int i = 0; i < 4; i++) 
@@ -28,11 +27,11 @@ int main()
 			animalArr[i] = new Cat();
 	}
 	
-	std::cout << std::endl << "destructor" << std::endl << std::endl;
+	std::cout << std::endl << "Destructor" << std::endl << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete animalArr[i];
 	
-	std::cout << std::endl << "deep copy" << std::endl << std::endl;
+	std::cout << std::endl << "Deep copy" << std::endl << std::endl;
 	Dog basic;
 	{
 		Dog tmp = basic;
@@ -45,3 +44,4 @@ int main()
 	}
 	std::cout << basic.get_brain()->get_ideas(0) << std::endl;
 }
+

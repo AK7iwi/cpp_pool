@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:10:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:58:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ class AAnimal
 		std::string		get_type() const;
 
 	protected:
-    	std::string _type;
+    	std::string		_type;
 };

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 14:40:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:20:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ AAnimal&	AAnimal::operator=(AAnimal const &rhs)
 		_type = rhs._type;
 	return (*this);
 }
-
-void		AAnimal::make_sound() const {std::cout << "I'm an aanimal" << std::endl;}
 
 std::string	AAnimal::get_type() const {return (_type);}

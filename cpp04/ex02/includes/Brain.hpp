@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:54:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 13:40:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:58:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ class Brain
 		void		set_ideas(uint8_t idx, std::string ideas);
 
 	private:
-		std::string     _ideas[100];
+		std::string	_ideas[100];
 };
