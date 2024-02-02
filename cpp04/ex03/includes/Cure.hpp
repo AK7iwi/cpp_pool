@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 13:56:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:38:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class Cure : public AMateria
 		Cure&	operator=(Cure const &rhs);
 		
     	Cure*	clone() const;
-    	void	use(ICharacter& target);
+    	void	use(ICharacter &target);
     
 };

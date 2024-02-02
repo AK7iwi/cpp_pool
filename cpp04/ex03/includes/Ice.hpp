@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 13:56:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 15:38:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ class Ice : public AMateria
 		Ice&	operator=(Ice const &rhs);
 		
     	Ice*	clone() const;
-    	void	use(ICharacter& target);
+    	void	use(ICharacter &target);
 };
