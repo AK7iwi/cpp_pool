@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:58:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 15:49:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:27:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ MateriaSource::MateriaSource()
 {
 	std::cout << "Type default constructor called for MateriaSource" << std::endl;
 	for (int i = 0; i < 4; ++i)
-        _learned_materias[i] = nullptr;
+        _learned_materias[i] = NULL;
 }
 
 MateriaSource::MateriaSource(MateriaSource const &cpy) 
@@ -24,10 +24,10 @@ MateriaSource::MateriaSource(MateriaSource const &cpy)
 	std::cout << "Copy constructor called for MateriaSource" << std::endl;
 	for (int i = 0; i < 4; ++i)
     {
-        if (cpy._learned_materias[i] != nullptr)
+        if (cpy._learned_materias[i] != NULL)
             _learned_materias[i] = cpy._learned_materias[i]->clone();
         else
-            _learned_materias[i] = nullptr;
+            _learned_materias[i] = NULL;
     }
 }
 
@@ -48,20 +48,20 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
 
         for (int i = 0; i < 4; ++i)
         {
-            if (rhs._learned_materias[i] != nullptr)
+            if (rhs._learned_materias[i] != NULL)
                 _learned_materias[i] = rhs._learned_materias[i]->clone();
             else
-                _learned_materias[i] = nullptr;
+                _learned_materias[i] = NULL;
         }
     }
     return (*this);
 }
 
-void MateriaSource::learn_materia(AMateria* m)
+void	MateriaSource::learn_materia(AMateria* m)
 {
     for (int i = 0; i < 4; ++i)
     {
-        if (_learned_materias[i] == nullptr)
+        if (_learned_materias[i] == NULL)
         {
             _learned_materias[i] = m->clone();
             return;
@@ -69,11 +69,11 @@ void MateriaSource::learn_materia(AMateria* m)
     }
 }
 
-AMateria* MateriaSource::create_materia(const std::string& type)
+AMateria*	MateriaSource::create_materia(const std::string& type)
 {
     for (int i = 0; i < 4; ++i)
     {
-        if (_learned_materias[i] != nullptr && _learned_materias[i]->get_type() == type)
+        if (_learned_materias[i] != NULL && _learned_materias[i]->get_type() == type)
             return (_learned_materias[i]->clone());
     }
     return (0);

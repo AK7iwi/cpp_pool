@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 14:44:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:26:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Character::Character(std::string const &name) : _name(name)
 {
 	std::cout << "Type default constructor called for Character" << std::endl;
 	for (int i = 0; i < 4; ++i)
-        _inventory[i] = nullptr;
+        _inventory[i] = NULL;
 }
 
 Character::Character(Character const &cpy) : _name(cpy._name)
@@ -24,10 +24,10 @@ Character::Character(Character const &cpy) : _name(cpy._name)
 	std::cout << "Copy constructor called for Character" << std::endl;
 	for (int i = 0; i < 4; ++i)
     {
-        if (cpy._inventory[i] != nullptr)
+        if (cpy._inventory[i] != NULL)
             _inventory[i] = cpy._inventory[i]->clone();
         else
-            _inventory[i] = nullptr;
+            _inventory[i] = NULL;
     }
 }
 
@@ -50,10 +50,10 @@ Character&	Character::operator=(Character const &rhs)
 			
         for (int i = 0; i < 4; ++i)
         {
-            if (rhs._inventory[i] != nullptr)
+            if (rhs._inventory[i] != NULL)
                 _inventory[i] = rhs._inventory[i]->clone();
             else
-                _inventory[i] = nullptr;
+                _inventory[i] = NULL;
         }
     }
 	return (*this);
@@ -61,11 +61,11 @@ Character&	Character::operator=(Character const &rhs)
 
 std::string const&	Character::get_name() const {return (_name);}
 
-void 				Character::equip(AMateria* m)
+void	Character::equip(AMateria* m)
 {
     for (int i = 0; i < 4; ++i)
     {
-        if (_inventory[i] == nullptr)
+        if (_inventory[i] == NULL)
         {
             _inventory[i] = m;
             return;
@@ -73,14 +73,14 @@ void 				Character::equip(AMateria* m)
     }
 }
 
-void Character::unequip(int idx)
+void	Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4)
-    	_inventory[idx] = nullptr;
+    	_inventory[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target)
+void	Character::use(int idx, ICharacter& target)
 {
-    if (idx >= 0 && idx < 4 && _inventory[idx] != nullptr)
+    if (idx >= 0 && idx < 4 && _inventory[idx] != NULL)
         _inventory[idx]->use(target);
 }

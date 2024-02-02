@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:01:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 15:38:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:24:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "AMateria.hpp"
 #include <string>
 #include <iostream>
+
+class AMateria;
 
 class ICharacter
 {
