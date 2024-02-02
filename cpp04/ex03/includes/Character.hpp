@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:54:15 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 14:26:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:32:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Character : public ICharacter
 {
     public:
-        Character();
+        Character(std::string const &name);
 		Character(Character const &cpy);
         virtual ~Character();
 		Character&	operator=(Character const &rhs);
