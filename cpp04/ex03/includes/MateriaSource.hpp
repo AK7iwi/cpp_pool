@@ -6,15 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:58:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 18:38:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:22:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
-#include <iostream>
+#include "IMateriaSource.hpp"
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
     public:
         MateriaSource();

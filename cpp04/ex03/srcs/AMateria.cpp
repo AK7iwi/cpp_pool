@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:57:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 15:53:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:30:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ AMateria&	AMateria::operator=(AMateria const &rhs)
 	return (*this);
 }
 
-std::string const& AMateria::getType() const {return(_type);}
+std::string const& AMateria::get_type() const {return(_type);}
