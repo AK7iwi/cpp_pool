@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:54:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:33:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:23:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int main()
 
     for (int i = 0; i < horde_size; ++i)
         zombie_array[i].announce();
-    delete[] zombie_array;
+    delete[] (zombie_array);
+
+	return (0);
 }

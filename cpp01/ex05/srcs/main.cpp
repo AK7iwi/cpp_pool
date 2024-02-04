@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:52:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/15 13:09:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:28:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ int main(void)
 	
 	harl.complain("ERROR");
 	std::cout << std::endl;
+
+	return (0);
 }

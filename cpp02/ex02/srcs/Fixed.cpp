@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 23:24:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:44:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:34:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,16 @@ Fixed &Fixed::operator--()
 
 Fixed Fixed::operator++(int)
 {
-    Fixed temp = *this;
+    Fixed tmp = *this;
     _raw_bits += 1;
-    return temp;
+    return (tmp);
 }
 
 Fixed Fixed::operator--(int)
 {
-    Fixed temp = *this;
+    Fixed tmp = *this;
     _raw_bits -= 1;
-    return temp;
+    return (tmp);
 }
 
 Fixed&  Fixed::min(Fixed &a, Fixed &b) {return (a < b) ? a : b;}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 13:58:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:41:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	Character::equip(AMateria* m)
         {
             _inventory[i] = m;
 			std::cout << "Materia added" << std::endl;
-            return;
+            return ;
         }
     }
 	std::cout << "Materia can't be added" << std::endl;

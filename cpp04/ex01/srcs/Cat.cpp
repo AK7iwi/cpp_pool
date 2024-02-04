@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:08:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:42:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(Cat const &cpy) : Animal(cpy._type), _brain(new Brain(*cpy._brain)) {st
 Cat::~Cat() 
 {
 	std::cout << "Destructor called for Cat" << std::endl;
-	delete _brain;
+	delete (_brain);
 }
 
 Cat&	Cat::operator=(Cat const &rhs) 

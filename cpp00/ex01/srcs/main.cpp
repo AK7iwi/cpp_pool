@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 18:49:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:17:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ int	main()
         else
             std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
     }
+	return (0);
 }

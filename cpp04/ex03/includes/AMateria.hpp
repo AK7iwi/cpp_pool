@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:50:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:04:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:29:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AMateria
         virtual	~AMateria();
 		AMateria&	operator=(AMateria const &rhs);
         
-    	std::string const	&get_type() const;
+    	std::string const&	get_type() const;
 		
     	virtual AMateria*	clone() const = 0;
     	virtual void		use(ICharacter &target);

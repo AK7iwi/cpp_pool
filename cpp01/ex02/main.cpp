@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:46:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/10 13:14:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:24:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,6 @@ int main()
     std::cout << str << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
+
+	return (0);
 }

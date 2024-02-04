@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/18 18:59:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:30:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int main(int argc, char **argv)
 	uint8_t level;
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR" };
 
-	for (int i = 0; i < 4; i++)
+	for (uint8_t i = 0; i < 4; i++)
 	{
 		if (levels[i] == argv[1])
 			level = i + 1;	
 	}
+	
 	switch(level)
 	{
 		case 1:
@@ -46,4 +47,6 @@ int main(int argc, char **argv)
     		std::cout << "Invalid level" << std::endl;
 			break;
 	}
+
+	return (0);
 }

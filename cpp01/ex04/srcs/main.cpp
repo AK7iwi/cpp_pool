@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:12:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/11 10:16:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:27:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,6 @@ int main(int argc, char **argv)
 
     FileReplacer file_replacer(filename, s1, s2);
     file_replacer.replace_and_save();
+
+	return (0);
 }
