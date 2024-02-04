@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:11:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:07:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog(Dog const &cpy) : AAnimal(cpy._type), _brain(new Brain(*cpy._brain)) {s
 Dog::~Dog() 
 {
 	std::cout << "Destructor called for Dog" << std::endl;
-	delete _brain;
+	delete (_brain);
 }
 
 Dog&	Dog::operator=(Dog const &rhs) 
@@ -27,7 +27,7 @@ Dog&	Dog::operator=(Dog const &rhs)
     std::cout << "Copy assignment operator called for Dog" << std::endl;
 	if (this != &rhs)
 	{
-		 delete _brain;
+		 delete (_brain);
   		_brain = new Brain(*rhs._brain);
 		_type = rhs._type;
 	}

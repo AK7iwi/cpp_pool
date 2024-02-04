@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/19 21:42:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:12:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Contact::Contact(Contact const &cpy)
 
 Contact::~Contact() {}
 
-Contact&	Contact::operator=(Contact const &rhs)
+Contact& Contact::operator=(Contact const &rhs)
 {	
 	if (this != &rhs)
 	{

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:11:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:07:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(Cat const &cpy) : AAnimal(cpy._type), _brain(new Brain(*cpy._brain)) {s
 Cat::~Cat() 
 {
 	std::cout << "Destructor called for Cat" << std::endl;
-	delete _brain;
+	delete (_brain);
 }
 
 Cat&	Cat::operator=(Cat const &rhs) 
@@ -27,7 +27,7 @@ Cat&	Cat::operator=(Cat const &rhs)
     std::cout << "Copy assignment operator called for Cat" << std::endl;
 	if (this != &rhs)
 	{
-		 delete _brain;
+		 delete (_brain);
   		_brain = new Brain(*rhs._brain);
 		_type = rhs._type;
 	}
