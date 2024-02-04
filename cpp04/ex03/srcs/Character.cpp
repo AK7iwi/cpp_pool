@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 16:26:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:27:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 Character::Character(std::string const &name) : _name(name)
 {
 	std::cout << "Type default constructor called for Character" << std::endl;
-	for (int i = 0; i < 4; ++i)
+	for (uint8_t i = 0; i < 4; ++i)
         _inventory[i] = NULL;
 }
 
 Character::Character(Character const &cpy) : _name(cpy._name)
 {
 	std::cout << "Copy constructor called for Character" << std::endl;
-	for (int i = 0; i < 4; ++i)
+	for (uint8_t i = 0; i < 4; ++i)
     {
         if (cpy._inventory[i] != NULL)
             _inventory[i] = cpy._inventory[i]->clone();
@@ -34,7 +34,7 @@ Character::Character(Character const &cpy) : _name(cpy._name)
 Character::~Character() 
 {
 	std::cout << "Destructor called for Character" << std::endl;
-	for (int i = 0; i < 4; ++i)
+	for (uint8_t i = 0; i < 4; ++i)
         delete (_inventory[i]);
 }
 
@@ -45,10 +45,10 @@ Character&	Character::operator=(Character const &rhs)
 	{
         _name = rhs._name;
 
-        for (int i = 0; i < 4; ++i)
+        for (uint8_t i = 0; i < 4; ++i)
             delete _inventory[i];
 			
-        for (int i = 0; i < 4; ++i)
+        for (uint8_t i = 0; i < 4; ++i)
         {
             if (rhs._inventory[i] != NULL)
                 _inventory[i] = rhs._inventory[i]->clone();
@@ -63,11 +63,12 @@ std::string const&	Character::get_name() const {return (_name);}
 
 void	Character::equip(AMateria* m)
 {
-    for (int i = 0; i < 4; ++i)
+    for (uint8_t i = 0; i < 4; ++i)
     {
         if (_inventory[i] == NULL)
         {
             _inventory[i] = m;
+			std::cout << "spell added" << std::endl;
             return;
         }
     }
