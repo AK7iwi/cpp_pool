@@ -6,37 +6,61 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:13:48 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 16:40:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:02:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
+#include "Character.hpp"
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
+    /* Create a MateriaSource and learn Ice and Cure */
+    IMateriaSource *src = new MateriaSource();
     src->learn_materia(new Ice());
     src->learn_materia(new Cure());
 
-    ICharacter* me = new Character("me");
-    AMateria* tmp;
+    /* Create a character named Goku */
+    ICharacter *goku = new Character("Goku");
 
-    tmp = src->create_materia("ice");
-    me->equip(tmp);
+    /* Create Ice and Cure Materias, and equip them to the character */
+    AMateria *tmp = src->create_materia("ice");
+    goku->equip(tmp);
+    goku->equip(src->create_materia("ice"));
+    goku->equip(src->create_materia("cure"));
+    goku->equip(src->create_materia("cure"));
 
-    tmp = src->create_materia("cure");
-    me->equip(tmp);
+    /* A fifth materia cannot be equipped */
+    AMateria *ice = src->create_materia("ice");
+    goku->equip(ice);
+    delete (ice);
 
-    ICharacter* bob = new Character("bob");
-    me->use(0, *bob);
-    me->use(1, *bob);
+    /* Use the 4 spells of "Goku" on "Frieza" */
+    ICharacter* frieza = new Character("Frieza");
+    goku->use(0, *frieza);
+    goku->use(1, *frieza);
+    goku->use(2, *frieza);
+    goku->use(3, *frieza);
 
-    delete bob;
-    delete me;
-    delete src;
+    /* Try to use a spell not present in the character's inventory */
+    goku->use(5, *frieza);
 
-    return 0;
+    /* Drop a spell on the ground */
+    goku->unequip(0);
+
+    /* Attempt to use a non-existent spell */
+    goku->use(0, *frieza);
+
+    /* Equip a spell and use it */
+    goku->equip(src->create_materia("cure"));
+    goku->use(0, *frieza);
+
+    delete (tmp);
+    delete (frieza);
+    delete (goku);
+    delete (src);
+
+    return (0);
 }

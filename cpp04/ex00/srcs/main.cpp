@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 13:17:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:55:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	main()
 	wrong2->make_sound();
 	Chat.make_sound();
 
-	delete animal;
-	delete dog;
-	delete cat;
-	delete bear;
-	delete wrong1;
-	delete wrong2;	
+	delete(animal);
+	delete(dog);
+	delete(cat);
+	delete(bear);
+	delete(wrong1);
+	delete(wrong2);	
 }

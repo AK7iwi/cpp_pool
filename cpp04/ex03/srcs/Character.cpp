@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 13:27:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:58:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Character::~Character()
 {
 	std::cout << "Destructor called for Character" << std::endl;
 	for (uint8_t i = 0; i < 4; ++i)
-        delete (_inventory[i]);
+        delete(_inventory[i]);
 }
 
 Character&	Character::operator=(Character const &rhs) 
@@ -68,20 +68,28 @@ void	Character::equip(AMateria* m)
         if (_inventory[i] == NULL)
         {
             _inventory[i] = m;
-			std::cout << "spell added" << std::endl;
+			std::cout << "Materia added" << std::endl;
             return;
         }
     }
+	std::cout << "Materia can't be added" << std::endl;
 }
 
 void	Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4)
+	{
     	_inventory[idx] = NULL;
+		std::cout << "Materia dropped with success" << std::endl;
+	}
+	else
+		std::cout << "Materia can't be dropped" << std::endl;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
     if (idx >= 0 && idx < 4 && _inventory[idx] != NULL)
         _inventory[idx]->use(target);
+	else 
+		std::cout << "Materia does not exist" << std::endl;
 }

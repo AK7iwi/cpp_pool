@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 13:25:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 13:59:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	std::cout << "Constructor" << std::endl << std::endl;
 	
 	const Animal *animalArr[4];
-	for (int i = 0; i < 4; i++) 
+	for (uint8_t i = 0; i < 4; i++) 
 	{
 		if (i < 2)
 			animalArr[i] = new Dog();
@@ -28,8 +28,8 @@ int main()
 	}
 	
 	std::cout << std::endl << "Destructor" << std::endl << std::endl;
-	for (int i = 0; i < 4; i++)
-		delete animalArr[i];
+	for (uint8_t i = 0; i < 4; i++)
+		delete(animalArr[i]);
 	
 	std::cout << std::endl << "Deep copy" << std::endl << std::endl;
 	Dog basic;
@@ -43,5 +43,7 @@ int main()
 		std::cout << tmp.get_brain()->get_ideas(0) << std::endl;
 	}
 	std::cout << basic.get_brain()->get_ideas(0) << std::endl;
+
+	return (0);
 }
 
