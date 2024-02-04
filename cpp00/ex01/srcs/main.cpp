@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:17:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:19:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main()
         else if (command == "EXIT")
         {
             std::cout << "Exiting phonebook. Goodbye!" << std::endl; 
-            break;
+            break ;
         }
         else
             std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;

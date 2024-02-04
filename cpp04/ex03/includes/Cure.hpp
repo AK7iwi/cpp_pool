@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:04:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:59:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Cure : public AMateria
         Cure();
 		Cure(Cure const &cpy);
         virtual ~Cure();
-		Cure&	operator=(Cure const &rhs);
+		Cure& operator=(Cure const &rhs);
 		
     	Cure*	clone() const;
     	void	use(ICharacter &target);

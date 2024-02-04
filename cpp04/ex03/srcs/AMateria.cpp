@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:57:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 12:53:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 16:05:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ AMateria&	AMateria::operator=(AMateria const &rhs)
 
 std::string const& AMateria::get_type() const {return(_type);}
 
-void AMateria::use(ICharacter& target) {std::cout << "* uses materia on " << target.get_name() << " *" << std::endl;}
+void	AMateria::use(ICharacter& target) {std::cout << "* uses materia on " << target.get_name() << " *" << std::endl;}

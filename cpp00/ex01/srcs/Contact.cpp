@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 15:12:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/04 15:33:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,19 @@ void	Contact::set_contact_info()
 	std::cin >> _darkest_secret;
 }
 
-void	Contact::display_phonebook(int index) const 
+void	Contact::display_phonebook(uint8_t index) const 
 {
     std::cout << "|"
-			  << std::setw(10) << index << "|"
+			  << std::setw(10) << unsigned(index) << "|"
 			  << std::setw(10) << (_first_name.length() > 10 ? _first_name.substr(0, 9) + "." : _first_name) << "|"
 			  << std::setw(10) << (_last_name.length() > 10 ? _last_name.substr(0, 9) + "." : _last_name) << "|"
 			  << std::setw(10) << (_nickname.length() > 10 ? _nickname.substr(0, 9) + "." : _nickname) << "|"
 			  << std::endl;
 }
 
-void	Contact::display_contact(int index) const 
+void	Contact::display_contact(uint8_t index) const 
 {
-    std::cout << "Index: " << index << "\n"
+    std::cout << "Index: " << unsigned(index) << "\n"
 			  << "First Name: " << _first_name << "\n"
 			  << "Last Name: " << _last_name << "\n"
 			  << "Nickname: " << _nickname << "\n"
