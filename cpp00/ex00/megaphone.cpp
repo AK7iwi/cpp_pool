@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:34:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 15:12:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:34:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	}
 	for (int i = 1; i < argc; i++)
 	{
-        for(int j = 0; argv[i][j]; j++)
+        for (int j = 0; argv[i][j]; j++)
             std::cout << (char)std::toupper(argv[i][j]);	
 	}
 	std::cout << std::endl;

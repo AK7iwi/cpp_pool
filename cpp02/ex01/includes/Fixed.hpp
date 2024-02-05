@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 13:07:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:39:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <cmath>
+#include <stdint.h>
 
 class Fixed
 {
@@ -30,8 +31,8 @@ class Fixed
 		float	to_float() const;
 		
 	private:
-		int					_raw_bits;
-		static int const	_nb_fractional_bits;
+		int						_raw_bits;
+		static uint8_t const	_nb_fractional_bits;
 };
 
 std::ostream&	operator<<(std::ostream &os, Fixed const &i);
