@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 12:22:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 12:29:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ Character&	Character::operator=(Character const &rhs)
 
 std::string const&	Character::get_name() const {return (_name);}
 
-void	Character::equip(AMateria* m)
+void	Character::equip(AMateria *m)
 {
     for (uint8_t i = 0; i < 4; ++i)
     {

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:37 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:03:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:09:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
         virtual ~Animal();
 		Animal&	operator=(Animal const &rhs);
 
-		virtual void	make_sound(void) const;
+		virtual void	make_sound() const;
 		std::string		get_type() const;
 
 	protected:

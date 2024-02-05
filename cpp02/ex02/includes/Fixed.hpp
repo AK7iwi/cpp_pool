@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 23:24:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:43:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:08:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ class Fixed
         static Fixed&  max(Fixed &a, Fixed &b);
         static Fixed   max(Fixed const &a, Fixed const &b);
 
-        int		get_raw_bits(void) const;
+        int		get_raw_bits() const;
 		void	set_raw_bits(int const raw);
-		int		to_int(void) const;
-		float	to_float(void) const;
+		int		to_int() const;
+		float	to_float() const;
     	
 	private:
 		int					_raw_bits;

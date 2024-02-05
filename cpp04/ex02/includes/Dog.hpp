@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:58:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 15:58:59 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 13:11:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public AAnimal
         virtual ~Dog();
 		Dog& operator=(Dog const &rhs);
 
-		void	make_sound(void) const;
+		void	make_sound() const;
 		Brain	*get_brain() const;
 
 	private:
