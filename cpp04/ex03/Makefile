@@ -1,6 +1,6 @@
 CC				= c++ 
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
+CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 -g3
 NAME 			= Materia
 SRCS			= srcs/main.cpp srcs/AMateria.cpp srcs/Character.cpp \
 					srcs/Cure.cpp srcs/Ice.cpp srcs/MateriaSource.cpp 
