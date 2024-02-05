@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 16:10:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:31:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ClapTrap
         ~ClapTrap();
 		ClapTrap& operator=(ClapTrap const &rhs);
 
-        void    attack(std::string const& target);
+        void    attack(std::string const &target);
         void    take_damage(unsigned int amount);
         void    be_repaired(unsigned int amount);
         

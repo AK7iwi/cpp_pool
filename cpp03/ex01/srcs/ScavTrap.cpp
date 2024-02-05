@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:36:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:33:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs)
 	return (*this);
 }
 
-void    ScavTrap::attack(const std::string& target) 
+void    ScavTrap::attack(std::string const &target) 
 {
     if (_hit_points != 0 && _energy_points != 0) 
     {

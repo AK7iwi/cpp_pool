@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:57:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:01:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 11:36:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const &rhs)
 	return (*this);
 }
 
-void DiamondTrap::attack( std::string const& target ) 
+void DiamondTrap::attack(std::string const &target) 
 {
   ScavTrap::attack(target);
-  return;
+  return ;
 }
 
 void DiamondTrap::who_am_I() {std::cout << "DiamondTrap name: " << _name << ", ClapTrap name: " << ClapTrap::_name << std::endl;}
