@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:58:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 12:23:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 12:26:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ MateriaSource&	MateriaSource::operator=(MateriaSource const &rhs)
     return (*this);
 }
 
-void	MateriaSource::learn_materia(AMateria* m)
+void	MateriaSource::learn_materia(AMateria *m)
 {
     for (uint8_t i = 0; i < 4; ++i)
     {
