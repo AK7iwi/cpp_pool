@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/02 14:13:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 12:21:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ Cure&	Cure::operator=(Cure const &rhs)
 	return (*this);
 }
 
-Cure*	Cure::clone() const {return(new Cure());}
+Cure*	Cure::clone() const {return (new Cure());}
 
-void 	Cure::use(ICharacter& target) {std::cout << "* heals " << target.get_name() << "'s wounds *" << std::endl;}
+void 	Cure::use(ICharacter &target) {std::cout << "* heals " << target.get_name() << "'s wounds *" << std::endl;}

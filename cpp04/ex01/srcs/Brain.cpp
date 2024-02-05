@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:59 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 13:56:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/05 12:14:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ Brain&	Brain::operator=(Brain const &rhs)
     std::cout << "Copy assignment operator called for Brain" << std::endl;
 	if (this != &rhs)
 	{
-		for(uint8_t i = 0; i < 100; ++i)
+		for (uint8_t i = 0; i < 100; ++i)
     		_ideas[i] = rhs._ideas[i];
 	}
 	return (*this);
 }
 
-std::string	Brain::get_ideas(uint8_t idx) const {return(_ideas[idx]);}
+std::string	Brain::get_ideas(uint8_t idx) const {return (_ideas[idx]);}
 
 void		Brain::set_ideas(uint8_t idx, std::string ideas) {_ideas[idx] = ideas;}
