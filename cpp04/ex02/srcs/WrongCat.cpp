@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:11:50 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:11:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/06 07:03:44 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,4 @@ WrongCat&	WrongCat::operator=(WrongCat const &rhs)
 	return (*this);
 }
 
-void WrongCat::make_sound() const {std::cout << "I'm a Wrong Cat!" << std::endl;}
+void	WrongCat::make_sound() const {std::cout << "I'm a Wrong Cat!" << std::endl;}
