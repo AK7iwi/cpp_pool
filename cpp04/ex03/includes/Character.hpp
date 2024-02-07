@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:54:15 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 12:29:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:08:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Character : public ICharacter
 		Character& operator=(Character const &rhs);
 
     	void				equip(AMateria *m);
-    	void				unequip(int idx);
-    	void				use(int idx, ICharacter &target);
+    	void				unequip(uint8_t idx);
+    	void				use(uint8_t idx, ICharacter &target);
 		std::string const&	get_name() const;
 	
 	private:

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/07 13:22:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:09:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	Character::equip(AMateria *m)
 	std::cout << "Materia can't be added" << std::endl;
 }
 
-void	Character::unequip(int idx)
+void	Character::unequip(uint8_t idx)
 {
     if (idx >= 0 && idx < 4)
 	{
@@ -86,7 +86,7 @@ void	Character::unequip(int idx)
 		std::cout << "Materia can't be dropped" << std::endl;
 }
 
-void	Character::use(int idx, ICharacter &target)
+void	Character::use(uint8_t idx, ICharacter &target)
 {
     if (idx >= 0 && idx < 4 && _inventory[idx] != NULL)
         _inventory[idx]->use(target);
