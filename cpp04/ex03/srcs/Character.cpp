@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/06 07:00:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/02/07 13:22:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Character::~Character()
 {
 	std::cout << "Destructor called for Character" << std::endl;
 	for (uint8_t i = 0; i < 4; ++i)
-        delete(_inventory[i]);
+        delete (_inventory[i]);
 }
 
 Character&	Character::operator=(Character const &rhs) 
@@ -46,7 +46,7 @@ Character&	Character::operator=(Character const &rhs)
         _name = rhs._name;
 		
         for (uint8_t i = 0; i < 4; ++i)
-            delete _inventory[i];
+            delete (_inventory[i]);
 			
         for (uint8_t i = 0; i < 4; ++i)
         {
