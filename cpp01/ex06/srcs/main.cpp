@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:30:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:31:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,20 @@ int main(int argc, char **argv)
 	switch(level)
 	{
 		case 1:
-			harl._debug();
+			harl.debug();
 			break;
 		case 2:
-			harl._info();
+			harl.info();
 			break;
 		case 3:
-			harl._warning();
+			harl.warning();
 			break;
 		case 4:
-			harl._error();
+			harl.error();
 			break;
 		default:
     		std::cout << "Invalid level" << std::endl;
 			break;
 	}
-
 	return (0);
 }

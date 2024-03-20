@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:27:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:31:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ FileReplacer&   FileReplacer::operator=(FileReplacer const &rhs)
 	}
 	return (*this);
 }
-
 
 void    FileReplacer::replace_and_save()
 {
