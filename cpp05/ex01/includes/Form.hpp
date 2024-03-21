@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 13:03:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:03:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <stdexcept>
 #include <stdint.h>
+
+class Bureaucrat;
 
 class Form 
 {
@@ -50,4 +52,4 @@ class Form
    		int const  			_grade_to_execute; // uint8_t
 };
 
-std::ostream &operator<<(std::ostream &os, Form const &cpy);
+std::ostream	&operator<<(std::ostream &os, Form &rhs);
