@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 14:04:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:17:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,7 +190,7 @@ int main(void)
 	}
 	try 
 	{
-		std::cout << "\nTest #23 : Create Bureaucrat I with grade <100>" << std::endl;
+		std::cout << "\nTest #23 : Create Bureaucrat I with grade 100" << std::endl;
 		Bureaucrat I("I", 100);
 		std::cout << I << std::endl;
 		std::cout << "Test #24 : Create Form J with sign_grade 99 and exec_grade 99" << std::endl;
