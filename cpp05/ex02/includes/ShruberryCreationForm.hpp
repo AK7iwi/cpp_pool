@@ -6,8 +6,20 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:42:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 15:54:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:44:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+class  ShrubberyCreationForm:
+{
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(ShrubberyCreationForm const &cpy);
+		~ShrubberyCreationForm();
+		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+
+	private:
+    	
+};

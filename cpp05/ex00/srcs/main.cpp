@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 05:18:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 14:36:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 {
 	try 
 	{
-		std::cout<< "\nTest #1 : Create Bureaucrat A with grade 0"<< std::endl;
+		std::cout<< "Test #1 : Create Bureaucrat A with grade 0"<< std::endl;
 		Bureaucrat A("A", 0);
 	}
 	catch(Bureaucrat::grade_too_high_exception &e) 
