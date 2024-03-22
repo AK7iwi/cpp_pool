@@ -6,18 +6,18 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 14:00:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:46:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #include <stdint.h>
 
-class Form;
+class AForm;
 
 class Bureaucrat 
 {
@@ -27,7 +27,7 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &rhs);
 
-		void		sign_form(Form &form); 
+		void		sign_form(AForm &form); 
 		std::string	get_name() const;
 		uint8_t		get_grade() const;
 		void		increment_grade();

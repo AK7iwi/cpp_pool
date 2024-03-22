@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/22 16:35:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:46:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     return(os);
 }
 
-void	Bureaucrat::sign_form(Form &form) 
+void	Bureaucrat::sign_form(AForm &form) 
 {
 	try
 	{

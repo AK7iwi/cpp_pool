@@ -6,13 +6,17 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:42:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/22 16:44:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:51:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include <stdint.h>
 
-class  ShrubberyCreationForm:
+class  ShrubberyCreationForm
 {
 	public:
 		ShrubberyCreationForm();
@@ -21,5 +25,4 @@ class  ShrubberyCreationForm:
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 
 	private:
-    	
 };
