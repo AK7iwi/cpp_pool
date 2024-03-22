@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 15:16:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:29:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,15 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
 	else if (grade > 150)
 		throw grade_too_low_exception();
 	_grade = grade;
-	std::cout << "Bureaucrat default constructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._grade) 
-{ 
-	std::cout << "Bureaucrat copy constructor called " <<std::endl;
-}
+Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : _name(cpy._name), _grade(cpy._grade) {}
 
-Bureaucrat::~Bureaucrat() {std::cout << "Bureaucrat destructor called" << std::endl;}
+Bureaucrat::~Bureaucrat() {}
 
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const &rhs) 
 {	
-    std::cout << "Bureaucrat copy assignement operator called" << std::endl;
 	if (this != &rhs)
 		_grade = rhs._grade;
 	return (*this);

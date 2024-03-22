@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 15:20:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:30:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,12 @@ Form::Form(Form const &cpy) :
 	_signed_status(cpy._signed_status), 
 	_grade_to_sign(cpy._grade_to_sign), 
 	_grade_to_execute(cpy._grade_to_execute)
-{
-    std::cout << "Form copy constructor called " <<std::endl;
-    _signed_status = cpy._signed_status;
-}
+{_signed_status = cpy._signed_status;}
 
-Form::~Form() {std::cout << "Form destructor called" << std::endl;}
+Form::~Form() {}
 
 Form&	Form::operator=(Form const &rhs) 
 {	
-    std::cout << "Form copy assignement operator called" << std::endl;
 	if (this != &rhs)
 		_signed_status = rhs._signed_status;
 	return (*this);
