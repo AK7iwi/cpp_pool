@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:53:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 15:59:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:15:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Ice : public AMateria
     public:
         Ice();
 		Ice(Ice const &cpy);
-        virtual ~Ice();
+        ~Ice();
 		Ice& operator=(Ice const &rhs);
 		
     	Ice*	clone() const;

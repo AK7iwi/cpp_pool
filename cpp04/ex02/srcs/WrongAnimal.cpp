@@ -6,15 +6,18 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:11:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/06 07:03:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/23 20:10:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() {std::cout << "Default constructor called for Wrong Animal" << std::endl;}
+WrongAnimal::WrongAnimal() 
+{std::cout << "Default constructor called for Wrong Animal" << std::endl;}
 
-WrongAnimal::WrongAnimal(std::string const &type) : _type(type) {std::cout << "Type default constructor called for Animal" << std::endl;}
+WrongAnimal::WrongAnimal(std::string const &type) : 
+	_type(type) 
+{std::cout << "Type default constructor called for Animal" << std::endl;}
 
 WrongAnimal::WrongAnimal(WrongAnimal const &cpy) : _type(cpy._type)
 {

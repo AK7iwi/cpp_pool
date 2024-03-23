@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/22 15:53:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/23 19:25:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout <<"\nTest #2 : Create Bureaucrat B with grade 151" << std::endl;
@@ -41,6 +42,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #3 : Create Bureaucrat C with grade 1" << std::endl;
@@ -63,6 +65,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #7 : Create Bureaucrat D with grade 150" << std::endl;
@@ -117,6 +120,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #14 : Create Form B with sign_grade 0 and exec_grade <1>" << std::endl;
@@ -130,6 +134,7 @@ int main(void)
 	{
 		std::cout << e.too_low()  << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #15 : Create Form C with sign_grade 151 and exec_grade 150" << std::endl;
@@ -143,6 +148,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #16 : Create Form D with sign_grade 150 and exec_grade 151" << std::endl;
@@ -156,6 +162,7 @@ int main(void)
 	{
 		std::cout << e.too_low()  << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #17 : Create Form E with sign_grade 1 and exec_grade 1" << std::endl;
@@ -185,6 +192,7 @@ int main(void)
 	{
 		std::cout << e.too_low() << std::endl;
 	}
+	
 	try 
 	{
 		std::cout << "\nTest #23 : Create Bureaucrat I with grade 100" << std::endl;

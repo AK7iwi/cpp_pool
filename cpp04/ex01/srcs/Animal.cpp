@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/01 14:40:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:14:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,18 @@ Animal::~Animal() {std::cout << "Destructor called for Animal" << std::endl;}
 
 Animal&	Animal::operator=(Animal const &rhs) 
 {	
-    std::cout << "Copy assignment operator called for Animal" << std::endl;
+    std::cout	<< "Copy assignment operator called for Animal" 
+				<< std::endl;
 	if (this != &rhs)
 		_type = rhs._type;
-	return (*this);
+	return(*this);
 }
 
-void		Animal::make_sound() const {std::cout << "I'm an animal" << std::endl;}
+void		Animal::make_sound() const 
+{
+	std::cout	<< "I'm an animal" 
+				<< std::endl;
+}
 
-std::string	Animal::get_type() const {return (_type);}
+std::string	Animal::get_type() const
+{return(_type);}
