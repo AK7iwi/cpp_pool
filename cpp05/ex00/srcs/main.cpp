@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/22 14:36:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:41:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main(void)
 		Bureaucrat B("B", 151);
 	}
 	catch(Bureaucrat::grade_too_high_exception &e) 
-	{
+	{https://profile.intra.42.fr/events/22636
 		std::cout << e.too_high() << std::endl;
 	} 
 	catch(Bureaucrat::grade_too_low_exception &e) 

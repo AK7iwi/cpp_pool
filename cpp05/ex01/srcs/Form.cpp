@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/23 20:12:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/27 21:53:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Form&	Form::operator=(Form const &rhs)
 {	
 	if (this != &rhs)
 		_signed_status = rhs._signed_status;
-	return(*this);
+	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &os, Form &rhs) 
@@ -47,7 +47,7 @@ std::ostream	&operator<<(std::ostream &os, Form &rhs)
 		<< (!rhs.get_signed_status() ? " is not signed, " : " is signed, ")
 		<< "Bureaucrat need grade "
 		<< (int)rhs.get_grade_to_sign()
-		<< " For sign it, and grade "
+		<< " for sign it, and grade "
 		<< (int)rhs.get_grade_to_execute()
 		<< " for execute it" << std::endl;
 	return(os);

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/23 21:01:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/27 22:46:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ class AForm
 	private:
     	std::string	const 	_name;
     	bool 				_signed_status;
-    	int	const 			_grade_to_sign; // uint8_t
-   		int const  			_grade_to_execute; // uint8_t
+    	int	const 			_grade_to_sign; 
+   		int const  			_grade_to_execute; 
 };
 
 std::ostream	&operator<<(std::ostream &os, AForm &rhs);
