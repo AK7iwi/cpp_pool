@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/27 22:41:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:47:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ AForm::AForm(AForm const &cpy) :
 	_name(cpy._name),
 	_signed_status(cpy._signed_status), 
 	_grade_to_sign(cpy._grade_to_sign), 
-	_grade_to_execute(cpy._grade_to_execute)
-{_signed_status = cpy._signed_status;}
+	_grade_to_execute(cpy._grade_to_execute) {}
 
 AForm::~AForm() {}
 
@@ -53,6 +52,13 @@ std::ostream	&operator<<(std::ostream &os, AForm &rhs)
 	return (os);
 }
 
+void	AForm::be_signed(Bureaucrat bureaucrat) 
+{
+	if (bureaucrat.get_grade() > get_grade_to_sign())
+		throw (AForm::grade_too_low_exception());
+	_signed_status = 1;
+}
+
 std::string AForm::get_name() const
 {return (_name);}
 
@@ -64,13 +70,6 @@ uint8_t AForm::get_grade_to_sign() const
 
 uint8_t AForm::get_grade_to_execute() const
 {return (_grade_to_execute);}
-
-void	AForm::be_signed(Bureaucrat bureaucrat) 
-{
-	if (bureaucrat.get_grade() > get_grade_to_sign())
-		throw (AForm::grade_too_low_exception());
-	_signed_status = 1;
-}
 
 std::string	AForm::grade_too_high_exception::too_high() const throw()
 {return ("Form grade is too high");}

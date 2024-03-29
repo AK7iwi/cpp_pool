@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/27 21:40:23 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:24:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) :
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &cpy) : 
-	_name(cpy._name), _grade(cpy._grade) {}
+	_name(cpy._name), 
+	_grade(cpy._grade) {}
 
 Bureaucrat::~Bureaucrat() {}
 

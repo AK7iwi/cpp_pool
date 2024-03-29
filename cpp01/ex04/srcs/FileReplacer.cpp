@@ -6,14 +6,16 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/20 15:31:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:29:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FileReplacer.hpp"
 
-FileReplacer::FileReplacer(std::string const &filename, std::string const &s1, std::string const &s2)
-	: _filename(filename), _s1(s1), _s2(s2) {}
+FileReplacer::FileReplacer(std::string const &filename, std::string const &s1, std::string const &s2) : 
+	_filename(filename), 
+	_s1(s1),
+	_s2(s2) {}
 	
 FileReplacer::FileReplacer(FileReplacer const &cpy)
 {

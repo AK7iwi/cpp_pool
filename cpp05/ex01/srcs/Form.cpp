@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/27 21:53:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:46:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@ Form::Form(std::string const name, int grade_to_sign, int grade_to_execute) :
 	_grade_to_execute(grade_to_execute) 
 {
     if (_grade_to_sign < 1 || _grade_to_execute < 1)
-        throw(grade_too_high_exception());
+        throw (grade_too_high_exception());
     else if (_grade_to_sign > 150 || _grade_to_execute > 150)
-        throw(grade_too_low_exception());
+        throw (grade_too_low_exception());
 }
 
 Form::Form(Form const &cpy) : 
 	_name(cpy._name),
 	_signed_status(cpy._signed_status), 
 	_grade_to_sign(cpy._grade_to_sign), 
-	_grade_to_execute(cpy._grade_to_execute)
-{_signed_status = cpy._signed_status;}
+	_grade_to_execute(cpy._grade_to_execute) {}
 
 Form::~Form() {}
 
@@ -50,7 +49,7 @@ std::ostream	&operator<<(std::ostream &os, Form &rhs)
 		<< " for sign it, and grade "
 		<< (int)rhs.get_grade_to_execute()
 		<< " for execute it" << std::endl;
-	return(os);
+	return (os);
 }
 
 void		Form::be_signed(Bureaucrat bureaucrat) 
@@ -61,16 +60,16 @@ void		Form::be_signed(Bureaucrat bureaucrat)
 }
 
 std::string Form::get_name() const
-{return(_name);}
+{return (_name);}
 
 uint8_t Form::get_signed_status() const
-{return(_signed_status);}
+{return (_signed_status);}
 
 uint8_t Form::get_grade_to_sign() const 
-{return(_grade_to_sign);}
+{return (_grade_to_sign);}
 
 uint8_t Form::get_grade_to_execute() const
-{return(_grade_to_execute);}
+{return (_grade_to_execute);}
 
 std::string	Form::grade_too_high_exception::too_high() const throw() 
 {return ("Form grade is too high");}

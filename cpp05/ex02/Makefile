@@ -1,7 +1,7 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
-NAME 			= TMLP
+NAME 			= AForm
 SRCS			= srcs/main.cpp srcs/Bureaucrat.cpp srcs/Form.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 

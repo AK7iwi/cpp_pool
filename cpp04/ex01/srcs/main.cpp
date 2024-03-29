@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 13:59:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:07:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int main()
 	
 	std::cout << std::endl << "Destructor" << std::endl << std::endl;
 	for (uint8_t i = 0; i < 4; i++)
-		delete(animalArr[i]);
+	{
+		animalArr[i]->make_sound();
+		delete (animalArr[i]);
+	}
 	
 	std::cout << std::endl << "Deep copy" << std::endl << std::endl;
 	Dog basic;

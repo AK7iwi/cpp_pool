@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/23 20:09:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 13:52:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ AAnimal::~AAnimal()
 
 AAnimal&	AAnimal::operator=(AAnimal const &rhs) 
 {	
-    std::cout << "Copy assignment operator called for AAnimal" << std::endl;
+    std::cout	<< "Copy assignment operator called for AAnimal"
+				<< std::endl;
 	if (this != &rhs)
 		_type = rhs._type;
 	return (*this);
 }
 
-std::string	AAnimal::get_type() const {return (_type);}
+std::string	AAnimal::get_type() const
+{return (_type);}

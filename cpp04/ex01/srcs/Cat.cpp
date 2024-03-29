@@ -6,15 +6,21 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/06 07:02:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:00:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain()) {std::cout << "Default constructor called for Cat" << std::endl;}
+Cat::Cat() : 
+	Animal("Cat"), 
+	_brain(new Brain())
+{std::cout << "Default constructor called for Cat" << std::endl;}
 
-Cat::Cat(Cat const &cpy) : Animal(cpy._type), _brain(new Brain(*cpy._brain)) {std::cout << "Copy constructor called for Cat" << std::endl;}
+Cat::Cat(Cat const &cpy) : 
+	Animal(cpy._type), 
+	_brain(new Brain(*cpy._brain)) 
+{std::cout << "Copy constructor called for Cat" << std::endl;}
 
 Cat::~Cat() 
 {

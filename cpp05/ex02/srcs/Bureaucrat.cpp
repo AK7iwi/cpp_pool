@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/22 16:46:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:12:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string const name, int grade) : 
+	_name(name)
 {
 	if (grade < 1)
 		throw(grade_too_high_exception());
