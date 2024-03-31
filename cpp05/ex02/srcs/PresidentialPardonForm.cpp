@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 13:45:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:43:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	PresidentialPardonForm::execute(Bureaucrat &bureaucrat) const
 	{
 		std::cout << err.too_high();
 	} 
-	catch(AForm::FormIsNotSigned &err) 
+	catch(AForm::form_is_not_signed &err) 
 	{
-		std::cout << err.notSigned();
+		std::cout << err.not_signed();
 	}
 }

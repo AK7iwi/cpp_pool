@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/27 22:46:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:45:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
 		virtual ~AForm();
 		AForm &operator=(AForm const &rhs);
 		
-		virtual void	execute(Bureaucrat const &executor) const = 0;
+		virtual void	execute(Bureaucrat const &bureaucrat) const = 0;
 		void			be_signed(Bureaucrat bureaucrat);
 		std::string		get_name() const;
 		uint8_t			get_signed_status() const;
@@ -44,6 +44,12 @@ class AForm
 		{
 			public:
 				std::string	too_low() const throw();
+		};
+
+		class form_is_not_signed : public std::exception 
+		{
+			public:
+				std::string		not_signed() const throw();
 		};
 	
 	private:

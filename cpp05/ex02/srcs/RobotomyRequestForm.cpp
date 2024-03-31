@@ -6,20 +6,20 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 13:44:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 18:43:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-	AForm("RobotomyForm", 72, 45)
-	, _target(target)
+	AForm("RobotomyForm", 72, 45) , 
+	_target(target)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &cpy) :
-	AForm("RobotomyForm", 72, 45)
-	, _target(cpy._target)
+	AForm("RobotomyForm", 72, 45) ,
+	_target(cpy._target)
 {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
@@ -51,8 +51,8 @@ void	RobotomyRequestForm::execute(Bureaucrat &bureaucrat) const
 	{
 		std::cout << err.too_high();
 	} 
-	catch(AForm::FormIsNotSigned &err) 
+	catch(AForm::form_is_not_signed &err) 
 	{
-		std::cout << err.notSigned();
+		std::cout << err.not_signed();
 	}
 }

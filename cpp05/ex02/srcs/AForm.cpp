@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:47:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:00:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,14 @@ void	AForm::be_signed(Bureaucrat bureaucrat)
 	_signed_status = 1;
 }
 
+bool	AForm::execute(Bureaucrat &executor) const {
+	if (executor.getGrade() > this->getGradeToExec())
+		throw GradeTooHighException();
+	else if (!this->getIsSigned())
+		throw FormIsNotSigned();
+	return (1);
+}
+
 std::string AForm::get_name() const
 {return (_name);}
 
@@ -76,3 +84,6 @@ std::string	AForm::grade_too_high_exception::too_high() const throw()
 
 std::string	AForm::grade_too_low_exception::too_low() const throw()
 {return ("Form grade is too low");}
+
+std::string		AForm::form_is_not_signed::not_signed() const throw()
+{return ("Form is not signed");}
