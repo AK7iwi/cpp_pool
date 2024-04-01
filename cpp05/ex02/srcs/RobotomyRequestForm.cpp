@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/31 18:43:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:04:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	RobotomyRequestForm::execute(Bureaucrat &bureaucrat) const
 		std::cout	<< _target
 					<< (rand % 2 ? " is robitized" : " robotization failed")
 					<< std::endl;
-
 	} 
 	catch(AForm::grade_too_high_exception &err) 
 	{

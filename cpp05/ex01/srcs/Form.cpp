@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 14:46:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/01 23:23:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		Form::be_signed(Bureaucrat bureaucrat)
 }
 
 std::string Form::get_name() const
-{return (_name);}
+{return (_name);} 
 
 uint8_t Form::get_signed_status() const
 {return (_signed_status);}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/31 19:00:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/03/31 19:13:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ void	AForm::be_signed(Bureaucrat bureaucrat)
 	_signed_status = 1;
 }
 
-bool	AForm::execute(Bureaucrat &executor) const {
+void	AForm::execute(Bureaucrat &executor) const 
+{
 	if (executor.getGrade() > this->getGradeToExec())
 		throw GradeTooHighException();
 	else if (!this->getIsSigned())
