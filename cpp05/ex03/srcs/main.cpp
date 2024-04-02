@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:36:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:57:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,81 +15,37 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int	main() 
 {
 	{
-		try 
-		{
-			Bureaucrat c("Julien", 1);
-			std::cout << c << std::endl;
+		Bureaucrat	a("BOSS", 1);
+		Intern		b;
 
-			PresidentialPardonForm d("PPF");
-			std::cout << d << std::endl;
+		AForm *new_form = b.makeForm("shrubbery creation", "hello");
 
-			c.sign_form(d);
-			std::cout << d << std::endl;
-
-			c.execute_form(d);
-
-		} 
-		catch (const Bureaucrat::grade_too_high_exception &err) 
-		{
-			std::cout << err.too_high() << std::endl;
-		} 
-		catch (const Bureaucrat::grade_too_low_exception &err) 
-		{
-			std::cout << err.too_low() << std::endl;
-		}
+		a.sign_form(*new_form);
+		a.execute_form(*new_form);
+		delete (new_form);
 	}
 	
 	{
-		try 
-		{
-			Bureaucrat c("Sylvain", 1);
-			std::cout << c << std::endl;
+		Bureaucrat	a("BOSS", 1);
+		Intern		b;
 
-			RobotomyRequestForm d("RBF");
-			std::cout << d << std::endl;
-
-			c.sign_form(d);
-			std::cout << d << std::endl;
-
-			c.execute_form(d);
-
-		} 
-		catch (const Bureaucrat::grade_too_high_exception &err) 
-		{
-			std::cout << err.too_high() << std::endl;
-		} 
-		catch (const Bureaucrat::grade_too_low_exception &err) 
-		{
-			std::cout << err.too_low() << std::endl;
-		}
+		AForm *new_form = b.makeForm("creation", "hello");
+		(void)new_form;
 	}
 
 	{
-		try 
-		{
-			Bureaucrat c("Carl", 1);
-			std::cout << c << std::endl;
+		Bureaucrat	a("BOSS", 1);
+		Intern		b;
 
-			ShrubberyCreationForm d("SCF");
-			std::cout << d << std::endl;
+		AForm *new_form = b.makeForm("robotomy request", "Bender");
 
-			c.sign_form(d);
-			std::cout << d << std::endl;
-
-			c.execute_form(d);
-
-		} 
-		catch (const Bureaucrat::grade_too_high_exception &err) 
-		{
-			std::cout << err.too_high() << std::endl;
-		} 
-		catch (const Bureaucrat::grade_too_low_exception &err) 
-		{
-			std::cout << err.too_low() << std::endl;
-		}
+		a.sign_form(*new_form);
+		a.execute_form(*new_form);
+		delete (new_form);
 	}
 }
