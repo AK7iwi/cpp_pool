@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShruberryCreationForm.cpp                          :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/31 18:43:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:58:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShruberryCreationForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
 	AForm("ShrubberyForm", 145, 137),
@@ -31,7 +31,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const 
+bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	try 
 	{
@@ -51,11 +51,11 @@ void	ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const
 		outFile << "      ||      "			<< std::endl;
 		
 	} 
-	catch(AForm::grade_too_high_exception &err) 
+	catch (AForm::grade_too_high_exception &err) 
 	{
 		std::cout << err.too_high();
 	} 
-	catch(AForm::form_is_not_signed &err) 
+	catch (AForm::form_is_not_signed &err) 
 	{
 		std::cout << err.not_signed();
 	}

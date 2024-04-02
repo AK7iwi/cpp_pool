@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/31 19:19:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:36:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Bureaucrat
 		Bureaucrat &operator=(Bureaucrat const &rhs);
 
 		void		sign_form(AForm &form);
-		void 		execute_form(AForm const &form) const; 
+		void 		execute_form(AForm const &form); 
 		void		increment_grade();
 		void		decrement_grade();
 		std::string	get_name() const;

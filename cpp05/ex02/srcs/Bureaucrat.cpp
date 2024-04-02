@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:12:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:36:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) :
 	_name(name)
 {
 	if (grade < 1)
-		throw(grade_too_high_exception());
+		throw (grade_too_high_exception());
 	else if (grade > 150)
-		throw(grade_too_low_exception());
+		throw (grade_too_low_exception());
 	_grade = grade;
 }
 
@@ -40,7 +40,7 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     os	<< bureaucrat.get_name() 
 		<< ", bureaucrat grade "
 		<< (int)bureaucrat.get_grade();
-    return(os);
+    return (os);
 }
 
 void	Bureaucrat::sign_form(AForm &form) 
@@ -49,14 +49,13 @@ void	Bureaucrat::sign_form(AForm &form)
 	{
 		form.be_signed(*this);
 	}
-	catch(const std::exception &err) 
+	catch (const std::exception &err) 
 	{
 		std::cout 	<< this->get_name()
 					<< " couldn't signed "
 					<< form.get_name()
 					<< " because form grade is too low"
 					<< std::endl;
-		return ;
 	}
 	std::cout 	<< this->get_name()
 				<< " signed "
@@ -64,12 +63,31 @@ void	Bureaucrat::sign_form(AForm &form)
 				<< std::endl;
 }
 
+void		Bureaucrat::execute_form(AForm const &form) 
+{
+	if (form.execute(*this)) 
+	{
+		std::cout	<< get_name()
+					<< " executed "
+					<< form.get_name()
+					<< std::endl;
+	} 
+	else 
+	{
+		std::cout	<< std::endl
+					<< get_name()
+					<< " can't execute "
+					<< form.get_name()
+					<< std::endl;
+	}
+}
+
 void Bureaucrat::increment_grade() 
 {
     if (_grade > 1)
         _grade--;
     else
-        throw(grade_too_high_exception());
+        throw (grade_too_high_exception());
 }
 
 void Bureaucrat::decrement_grade() 
@@ -77,7 +95,7 @@ void Bureaucrat::decrement_grade()
     if (_grade < 150)
         _grade++;
     else
-        throw(grade_too_low_exception());
+        throw (grade_too_low_exception());
 }
 
 std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
@@ -87,7 +105,7 @@ std::string	Bureaucrat::grade_too_low_exception::too_low() const throw()
 {return ("Bureaucrat grade is too low");}
 
 std::string Bureaucrat::get_name() const
-{return(_name);}
+{return (_name);}
 
 uint8_t Bureaucrat::get_grade() const
-{return(_grade);}
+{return (_grade);}

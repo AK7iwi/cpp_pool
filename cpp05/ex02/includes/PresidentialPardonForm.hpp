@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:46:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:33:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:57:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class  PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 		PresidentialPardonForm &operator=(PresidentialPardonForm const &rhs);
 
-		void	execute(Bureaucrat &bureaucrat) const;
+		bool	execute(Bureaucrat const &bureaucrat) const;
 
 	private:
 		std::string     _target;

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/31 19:13:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:57:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ AForm::AForm(std::string const name, int grade_to_sign, int grade_to_execute) :
 	_grade_to_execute(grade_to_execute) 
 {
     if (_grade_to_sign < 1 || _grade_to_execute < 1)
-        throw(grade_too_high_exception());
+        throw (grade_too_high_exception());
     else if (_grade_to_sign > 150 || _grade_to_execute > 150)
-        throw(grade_too_low_exception());
+        throw (grade_too_low_exception());
 }
 
 AForm::AForm(AForm const &cpy) : 
@@ -59,13 +59,12 @@ void	AForm::be_signed(Bureaucrat bureaucrat)
 	_signed_status = 1;
 }
 
-void	AForm::execute(Bureaucrat &executor) const 
+bool	AForm::execute(Bureaucrat const &executor) const 
 {
-	if (executor.getGrade() > this->getGradeToExec())
-		throw GradeTooHighException();
-	else if (!this->getIsSigned())
-		throw FormIsNotSigned();
-	return (1);
+	if (executor.get_grade() > this->get_grade_to_execute())
+		throw (grade_too_high_exception());
+	else if (!this->get_signed_status())
+		throw (form_is_not_signed());
 }
 
 std::string AForm::get_name() const

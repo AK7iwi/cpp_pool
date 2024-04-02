@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:45:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:57:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class  RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 		RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
-		void	execute(Bureaucrat &bureaucrat) const;
+		bool	execute(Bureaucrat const &bureaucrat) const;
 
 	private:
 		std::string     _target;

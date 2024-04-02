@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShruberryCreationForm.hpp                          :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:42:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:27:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 08:57:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class  ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
 
-		void	execute(Bureaucrat &bureaucrat) const;
+		bool	execute(Bureaucrat const &bureaucrat) const;
 
 	private:
 		std::string     _target;
