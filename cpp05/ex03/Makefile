@@ -4,7 +4,8 @@ CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
 NAME 			= Intern
 SRCS			= srcs/main.cpp srcs/Bureaucrat.cpp srcs/AForm.cpp \
 					srcs/ShrubberyCreationForm.cpp srcs/RobotomyRequestForm.cpp \
-					srcs/PresidentialPardonForm.cpp
+					srcs/PresidentialPardonForm.cpp srcs/Intern.cpp 
+					
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)

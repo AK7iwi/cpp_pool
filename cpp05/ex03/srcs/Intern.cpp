@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:54:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:03:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static AForm *newRobotomy(std::string form_target)
 static AForm *newPresidential(std::string form_target) 
 {return (new PresidentialPardonForm(form_target));}
 
-static int8_t		whatForm(std::string form_name) 
+static int8_t		what_form(std::string form_name) 
 {
 	
 	int8_t	id = -1;
@@ -48,7 +48,7 @@ static int8_t		whatForm(std::string form_name)
 	return (id);
 }
 
-AForm	*Intern::makeForm(std::string form_name, std::string form_target) 
+AForm	*Intern::make_form(std::string form_name, std::string form_target) 
 {
 
 	AForm *(*f[3])(std::string form_target) = 
@@ -58,19 +58,21 @@ AForm	*Intern::makeForm(std::string form_name, std::string form_target)
 		&newPresidential
 	};
 	
-	int16_t id = whatForm(form_name);
+	int16_t id = what_form(form_name);
 	AForm *new_form = NULL;
 
-	if (id != -1) {
+	if (id != -1) 
+	{
 		new_form = f[id](form_target);
 		
 		std::cout	<< "Intern creates : "
 					<< new_form->get_name()
 					<< std::endl;
-	} else {
-		std::cout	<< "Invalid FormName"
+	} 
+	else 
+	{
+		std::cout	<< "Invalid form_name"
 					<< std::endl;
 	}
-
-	return(new_form);
+	return (new_form);
 }
