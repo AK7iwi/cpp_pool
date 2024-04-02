@@ -2,7 +2,9 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= AForm
-SRCS			= srcs/main.cpp srcs/Bureaucrat.cpp srcs/Form.cpp
+SRCS			= srcs/main.cpp srcs/Bureaucrat.cpp srcs/AForm.cpp \
+					srcs/ShrubberyCreationForm.cpp srcs/RobotomyRequestForm.cpp \
+					srcs/PresidentialPardonForm.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)

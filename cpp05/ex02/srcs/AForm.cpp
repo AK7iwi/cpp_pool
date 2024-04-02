@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 08:57:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:15:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ bool	AForm::execute(Bureaucrat const &executor) const
 		throw (grade_too_high_exception());
 	else if (!this->get_signed_status())
 		throw (form_is_not_signed());
+	return (1);
 }
 
 std::string AForm::get_name() const

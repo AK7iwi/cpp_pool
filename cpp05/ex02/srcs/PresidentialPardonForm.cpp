@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 08:57:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:16:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 		std::cout	<< _target
 					<< " has been pardoned by Zaphod Beeblebrox."
 					<< std::endl;
+		return (1);
 	} 
 	catch (AForm::grade_too_high_exception &err) 
 	{
@@ -49,4 +50,5 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		std::cout << err.not_signed();
 	}
+	return (0);
 }

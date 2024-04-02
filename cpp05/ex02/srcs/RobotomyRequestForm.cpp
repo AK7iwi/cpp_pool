@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 08:57:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 09:29:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		AForm::execute(bureaucrat);
 		
+		std::srand(std::time(NULL));
 		int rand = std::rand();
 		
 		std::cout 	<< "BrRrrrRrrrrrrrRrrr" 
@@ -44,6 +45,7 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 		std::cout	<< _target
 					<< (rand % 2 ? " is robitized" : " robotization failed")
 					<< std::endl;
+		return (1);
 	} 
 	catch (AForm::grade_too_high_exception &err) 
 	{
@@ -53,4 +55,5 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		std::cout << err.not_signed();
 	}
+	return (0);
 }
