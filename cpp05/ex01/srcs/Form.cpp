@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/01 23:23:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 07:03:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ std::ostream	&operator<<(std::ostream &os, Form &rhs)
 void		Form::be_signed(Bureaucrat bureaucrat) 
 {
 	if (bureaucrat.get_grade() > get_grade_to_sign())
-		throw(Form::grade_too_low_exception());
+		throw (Form::grade_too_low_exception());
 	_signed_status = 1;
 }
 

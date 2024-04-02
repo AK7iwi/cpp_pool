@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/27 22:50:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/02 06:28:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int main(void)
 	
 	try 
 	{
-		std::cout << "\nTest #14 : Create Form B with sign_grade 0 and exec_grade <1>" << std::endl;
+		std::cout << "\nTest #14 : Create Form B with sign_grade 0 and exec_grade 1" << std::endl;
 		Form B("B", 0, 1);
 	} 
 	catch(Form::grade_too_high_exception &e) 
