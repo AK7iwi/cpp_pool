@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/04 17:02:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:14:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	ScalarConverter::find_type(std::string input)
 		throw (ScalarConverter::bad_input());
 }
 
-void ScalarConverter::convert() // good catch?
+void ScalarConverter::convert() 
 {
 	try 
 	{
@@ -177,7 +177,7 @@ bool	ScalarConverter::is_int(std::string input)
 bool ScalarConverter::is_float(const std::string input) 
 {
 	int		i = 0;
-	bool	hasDecimal = false;
+	bool	has_decimal = false;
 
 	if (input[0] == '-' || input[0] == '+')
 		i++;
@@ -188,9 +188,9 @@ bool ScalarConverter::is_float(const std::string input)
 		{
 			if (input[i] == '.') 
 			{
-				if (hasDecimal)
+				if (has_decimal)
 					return (false);
-				hasDecimal = true;
+				has_decimal = true;
 			} 
 			else if (input[i] == 'f') 
 				return (true);
@@ -282,14 +282,14 @@ double	ScalarConverter::to_double()
 	return (_d);
 }
 
-std::string ScalarConverter::empty_string::what() const throw() 
+const char *ScalarConverter::empty_string::what() const throw() 
 {return ("The string is empty");}
 
-std::string ScalarConverter::bad_input::what() const throw() 
+const char *ScalarConverter::bad_input::what() const throw() 
 {return ("Bad Input");}
 
-std::string ScalarConverter::impossible::what() const throw() 
+const char *ScalarConverter::impossible::what() const throw() 
 {return ("Impossible");}
 
-std::string ScalarConverter::non_displayable::what() const throw() 
+const char *ScalarConverter::non_displayable::what() const throw() 
 {return ("Non displayable");}
