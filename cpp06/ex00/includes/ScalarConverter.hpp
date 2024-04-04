@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/03 07:11:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:01:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,24 @@ class ScalarConverter
 		static void		find_type(std::string input);
 		static void		convert();
 	
-		class EmptyString : public std::exception 
+		class empty_string : public std::exception 
 		{
-			virtual const char *what() const throw();
+			std::string what() const throw();
 		};
 
-		class BadInput : public std::exception 
+		class bad_input : public std::exception 
 		{
-			virtual const char *what() const throw();
+			std::string what() const throw();
 		};
 
-		class Impossible : public std::exception 
+		class impossible : public std::exception 
 		{
-			virtual const char *what() const throw();
+			std::string what() const throw();
 		};
 
-		class NonDisplayable : public std::exception 
+		class non_displayable : public std::exception 
 		{
-			virtual const char *what() const throw();
+			std::string what() const throw();
 		};
 
 		private:

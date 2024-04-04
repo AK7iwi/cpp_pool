@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:15:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:28:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,5 @@ std::string	AForm::grade_too_high_exception::too_high() const throw()
 std::string	AForm::grade_too_low_exception::too_low() const throw()
 {return ("Form grade is too low");}
 
-std::string		AForm::form_is_not_signed::not_signed() const throw()
+std::string	AForm::form_is_not_signed::not_signed() const throw()
 {return ("Form is not signed");}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 11:59:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:15:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ Intern::~Intern() {};
 Intern		&Intern::operator=(Intern const &rhs)
 {(void)rhs; return (*this);}
 
-static AForm	*newShrubbery(std::string form_target) 
+static AForm *new_shrubbery(std::string form_target) 
 {return (new ShrubberyCreationForm(form_target));}
 
-static AForm	*newRobotomy(std::string form_target) 
-{return (new RobotomyRequestForm(form_target));}
+static AForm *new_robotomy(std::string form_target) 
+{ return (new RobotomyRequestForm(form_target));}
 
-static AForm	*newPresidential(std::string form_target) 
-{return (new PresidentialPardonForm(form_target));}
+static AForm *new_presidential(std::string formTarget) 
+{return (new PresidentialPardonForm(formTarget));}
 
 static int8_t	what_form(std::string form_name) 
 {
-	
 	int8_t	id = -1;
 	std::string	form_name_list[3] = 
 	{
@@ -50,12 +49,11 @@ static int8_t	what_form(std::string form_name)
 
 AForm	*Intern::make_form(std::string form_name, std::string form_target) 
 {
-
 	AForm *(*f[3])(std::string form_target) = 
 	{ 
-		&newShrubbery,
-		&newRobotomy,
-		&newPresidential
+		&new_shrubbery,
+		&new_robotomy,
+		&new_presidential
 	};
 	
 	int16_t id = what_form(form_name);
