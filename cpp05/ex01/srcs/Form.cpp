@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 07:03:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/05 23:39:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(std::string const name, int grade_to_sign, int grade_to_execute) :
+Form::Form(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
 	_signed_status(false), 
 	_grade_to_sign(grade_to_sign), 
@@ -52,11 +52,11 @@ std::ostream	&operator<<(std::ostream &os, Form &rhs)
 	return (os);
 }
 
-void		Form::be_signed(Bureaucrat bureaucrat) 
+void		Form::be_signed(Bureaucrat &bureaucrat) 
 {
 	if (bureaucrat.get_grade() > get_grade_to_sign())
 		throw (Form::grade_too_low_exception());
-	_signed_status = 1;
+	_signed_status = true;
 }
 
 std::string Form::get_name() const

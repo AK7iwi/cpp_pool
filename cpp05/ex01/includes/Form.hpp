@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:47:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/05 23:38:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ class Bureaucrat;
 class Form 
 {
 	public:
-		Form(std::string const name, int grade_to_sign, int grade_to_execute);
+		Form(std::string const name, int const grade_to_sign, int const grade_to_execute);
 		Form(Form const &cpy);
 		~Form();
 		Form &operator=(Form const &rhs);
 		
-		void		be_signed(Bureaucrat bureaucrat);
+		void		be_signed(Bureaucrat &bureaucrat);
 		std::string	get_name() const;
 		uint8_t		get_signed_status() const;
 		uint8_t		get_grade_to_sign() const;

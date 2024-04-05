@@ -6,14 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/03 08:03:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/05 23:31:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) : 
+Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)
 {
 	if (grade < 1)
@@ -49,6 +49,10 @@ void	Bureaucrat::sign_form(Form &form)
 	try
 	{
 		form.be_signed(*this);
+		std::cout	<< this->get_name()
+					<< " signed "
+					<< form.get_name()
+					<< std::endl;
 	}
 	catch (Form::grade_too_low_exception &e)
 	{
@@ -58,10 +62,6 @@ void	Bureaucrat::sign_form(Form &form)
 					<< " because form grade is too low"
 					<< std::endl;
 	}
-	std::cout 	<< this->get_name()
-				<< " signed "
-				<< form.get_name()
-				<< std::endl;
 }
 
 void Bureaucrat::increment_grade() 

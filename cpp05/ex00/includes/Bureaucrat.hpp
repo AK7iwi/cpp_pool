@@ -6,24 +6,28 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/21 14:34:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/05 23:38:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <string>
 #include <stdexcept>
 #include <stdint.h>
 
 class Bureaucrat 
 {
 	public:
-		Bureaucrat(std::string const name, int grade);
+		Bureaucrat(std::string const name, int const grade);
 		Bureaucrat(Bureaucrat const &cpy);
 		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &rhs);
 
+		void		increment_grade();
+		void		decrement_grade();
+		uint8_t		get_grade() const;
+		std::string	get_name() const;
+		
 		class grade_too_high_exception : public std::exception
 		{
 			public:
@@ -36,11 +40,6 @@ class Bureaucrat
 				std::string	too_low() const throw();
 		};
 
-		std::string	get_name() const;
-		uint8_t		get_grade() const;
-
-		void		increment_grade();
-		void		decrement_grade();
 	
 	private:
     	std::string	const 	_name;

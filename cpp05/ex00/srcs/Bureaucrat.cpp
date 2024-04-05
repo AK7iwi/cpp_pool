@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/04 16:24:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/05 22:44:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string const name, int grade) : 
+Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)
 {
 	if (grade < 1)
