@@ -6,21 +6,19 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:16:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:22:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
-	AForm("PresidentialForm", 25, 5)
-	, _target(target)
-{}
+	AForm("PresidentialForm", 25, 5),
+	_target(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &cpy) :
-	AForm("PresidentialForm", 25, 5)
-	, _target(cpy._target)
-{}
+	AForm("PresidentialForm", 25, 5), 
+	_target(cpy._target) {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
@@ -40,7 +38,7 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 		std::cout	<< _target
 					<< " has been pardoned by Zaphod Beeblebrox."
 					<< std::endl;
-		return (1);
+		return (true);
 	} 
 	catch (AForm::grade_too_high_exception &err) 
 	{
@@ -50,5 +48,5 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		std::cout << err.not_signed();
 	}
-	return (0);
+	return (alse);
 }

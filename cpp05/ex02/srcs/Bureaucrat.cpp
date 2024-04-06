@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 02:20:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:19:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,15 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
+std::string Bureaucrat::get_name() const
+{return (_name);}
+
+uint8_t Bureaucrat::get_grade() const
+{return (_grade);}
+
 std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
 {return ("Bureaucrat grade is too high");}
 
 std::string	Bureaucrat::grade_too_low_exception::too_low() const throw() 
 {return ("Bureaucrat grade is too low");}
 
-std::string Bureaucrat::get_name() const
-{return (_name);}
-
-uint8_t Bureaucrat::get_grade() const
-{return (_grade);}

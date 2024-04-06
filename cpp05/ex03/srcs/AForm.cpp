@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:15:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:17:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(std::string const name, int grade_to_sign, int grade_to_execute) :
+AForm::AForm(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
 	_signed_status(false), 
 	_grade_to_sign(grade_to_sign), 
@@ -39,7 +39,7 @@ AForm&	AForm::operator=(AForm const &rhs)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &os, AForm &rhs) 
+std::ostream	&operator<<(std::ostream &os, AForm const &rhs) 
 {
 	os	<< "AForm " 
 		<< rhs.get_name()
@@ -48,24 +48,25 @@ std::ostream	&operator<<(std::ostream &os, AForm &rhs)
 		<< (int)rhs.get_grade_to_sign()
 		<< " For sign it, and grade " 
 		<< (int)rhs.get_grade_to_execute()
-		<< " for execute it" << std::endl;
+		<< " for execute it" 
+		<< std::endl;
 	return (os);
 }
 
-void	AForm::be_signed(Bureaucrat bureaucrat) 
+void	AForm::be_signed(Bureaucrat &bureaucrat) 
 {
-	if (bureaucrat.get_grade() > get_grade_to_sign())
+	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (AForm::grade_too_low_exception());
-	_signed_status = 1;
+	_signed_status = true;
 }
 
-bool	AForm::execute(Bureaucrat const &executor) const 
+bool	AForm::execute(Bureaucrat const &bureaucrat) const 
 {
-	if (executor.get_grade() > this->get_grade_to_execute())
+	if (bureaucrat.get_grade() > _grade_to_execute)
 		throw (grade_too_high_exception());
-	else if (!this->get_signed_status())
+	else if (!_signed_status)
 		throw (form_is_not_signed());
-	return (1);
+	return (true);
 }
 
 std::string AForm::get_name() const

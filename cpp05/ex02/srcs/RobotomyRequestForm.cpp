@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:29:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:23:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
 	AForm("RobotomyForm", 72, 45), 
-	_target(target)
-{}
+	_target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &cpy) :
 	AForm("RobotomyForm", 72, 45),
-	_target(cpy._target)
-{}
+	_target(cpy._target) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
@@ -40,12 +38,12 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 		std::srand(std::time(NULL));
 		int rand = std::rand();
 		
-		std::cout 	<< "BrRrrrRrrrrrrrRrrr" 
+		std::cout 	<< "*drilling noise*" 
 					<< std::endl;
 		std::cout	<< _target
-					<< (rand % 2 ? " is robitized" : " robotization failed")
+					<< (rand % 2 ? " has been robotomized successfully" : " Robotomy failed.")
 					<< std::endl;
-		return (1);
+		return (true);
 	} 
 	catch (AForm::grade_too_high_exception &err) 
 	{
@@ -55,5 +53,5 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		std::cout << err.not_signed();
 	}
-	return (0);
+	return (false);
 }

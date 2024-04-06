@@ -6,18 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 09:33:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:13:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <AForm.hpp>
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <string>
-#include <stdexcept>
-#include <stdint.h>
 
 class  RobotomyRequestForm : public AForm
 {
@@ -30,6 +26,6 @@ class  RobotomyRequestForm : public AForm
 		bool	execute(Bureaucrat const &bureaucrat) const;
 
 	private:
-		std::string     _target;
+		std::string	_target;
     	
 };

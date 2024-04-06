@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/03 08:14:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:27:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 class Intern 
 {
-
 	public:
 		Intern();
 		Intern(Intern const &cpy);

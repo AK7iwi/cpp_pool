@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/04 16:15:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 03:30:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ static AForm *new_presidential(std::string formTarget)
 
 static int8_t	what_form(std::string form_name) 
 {
-	int8_t	id = -1;
 	std::string	form_name_list[3] = 
 	{
 		"shrubbery creation",
 		"robotomy request",
 		"presidential pardon"
 	};
+	
+	int8_t	id = -1;
 	
 	for (uint8_t i = 0; i < 3; i++)
 		if (form_name_list[i] == form_name)
@@ -56,8 +57,8 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)
 		&new_presidential
 	};
 	
-	int16_t id = what_form(form_name);
 	AForm *new_form = NULL;
+	int16_t id = what_form(form_name);
 
 	if (id != -1) 
 	{
