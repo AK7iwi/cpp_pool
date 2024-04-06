@@ -6,10 +6,28 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/05 22:01:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 06:01:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+# include <iostream>
+# include <string>
+# include <cstdlib>
+# include <cfloat>
+# include <sstream>
+# include <iomanip>
+# include <cmath>
 
+class ScalarConverter
+{
+	public:
+		ScalarConverter();
+		ScalarConverter(ScalarConverter const &cpy);
+		~ScalarConverter();
+		ScalarConverter &operator=(ScalarConverter const &rhs);
 
+		static void convert(std::string const &input);
+		
+	private:
+};

@@ -6,30 +6,37 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/05 22:02:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 06:06:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-# include <iostream>
-# include <string>
-# include <cstdlib>
-# include <cfloat>
-# include <sstream>
-# include <iomanip>
-# include <cmath>
+ScalarConverter::ScalarConverter() {}
 
+ScalarConverter::ScalarConverter(ScalarConverter const &cpy) 
+{(void)cpy;}
 
-class ScalarConverter
+ScalarConverter::~ScalarConverter() {}
+
+ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
 {
-	public:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &cpy);
-		~ScalarConverter();
-		ScalarConverter &operator=(const ScalarConverter &rhs);
+	(void)cpy;
+	return (*this);
+}
 
-		static void convert(std::string input);
+
+void ScalarConverter::convert(std::string const &literal)
+{
+	//find type
+		//is_data
+	
+	//convert from string to actual type
+		//to_data
 		
-	private:
-};
+	//convert to the three other data types
+		//to_other data
+		
+	//display the result   
+		// display 
+}

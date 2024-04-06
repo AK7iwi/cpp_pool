@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:08:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/03 07:20:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 05:58:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ int main(int argc, char **argv)
 	}
 	try 
 	{
-		ScalarConverter a(argv[1]);
-		a.convert();
+		
 	} 
 	catch(std::exception &err) 
 	{
-		std::cout << err.what() << std::endl;
+		
 	}
 	return (0);
 }
