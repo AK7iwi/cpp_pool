@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/05 23:38:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 01:04:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,4 @@ class Bureaucrat
     	uint8_t 			_grade;
 };
 
-std::ostream &operator<<(std::ostream &os,Bureaucrat const &cpy);
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &cpy);

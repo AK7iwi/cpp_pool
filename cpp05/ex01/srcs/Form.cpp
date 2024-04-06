@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/05 23:39:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 01:43:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Form&	Form::operator=(Form const &rhs)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &os, Form &rhs) 
+std::ostream	&operator<<(std::ostream &os, Form const &rhs) 
 {
 	os	<< "Form " 
 		<< rhs.get_name()
@@ -54,7 +54,7 @@ std::ostream	&operator<<(std::ostream &os, Form &rhs)
 
 void		Form::be_signed(Bureaucrat &bureaucrat) 
 {
-	if (bureaucrat.get_grade() > get_grade_to_sign())
+	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (Form::grade_too_low_exception());
 	_signed_status = true;
 }

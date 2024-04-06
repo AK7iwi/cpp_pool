@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/05 23:31:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/06 01:45:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	Bureaucrat::sign_form(Form &form)
 	try
 	{
 		form.be_signed(*this);
-		std::cout	<< this->get_name()
+		std::cout	<< _name
 					<< " signed "
 					<< form.get_name()
 					<< std::endl;
 	}
 	catch (Form::grade_too_low_exception &e)
 	{
-		std::cout 	<< this->get_name()
+		std::cout 	<< _name
 					<< " couldn't signed "
 					<< form.get_name()
 					<< " because form grade is too low"
@@ -80,14 +80,14 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
-std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
-{return ("Bureaucrat grade is too high");}
-
-std::string	Bureaucrat::grade_too_low_exception::too_low() const throw() 
-{return ("Bureaucrat grade is too low");}
-
 std::string Bureaucrat::get_name() const
 {return (_name);}
 
 uint8_t Bureaucrat::get_grade() const
 {return (_grade);}
+
+std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
+{return ("Bureaucrat grade is too high");}
+
+std::string	Bureaucrat::grade_too_low_exception::too_low() const throw() 
+{return ("Bureaucrat grade is too low");}
