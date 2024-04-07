@@ -6,26 +6,23 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:08:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 17:58:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/07 14:30:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main(int argc, char **argv) 
+int main() 
 {
-	if (argc != 2) 
-	{
-		std::cout << "Invalid input" << std::endl;
-		return (1);
-	}
-	try 
-	{
-		
-	} 
-	catch(std::exception &err) 
-	{
-		
-	}
-	return (0);
+    ScalarConverter::convert("42");
+    ScalarConverter::convert("3.14f");
+    ScalarConverter::convert("3.14");
+    ScalarConverter::convert("'a'");
+    ScalarConverter::convert("-128");
+    ScalarConverter::convert("999999999");
+    ScalarConverter::convert("-inf");
+    ScalarConverter::convert("+inf");
+    ScalarConverter::convert("nan");
+
+    return (0);
 }
