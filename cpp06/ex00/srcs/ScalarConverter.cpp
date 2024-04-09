@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/09 16:27:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:33:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ void ScalarConverter::convert(std::string const &literal)
 {
 	uint8_t o_type = find_and_display_type(literal);
 	
-	void (ScalarConverter::*functions[4])(void) = 
+	void (ScalarConverter::functions[4])(void) = 
 	{
 		&ScalarConverter::to_char,
 		&ScalarConverter::to_int,
@@ -128,7 +128,7 @@ void ScalarConverter::convert(std::string const &literal)
 	for (uint8_t i = 1; i < 4; i++)
 	{
 		if (i != o_type)
-			(functions[i](literal))();
+			(functions[i](&literal))();
 	}
 	// if (o_type == 1) //verif avec une boucle + tableau 
 	
