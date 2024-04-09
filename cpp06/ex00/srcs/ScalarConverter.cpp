@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/07 18:17:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:27:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,36 +25,22 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
 	return (*this);
 }
 
+static void to_char()
+{}
 
-void ScalarConverter::convert(std::string const &literal)
+static void to_int()
+{}
+
+static void to_double()
+{}
+
+static void to_char()
+{}
+
+static void display()
 {
-	uint8_t type = find_and_display_type(literal);
 	
-	//convert from string to actual type
-		//to_data
-		
-	//convert to the three other data types
-		//to_other data
-	
-	// other type 
-	
-	//display the result   
-		// display 
 }
-
-
-static uint8_t find_and_display_type(std::string const &literal)
-{
-	if (is_char(literal))
-		return (1);
-	else if (is_int(literal))
-		return (2);
-	else if (is_float(literal))
-		return (3);
-	else if (is_double(literal))
-		return (4);
-}
-	
 
 static bool is_char(std::string const &literal)
 {return (literal.size() == 1 && !isdigit(literal[0]));}
@@ -75,24 +61,10 @@ static bool is_int(std::string const &literal)
 	return (true);
 }
 
-static bool is_float(std::string const &literal)
-{
-	int len = std::strlen(literal.c_str());
-
-	std::string d_cpy;
-
-	std::strncpy(d_cpy)
-
-	if (!is_double(d_cpy))
-		return (false);
-	return (literal[len - 1] == 'f');
-	
-}
-
 static bool is_double(std::string const &literal)
 {
-	int i = 0;
 	uint8_t point = 0;
+	int i = 0;
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
@@ -108,23 +80,63 @@ static bool is_double(std::string const &literal)
 		}
 		i++;
 	}
-	return (point == 1);
+	return (point == 1 && isdigit(literal[i - 1]));
 	
 }
 
-static void to_char()
-{}
-
-static void to_int()
-{}
-
-static void to_double()
-{}
-
-static void to_char()
-{}
-
-static void display()
+static bool is_float(std::string const &literal)
 {
+	int len = std::strlen(literal.c_str());
 	
+	std::string d_cpy;
+	d_cpy = literal;
+
+	d_cpy[len - 1] = '\0';
+	
+	if (!is_double(d_cpy))
+		return (false);
+	return (literal[len - 1] == 'f');
+}
+
+static uint8_t find_and_display_type(std::string const &literal)
+{
+	if (is_char(literal))
+		return (1); // to_char
+	else if (is_int(literal))
+		return (2); //to_int
+	else if (is_float(literal))
+		return (3); //to_float
+	else if (is_double(literal))
+		return (4); //to_double
+	else
+		std::cout << "Wrong input" << std::endl;
+	return (0);
+}
+
+void ScalarConverter::convert(std::string const &literal)
+{
+	uint8_t o_type = find_and_display_type(literal);
+	
+	void (ScalarConverter::*functions[4])(void) = 
+	{
+		&ScalarConverter::to_char,
+		&ScalarConverter::to_int,
+		&ScalarConverter::to_float,
+		&ScalarConverter::to_double
+	};
+	
+	for (uint8_t i = 1; i < 4; i++)
+	{
+		if (i != o_type)
+			(functions[i](literal))();
+	}
+	// if (o_type == 1) //verif avec une boucle + tableau 
+	
+	//convert to the three other data types
+		//to_other data
+	
+	// other type (inf,..)
+	
+	//display the result   
+		// display at the end of convert fct 
 }
