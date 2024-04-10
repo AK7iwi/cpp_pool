@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/09 18:55:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:20:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,20 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
 	return (*this);
 }
 
-static void to_char()
+static char to_char()
 {}
 
-static void to_int()
+static int to_int()
 {}
 
-static void to_double()
+static float to_float()
 {}
 
-static void to_char()
+static double to_double()
 {}
 
 static void display()
-{
-	
-}
+{}
 
 static bool is_char(std::string const &literal)
 {return (literal.size() == 1 && !isdigit(literal[0]));}
@@ -81,15 +79,12 @@ static bool is_double(std::string const &literal)
 		i++;
 	}
 	return (point == 1 && isdigit(literal[i - 1]));
-	
 }
 
 static bool is_float(std::string const &literal)
 {
+	std::string d_cpy = literal;
 	int len = std::strlen(literal.c_str());
-	
-	std::string d_cpy;
-	d_cpy = literal;
 
 	d_cpy[len - 1] = '\0';
 	
@@ -117,20 +112,13 @@ void ScalarConverter::convert(std::string const &literal)
 {
 	uint8_t o_type = find_and_display_type(literal);
 	
-	bool (*f[4])(void) = 
-	{
-		&to_char,
-		&to_int,
-		&to_float,
-		&to_double
-	};
-	
 	for (uint8_t i = 1; i < 4; i++)
 	{
 		if (i != o_type)
-			(functions[i](&literal))();
+		{
+			
+		}
 	}
-	// if (o_type == 1) //verif avec une boucle + tableau 
 	
 	//convert to the three other data types
 		//to_other data

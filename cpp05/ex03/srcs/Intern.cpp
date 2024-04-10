@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/07 18:04:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:58:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,10 @@ static int8_t	what_form(std::string form_name)
 		"presidential pardon"
 	};
 	
-	int8_t	id = -1;
-	
 	for (uint8_t i = 0; i < 3; i++)
 		if (form_name_list[i] == form_name)
-			id = i;
-	return (id);
+			return (i);
+	return (-1);
 }
 
 AForm	*Intern::make_form(std::string form_name, std::string form_target) 
@@ -58,7 +56,7 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)
 	};
 	
 	AForm *new_form = NULL;
-	int16_t id = what_form(form_name);
+	int8_t id = what_form(form_name);
 
 	if (id != -1) 
 	{
