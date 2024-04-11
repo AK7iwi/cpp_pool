@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/07 14:28:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 21:46:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm
 		AForm(std::string const name, int const grade_to_sign, int const grade_to_execute);
 		AForm(AForm const &cpy);
 		virtual ~AForm();
-		AForm &operator=(AForm const &rhs);
+		AForm& operator=(AForm const &rhs);
 		
 		virtual bool	execute(Bureaucrat const &bureaucrat) const = 0;
 		void			be_signed(Bureaucrat &bureaucrat);

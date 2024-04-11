@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:49 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:43:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 22:34:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,18 @@ class Array
     	T& operator[](unsigned int index) 
 		{
         	if (index >= _array_size)
-            	throw std::out_of_range("Index out of bounds"); //exception
-        	return (elements[index]);
+            	throw();
+        	return (_elements[index]);
     	}
 
     	unsigned int size() const
-		{return arraySize;}
+		{return _array_size;}
+
+		class invalid_index : public std::exception 
+		{
+			std::string error() const throw() 
+			{return ("Invalid Index");}
+		};
 
 	private:
     	T* _elements;

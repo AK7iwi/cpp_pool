@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 04:43:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 21:48:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScalarConverter::ScalarConverter(ScalarConverter const &cpy)
 
 ScalarConverter::~ScalarConverter() {}
 
-ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
+ScalarConverter& ScalarConverter::operator=(ScalarConverter const &cpy)
 {
 	(void)cpy;
 	return (*this);

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:17:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 06:57:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 21:48:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Serializer::Serializer(const Serializer &cpy)
 
 Serializer::~Serializer() {}
 
-Serializer	&Serializer::operator=(const Serializer &rhs)
+Serializer& Serializer::operator=(const Serializer &rhs)
 {
 	(void)rhs;
 	return (*this);
