@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:49 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 22:34:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:27:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,16 @@ template<typename T>
 class Array
 {
 	public:
-    	Array() : _elements(nullptr), _array_size(0) {}
+    	Array() : _elements(new T[0]), _array_size(0) {}
 
-    	Array(unsigned int n) : _array_size(n) 
+    	Array(unsigned int n) : _elements(new T[n]),  _array_size(n) 
 		{
-        	_elements = new T[_array_size];
         	for (unsigned int i = 0; i < _array_size; ++i)
             	_elements[i] = T();
     	}
 
-    	Array(Array const &cpy) : _array_size(cpy._array_size) 
+    	Array(Array const &cpy) : _elements(new T[cpy._array_size]), _array_size(cpy._array_size) 
 		{
-        	_elements = new T[_array_size];
         	for (unsigned int i = 0; i < _array_size; ++i)
             	_elements[i] = cpy._elements[i];
         }
@@ -53,7 +51,7 @@ class Array
     	T& operator[](unsigned int index) 
 		{
         	if (index >= _array_size)
-            	throw();
+            	throw(invalid_index());
         	return (_elements[index]);
     	}
 
@@ -62,7 +60,7 @@ class Array
 
 		class invalid_index : public std::exception 
 		{
-			std::string error() const throw() 
+			const char *what() const throw() 
 			{return ("Invalid Index");}
 		};
 

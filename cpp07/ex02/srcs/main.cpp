@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 22:43:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 23:26:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int main()
         std::cout << "Accessing out of bounds element: ";
         std::cout << int_array[10] << std::endl; // This should throw an exception
     } 
-	catch (const std::exception& e) 
-	{std::cerr << "Exception caught: " << e.what() << std::endl;}
+	catch (std::exception &e) 
+	{std::cerr  << e.what() << std::endl;} 
 
     return (0);
 }
