@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 07:15:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 07:21:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Base *generate(void)
 	Base *base = NULL;
 
 	srand(time(NULL));
-	int random_number = rand() % 5;
+	int random_number = rand() % 3;
 	std::cout << "Random number: " << random_number << std::endl;
 
 	switch (random_number)
@@ -76,10 +76,26 @@ void identify(Base &p)
 	{std::cout  << "Identify(Base &p): NULL" << std::endl; }
 }
 
-int main(void)
+int main() 
 {
-	Base *ptr = generate();
-	identify(ptr);
-	identify(*ptr);
-	return (delete ptr, 0);
+	A a;
+    B b;
+    C c;
+
+	Base *new_base = generate();
+	identify(new_base);
+	delete (new_base);
+    
+	identify(a);
+    identify(b);
+    identify(c);
+
+    Base *ptr = &a;
+    identify(ptr);
+    
+    ptr = &b;
+    identify(ptr);
+    
+    ptr = &c;
+    identify(ptr);
 }
