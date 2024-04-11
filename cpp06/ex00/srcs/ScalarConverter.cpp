@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 03:50:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 04:43:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
 
 static void to_char(const char *lit_as_char, double lit_as_double)
 {
-	if (!isdigit(lit_as_char[0]))
+	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< lit_as_char[0]
 					<< std::endl;
 	else if (lit_as_double < 0 || lit_as_double >= CHAR_MAX)
@@ -43,7 +43,7 @@ static void to_char(const char *lit_as_char, double lit_as_double)
 
 static void to_int(const char *lit_as_char, double lit_as_double)
 {
-	if (!isdigit(lit_as_char[0]))
+	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< static_cast<int>(lit_as_char[0])
 					<< std::endl;
 	else if (lit_as_double < INT_MIN || lit_as_double > INT_MAX)
@@ -56,7 +56,7 @@ static void to_int(const char *lit_as_char, double lit_as_double)
 
 static void to_float(const char *lit_as_char, double lit_as_double)
 {
-	if (!isdigit(lit_as_char[0]))
+	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< std::fixed 
 					<< std::setprecision(1) 
 					<< static_cast<float>(lit_as_char[0])
@@ -75,7 +75,7 @@ static void to_float(const char *lit_as_char, double lit_as_double)
 
 static void to_double(const char *lit_as_char, double lit_as_double)
 {
-	if (!isdigit(lit_as_char[0]))
+	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< std::fixed
 					<< std::setprecision(1) 
 					<< static_cast<double>(lit_as_char[0])
@@ -140,7 +140,6 @@ static void display(std::string const &literal)
 
 	std::cout << "Double: ";
 	to_double(lit_as_char, lit_as_double);
-	std::cout << std::endl;
 }
 
 static bool is_char(std::string const &literal)
