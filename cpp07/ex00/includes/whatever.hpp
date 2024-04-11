@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 06:37:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 09:15:18 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/04/11 08:49:29 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/04/11 09:15:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
 
-class Base
+template <typename T>
+void	swap(T &a, T &b) 
 {
-	public:
-		virtual ~Base();
-	private:
-};
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
 
-class A : public Base {};
+template <typename T>
+T	min(T a, T b)
+{return ((a < b) ? a : b);}
 
-class B : public Base {};
-
-class C : public Base {};
+template <typename T>
+T	max(T a, T b) 
+{return ((a > b) ? a : b);}

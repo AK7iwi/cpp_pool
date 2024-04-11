@@ -6,20 +6,20 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 00:11:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 09:15:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-# include <iostream>
-# include <stdint.h>
-# include <climits>
-# include <cstring>
-# include <cstdlib>
-# include <cfloat>
-# include <sstream>
-# include <iomanip>
-# include <cmath>
+#include <iostream>
+#include <stdint.h>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <cfloat>
+#include <sstream>
+#include <iomanip>
+#include <cmath>
 
 class ScalarConverter
 {

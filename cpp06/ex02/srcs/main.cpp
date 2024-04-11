@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 07:21:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 08:33:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,24 +78,13 @@ void identify(Base &p)
 
 int main() 
 {
-	A a;
-    B b;
-    C c;
-
 	Base *new_base = generate();
 	identify(new_base);
+	identify(*new_base);
 	delete (new_base);
     
-	identify(a);
-    identify(b);
-    identify(c);
+	new_base = NULL;
 
-    Base *ptr = &a;
-    identify(ptr);
-    
-    ptr = &b;
-    identify(ptr);
-    
-    ptr = &c;
-    identify(ptr);
+  	identify(new_base);
+ 	return (0);
 }
