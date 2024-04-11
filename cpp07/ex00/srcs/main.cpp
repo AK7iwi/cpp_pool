@@ -6,11 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 08:49:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 09:02:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/12 00:26:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "Whatever.hpp"
 
 int main(void) 
 {

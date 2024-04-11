@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   EasyFind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 09:03:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 09:18:04 by mfeldman         ###   ########.fr       */
+/*   Created: 2024/04/11 23:33:09 by mfeldman          #+#    #+#             */
+/*   Updated: 2024/04/12 00:13:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <stdint.h> 
-
-template<typename T, typename Func>
-void iter(T* array, uint16_t length, Func func)
-{
-    for (size_t i = 0; i < length; ++i)
-        func(array[i]);
-}
+#include <stdexcept>
+#include <algorithm>
+#include <vector>
 
 template<typename T>
-void print_element(const T& element) 
-{std::cout << element << std::endl;}
+typename T::iterator easyfind(T &container, int value)
+{
+	typename T::iterator it = std::find(container.begin(), container.end(), value);
+	if (it == container.end())
+		throw(std::out_of_range("=> Value not found"));
+	return (it);
+}
