@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 03:07:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/11 03:50:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ScalarConverter	&ScalarConverter::operator=(ScalarConverter const &cpy)
 static void to_char(const char *lit_as_char, double lit_as_double)
 {
 	if (!isdigit(lit_as_char[0]))
-		std::cout	<< lit_as_char
+		std::cout	<< lit_as_char[0]
 					<< std::endl;
 	else if (lit_as_double < 0 || lit_as_double >= CHAR_MAX)
 		std::cout	<< "Impossible" 
@@ -90,8 +90,42 @@ static void to_double(const char *lit_as_char, double lit_as_double)
 					<< std::endl;
 }
 
+static bool limit_type(std::string const &literal)
+{
+	if (literal == "+inf" || literal == "-inf" || literal == "+inff" || literal == "-inff")
+	{
+		std::cout	<< "Char: Impossile" 
+					<< std::endl
+					<< "Int: Impossile" 
+					<< std::endl
+		 			<< "Float: +inff" 
+					<< std::endl
+					<< "Double: +inf" 
+					<< std::endl
+					<< std::endl;
+		return (true);
+	}
+	else if (literal == "nan" || literal == "nanf")
+	{
+		std::cout	<< "Char: Impossile" 
+					<< std::endl
+					<< "Int: Impossile" 
+					<< std::endl
+					<< "Float: nanf" 
+					<< std::endl
+					<< "Double: nan" 
+					<< std::endl
+					<< std::endl;
+		return (true);
+	}
+	return (false);
+}
+
 static void display(std::string const &literal)
 {
+	if (limit_type(literal))
+		return ;
+		
 	const char *lit_as_char = literal.c_str();
 	double lit_as_double = strtod(lit_as_char, NULL);
 	
@@ -130,12 +164,14 @@ static bool is_int(std::string const &literal)
 
 static bool is_double(std::string const &literal)
 {
+	if (literal == "-inf" || literal == "+inf" || literal == "nan")
+		return (true);
+		
 	uint8_t point = 0;
 	int i = 0;
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
-
 	while (literal[i])
 	{
 		if (!isdigit(literal[i]))
@@ -152,13 +188,16 @@ static bool is_double(std::string const &literal)
 
 static bool is_float(std::string const &literal)
 {
+	if (literal == "-inff" || literal == "+inff" || literal == "nanf")
+		return (true);
+		
 	std::string d_cpy = literal;
 	int len = std::strlen(literal.c_str());
-
-	d_cpy[len - 1] = '\0';
 	
+	d_cpy[len - 1] = '\0';
 	if (!is_double(d_cpy))
 		return (false);
+		
 	return (literal[len - 1] == 'f' && isdigit(literal[len - 2]));
 }
 
@@ -178,7 +217,6 @@ static bool find_and_display_type(std::string const &literal)
 	else if (is_double(literal))
 		std::cout	<< "Double" 
 					<< std::endl;
-	// else if (is_limit_type(literal))
 	else
 		return (false);
 	return (true);
