@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 08:33:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/12 00:58:53 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void identify(Base &p)
 		return;
 	} 
 	catch(const std::exception &e) {}
+	
 	try 
 	{
 		(void)dynamic_cast<C &>(p);
