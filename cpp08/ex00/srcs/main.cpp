@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 13:19:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:20:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	main()
 		
 	try 
 	{
-			std::cout << "\nSearch 30" << std::endl;
-			std::vector<int>::iterator it = easyfind(vec, 30);
-			std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
+		std::cout << "\nSearch 30" << std::endl;
+		std::vector<int>::iterator it = easyfind(vec, 30);
+		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
 	catch (std::exception &e) {std::cout << e.what() << std::endl;}
 	

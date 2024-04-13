@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= Mutated_Abomination
-SRCS			= srcs/main.cpp srcs/Span.cpp
+SRCS			= srcs/main.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 
