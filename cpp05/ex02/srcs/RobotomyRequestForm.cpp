@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 03:23:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/13 17:22:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 	{
 		AForm::execute(bureaucrat);
 		
-		std::srand(std::time(NULL));
+		std::srand(time(NULL));
 		int rand = std::rand();
 		
 		std::cout 	<< "*drilling noise*" 

@@ -6,18 +6,16 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 11:33:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/13 18:07:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string const &name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0) 
-{
-    std::cout << "Constructor called for ClapTrap " << _name << std::endl;
-}
+{std::cout << "Constructor called for ClapTrap " << _name << std::endl;}
 
-ClapTrap::ClapTrap(ClapTrap const &cpy) 
+ClapTrap::ClapTrap(ClapTrap const &cpy) //init here 
 {
     std::cout << "Copy constructor called for ClapTrap " << _name << std::endl;
     _name = cpy._name;
@@ -26,7 +24,8 @@ ClapTrap::ClapTrap(ClapTrap const &cpy)
     _attack_damage = cpy._attack_damage;
 }
 
-ClapTrap::~ClapTrap() {std::cout << "Destructor called for ClapTrap " << _name << std::endl;}
+ClapTrap::~ClapTrap()
+{std::cout << "Destructor called for ClapTrap " << _name << std::endl;}
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const &rhs) 
 {	
