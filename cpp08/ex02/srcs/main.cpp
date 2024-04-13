@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 19:04:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/13 19:14:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main()
 {
-	std::cout << "\nTests with MutantStack" << std::endl;
+	std::cout << "\nTests with MutantStack:" << std::endl;
 	
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
-	std::cout << mstack.top() << std::endl;
+	std::cout << "Top: " << mstack.top() << std::endl;
 	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	std::cout << "Size: " << mstack.size() << std::endl;
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
@@ -38,15 +38,14 @@ int main()
 
 	std::stack<int> s(mstack);
 	
-	std::cout << "\nTests with std::list"  << std::endl;
+	std::cout << "\nTests with std::list:"  << std::endl;
 
 	std::list<int> mlist;
 	mlist.push_back(5);
 	mlist.push_back(17);
-	std::cout << mstack.top() << std::endl;
-	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	std::cout << "Top: " << mlist.back() << std::endl;
 	mlist.pop_back();
+	std::cout << "size: " << mlist.size() << std::endl;
 	mlist.push_back(3);
 	mlist.push_back(5);
 	mlist.push_back(737);
