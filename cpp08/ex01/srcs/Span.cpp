@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 18:11:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:41:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ Span::Span(unsigned int size)
 	_N = size;
 }
 
-Span::Span(Span const &cpy) : _N(cpy._N), _numbers(cpy._numbers)
+Span::Span(Span const &cpy) : 
+	_N(cpy._N), 
+	_numbers(cpy._numbers)
 {}
 
 Span::~Span() {}
