@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:56:59 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 12:14:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:35:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain() {std::cout << "Default constructor called for Brain" << std::endl;}
+Brain::Brain() 
+{std::cout << "Default constructor called for Brain" << std::endl;}
 
 Brain::Brain(Brain const &cpy) 
 {
@@ -21,7 +22,8 @@ Brain::Brain(Brain const &cpy)
     	_ideas[i] = cpy._ideas[i];
 }
 
-Brain::~Brain() {std::cout << "Destructor called for Brain" << std::endl;}
+Brain::~Brain() 
+{std::cout << "Destructor called for Brain" << std::endl;}
 
 Brain&	Brain::operator=(Brain const &rhs) 
 {	
@@ -34,6 +36,8 @@ Brain&	Brain::operator=(Brain const &rhs)
 	return (*this);
 }
 
-std::string	Brain::get_ideas(uint8_t idx) const {return (_ideas[idx]);}
+std::string	Brain::get_ideas(uint8_t idx) const
+{return (_ideas[idx]);}
 
-void		Brain::set_ideas(uint8_t idx, std::string ideas) {_ideas[idx] = ideas;}
+void		Brain::set_ideas(uint8_t idx, std::string ideas)
+{_ideas[idx] = ideas;}

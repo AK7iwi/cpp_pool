@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 03:24:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:17:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,10 @@ bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 		return (true);	
 	} 
 	catch (AForm::grade_too_high_exception &err) 
-	{
-		std::cout << err.too_high();
-	} 
+	{std::cout << err.too_high();} 
 	catch (AForm::form_is_not_signed &err) 
-	{
-		std::cout << err.not_signed();
-	}
+	{std::cout << err.not_signed();}
+	
 	return (false);
 }
 

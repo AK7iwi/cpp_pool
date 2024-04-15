@@ -6,19 +6,23 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/23 21:14:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:35:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() {std::cout << "Default constructor called for Animal" << std::endl;}
+Animal::Animal() 
+{std::cout << "Default constructor called for Animal" << std::endl;}
 
-Animal::Animal(std::string const &type) : _type(type) {std::cout << "Type default constructor called for Animal" << std::endl;}
+Animal::Animal(std::string const &type) : _type(type) 
+{std::cout << "Type default constructor called for Animal" << std::endl;}
 
-Animal::Animal(Animal const &cpy) : _type(cpy._type) {std::cout << "Copy constructor called for Animal" << std::endl;}
+Animal::Animal(Animal const &cpy) : _type(cpy._type) 
+{std::cout << "Copy constructor called for Animal" << std::endl;}
 
-Animal::~Animal() {std::cout << "Destructor called for Animal" << std::endl;}
+Animal::~Animal() 
+{std::cout << "Destructor called for Animal" << std::endl;}
 
 Animal&	Animal::operator=(Animal const &rhs) 
 {	

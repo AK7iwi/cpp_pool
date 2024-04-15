@@ -6,15 +6,17 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/06 07:02:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:36:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain()) {std::cout << "Default constructor called for Dog" << std::endl;}
+Dog::Dog() : Animal("Dog"), _brain(new Brain()) 
+{std::cout << "Default constructor called for Dog" << std::endl;}
 
-Dog::Dog(Dog const &cpy) : Animal(cpy._type), _brain(new Brain(*cpy._brain)) {std::cout << "Copy constructor called for Dog" << std::endl;}
+Dog::Dog(Dog const &cpy) : Animal(cpy._type), _brain(new Brain(*cpy._brain)) 
+{std::cout << "Copy constructor called for Dog" << std::endl;}
 
 Dog::~Dog() 
 {
@@ -34,6 +36,8 @@ Dog&	Dog::operator=(Dog const &rhs)
 	return (*this);
 }
 
-void	Dog::make_sound() const {std::cout << "Waouf! Waouf!" << std::endl;}
+void	Dog::make_sound() const
+{std::cout << "Waouf! Waouf!" << std::endl;}
 
-Brain	*Dog::get_brain() const {return (_brain);}
+Brain	*Dog::get_brain() const
+{return (_brain);}
