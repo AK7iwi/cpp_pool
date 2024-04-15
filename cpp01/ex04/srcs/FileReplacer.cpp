@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 11:29:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:58:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void    FileReplacer::replace_and_save()
     }
 
     std::string output_filename = _filename + ".replace";
+	
     // Open the output file
     std::ofstream output_file(output_filename.c_str());
 
