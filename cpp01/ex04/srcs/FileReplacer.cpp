@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:47:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 18:58:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:14:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FileReplacer::FileReplacer(std::string const &filename, std::string const &s1, s
 	_s1(s1),
 	_s2(s2) {}
 	
-FileReplacer::FileReplacer(FileReplacer const &cpy)
+FileReplacer::FileReplacer(FileReplacer const &cpy) //init comme le default constructor
 {
 	_filename = cpy._filename;
 	_s1 = cpy._s1;
@@ -44,7 +44,7 @@ void    FileReplacer::replace_and_save()
     if (!input_file.is_open()) 
 	{
         std::cout << "Error: Unable to open input file: " << _filename << std::endl;
-        return ;
+        return ; // throw/ catch
     }
 
     // Read the content of the file into a string

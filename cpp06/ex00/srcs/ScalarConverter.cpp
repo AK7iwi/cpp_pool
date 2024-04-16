@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:48:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:47:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void to_char(const char *lit_as_char, double lit_as_double)
 					<< std::endl;
 	else if (lit_as_double < 0 || lit_as_double >= CHAR_MAX)
 		std::cout	<< "Impossible" 
-					<< std::endl;
+					<< std::endl; // throw/catch
 	else if (lit_as_double <= 32 && lit_as_double >= 0)
-		std::cout	<< "Non displayable" 
+		std::cout	<< "Non displayable" //throw/catch
 					<< std::endl;
 	else
 		std::cout	<< static_cast<char>(lit_as_double) 
@@ -47,7 +47,7 @@ static void to_int(const char *lit_as_char, double lit_as_double)
 		std::cout	<< static_cast<int>(lit_as_char[0])
 					<< std::endl;
 	else if (lit_as_double < INT_MIN || lit_as_double > INT_MAX)
-		std::cout	<< "Impossible"
+		std::cout	<< "Impossible" //throw/catch
 					<< std::endl;
 	else 
 		std::cout	<< static_cast<int>(lit_as_double)
@@ -63,7 +63,7 @@ static void to_float(const char *lit_as_char, double lit_as_double)
 					<< "f"
 					<< std::endl;
 	else if (lit_as_double < -FLT_MAX || lit_as_double > FLT_MAX)
-		std::cout	<< "Impossible"
+		std::cout	<< "Impossible" //throw/catch
 					<< std::endl;
 	else 
 		std::cout 	<< std::fixed 
@@ -81,7 +81,7 @@ static void to_double(const char *lit_as_char, double lit_as_double)
 					<< static_cast<double>(lit_as_char[0])
 					<< std::endl;
 	else if (lit_as_double < -DBL_MAX || lit_as_double > DBL_MAX)
-		std::cout	<< "Impossible"
+		std::cout	<< "Impossible" //throw/catch
 					<< std::endl;
 	else 
 		std::cout	<< std::fixed
@@ -227,7 +227,7 @@ void ScalarConverter::convert(std::string const &literal)
 	{
 		std::cout	<< "Unknow(Wrong input)"
 					<< std::endl;
-		return ;
+		return ; // catch throw
 	}
 	display(literal);
 }

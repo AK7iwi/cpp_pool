@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 16:41:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:01:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int Span::shortest_span() const
 int Span::longest_span() const 
 {
 	if (_numbers.size() <= 1)
-        throw std::runtime_error("Not enough numbers to calculate span");
+        throw (std::runtime_error("Not enough numbers to calculate span"));
 	return (*std::max_element(_numbers.begin(), _numbers.end()) - *std::min_element(_numbers.begin(), _numbers.end()));
 }
