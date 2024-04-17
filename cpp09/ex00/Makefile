@@ -4,7 +4,6 @@ CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98
 NAME 			= btc
 SRCS			= srcs/main.cpp srcs/BitcoinExchange.cpp
 
-# srcs/BitcoinExchange.cpp
 OBJS 			= $(SRCS:.cpp=.o)
 
 all:			$(NAME)
