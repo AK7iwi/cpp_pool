@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/17 21:50:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/17 22:25:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,24 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return(*this);
 }
 
+bool is_valid_date(std::string &date)
+{
+	
+}
+
+
+bool is_valid_value(std::string &value)
+{
+	
+}
+
 void BitcoinExchange::parse_line(std::string &line)
 {
 	std::istringstream	iss(line);
 	std::string	date, value_str;
-	std::getline(iss, date, '|'); // check that it exist 
-	std::getline(iss, value_str);
+
+	if (!std::getline(iss, date, '|') || !std::getline(iss, value_str))
+		throw(std::invalid_argument("Invalid line"));
 	// float value = std::stof(value_str);
 	
 	date.erase(0, date.find_first_not_of(" \t"));
@@ -44,16 +56,14 @@ void BitcoinExchange::parse_line(std::string &line)
     value_str.erase(0, value_str.find_first_not_of(" \t"));
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
 
+	is_valid_date(date);
+	is_valid_value(date);
+	//check value
+	//check int max/min, positiv number
 	std::cout << date << std::endl;
 	std::cout << value_str << std::endl;
 
-
-	//check date
-	//check |
-	//check value
-	//check int max/min, positiv number
 	// _bitcoin_data[date] = value;
-	
 }
 
 void BitcoinExchange::display_result()
@@ -74,5 +84,6 @@ void BitcoinExchange::display_result()
 		// exchange_value();
 		// display();
 	}
-	 input_file.close();
+	
+	input_file.close();
 }
