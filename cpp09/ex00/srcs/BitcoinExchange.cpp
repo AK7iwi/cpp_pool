@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/16 22:25:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/17 21:22:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ void BitcoinExchange::parse_line(std::string &line)
 	std::cout << date << std::endl;
 	std::cout << value_str << std::endl;
 
+	//erase 
+
 	if (line.empty())
 	{
-		std::cout << "EMpty line" << std::endl;
+		std::cerr << "Empty line" << std::endl;
 		return ;
 	}
 	//check date
@@ -68,7 +70,7 @@ void BitcoinExchange::display_result()
 		parse_line(line); 
 		// find_in_db()
 		// exchange_value();
-		// display();	
+		// display();
 	}
 	 input_file.close();
 }
