@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/19 21:13:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/21 19:00:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,15 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 // }
 
 
-void is_valid_value(std::string &value)
+bool	is_valid_value(std::string &value) // bool
 {
 	float value_f;
 
 	std::istringstream(value) >> value_f;
 	
 	if (value_f > 1000 || value_f < 0)
-		std::cout << "Error: not a positive number or too large number" << std::endl;
-		
-	//is_digit test
+		return (std::cout << "Error: not a positive number or too large number" << std::endl, false);
+	return (true);
 }
 
 void BitcoinExchange::parse_line(std::string &line)
@@ -66,7 +65,7 @@ void BitcoinExchange::parse_line(std::string &line)
 	is_valid_value(value_str);
 
 	// if (is_valid_value(value_str) && is_valid_date(date))
-	// _bitcoin_data[date] = value;
+	// _bitcoin_data[date] = value; 
 	
 	// std::cout << date << std::endl;
 	// std::cout << value_str << std::endl;
