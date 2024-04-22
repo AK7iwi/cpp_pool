@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/21 19:00:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:38:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,25 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return(*this);
 }
 
-// void is_valid_date(std::string &date)
-// {
-	
-// }
-
-
-bool	is_valid_value(std::string &value) // bool
+bool is_valid_date(std::string const &date)
 {
-	float value_f;
+	struct tm tm;
+
+	if (!strptime(date.c_str(), "%Y-%m-%d", &tm))
+		return (false);
+
+	if ((tm.tm_mon == 1 && tm.tm_mday > 29)
+		|| (!(tm.tm_mon % 2) && tm.tm_mday > 31)
+		|| (tm.tm_mon % 2 && tm.tm_mday > 30)
+		|| tm.tm_mon > 12) // <2009 > 2050
+			return (false);
+	return (true);
+}
+
+
+bool	is_valid_value(std::string const &value) 
+{
+	double value_f;
 
 	std::istringstream(value) >> value_f;
 	
@@ -61,12 +71,14 @@ void BitcoinExchange::parse_line(std::string &line)
     value_str.erase(0, value_str.find_first_not_of(" \t"));
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
 	
-	// is_valid_date(date);
+	is_valid_date(date);
 	is_valid_value(value_str);
 
-	// if (is_valid_value(value_str) && is_valid_date(date))
-	// _bitcoin_data[date] = value; 
-	
+	if (is_valid_value(value_str) && is_valid_date(date))
+
+	else 
+		std::cout << "Error: not a positive number or too large number" << std::endl;
+		// _bitcoin_data[date] = atof(value_str.c_str()); 
 	// std::cout << date << std::endl;
 	// std::cout << value_str << std::endl;
 
