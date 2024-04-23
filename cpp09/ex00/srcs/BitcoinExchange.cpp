@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/23 17:50:59 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:59:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,29 @@ bool is_valid_date(std::string const &date)
 	if( date.length() != 10 || date[4] != '-' || date[7] != '-' )
     	return (false);
 		
-  	day_str = date.substr( 8, 2 );
-  	month_str = date.substr( 5, 2 );
-	year_str = date.substr( 0, 4 );
+  	day_str = date.substr(8, 2);
+  	month_str = date.substr(5, 2);
+	year_str = date.substr(0, 4);
 	
-	day = std::strtol();
-	month = std::strtol();
-	year = std::strtol();
+	//is_digit_value
+	
+	day = std::strtol(day_str.c_str(), );
+	month = std::strtol(month_str.c_str(), );
+	year = std::strtol(year_str.c_str(), );
 }
 
 bool	is_valid_value(std::string const &value) 
 {
 	double value_f;
 
+	//is_digit_value
+	
 	std::istringstream(value) >> value_f;
 	
 	if (value_f > 1000 || value_f < 0)
 		return (std::cout << "Error: not a positive number or too large number" << std::endl, false);
 	return (true);
 
-	//is_digit_value
 }
 
 bool	BitcoinExchange::parse_line(std::string &line)
