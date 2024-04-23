@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/22 22:38:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:22:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,10 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 
 bool is_valid_date(std::string const &date)
 {
-	struct tm tm;
-
-	if (!strptime(date.c_str(), "%Y-%m-%d", &tm))
-		return (false);
-
-	if ((tm.tm_mon == 1 && tm.tm_mday > 29)
-		|| (!(tm.tm_mon % 2) && tm.tm_mday > 31)
-		|| (tm.tm_mon % 2 && tm.tm_mday > 30)
-		|| tm.tm_mon > 12) // <2009 > 2050
-			return (false);
-	return (true);
+	int day, month, year;
+	
+	// <2009
 }
-
 
 bool	is_valid_value(std::string const &value) 
 {
@@ -57,7 +48,7 @@ bool	is_valid_value(std::string const &value)
 	return (true);
 }
 
-void BitcoinExchange::parse_line(std::string &line)
+bool	BitcoinExchange::parse_line(std::string &line)
 {
 	std::istringstream	iss(line);
 	std::string	date, value_str;
@@ -70,37 +61,33 @@ void BitcoinExchange::parse_line(std::string &line)
 
     value_str.erase(0, value_str.find_first_not_of(" \t"));
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
-	
-	is_valid_date(date);
-	is_valid_value(value_str);
 
-	if (is_valid_value(value_str) && is_valid_date(date))
-
-	else 
-		std::cout << "Error: not a positive number or too large number" << std::endl;
-		// _bitcoin_data[date] = atof(value_str.c_str()); 
+	return (is_valid_value(value_str) && is_valid_date(date));
 	// std::cout << date << std::endl;
 	// std::cout << value_str << std::endl;
-
 }
 
-void BitcoinExchange::display_result()
+void BitcoinExchange::exchange()
 {
 	std::ifstream input_file(_filename.c_str());
 	std::string line;
     
     if (!input_file.is_open()) 
 		throw (std::invalid_argument("Error: could to open input file"));
+ 
+	//cpy_csv
+	// _bitcoin_data[date] = atof(value_str.c_str()); 
 
 	while(getline(input_file, line)) // skip the first line, get_line one time before the while
 	{
 		if (line.empty())
 			std::cout << "Error: empty line" << std::endl;
-		parse_line(line); 
-		// find_date_in_db_and_get_value()
-		// exchange_value();
-		// display();
+		else if (parse_line(line))
+		{
+			// find_date_in_db_and_get_value()
+			// exchange_value(); 
+			// display_result();
+		}
 	}
-	
 	input_file.close();
 }

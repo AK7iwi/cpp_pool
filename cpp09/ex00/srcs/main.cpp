@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:17:50 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/16 21:36:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:45:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 			
 		std::string filename = argv[1];
 		BitcoinExchange Exchange(filename);
-		Exchange.display_result();
+		Exchange.exchange();
 	}
 	catch(std::exception &e)
 	{std::cerr << e.what() << std::endl;}

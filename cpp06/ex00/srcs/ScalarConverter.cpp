@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/16 20:47:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:25:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,20 +205,14 @@ static bool find_and_display_type(std::string const &literal)
 	std::cout << "The original type is: ";
 	
 	if (is_char(literal))
-		std::cout	<< "Char" 
-					<< std::endl;
+		return (std::cout << "Char" << std::endl, true);
 	else if (is_int(literal))
-		std::cout	<< "Int" 
-					<< std::endl;
+		return (std::cout << "Int" << std::endl, true);
 	else if (is_float(literal))
-		std::cout	<< "Float" 
-					<< std::endl;
+		return (std::cout << "Float" << std::endl, true);
 	else if (is_double(literal))
-		std::cout	<< "Double" 
-					<< std::endl;
-	else
-		return (false);
-	return (true);
+		return (std::cout << "Double" << std::endl, true);
+	return (false);
 }
 
 void ScalarConverter::convert(std::string const &literal)
