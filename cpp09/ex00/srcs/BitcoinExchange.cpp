@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 15:11:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:27:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,14 +105,41 @@ static bool	parse_line(std::string &line)
 	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
+static void cpy_csv() // data, _database
+{
+	std::ifstream	data("data.csv");
+	if (!data.is_open())
+	{
+		std::cout << "Error : could not open data base file" << std::endl;
+		return ;
+	}
+
+	std::string line;
+	std::getline(data, line);
+	while (std::getline(data, line))
+	{
+		std::istringstream	iss(line);
+		std::string			date;
+		float				value;
+		if (std::getline(iss, date, ',') && (iss >> value))
+			_database[date] = value;
+		else
+		{
+			std::cout << "Error: bad input => " << line << std::endl;
+			return ;
+		}
+	}
+	data.close();
+}
+
 void BitcoinExchange::exchange()
 {
 	std::ifstream input_file(_filename.c_str());
 	std::string line;
     
-    if (!input_file.is_open()) 
+    if (!input_file.is_open()) //csv file check
 		throw (std::invalid_argument("Error: could to open input file"));
- 
+
 	//cpy_csv
 	// _bitcoin_data[date] = atof(value_str.c_str()); 
 

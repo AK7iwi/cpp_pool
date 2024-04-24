@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 15:03:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:21:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class BitcoinExchange
 		
 	private:
     	std::string 					_filename;
-		std::map<std::string, double>	_bitcoin_data;
+		std::map<std::string, double>	_database;
 	
 };
 
