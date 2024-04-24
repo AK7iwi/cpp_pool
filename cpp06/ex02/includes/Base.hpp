@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 09:15:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:20:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class Base
 {
 	public:
 		virtual ~Base();
-	private:
 };
 
 class A : public Base {};

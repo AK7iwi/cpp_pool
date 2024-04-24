@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/23 17:59:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:45:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,24 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return(*this);
 }
 
-bool is_valid_date(std::string const &date)
+static bool is_leap(long const &year) 
+{
+  if (year % 400 == 0)
+    return (true);
+  else if (year % 100 == 0)
+    return (false);
+  else if(year % 4 == 0)
+    return (true);
+  else
+    return (false);
+}
+
+static bool is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
 	long	day, month, year;
 	
-	if( date.length() != 10 || date[4] != '-' || date[7] != '-' )
+	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
     	return (false);
 		
   	day_str = date.substr(8, 2);
@@ -44,12 +56,26 @@ bool is_valid_date(std::string const &date)
 	
 	//is_digit_value
 	
-	day = std::strtol(day_str.c_str(), );
-	month = std::strtol(month_str.c_str(), );
-	year = std::strtol(year_str.c_str(), );
+	day = std::strtol(day_str.c_str(), NULL, 10);
+	month = std::strtol(month_str.c_str(), NULL, 10);
+	year = std::strtol(year_str.c_str(), NULL, 10);
+
+	if (day < 1)
+		return (false);
+	if (!(month % 2) && day > 30)
+		return (false);
+	else if (month == 2 && is_leap(year) && day > 28)
+		return (false);
+	else if (day > 30)
+		return (false);
+	if (month < 1 || month > 12)
+		return (false);
+	if (year < 2009 || year > 2050)
+		return (false);
+	return (true);
 }
 
-bool	is_valid_value(std::string const &value) 
+static bool	is_valid_value(std::string const &value) 
 {
 	double value_f;
 
@@ -63,7 +89,7 @@ bool	is_valid_value(std::string const &value)
 
 }
 
-bool	BitcoinExchange::parse_line(std::string &line)
+static bool	parse_line(std::string &line)
 {
 	std::istringstream	iss(line);
 	std::string	date, value_str;
@@ -78,8 +104,6 @@ bool	BitcoinExchange::parse_line(std::string &line)
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
 
 	return (is_valid_value(value_str) && is_valid_date(date));
-	// std::cout << date << std::endl;
-	// std::cout << value_str << std::endl;
 }
 
 void BitcoinExchange::exchange()

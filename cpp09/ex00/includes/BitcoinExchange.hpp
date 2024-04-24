@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/23 15:28:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:11:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class BitcoinExchange
         ~BitcoinExchange();
 		BitcoinExchange&	operator=(BitcoinExchange const &rhs);
 
-		bool	parse_line(std::string &line);
 		void	exchange();
 		
 	private:
