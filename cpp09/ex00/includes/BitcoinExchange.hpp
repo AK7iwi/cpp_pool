@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 11:27:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:42:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include <stdexcept>
 #include <fstream>
 #include <sstream>
+#include <stdint.h>
 #include <cstdlib>
+#include <cstring>
 
 class BitcoinExchange 
 {
@@ -31,5 +33,10 @@ class BitcoinExchange
 	private:
     	std::string 					_filename;
 		std::map<std::string, double>	_bitcoin_data;
+	
 };
+
+bool 	is_leap(long const &year);
+bool 	is_digit(std::string const &digit);
+bool 	is_float(std::string const &literal);
 

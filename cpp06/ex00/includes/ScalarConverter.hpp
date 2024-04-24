@@ -6,19 +6,19 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 19:02:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:41:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <iomanip>
 #include <stdint.h>
 #include <climits>
 #include <cstring>
 #include <cstdlib>
 #include <cfloat>
 #include <sstream>
-#include <iomanip>
 #include <cmath>
 
 class ScalarConverter

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 12:33:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:45:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,14 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {	
 	if (this != &rhs)
 		_filename = rhs._filename;
-	return(*this);
-}
-
-static bool is_leap(long const &year) 
-{
-  if (year % 400 == 0)
-    return (true);
-  else if (year % 100 == 0)
-    return (false);
-  else if(year % 4 == 0)
-    return (true);
-  else
-    return (false);
+	return (*this);
 }
 
 static bool is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
 	long	day, month, year;
-	bool error = 0;
+	bool 	error = 0;
 	
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
     	return (false);
@@ -59,11 +47,11 @@ static bool is_valid_date(std::string const &date)
 	month = strtol(month_str.c_str(), NULL, 10);
 	year = strtol(year_str.c_str(), NULL, 10);
 
-	//is_digit()	
-	if (day < 1)
-		return (false);
-	
-	if (!(month % 2) && day > 30 && month != 8) //august
+	if (!is_digit(day_str) || !is_digit(month_str) || !is_digit(year_str))
+		return (std::cout << "Error: non-digit character in the date" << std::endl, false);
+	else if (day < 1)
+		error |= 1;
+	else if (!(month % 2) && day > 30 && month != 8) //august
 		error |= 1;
 	else if (month == 2)
 	{
@@ -88,16 +76,17 @@ static bool is_valid_date(std::string const &date)
 
 static bool	is_valid_value(std::string const &value) 
 {
-	double value_f;
-
-	//is_digit()
+	//is_double, is_int -->check scalarconverter 
 	
+	if (!is_float(value))
+		return (std::cout << "Error: invalid float number" << std::endl, false);
+
+	float value_f;
 	std::istringstream(value) >> value_f;
 	
 	if (value_f > 1000 || value_f < 0)
 		return (std::cout << "Error: not a positive number or too large number" << std::endl, false);
 	return (true);
-
 }
 
 static bool	parse_line(std::string &line)
