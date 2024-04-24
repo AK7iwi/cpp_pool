@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 15:27:28 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:55:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,8 @@ static bool	parse_line(std::string &line)
 	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
-static void cpy_csv() // data, _database
+static void cpy_csv(std::ifstream &data, std::map<std::string, double> database) // data, _database
 {
-	std::ifstream	data("data.csv");
-	if (!data.is_open())
-	{
-		std::cout << "Error : could not open data base file" << std::endl;
-		return ;
-	}
-
 	std::string line;
 	std::getline(data, line);
 	while (std::getline(data, line))
@@ -122,7 +115,7 @@ static void cpy_csv() // data, _database
 		std::string			date;
 		float				value;
 		if (std::getline(iss, date, ',') && (iss >> value))
-			_database[date] = value;
+			database[date] = value;
 		else
 		{
 			std::cout << "Error: bad input => " << line << std::endl;
@@ -134,17 +127,17 @@ static void cpy_csv() // data, _database
 
 void BitcoinExchange::exchange()
 {
-	std::ifstream input_file(_filename.c_str());
+	std::ifstream 	input_file(_filename.c_str());
+	std::ifstream	data_file("data.csv");
 	std::string line;
     
-    if (!input_file.is_open()) //csv file check
+    if (!input_file.is_open() || !data_file.is_open())
 		throw (std::invalid_argument("Error: could to open input file"));
 
-	//cpy_csv
-	// _bitcoin_data[date] = atof(value_str.c_str()); 
-
+	cpy_csv(data_file, _database); // to protect
+	
 	int i = 0;
-	while (getline(input_file, line)) // skip the first line, get_line one time before the while
+	while (getline(input_file, line)) 
 	{
 		if (line.empty())
 			std::cout << "Error: empty line" << std::endl;
