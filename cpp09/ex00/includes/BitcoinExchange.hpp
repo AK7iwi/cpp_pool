@@ -6,16 +6,17 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 10:11:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:27:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
-#include <fstream>
-#include <sstream>
 #include <map>
 #include <stdexcept>
+#include <fstream>
+#include <sstream>
+#include <cstdlib>
 
 class BitcoinExchange 
 {
@@ -28,7 +29,7 @@ class BitcoinExchange
 		void	exchange();
 		
 	private:
-    	std::string _filename;
-		std::map<std::string, double> _bitcoin_data;
+    	std::string 					_filename;
+		std::map<std::string, double>	_bitcoin_data;
 };
 

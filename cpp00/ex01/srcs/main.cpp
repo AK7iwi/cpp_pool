@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 15:19:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:18:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	main()
 	{	
         std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
         std::cin >> command;
-        
+
+		//protect cin from ctrl + D
 		if (command == "ADD")
             phone_book.add_contact();
 		else if (command == "SEARCH")
@@ -33,7 +34,7 @@ int	main()
             break ;
         }
         else
-            std::cout << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
+            std::cerr << "Invalid command. Please enter ADD, SEARCH, or EXIT." << std::endl;
     }
 	return (0);
 }

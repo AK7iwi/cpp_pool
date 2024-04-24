@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 10:45:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:33:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static bool is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
 	long	day, month, year;
+	bool error = 0;
 	
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
     	return (false);
@@ -54,24 +55,34 @@ static bool is_valid_date(std::string const &date)
   	month_str = date.substr(5, 2);
 	year_str = date.substr(0, 4);
 	
-	//is_digit_value
-	
-	day = std::strtol(day_str.c_str(), NULL, 10);
-	month = std::strtol(month_str.c_str(), NULL, 10);
-	year = std::strtol(year_str.c_str(), NULL, 10);
+	day = strtol(day_str.c_str(), NULL, 10);
+	month = strtol(month_str.c_str(), NULL, 10);
+	year = strtol(year_str.c_str(), NULL, 10);
 
+	//is_digit()	
 	if (day < 1)
 		return (false);
-	if (!(month % 2) && day > 30)
-		return (false);
-	else if (month == 2 && is_leap(year) && day > 28)
-		return (false);
-	else if (day > 30)
-		return (false);
-	if (month < 1 || month > 12)
-		return (false);
-	if (year < 2009 || year > 2050)
-		return (false);
+	
+	if (!(month % 2) && day > 30 && month != 8) //august
+		error |= 1;
+	else if (month == 2)
+	{
+		if (is_leap(year))
+		{
+			if (day > 29)
+				error |= 1;
+		}
+		else if (day > 28)
+			error |= 1;
+	}
+	else if (day > 31)
+		error |= 1;
+	else if (month < 1 || month > 12)
+		error |= 1;
+	else if (year < 2009 || year > 2050)
+		error |= 1;	
+	if (error)
+		return (std::cout << "Error: invalid date format" << std::endl, false);
 	return (true);
 }
 
@@ -79,7 +90,7 @@ static bool	is_valid_value(std::string const &value)
 {
 	double value_f;
 
-	//is_digit_value
+	//is_digit()
 	
 	std::istringstream(value) >> value_f;
 	
@@ -95,7 +106,7 @@ static bool	parse_line(std::string &line)
 	std::string	date, value_str;
 
 	if (!std::getline(iss, date, '|') || !std::getline(iss, value_str))
-		std::cout << "Error: invalid format line" << std::endl;
+		std::cout << "Error: invalid line format" << std::endl;
 
 	date.erase(0, date.find_first_not_of(" \t"));
     date.erase(date.find_last_not_of(" \t") + 1);
@@ -103,7 +114,7 @@ static bool	parse_line(std::string &line)
     value_str.erase(0, value_str.find_first_not_of(" \t"));
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
 
-	return (is_valid_value(value_str) && is_valid_date(date));
+	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
 void BitcoinExchange::exchange()
@@ -117,16 +128,19 @@ void BitcoinExchange::exchange()
 	//cpy_csv
 	// _bitcoin_data[date] = atof(value_str.c_str()); 
 
-	while(getline(input_file, line)) // skip the first line, get_line one time before the while
+	int i = 0;
+	while (getline(input_file, line)) // skip the first line, get_line one time before the while
 	{
 		if (line.empty())
 			std::cout << "Error: empty line" << std::endl;
 		else if (parse_line(line))
 		{
+			std::cout << "Ligne" << i << ":" << "Yeaaaaaaaaaaaaaaaah" << std::endl;
 			// find_date_in_db_and_get_value()
 			// exchange_value(); 
 			// display_result();
 		}
+		i++;
 	}
 	input_file.close();
 }
