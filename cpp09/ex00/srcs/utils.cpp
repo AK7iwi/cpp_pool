@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:36:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 14:42:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:07:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,26 @@ bool is_digit(std::string const &digit)
 	for (uint8_t i = 0; i < digit.length(); i++)
     {
 		if (!isdigit(digit[i]))
-			return (std::cout << "Error: not a digit value" << std::endl, false);
+			return (false);
 	}
 	return (true);
 }
 
-static bool is_double(std::string const &literal)
+bool is_int(std::string const &literal)
+{
+	int i = 0;
+
+	if (literal[0] == '-' || literal[0] == '+')
+		i++;
+	while (literal[i++]) 
+	{
+		if (!isdigit(literal[i]))
+			return (false);
+	}
+	return (true);
+}
+
+bool is_double(std::string const &literal)
 {
 	if (literal == "-inf" || literal == "+inf" || literal == "nan")
 		return (true);

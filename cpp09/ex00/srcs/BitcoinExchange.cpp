@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 14:45:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:11:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,10 @@ static bool is_valid_date(std::string const &date)
 
 static bool	is_valid_value(std::string const &value) 
 {
-	//is_double, is_int -->check scalarconverter 
-	
-	if (!is_float(value))
-		return (std::cout << "Error: invalid float number" << std::endl, false);
+	if (!is_int(value) && !is_double(value) && !is_float(value))
+		return (std::cout << "Error: invalid number" << std::endl, false);
 
+	std::cout << value << std::endl;
 	float value_f;
 	std::istringstream(value) >> value_f;
 	
