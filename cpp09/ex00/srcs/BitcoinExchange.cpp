@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/25 14:58:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:42:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,9 @@ static bool	parse_line(std::string &line)
 	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
-static void cpy_csv(std::ifstream &data, std::map<std::string, double> database)
+static std::map<std::string, double> cpy_csv(std::ifstream &data)
 {
+	std::map<std::string, double> database;
 	std::string line;
 	std::getline(data, line);
 	while (std::getline(data, line))
@@ -119,6 +120,7 @@ static void cpy_csv(std::ifstream &data, std::map<std::string, double> database)
 			database[date] = value;
 	}
 	data.close();
+	return (database);
 }
 
 void BitcoinExchange::exchange()
@@ -130,9 +132,8 @@ void BitcoinExchange::exchange()
     if (!input_file.is_open() || !data_file.is_open())
 		throw (std::runtime_error("Error: could to open input file"));
 
-	cpy_csv(data_file, _database);
-	//print database  to test 
-	
+	_database = cpy_csv(data_file);
+
 	int i = 0;
 	while (getline(input_file, line)) 
 	{
