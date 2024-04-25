@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/25 15:42:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:48:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,21 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return (*this);
 }
 
-static bool is_valid_date(std::string const &date)
+void BitcoinExchange::find_date_in_db_and_get_btc_value(std::string date, float value, std::map<std::string, double> database)
+{
+
+	std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), value);
+	if (it == database.end())
+		std::cout << "NOOOOOOON" << std::endl; //find the nearest date
+	else 
+		std::cout << it->second  << std::endl;
+}
+
+bool BitcoinExchange::is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
-	long	day, month, year;
-	bool 	error = 0;
+	long		day, month, year;
+	bool 		error = 0;
 	
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
     	return (false);
@@ -68,13 +78,15 @@ static bool is_valid_date(std::string const &date)
 	else if (month < 1 || month > 12)
 		error |= 1;
 	else if (year < 2009 || year > 2050)
-		error |= 1;	
+		error |= 1;
+		
 	if (error)
-		return (std::cout << "Error: invalid date format" << std::endl, false);
+		return (std::cout << "Error: invalid date" << std::endl, false);
+	_date = date;
 	return (true);
 }
 
-static bool	is_valid_value(std::string const &value) 
+bool	BitcoinExchange::is_valid_value(std::string const &value) 
 {
 	if (!is_int(value) && !is_double(value) && !is_float(value))
 		return (std::cout << "Error: invalid number" << std::endl, false);
@@ -82,15 +94,18 @@ static bool	is_valid_value(std::string const &value)
 	float value_f;
 	std::istringstream(value) >> value_f;
 	
-	if (value_f > 1000 || value_f < 0)
-		return (std::cout << "Error: not a positive number or too large number" << std::endl, false);
+	if (value_f > 1000)
+		return (std::cout << "Error: Too large number" << std::endl, false);
+	else if (value_f < 0)
+		return (std::cout << "Error: Negative number" << std::endl, false);
+	_value = value_f;
 	return (true);
 }
 
-static bool	parse_line(std::string &line)
+bool	BitcoinExchange::parse_line(std::string &line)
 {
 	std::istringstream	iss(line);
-	std::string	date, value_str;
+	std::string			date, value_str;
 
 	if (!std::getline(iss, date, '|') || !std::getline(iss, value_str))
 		std::cout << "Error: invalid line format" << std::endl;
@@ -115,11 +130,10 @@ static std::map<std::string, double> cpy_csv(std::ifstream &data)
 		std::string			date;
 		float				value;
 		if (!std::getline(iss, date, ',') || !(iss >> value))
-			std::cout << "Error: bad input => " << line << std::endl;
+			std::cout << "Error: bad data => " << line << std::endl;
 		else
 			database[date] = value;
 	}
-	data.close();
 	return (database);
 }
 
@@ -127,7 +141,7 @@ void BitcoinExchange::exchange()
 {
 	std::ifstream 	input_file(_filename.c_str());
 	std::ifstream	data_file("data.csv");
-	std::string line;
+	std::string 	line;
     
     if (!input_file.is_open() || !data_file.is_open())
 		throw (std::runtime_error("Error: could to open input file"));
@@ -142,11 +156,12 @@ void BitcoinExchange::exchange()
 		else if (parse_line(line))
 		{
 			std::cout << "Ligne" << i << ":" << "Yeaaaaaaaaaaaaaaaah" << std::endl;
-			// find_date_in_db_and_get_value()
+			find_date_in_db_and_get_btc_value(_date, _value ,_database);
 			// exchange_value(); 
 			// display_result();
 		}
 		i++;
 	}
 	input_file.close();
+	data_file.close();
 }
