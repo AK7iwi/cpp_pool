@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:36:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 15:07:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:44:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ bool is_int(std::string const &literal)
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
-	while (literal[i++]) 
+	while (literal[i]) 
 	{
 		if (!isdigit(literal[i]))
 			return (false);
+		i++;
 	}
 	return (true);
 }
@@ -58,7 +59,7 @@ bool is_double(std::string const &literal)
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
-	while (literal[i++])
+	while (literal[i])
 	{
 		if (!isdigit(literal[i]))
 		{
@@ -67,6 +68,7 @@ bool is_double(std::string const &literal)
 			else 
 				return (false);
 		}
+		i++;
 	}
 	return (point == 1 && isdigit(literal[i - 1]));
 }

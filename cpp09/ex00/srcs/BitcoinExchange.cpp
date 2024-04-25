@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/24 17:55:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:58:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static bool	is_valid_value(std::string const &value)
 	if (!is_int(value) && !is_double(value) && !is_float(value))
 		return (std::cout << "Error: invalid number" << std::endl, false);
 
-	std::cout << value << std::endl;
 	float value_f;
 	std::istringstream(value) >> value_f;
 	
@@ -105,7 +104,7 @@ static bool	parse_line(std::string &line)
 	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
-static void cpy_csv(std::ifstream &data, std::map<std::string, double> database) // data, _database
+static void cpy_csv(std::ifstream &data, std::map<std::string, double> database)
 {
 	std::string line;
 	std::getline(data, line);
@@ -114,13 +113,10 @@ static void cpy_csv(std::ifstream &data, std::map<std::string, double> database)
 		std::istringstream	iss(line);
 		std::string			date;
 		float				value;
-		if (std::getline(iss, date, ',') && (iss >> value))
-			database[date] = value;
-		else
-		{
+		if (!std::getline(iss, date, ',') || !(iss >> value))
 			std::cout << "Error: bad input => " << line << std::endl;
-			return ;
-		}
+		else
+			database[date] = value;
 	}
 	data.close();
 }
@@ -132,9 +128,10 @@ void BitcoinExchange::exchange()
 	std::string line;
     
     if (!input_file.is_open() || !data_file.is_open())
-		throw (std::invalid_argument("Error: could to open input file"));
+		throw (std::runtime_error("Error: could to open input file"));
 
-	cpy_csv(data_file, _database); // to protect
+	cpy_csv(data_file, _database);
+	//print database  to test 
 	
 	int i = 0;
 	while (getline(input_file, line)) 
