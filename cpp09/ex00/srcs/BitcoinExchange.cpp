@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/26 14:22:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:52:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ static float find_date_in_db_and_get_btc_price(std::string const &date, std::map
 	float price;
 	std::map<std::string, float>::const_iterator it = database.find(date);
 	if (it == database.end())
-		price = nearest_price();
+	{
+		price = 0;
+		std::cout << std::abs(std::atof(date.c_str())) << std::endl;
+	}
 	else 
 		price = it->second;
 	return (price);
@@ -60,9 +63,11 @@ bool BitcoinExchange::is_valid_date(std::string const &date)
 
 	if (!is_digit(day_str) || !is_digit(month_str) || !is_digit(year_str))
 		return (std::cout << "Error: non-digit character in the date" << std::endl, false);
-	else if (day < 1)
+	else if (day < 1 || day > 31)
 		error |= 1;
-	else if (!(month % 2) && day > 30 && month != 8) // August
+	else if (month < 1 || month > 12)
+		error |= 1;
+	else if (year < 2009 || year > 2050)
 		error |= 1;
 	else if (month == 2)
 	{
@@ -74,14 +79,9 @@ bool BitcoinExchange::is_valid_date(std::string const &date)
 		else if (day > 28)
 			error |= 1;
 	}
-	else if (day > 31)
+	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
 		error |= 1;
-	else if (month < 1 || month > 12)
-		error |= 1;
-	else if (year < 2009 || year > 2050)
-		error |= 1;
-	
-	//check if its in the db
+	// check if its in the db
 	if (error)
 		return (std::cout << "Error: invalid date" << std::endl, false);
 	_date = date;
