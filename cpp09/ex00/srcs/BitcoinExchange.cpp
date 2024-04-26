@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/26 15:52:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:24:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,19 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return (*this);
 }
 
-static float find_date_in_db_and_get_btc_price(std::string const &date, std::map<std::string, float> const &database)
+static float find_date_in_db_and_get_btc_price(std::string const &date, std::map<std::string, float> &database)
 {
 	float price;
 	std::map<std::string, float>::const_iterator it = database.find(date);
+	std::map<std::string, float>::iterator previous_date;
+	
 	if (it == database.end())
 	{
-		price = 0;
-		std::cout << std::abs(std::atof(date.c_str())) << std::endl;
+		previous_date = database.upper_bound(date);
+    	if (previous_date == database.begin()){
+      		std::cout << "Error: Unknow date" << std::endl;}
+			
+		price = previous_date->second;
 	}
 	else 
 		price = it->second;
@@ -154,7 +159,7 @@ void BitcoinExchange::exchange()
 	while (getline(input_file, line)) 
 	{
 		if (line.empty())
-			std::cout << "Error: empty line" << std::endl;
+			std::cout << "Error: empty line" << std::endl; //throw and catch in the while
 		else if (parse_line(line))
 		{
 			btc_price = find_date_in_db_and_get_btc_price(_date ,_database);
