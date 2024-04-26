@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/25 16:48:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:22:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,15 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return (*this);
 }
 
-void BitcoinExchange::find_date_in_db_and_get_btc_value(std::string date, float value, std::map<std::string, double> database)
+static float find_date_in_db_and_get_btc_price(std::string const &date, std::map<std::string, float> const &database)
 {
-
-	std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), value);
+	float price;
+	std::map<std::string, float>::const_iterator it = database.find(date);
 	if (it == database.end())
-		std::cout << "NOOOOOOON" << std::endl; //find the nearest date
+		price = nearest_price();
 	else 
-		std::cout << it->second  << std::endl;
+		price = it->second;
+	return (price);
 }
 
 bool BitcoinExchange::is_valid_date(std::string const &date)
@@ -61,7 +62,7 @@ bool BitcoinExchange::is_valid_date(std::string const &date)
 		return (std::cout << "Error: non-digit character in the date" << std::endl, false);
 	else if (day < 1)
 		error |= 1;
-	else if (!(month % 2) && day > 30 && month != 8) //august
+	else if (!(month % 2) && day > 30 && month != 8) // August
 		error |= 1;
 	else if (month == 2)
 	{
@@ -79,7 +80,8 @@ bool BitcoinExchange::is_valid_date(std::string const &date)
 		error |= 1;
 	else if (year < 2009 || year > 2050)
 		error |= 1;
-		
+	
+	//check if its in the db
 	if (error)
 		return (std::cout << "Error: invalid date" << std::endl, false);
 	_date = date;
@@ -89,15 +91,15 @@ bool BitcoinExchange::is_valid_date(std::string const &date)
 bool	BitcoinExchange::is_valid_value(std::string const &value) 
 {
 	if (!is_int(value) && !is_double(value) && !is_float(value))
-		return (std::cout << "Error: invalid number" << std::endl, false);
+		return (std::cout << "Error: invalid value" << std::endl, false);
 
 	float value_f;
 	std::istringstream(value) >> value_f;
 	
 	if (value_f > 1000)
-		return (std::cout << "Error: Too large number" << std::endl, false);
+		return (std::cout << "Error: too large number" << std::endl, false);
 	else if (value_f < 0)
-		return (std::cout << "Error: Negative number" << std::endl, false);
+		return (std::cout << "Error: negative number" << std::endl, false);
 	_value = value_f;
 	return (true);
 }
@@ -119,11 +121,11 @@ bool	BitcoinExchange::parse_line(std::string &line)
 	return (is_valid_date(date) && is_valid_value(value_str));
 }
 
-static std::map<std::string, double> cpy_csv(std::ifstream &data)
+static std::map<std::string, float> cpy_csv(std::ifstream &data)
 {
-	std::map<std::string, double> database;
+	std::map<std::string, float> database;
 	std::string line;
-	std::getline(data, line);
+	std::getline(data, line); //check
 	while (std::getline(data, line))
 	{
 		std::istringstream	iss(line);
@@ -142,25 +144,22 @@ void BitcoinExchange::exchange()
 	std::ifstream 	input_file(_filename.c_str());
 	std::ifstream	data_file("data.csv");
 	std::string 	line;
+	float 			btc_price;
     
     if (!input_file.is_open() || !data_file.is_open())
 		throw (std::runtime_error("Error: could to open input file"));
 
 	_database = cpy_csv(data_file);
 
-	int i = 0;
 	while (getline(input_file, line)) 
 	{
 		if (line.empty())
 			std::cout << "Error: empty line" << std::endl;
 		else if (parse_line(line))
 		{
-			std::cout << "Ligne" << i << ":" << "Yeaaaaaaaaaaaaaaaah" << std::endl;
-			find_date_in_db_and_get_btc_value(_date, _value ,_database);
-			// exchange_value(); 
-			// display_result();
+			btc_price = find_date_in_db_and_get_btc_price(_date ,_database);
+			std::cout << btc_price * _value <<  std::endl; 
 		}
-		i++;
 	}
 	input_file.close();
 	data_file.close();

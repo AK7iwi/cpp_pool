@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/25 16:47:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:16:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class BitcoinExchange
         ~BitcoinExchange();
 		BitcoinExchange&	operator=(BitcoinExchange const &rhs);
 
-		void 	find_date_in_db_and_get_btc_value(std::string date, float value, std::map<std::string, double> database);
 		bool	is_valid_value(std::string const &value);
 		bool 	is_valid_date(std::string const &date);
 		bool	parse_line(std::string &line);
@@ -40,7 +39,7 @@ class BitcoinExchange
     	std::string 					_filename;
 		std::string 					_date;
 		float							_value;
-		std::map<std::string, double>	_database;
+		std::map<std::string, float>	_database;
 		
 	
 };
