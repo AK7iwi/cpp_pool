@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/26 17:54:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/27 18:56:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &cpy) :
 	_value(cpy._value)
 {
 	_database.clear();
-	for( std::map<std::string, float>::const_iterator it = cpy._database.begin(); it != cpy._database.end(); ++it) 
-    	_database.insert( std::make_pair(it->first, it->second));
+	for (std::map<std::string, float>::const_iterator it = cpy._database.begin(); it != cpy._database.end(); ++it) 
+    	_database.insert(std::make_pair(it->first, it->second));
 }
 
 BitcoinExchange::~BitcoinExchange() 
@@ -37,8 +37,8 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 		_date = rhs._date;
 		_value = rhs._value;
 		_database.clear();
-		for( std::map<std::string, float>::const_iterator it = rhs._database.begin(); it != rhs._database.end(); ++it)
-   			 _database.insert( std::make_pair( it->first, it->second));
+		for (std::map<std::string, float>::const_iterator it = rhs._database.begin(); it != rhs._database.end(); ++it)
+   			 _database.insert(std::make_pair( it->first, it->second));
 	}
 	return (*this);
 }
