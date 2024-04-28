@@ -6,18 +6,15 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/27 18:56:55 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:29:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange(std::string const &filename) : 
-	_filename(filename)
-{}
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &cpy) : 
-	_filename(cpy._filename),
 	_date(cpy._date),
 	_value(cpy._value)
 {
@@ -33,7 +30,6 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {	
 	if (this != &rhs)
 	{
-		_filename = rhs._filename;
 		_date = rhs._date;
 		_value = rhs._value;
 		_database.clear();
@@ -156,10 +152,9 @@ static std::map<std::string, float> cpy_csv(std::ifstream &data)
 	return (database);
 }
 
-void BitcoinExchange::exchange()
+void BitcoinExchange::exchange(std::ifstream &input_file)
 {
-	std::ifstream 	input_file(_filename.c_str());
-	std::ifstream	data_file("data.csv");
+	std::ifstream 	data_file("data.csv");
 	std::string 	line;
 	float 			btc_price;
     

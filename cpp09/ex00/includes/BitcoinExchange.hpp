@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/27 19:41:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:28:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 class BitcoinExchange 
 {
 	public:
-		BitcoinExchange(std::string const &filename);
+		BitcoinExchange();
         BitcoinExchange(BitcoinExchange const &cpy);
         ~BitcoinExchange();
 		BitcoinExchange&	operator=(BitcoinExchange const &rhs);
@@ -33,13 +33,12 @@ class BitcoinExchange
 		void	is_valid_value(std::string const &value);
 		void 	is_valid_date(std::string const &date);
 		void	parse_line(std::string &line);
-		void	exchange();
+		void	exchange(std::ifstream &filename);
 		
 	private:
-    	std::string 					_filename; //const 
 		std::string 					_date;
 		float							_value;
-		std::map<std::string, float>	_database; //const 
+		std::map<std::string, float>	_database;  
 };
 
 bool 	is_leap(long const &year);
