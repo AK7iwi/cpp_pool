@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= RPN
-SRCS			= srcs/main.cpp srcs/RPN.cpp
+SRCS			= srcs/main.cpp srcs/RPN.cpp srcs/utils.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 

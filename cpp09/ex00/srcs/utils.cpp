@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:36:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/26 14:31:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:15:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool is_leap(long const &year) //less conditions
 
 bool is_digit(std::string const &digit)
 {	
-	for (uint8_t i = 0; i < digit.length(); i++)
+	for (uint8_t i = 0; i < digit.length(); i++) //digit[i]
     {
 		if (!isdigit(digit[i]))
 			return (false);

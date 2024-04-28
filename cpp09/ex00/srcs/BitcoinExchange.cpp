@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/28 16:29:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:11:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,9 +159,10 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 	float 			btc_price;
     
     if (!input_file.is_open() || !data_file.is_open())
-		throw (std::runtime_error("Error: could to open input file"));
+		throw (std::invalid_argument("Error: could to open input file"));
 
 	_database = cpy_csv(data_file);
+	data_file.close();
 
 	while (getline(input_file, line)) 
 	{
@@ -173,12 +174,11 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 			{
 				parse_line(line);
 				btc_price = find_date_in_db_and_get_btc_price(_date ,_database);
-				std::cout << _date << " => " << _value << " = " << btc_price * _value <<   std::endl; 
+				std::cout << _date << " => " << _value << " = " << btc_price * _value << std::endl; 
 			}
 		}
 		catch(std::exception &e)
 		{std::cerr << e.what() << std::endl;}
 	}
 	input_file.close();
-	data_file.close();
 }
