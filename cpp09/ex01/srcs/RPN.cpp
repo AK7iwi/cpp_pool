@@ -6,33 +6,24 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/29 16:27:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:17:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-RPN::RPN()
-{
-	
-}
+RPN::RPN() {}
 
-RPN::RPN(RPN const &cpy)
-{
-	(void)cpy;
-}
+RPN::RPN(RPN const &cpy) : 
+	_stack(cpy._stack)
+{}
 
-RPN::~RPN() 
-{
-	
-}
+RPN::~RPN() {}
 
 RPN&	RPN::operator=(RPN const &rhs) 
 {	
 	if (this != &rhs)
-	{
-		
-	}
+		_stack = rhs._stack;
 	return (*this);
 }
 
@@ -48,10 +39,11 @@ void RPN::perform_operation(char sign)
 	n2 = _stack.top();
 	_stack.pop();
 	
-	if (sign == '/' && n1 == 0)
-		throw std::invalid_argument("Error: Division by 0");
+	if (sign == '/' && n2 == 0)
+		throw (std::invalid_argument("Error: Division by 0"));
 	
-	switch (sign) {
+	switch (sign) 
+	{
 		case '+':
 			_stack.push(n2 + n1);
 			break;
@@ -66,7 +58,6 @@ void RPN::perform_operation(char sign)
 			break;
 	}
 }
-
 
 void RPN::parse_operation(std::string const &operation)
 {
