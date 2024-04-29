@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/29 18:17:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:22:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void RPN::perform_operation(char sign)
 	int	n1, n2;
 
 	if (_stack.size() < 2)
-		throw std::invalid_argument("Error");
+		throw (std::invalid_argument("Error: not enough numbers"));
 	
 	n1 = _stack.top();
 	_stack.pop();
@@ -40,7 +40,7 @@ void RPN::perform_operation(char sign)
 	_stack.pop();
 	
 	if (sign == '/' && n2 == 0)
-		throw (std::invalid_argument("Error: Division by 0"));
+		throw (std::invalid_argument("Error: division by 0"));
 	
 	switch (sign) 
 	{
@@ -56,7 +56,7 @@ void RPN::perform_operation(char sign)
 		case '*':
 			_stack.push(n2 * n1);
 			break;
-	}
+	}	
 }
 
 void RPN::parse_operation(std::string const &operation)
@@ -69,7 +69,7 @@ void RPN::parse_operation(std::string const &operation)
 		if (operation[i] == ' ')
 			continue;
 		else if (!is_valid_char(operation[i]))
-			throw (std::invalid_argument("Error: Invalid character"));
+			throw (std::invalid_argument("Error: invalid character"));
 		else if (is_operator(operation[i]))
 			perform_operation(operation[i]);
 		else
