@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/28 17:28:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/29 16:26:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ class RPN
         ~RPN();
 		RPN&	operator=(RPN const &rhs);
 
-		void RPN::calcule(std::string const  &operation);
+		void 	perform_operation(char sign);
+		void 	parse_operation(std::string const &operation);
+		void 	calcule(std::string const  &operation);
 		
 	private:
 		std::stack<int>		_stack;
+		// int					_result;
     	
 };
 
-bool inline	is_valid_char(char c);
+bool 		is_valid_char(char c);
+bool		is_operator(char c);
