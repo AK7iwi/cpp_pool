@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/29 18:22:28 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:34:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,5 @@ void RPN::calcule(std::string const &operation)
 		std::cout << _stack.top() << std::endl;
     }
 	catch (std::exception &e)
-	{std::cerr << e.what() << std::endl;}
+	{std::cerr <<  e.what() << std::endl;}
 }
