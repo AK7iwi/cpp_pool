@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/28 17:11:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/04/30 20:10:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 				std::cout << _date << " => " << _value << " = " << btc_price * _value << std::endl; 
 			}
 		}
-		catch(std::exception &e)
+		catch (std::exception &e)
 		{std::cerr << e.what() << std::endl;}
 	}
 	input_file.close();
