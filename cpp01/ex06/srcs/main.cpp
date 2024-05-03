@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/20 15:31:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:26:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,15 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-	{
-		std::cout << "Invalid level or to much paramaters" << std::endl;
-		return (0);
-	}
+		return (std::cout << "Invalid level or to much paramaters" << std::endl, EXIT_FAILURE);
+		
 	Harl harl;
 	uint8_t level;
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR" };
 
 	for (uint8_t i = 0; i < 4; i++)
-	{
 		if (levels[i] == argv[1])
 			level = i + 1;	
-	}
 	
 	switch(level)
 	{
@@ -47,5 +43,5 @@ int main(int argc, char **argv)
     		std::cout << "Invalid level" << std::endl;
 			break;
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }

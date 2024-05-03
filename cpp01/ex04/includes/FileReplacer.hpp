@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:39:01 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 12:26:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:25:44 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <stdlib.h>
 
 class FileReplacer
 {

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:19:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 17:35:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:30:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
 		std::cout << "Longest span: " << sp0.longest_span() << std::endl << std::endl;
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl << std::endl;}
+	{std::cerr << e.what() << std::endl << std::endl;}
 
 	try
 	{
@@ -42,7 +42,7 @@ int main()
 		std::cout  << "Longest span: " << sp1.longest_span() << std::endl << std::endl; 
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl << std::endl;}
+	{std::cerr << e.what() << std::endl << std::endl;}
 
 	try
 	{
@@ -60,7 +60,7 @@ int main()
 		std::cout  << "Longest span: " << sp5.longest_span() << std::endl << std::endl;
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl << std::endl;}
+	{std::cerr << e.what() << std::endl << std::endl;}
 	
 	try
 	{
@@ -79,7 +79,7 @@ int main()
 		std::cout  << "Longest span: "<< sp6.longest_span() << std::endl << std::endl;
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl << std::endl;}
+	{std::cerr << e.what() << std::endl << std::endl;}
 
 	try
 	{
@@ -98,7 +98,7 @@ int main()
 		
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl << std::endl;}
+	{std::cerr << e.what() << std::endl << std::endl;}
 
 	try
 	{
@@ -117,8 +117,8 @@ int main()
 		std::cout  << "Longest span: "<< splim.longest_span() << std::endl;
 	}
 	catch(std::exception &e)
-	{std::cout << e.what() << std::endl;}
+	{std::cerr << e.what() << std::endl;}
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
 	

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 23:23:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:48:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:29:53 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int main()
     std::cout << "a == b: " << (a == b) << std::endl;
     std::cout << "a != b: " << (a != b) << std::endl;
 
-    return (0);
+    return (EXIT_SUCCESS);
 }

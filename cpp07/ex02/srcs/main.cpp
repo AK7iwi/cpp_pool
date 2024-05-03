@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 23:26:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:24:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ int main()
 	catch (std::exception &e) 
 	{std::cerr  << e.what() << std::endl;} 
 
-    return (0);
+    return (EXIT_SUCCESS);
 }

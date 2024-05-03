@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/25 14:47:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:54:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ static void to_double(const char *lit_as_char, double lit_as_double)
 	else 
 		std::cout	<< std::fixed
 					<< std::setprecision(1) 
-					<< lit_as_double
-					<< std::endl;
+					<< lit_as_double;
+					// << std::endl;
 }
 
 static bool limit_type(std::string const &literal)

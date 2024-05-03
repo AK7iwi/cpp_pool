@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:24 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:37:55 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:18:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	main()
 	
 	random_chump("Julie");
 
-	return (0);
+	return (EXIT_SUCCESS);
 }

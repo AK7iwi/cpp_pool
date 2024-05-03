@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:49 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/12 00:15:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:25:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <exception>
+#include <stdlib.h>
 
 template<typename T>
 class Array
@@ -51,7 +52,7 @@ class Array
     	T& operator[](unsigned int index) 
 		{
         	if (index >= _array_size)
-            	throw(std::out_of_range("Index out of bounds"));
+            	throw (std::out_of_range("Index out of bounds"));
         	return (_elements[index]);
     	}
 

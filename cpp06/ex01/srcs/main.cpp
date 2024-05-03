@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:16:41 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 07:06:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:58:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int main(void)
 	std::cout << "data_double: "	<< data.data_double  << std::endl;
 	std::cout << "data_str: "    	<< data.data_str  << std::endl;
 
-	return (0);
+	return (EXIT_SUCCESS);
 }

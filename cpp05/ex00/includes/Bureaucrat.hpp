@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 22:29:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:44:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <stdint.h>
+#include <stdlib.h>
 
 class Bureaucrat 
 {
@@ -39,8 +40,7 @@ class Bureaucrat
 			public:
 				std::string	too_low() const throw();
 		};
-
-	
+		
 	private:
     	std::string	const 	_name;
     	uint8_t 			_grade;

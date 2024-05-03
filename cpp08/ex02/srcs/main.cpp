@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 19:14:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:11:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int main()
 	}
 	
 	std::list<int> t(mlist);
-	return (0);
+	
+	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:44:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 10:11:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:23:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int main()
 	club2.set_type("some other type of club");
 	jim.attack();
 	
-	return (0);
+	return (EXIT_SUCCESS);
 }

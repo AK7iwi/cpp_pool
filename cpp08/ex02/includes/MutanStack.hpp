@@ -6,15 +6,16 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 17:09:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:33:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <stack>
-#include <iterator>
 #include <list>
+#include <iterator>
+#include <stdlib.h>
 
 template<typename T>
 class MutantStack : public std::stack<T> 

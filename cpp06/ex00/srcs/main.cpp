@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:08:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/16 20:40:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:51:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int main(int argc, char **argv) 
 {
 	if (argc != 2)
-		return (std::cout << "Need 1 argument" << std::endl, 1); // throw
+		return (std::cerr << "Need at least 1 argument" << std::endl, EXIT_FAILURE); 
+	
 	std::string lit = argv[1];
     ScalarConverter::convert(lit);
 	std::cout << std::endl;
@@ -49,5 +50,5 @@ int main(int argc, char **argv)
 	std::cout << std::endl;
 	ScalarConverter::convert("nanf");
 
-    return (0);
+    return (EXIT_SUCCESS);
 }

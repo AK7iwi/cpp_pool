@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 16:07:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:13:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,8 @@ std::vector<int>	PmergeMe::_create_vector_from_pair()
 	std::vector<int>	res;
 	
 	for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
-	{
 		if (it->second != -1)
 			res.push_back(it->second);
-	}
 	return (res);
 }
 
@@ -172,7 +170,6 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 
 	for (int i = 1; i <= _nb_value; i += 2)
 	{	
-		
 		buffer = atol(argv[i]);
 		if (buffer > INT_MAX)
 			throw (std::invalid_argument("Error: `int` overflow"));

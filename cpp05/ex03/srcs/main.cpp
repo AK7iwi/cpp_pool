@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 11:04:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:49:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,29 @@
 
 int	main()
 {
-	{
-		Bureaucrat	a("BOSS", 1);
-		Intern		b;
+	Bureaucrat	a("BOSS1", 1);
+	Intern		b;
 
-		AForm *new_form = b.make_form("shrubbery creation", "hello");
+	AForm *new_form1 = b.make_form("shrubbery creation", "hello");
 
-		a.sign_form(*new_form);
-		a.execute_form(*new_form);
-		delete (new_form);
-	}
-	
-	{
-		Bureaucrat	a("BOSS", 1);
-		Intern		b;
+	a.sign_form(*new_form1);
+	a.execute_form(*new_form1);
+	delete (new_form1);
 
-		AForm *new_form = b.make_form("creation", "hello");
-		(void)new_form;
-	}
+	Bureaucrat	c("BOSS2", 1);
+	Intern		d;
 
-	{
-		Bureaucrat	a("BOSS", 1);
-		Intern		b;
+	AForm *new_form2 = d.make_form("creation", "hello");
+	(void)new_form2;
 
-		AForm *new_form = b.make_form("robotomy request", "Bender");
+	Bureaucrat	e("BOSS3", 1);
+	Intern		f;
 
-		a.sign_form(*new_form);
-		a.execute_form(*new_form);
-		delete (new_form);
-	}
+	AForm *new_form3 = f.make_form("robotomy request", "Bender");
+
+	e.sign_form(*new_form3);
+	e.execute_form(*new_form3);
+	delete (new_form3);
+
+	return (EXIT_SUCCESS);
 }

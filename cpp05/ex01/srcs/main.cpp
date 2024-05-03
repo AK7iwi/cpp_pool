@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/02 06:28:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:00:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,9 @@ int main(void)
 		Bureaucrat A("A", 0);
 	} 
 	catch(Bureaucrat::grade_too_high_exception &e)
-	{
-		std::cout << e.too_high() <<std::endl;
-	} 
+	{std::cerr << e.too_high() <<std::endl;} 
 	catch(Bureaucrat::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -35,13 +31,9 @@ int main(void)
 		Bureaucrat B("B", 151);
 	} 
 	catch(Bureaucrat::grade_too_high_exception &e)
-	{
-		std::cout << e.too_high()<< std::endl;
-	} 
+	{std::cerr << e.too_high()<< std::endl;} 
 	catch(Bureaucrat::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -58,13 +50,9 @@ int main(void)
 		C.increment_grade();
 	} 
 	catch(Bureaucrat::grade_too_high_exception &e) 
-	{
-		std::cout  << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Bureaucrat::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -81,13 +69,9 @@ int main(void)
 		D.decrement_grade();
 	} 
 	catch(Bureaucrat::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Bureaucrat::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 
 	try 
 	{
@@ -99,13 +83,9 @@ int main(void)
 		std::cout << F << std::endl;
 	} 
 	catch(Bureaucrat::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Bureaucrat::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -113,13 +93,9 @@ int main(void)
 		Form A("A", 1, 0);
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Form::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -127,13 +103,9 @@ int main(void)
 		Form B("B", 0, 1);
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Form::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low()  << std::endl;
-	}
+	{std::cerr << e.too_low()  << std::endl;}
 	
 	try 
 	{
@@ -141,13 +113,9 @@ int main(void)
 		Form C("C", 151, 150);
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Form::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -155,13 +123,9 @@ int main(void)
 		Form D("D", 150, 151);
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Form::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low()  << std::endl;
-	}
+	{std::cerr << e.too_low()  << std::endl;}
 	
 	try 
 	{
@@ -185,13 +149,9 @@ int main(void)
 		G.sign_form(E);
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	}
+	{std::cerr << e.too_high() << std::endl;}
 	catch(Form::grade_too_low_exception &e)
-	{
-		std::cout << e.too_low() << std::endl;
-	}
+	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
 	{
@@ -212,12 +172,9 @@ int main(void)
 		std::cout << J << std::endl;
 	} 
 	catch(Form::grade_too_high_exception &e) 
-	{
-		std::cout << e.too_high() << std::endl;
-	} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch(Form::grade_too_low_exception &e) 
-	{
-		std::cout << e.too_low()  << std::endl;
-	}
-	return (0);
+	{std::cerr << e.too_low()  << std::endl;}
+	
+	return (EXIT_SUCCESS);
 }

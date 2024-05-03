@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 13:45:22 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:48:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:29:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int main()
 	std::cout << "c is " << c.to_float() << " as float" << std::endl;
 	std::cout << "d is " << d.to_float() << " as float" << std::endl;
 	
-	return (0);
+	return (EXIT_SUCCESS);
 }

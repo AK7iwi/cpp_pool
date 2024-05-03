@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:47:43 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 13:39:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:28:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <stdint.h>
+#include <stdlib.h>
 
 class Fixed
 {

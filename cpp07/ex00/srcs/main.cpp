@@ -6,27 +6,29 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 08:49:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/12 00:26:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:20:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Whatever.hpp"
 
-int main(void) 
+int main() 
 {
 	int a = 2, b = 3;
 		
+	std::cout << "Before swap: a = " << a << ", b = " << b << std::endl;
 	swap(a, b);
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
-	std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+	std::cout << "After swap: a = " << a << ", b = " << b << std::endl;
+	std::cout << "Min(a, b) = " << ::min(a, b) << std::endl;
+	std::cout << "Max(a, b) = " << ::max(a, b) << std::endl;
 	
-	std::string c = "chaine1", d = "chaine2";
+	std::string c = "Chaine1", d = "Chaine2";
 	
+	std::cout << "Before swap: c = " << c << ", d = " << d << std::endl;
 	swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min(c, d) = " << ::min(c, d) << std::endl;
-	std::cout << "max(c, d) = " << ::max(c, d) << std::endl;
+	std::cout << "After swap: c = " << c << ", d = " << d << std::endl;
+	std::cout << "Min(c, d) = " << ::min(c, d) << std::endl;
+	std::cout << "Max(c, d) = " << ::max(c, d) << std::endl;
 	
-	return (0);
+	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 10:07:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 18:45:42 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main()
 {
 	try 
 	{
-		Bureaucrat c("Julien", 1);
+		Bureaucrat c("Bob", 1);
 		std::cout << c << std::endl;
 
 		PresidentialPardonForm d("PPF");
@@ -33,17 +33,13 @@ int	main()
 
 	} 
 	catch (const Bureaucrat::grade_too_high_exception &err) 
-	{
-		std::cout << err.too_high() << std::endl;
-	} 
+	{std::cerr << err.too_high() << std::endl;} 
 	catch (const Bureaucrat::grade_too_low_exception &err) 
-	{
-		std::cout << err.too_low() << std::endl;
-	}
+	{std::cerr << err.too_low() << std::endl;}
 	
 	try 
 	{
-		Bureaucrat c("Sylvain", 1);
+		Bureaucrat c("Bobette", 1);
 		std::cout << c << std::endl;
 
 		RobotomyRequestForm d("RBF");
@@ -56,17 +52,13 @@ int	main()
 
 	} 
 	catch (const Bureaucrat::grade_too_high_exception &err) 
-	{
-		std::cout << err.too_high() << std::endl;
-	} 
+	{std::cerr << err.too_high() << std::endl;} 
 	catch (const Bureaucrat::grade_too_low_exception &err) 
-	{
-		std::cout << err.too_low() << std::endl;
-	}
+	{std::cerr << err.too_low() << std::endl;}
 
 	try 
 	{
-		Bureaucrat c("Carl", 1);
+		Bureaucrat c("Booba", 1);
 		std::cout << c << std::endl;
 
 		ShrubberyCreationForm d("SCF");
@@ -79,11 +71,9 @@ int	main()
 
 	} 
 	catch (const Bureaucrat::grade_too_high_exception &err) 
-	{
-		std::cout << err.too_high() << std::endl;
-	} 
+	{std::cerr << err.too_high() << std::endl;} 
 	catch (const Bureaucrat::grade_too_low_exception &err) 
-	{
-		std::cout << err.too_low() << std::endl;
-	}
+	{std::cerr << err.too_low() << std::endl;}
+
+	return (EXIT_SUCCESS);
 }

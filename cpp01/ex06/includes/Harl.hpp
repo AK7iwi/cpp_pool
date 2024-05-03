@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:46 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/20 15:31:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:26:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <stdint.h>
+#include <stdlib.h>
 
 class Harl
 {

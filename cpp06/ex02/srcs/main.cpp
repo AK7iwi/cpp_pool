@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/12 00:58:53 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:01:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Base *generate(void)
 
 	switch (random_number)
 	{
+		
 	case 0:
 		std::cout << "Creation: A" << std::endl;
 		base = new (A);
@@ -87,5 +88,5 @@ int main()
 	new_base = NULL;
 
   	identify(new_base);
- 	return (0);
+ 	return (EXIT_SUCCESS);
 }

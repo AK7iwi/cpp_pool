@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:25:17 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 09:53:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:34:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	main()
 	player2.be_repaired(5);
 	player1.take_damage(200);
 	
-	return (0);
+	return (EXIT_SUCCESS);
 }

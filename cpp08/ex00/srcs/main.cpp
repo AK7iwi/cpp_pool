@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 16:32:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 19:29:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main()
 		std::cout  << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
 	catch (std::exception &e) 
-	{std::cout << e.what() << std::endl;}
+	{std::cerr << e.what() << std::endl;}
 
 	try 
 	{
@@ -36,7 +36,7 @@ int	main()
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
 	catch (std::exception &e)
-	{std::cout  << e.what() << std::endl;}
+	{std::cerr << e.what() << std::endl;}
 		
 	try 
 	{
@@ -45,7 +45,7 @@ int	main()
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
 	catch (std::exception &e) 
-	{std::cout << e.what() << std::endl;}
+	{std::cerr << e.what() << std::endl;}
 
 	try 
 	{
@@ -54,7 +54,7 @@ int	main()
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
 	catch (std::exception &e) 
-	{std::cout << e.what() << std::endl;}
+	{std::cerr << e.what() << std::endl;}
 	
-	return (0);
+	return (EXIT_SUCCESS);
 }

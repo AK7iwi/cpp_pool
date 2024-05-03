@@ -6,10 +6,11 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 01:21:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:21:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:20:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie*	new_zombie(std::string name) {return (new Zombie(name));}
+Zombie*	new_zombie(std::string name) 
+{return (new Zombie(name));}
