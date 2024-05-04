@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 13:52:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:15:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 AAnimal::AAnimal() 
 {std::cout << "Default constructor called for AAnimal" << std::endl;}
 
-AAnimal::AAnimal(std::string const &type) : _type(type) 
+AAnimal::AAnimal(std::string const &type) : 
+	_type(type) 
 {std::cout << "Type default constructor called for AAnimal" << std::endl;}
 
 AAnimal::AAnimal(AAnimal const &cpy) : _type(cpy._type) 

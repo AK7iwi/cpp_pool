@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:53:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/09 16:27:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:55:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,11 @@ void Harl::complain(std::string level)
 {
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	
-	void (Harl::*functions[4])(void) = 
-	{
-		&Harl::_debug,
-		&Harl::_info, 
-		&Harl::_warning, 
-		&Harl::_error
-	};
+	void (Harl::*functions[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
 	
 	for (uint8_t i = 0; i < 4; i++)
-	{
 		if (levels[i] == level)
 			(this->*functions[i])();
-	}
 }
 
 void Harl::_debug() 
@@ -54,4 +46,4 @@ void Harl::_warning()
 {std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;}
 
 void Harl::_error() 
-{std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;}
+{std::cerr << "This is unacceptable! I want to speak to the manager now." << std::endl;}

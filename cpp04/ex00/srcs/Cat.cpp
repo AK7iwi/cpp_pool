@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:01:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 14:02:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:10:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ Cat&	Cat::operator=(Cat const &rhs)
 	return (*this);
 }
 
-void	Cat::make_sound() const {std::cout << "Miaou! Miaou!" << std::endl;}
+void	Cat::make_sound() const
+{std::cout << "Miaou! Miaou!" << std::endl;}

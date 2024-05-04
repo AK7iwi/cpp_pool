@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 14:42:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:10:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ int	main()
 	delete (cat);
 	delete (bear);
 	delete (wrong1);
-	delete (wrong2);	
+	delete (wrong2);
+
+	return (EXIT_SUCCESS);
 }

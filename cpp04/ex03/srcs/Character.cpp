@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/07 15:09:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:17:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string const &name) : _name(name)
+Character::Character(std::string const &name) : 
+	_name(name)
 {
 	std::cout << "Type default constructor called for Character" << std::endl;
 	for (uint8_t i = 0; i < 4; ++i)
@@ -59,7 +60,8 @@ Character&	Character::operator=(Character const &rhs)
 	return (*this);
 }
 
-std::string const&	Character::get_name() const {return (_name);}
+std::string const&	Character::get_name() const 
+{return (_name);}
 
 void	Character::equip(AMateria *m)
 {

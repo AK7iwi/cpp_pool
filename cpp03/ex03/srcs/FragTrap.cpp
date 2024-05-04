@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:15:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/01/25 10:00:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:05:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string const &name) : ClapTrap(name) 
+FragTrap::FragTrap(std::string const &name) :
+	ClapTrap(name) 
 {
     std::cout << "Constructor called for FragTrap " << _name << std::endl;
     _hit_points = 100;
@@ -29,7 +30,8 @@ FragTrap::FragTrap(FragTrap const &cpy) : ClapTrap(cpy._name)
     _attack_damage = cpy._attack_damage;
 }
 
-FragTrap::~FragTrap() {std::cout << "Destructor called for FragTrap " << _name << std::endl;}
+FragTrap::~FragTrap()
+{std::cout << "Destructor called for FragTrap " << _name << std::endl;}
 
 FragTrap&	FragTrap::operator=(FragTrap const &rhs) 
 {	
@@ -44,4 +46,5 @@ FragTrap&	FragTrap::operator=(FragTrap const &rhs)
 	return (*this);
 }
 
-void FragTrap::high_fives_guys() {std::cout << "FragTrap " << _name << " requests a high five" << std::endl;}
+void FragTrap::high_fives_guys()
+{std::cout << "FragTrap " << _name << " requests a high five" << std::endl;}

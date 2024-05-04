@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 10:52:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 20:25:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:49:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int main(void)
+int main()
 {
 	Harl	harl;
 

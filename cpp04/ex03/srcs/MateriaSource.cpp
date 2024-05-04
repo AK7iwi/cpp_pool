@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:58:00 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/07 13:33:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:19:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,7 @@ void	MateriaSource::learn_materia(AMateria *m)
 AMateria*	MateriaSource::create_materia(std::string const &type)
 {
     for (uint8_t i = 0; i < 4; ++i)
-    {
         if (_learned_materias[i] != NULL && _learned_materias[i]->get_type() == type)
             return (_learned_materias[i]->clone());
-    }
     return (0);
 }

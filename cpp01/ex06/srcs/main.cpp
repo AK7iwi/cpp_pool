@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 20:26:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:51:22 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		return (std::cout << "Invalid level or to much paramaters" << std::endl, EXIT_FAILURE);
+		return (std::cerr << "Invalid level or to much paramaters" << std::endl, EXIT_FAILURE);
 		
 	Harl harl;
 	uint8_t level;
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 			harl.error();
 			break;
 		default:
-    		std::cout << "Invalid level" << std::endl;
+    		std::cerr << "Invalid level" << std::endl;
 			break;
 	}
 	return (EXIT_SUCCESS);

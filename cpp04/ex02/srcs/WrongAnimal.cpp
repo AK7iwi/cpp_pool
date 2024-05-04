@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:11:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/23 20:10:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:15:34 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ WrongAnimal::WrongAnimal(std::string const &type) :
 {std::cout << "Type default constructor called for Animal" << std::endl;}
 
 WrongAnimal::WrongAnimal(WrongAnimal const &cpy) : _type(cpy._type)
-{
-	std::cout << "Copy constructor called for Wrong Animal" << std::endl;
-}
+{std::cout << "Copy constructor called for Wrong Animal" << std::endl;}
 
-WrongAnimal::~WrongAnimal() {std::cout << "Destructor called for Wrong Animal" << std::endl;}
+WrongAnimal::~WrongAnimal() 
+{std::cout << "Destructor called for Wrong Animal" << std::endl;}
 
 WrongAnimal&	WrongAnimal::operator=(WrongAnimal const &rhs) 
 {	
@@ -34,6 +33,8 @@ WrongAnimal&	WrongAnimal::operator=(WrongAnimal const &rhs)
 	return (*this);
 }
 
-void		WrongAnimal::make_sound() const {std::cout << "I'm a Wrong Animal" << std::endl;}
+void		WrongAnimal::make_sound() const 
+{std::cout << "I'm a Wrong Animal" << std::endl;}
 
-std::string	WrongAnimal::get_type() const {return (_type);}
+std::string	WrongAnimal::get_type() const 
+{return (_type);}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:13:48 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/07 13:33:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:16:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ int main()
     delete (goku);
     delete (src);
 
-    return (0);
+    return (EXIT_SUCCESS);
 }

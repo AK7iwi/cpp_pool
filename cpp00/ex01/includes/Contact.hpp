@@ -6,12 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:33:23 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/04 16:01:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:41:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
+#include <stdint.h>
 
 class Contact 
 {

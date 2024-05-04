@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 12:48:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/09 16:30:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:55:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,4 @@ void Harl::warning() const
 {std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." << std::endl;}
 
 void Harl::error() const 
-{std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;}
+{std::cerr << "This is unacceptable! I want to speak to the manager now." << std::endl;}

@@ -6,17 +6,21 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:55:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 12:21:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:17:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure") {std::cout << "Type default constructor called for Cure" << std::endl;}
+Cure::Cure() : 
+	AMateria("cure")
+{std::cout << "Type default constructor called for Cure" << std::endl;}
 
-Cure::Cure(Cure const &cpy) :  AMateria(cpy._type) {std::cout << "Copy constructor called for Cure" << std::endl;}
+Cure::Cure(Cure const &cpy) :  AMateria(cpy._type) 
+{std::cout << "Copy constructor called for Cure" << std::endl;}
 
-Cure::~Cure() {std::cout << "Destructor called for Cure" << std::endl;}
+Cure::~Cure() 
+{std::cout << "Destructor called for Cure" << std::endl;}
 
 Cure&	Cure::operator=(Cure const &rhs) 
 {	
@@ -26,6 +30,8 @@ Cure&	Cure::operator=(Cure const &rhs)
 	return (*this);
 }
 
-Cure*	Cure::clone() const {return (new Cure());}
+Cure*	Cure::clone() const 
+{return (new Cure());}
 
-void 	Cure::use(ICharacter &target) {std::cout << "* heals " << target.get_name() << "'s wounds *" << std::endl;}
+void 	Cure::use(ICharacter &target) 
+{std::cout << "* heals " << target.get_name() << "'s wounds *" << std::endl;}

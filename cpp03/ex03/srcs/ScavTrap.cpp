@@ -6,13 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 20:20:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/02/05 11:36:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:05:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name) 
+ScavTrap::ScavTrap(std::string const &name) :
+	ClapTrap(name) 
 {
     std::cout << "Constructor called for ScavTrap " << _name << std::endl;
     _hit_points = 100;
@@ -29,7 +30,8 @@ ScavTrap::ScavTrap(ScavTrap const &cpy) : ClapTrap(cpy._name)
     _attack_damage = cpy._attack_damage;
 }
 
-ScavTrap::~ScavTrap() {std::cout << "Destructor called for ScavTrap " << _name << std::endl;}
+ScavTrap::~ScavTrap()
+{std::cout << "Destructor called for ScavTrap " << _name << std::endl;}
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const &rhs) 
 {	
@@ -58,4 +60,5 @@ void    ScavTrap::attack(std::string const &target)
         std::cout << "ScavTrap " << _name << " has no energy points left and can't attack!" << std::endl;
 }
 
-void    ScavTrap::guard_gate() {std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode." << std::endl;}
+void    ScavTrap::guard_gate()
+{std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode." << std::endl;}

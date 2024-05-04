@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:11:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/15 17:36:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:11:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 WrongAnimal::WrongAnimal()
 {std::cout << "Default constructor called for Wrong Animal" << std::endl;}
 
-WrongAnimal::WrongAnimal(std::string const &type) : _type(type)
+WrongAnimal::WrongAnimal(std::string const &type) : 
+	_type(type)
 {std::cout << "Type default constructor called for Animal" << std::endl;}
 
 WrongAnimal::WrongAnimal(WrongAnimal const &cpy) : _type(cpy._type) 

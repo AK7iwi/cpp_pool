@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 09:12:51 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 20:25:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 20:48:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 4)
-		return(std::cout << "Wrong number of arguments" << std::endl, EXIT_FAILURE);
+		return (std::cerr << "Wrong number of arguments" << std::endl, EXIT_FAILURE);
 
 	std::string filename = argv[1];
     std::string s1 = argv[2];

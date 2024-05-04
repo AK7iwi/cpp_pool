@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:09:07 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/03/29 14:07:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:11:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int main()
 	}
 	std::cout << basic.get_brain()->get_ideas(0) << std::endl;
 
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
