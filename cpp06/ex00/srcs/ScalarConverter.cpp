@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 18:54:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:49:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ ScalarConverter::ScalarConverter(ScalarConverter const &cpy)
 
 ScalarConverter::~ScalarConverter() {}
 
-ScalarConverter& ScalarConverter::operator=(ScalarConverter const &cpy)
+ScalarConverter& ScalarConverter::operator=(ScalarConverter const &rhs)
 {
-	(void)cpy;
+	(void)rhs;
 	return (*this);
 }
 
@@ -118,6 +118,7 @@ static bool limit_type(std::string const &literal)
 					<< std::endl;
 		return (true);
 	}
+	
 	return (false);
 }
 
@@ -151,12 +152,14 @@ static bool is_int(std::string const &literal)
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
+		
 	while (literal[i]) 
 	{
 		if (!isdigit(literal[i]))
 			return (false);
 		i++;
 	}
+
 	return (true);
 }
 
@@ -170,6 +173,7 @@ static bool is_double(std::string const &literal)
 
 	if (literal[0] == '-' || literal[0] == '+')
 		i++;
+
 	while (literal[i])
 	{
 		if (!isdigit(literal[i]))
@@ -181,6 +185,7 @@ static bool is_double(std::string const &literal)
 		}
 		i++;
 	}
+	
 	return (point == 1 && isdigit(literal[i - 1]));
 }
 
@@ -193,6 +198,7 @@ static bool is_float(std::string const &literal)
 	int len = std::strlen(literal.c_str());
 	
 	d_cpy[len - 1] = '\0';
+	
 	return (is_double(d_cpy) && literal[len - 1] == 'f' && isdigit(literal[len - 2])); //check this return
 }
 
@@ -210,6 +216,7 @@ static bool find_and_display_type(std::string const &literal)
 		return (std::cout << "Float" << std::endl, true);
 	else if (is_double(literal))
 		return (std::cout << "Double" << std::endl, true);
+		
 	return (false);
 }
 

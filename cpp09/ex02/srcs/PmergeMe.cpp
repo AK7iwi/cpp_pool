@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/04 21:21:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:04:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 PmergeMe::PmergeMe() {}
 
 PmergeMe::PmergeMe(PmergeMe const &cpy)
-{
-	(void)cpy;
-}
+{(void)cpy;}
 
 PmergeMe::~PmergeMe() 
 {}
@@ -88,6 +86,7 @@ std::deque<int>	PmergeMe::_create_deque_from_pair()
 	for (std::deque<std::pair<int, int> >::iterator it = _deque.begin(); it != _deque.end(); it++)
 		if (it->second != -1)
 			res.push_back(it->second);
+			
 	return (res);
 }
 

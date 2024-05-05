@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/10 15:58:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:21:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,17 @@ Intern::Intern(Intern const &cpy)
 Intern::~Intern() {};
 
 Intern		&Intern::operator=(Intern const &rhs)
-{(void)rhs; return (*this);}
+{
+	if (this != &rhs)
+	{}
+	return (*this);
+}
 
 static AForm *new_shrubbery(std::string form_target) 
 {return (new ShrubberyCreationForm(form_target));}
 
 static AForm *new_robotomy(std::string form_target) 
-{ return (new RobotomyRequestForm(form_target));}
+{return (new RobotomyRequestForm(form_target));}
 
 static AForm *new_presidential(std::string formTarget) 
 {return (new PresidentialPardonForm(formTarget));}
@@ -43,6 +47,7 @@ static int8_t	what_form(std::string form_name)
 	for (uint8_t i = 0; i < 3; i++)
 		if (form_name_list[i] == form_name)
 			return (i);
+			
 	return (-1);
 }
 
@@ -67,9 +72,7 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)
 					<< std::endl;
 	} 
 	else 
-	{
-		std::cout	<< "Invalid form_name"
-					<< std::endl;
-	}
+		std::cout	<< "Invalid form_name" << std::endl;
+	
 	return (new_form);
 }

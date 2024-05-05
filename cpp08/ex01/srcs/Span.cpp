@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/16 20:01:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:05:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ Span::Span(unsigned int size)
 
 Span::Span(Span const &cpy) : 
 	_N(cpy._N), 
-	_numbers(cpy._numbers)
-{}
+	_numbers(cpy._numbers) {}
 
 Span::~Span() {}
 
@@ -40,6 +39,7 @@ void Span::add_number(int num)
 {	
     if (_numbers.size() >= _N)
         throw (std::out_of_range("Span is full"));
+		
     _numbers.push_back(num);
 }
 
@@ -58,6 +58,7 @@ int Span::shortest_span() const
         if (span < min_span)
             min_span = span;
     }
+	
     return (min_span);
 }
 
@@ -65,5 +66,6 @@ int Span::longest_span() const
 {
 	if (_numbers.size() <= 1)
         throw (std::runtime_error("Not enough numbers to calculate span"));
+		
 	return (*std::max_element(_numbers.begin(), _numbers.end()) - *std::min_element(_numbers.begin(), _numbers.end()));
 }

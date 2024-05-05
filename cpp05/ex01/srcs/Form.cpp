@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:46:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:06:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Form&	Form::operator=(Form const &rhs)
 {	
 	if (this != &rhs)
 		_signed_status = rhs._signed_status;
+		
 	return (*this);
 }
 
@@ -49,6 +50,7 @@ std::ostream& operator<<(std::ostream &os, Form const &rhs)
 		<< " for sign it, and grade "
 		<< (int)rhs.get_grade_to_execute()
 		<< " for execute it" << std::endl;
+		
 	return (os);
 }
 
@@ -56,16 +58,17 @@ void		Form::be_signed(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (Form::grade_too_low_exception());
+		
 	_signed_status = true;
 }
 
-std::string Form::get_name() const
-{return (_name);} 
+std::string Form::get_name() const 
+{return (_name);}
 
 uint8_t Form::get_signed_status() const
 {return (_signed_status);}
 
-uint8_t Form::get_grade_to_sign() const 
+uint8_t Form::get_grade_to_sign() const
 {return (_grade_to_sign);}
 
 uint8_t Form::get_grade_to_execute() const

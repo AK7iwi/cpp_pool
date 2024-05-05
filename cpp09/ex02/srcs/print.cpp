@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:27:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/04 21:20:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:02:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,17 @@ void	PmergeMe::_print_after_sort()
 }
 
 void	PmergeMe::_print_time_vector() 
-{std::cout	<< "Time to process with std::vector : " << _duration_vector << " us" << std::endl;}
+{
+	std::cout	<< "Time to process with std::vector : " 
+				<< _duration_vector 
+				<< " us"
+				<< std::endl;
+}
 
 void	PmergeMe::_print_time_deque()
-{std::cout	<<  "Time to process with std::deque : " << _duration_deque << " us" << std::endl;}
+{
+	std::cout	<<  "Time to process with std::deque : " 
+				<< _duration_deque 
+				<< " us" 
+				<< std::endl;
+}

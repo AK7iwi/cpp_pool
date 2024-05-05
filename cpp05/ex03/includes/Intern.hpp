@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:47:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:19:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ class Intern
 		
 		AForm	*make_form(std::string form_name, std::string form_target);
 
-	private:
 };

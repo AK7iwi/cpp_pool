@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 03:16:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:14:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ AForm&	AForm::operator=(AForm const &rhs)
 {	
 	if (this != &rhs)
 		_signed_status = rhs._signed_status;
+		
 	return (*this);
 }
 
@@ -49,6 +50,7 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 		<< " For sign it, and grade " 
 		<< (int)rhs.get_grade_to_execute()
 		<< " for execute it" << std::endl;
+		
 	return (os);
 }
 
@@ -56,15 +58,17 @@ void	AForm::be_signed(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (AForm::grade_too_low_exception());
+		
 	_signed_status = true;
 }
 
-bool	AForm::execute(Bureaucrat const &bureaucrat) const 
+bool	AForm::execute(Bureaucrat const &bureaucrat) const //pas bool
 {
 	if (bureaucrat.get_grade() > _grade_to_execute)
 		throw (grade_too_high_exception());
 	else if (!_signed_status)
 		throw (form_is_not_signed());
+		
 	return (true);
 }
 

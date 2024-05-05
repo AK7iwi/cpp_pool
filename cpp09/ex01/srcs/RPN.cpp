@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/30 16:34:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 20:04:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 RPN::RPN() {}
 
 RPN::RPN(RPN const &cpy) : 
-	_stack(cpy._stack)
-{}
+	_stack(cpy._stack) {}
 
 RPN::~RPN() {}
 
@@ -24,6 +23,7 @@ RPN&	RPN::operator=(RPN const &rhs)
 {	
 	if (this != &rhs)
 		_stack = rhs._stack;
+		
 	return (*this);
 }
 
@@ -42,7 +42,7 @@ void RPN::perform_operation(char sign)
 	if (sign == '/' && n2 == 0)
 		throw (std::invalid_argument("Error: division by 0"));
 	
-	switch (sign) 
+	switch (sign) //default 
 	{
 		case '+':
 			_stack.push(n2 + n1);
@@ -82,7 +82,8 @@ void RPN::calcule(std::string const &operation)
 	try
 	{
 		parse_operation(operation);
-		std::cout << _stack.top() << std::endl;
+		std::cout 	<< _stack.top() 
+					<< std::endl;
     }
 	catch (std::exception &e)
 	{std::cerr <<  e.what() << std::endl;}

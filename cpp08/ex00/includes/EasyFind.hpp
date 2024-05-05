@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:09 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/12 00:13:23 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:47:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ typename T::iterator easyfind(T &container, int value)
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
 	if (it == container.end())
 		throw(std::out_of_range("=> Value not found"));
+		
 	return (it);
 }

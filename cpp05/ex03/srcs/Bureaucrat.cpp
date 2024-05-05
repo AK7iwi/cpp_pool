@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/06 03:19:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:12:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Bureaucrat::Bureaucrat(std::string const name, int const grade) :
 		throw (grade_too_high_exception());
 	else if (grade > 150)
 		throw (grade_too_low_exception());
+		
 	_grade = grade;
 }
 
@@ -32,6 +33,7 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const &rhs)
 {	    
 	if (this != &rhs)
 		_grade = rhs._grade;
+		
 	return (*this);
 }
 
@@ -40,6 +42,7 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     os	<< bureaucrat.get_name() 
 		<< ", bureaucrat grade "
 		<< (int)bureaucrat.get_grade();
+		
     return (os);
 }
 
@@ -48,6 +51,7 @@ void	Bureaucrat::sign_form(AForm &form)
 	try
 	{
 		form.be_signed(*this);
+		
 		std::cout	<< _name
 					<< " signed "
 					<< form.get_name()

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 13:35:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:48:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 		for (std::map<std::string, float>::const_iterator it = rhs._database.begin(); it != rhs._database.end(); ++it)
    			 _database.insert(std::make_pair( it->first, it->second));
 	}
+	
 	return (*this);
 }
 
@@ -55,6 +56,7 @@ static float find_date_in_db_and_get_btc_price(std::string const &date, std::map
 	}
 	else 
 		price = it->second;
+		
 	return (price);
 }
 
