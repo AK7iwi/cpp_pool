@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 20:04:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:23:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,31 @@
 PmergeMe::PmergeMe() {}
 
 PmergeMe::PmergeMe(PmergeMe const &cpy)
-{(void)cpy;}
+{
+	_nb_value = cpy._nb_value;
+	_duration_vector = cpy._duration_vector;
+	_duration_deque = cpy._duration_deque;
+	_vector.clear();
+	_vector.insert(_vector.end(), cpy._vector.begin(), cpy._vector.end());
+	_deque.clear();
+	_deque.insert(_deque.end(), cpy._deque.begin(), cpy._deque.end());
+}
 
-PmergeMe::~PmergeMe() 
-{}
+PmergeMe::~PmergeMe() {}
 
 PmergeMe&	PmergeMe::operator=(PmergeMe const &rhs) 
 {	
 	if (this != &rhs)
 	{
+		_nb_value = rhs._nb_value;
+		_duration_vector = rhs._duration_vector;
+		_duration_deque = rhs._duration_deque;
+		_vector.clear();
+		_vector.insert(_vector.end(), rhs._vector.begin(), rhs._vector.end());
+		_deque.clear();
+		_deque.insert(_deque.end(), rhs._deque.begin(), rhs._deque.end());
 	}
+	
 	return (*this);
 }
 
@@ -76,6 +91,7 @@ std::vector<int>	PmergeMe::_create_vector_from_pair()
 	for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
 		if (it->second != -1)
 			res.push_back(it->second);
+			
 	return (res);
 }
 
@@ -225,6 +241,7 @@ void PmergeMe::_parse_nb_sequence(char **argv)
 		for (int j = 0; argv[i][j]; j++)
 			if (!isdigit(argv[i][j]) && argv[i][j] != ' ') // int min/ max
 				throw (std::invalid_argument("Error: invalid character in input"));
+				
 		_nb_value = i;
 	}
 }

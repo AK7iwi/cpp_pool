@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:47:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:47:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ class  RobotomyRequestForm : public AForm
 
 	private:
 		std::string	_target;
-    	
 };

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/13 16:07:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:01:34 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ class Span
     	int longest_span() const;
 	
 	private:
-    	unsigned int _N;
+    	unsigned int _N; //const?
     	std::vector<int> _numbers;
 };

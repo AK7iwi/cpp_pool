@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 20:04:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:04:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,47 @@
 
 RPN::RPN() {}
 
-RPN::RPN(RPN const &cpy) : 
-	_stack(cpy._stack) {}
+RPN::RPN(RPN const &cpy)
+{
+	while (!_stack.empty())
+		_stack.pop();
+		
+	std::stack<int> stack_tmp = cpy._stack;
+
+	while (!stack_tmp.empty())
+	{
+        _stack.push(cpy._stack.top());
+        stack_tmp.pop();
+    }
+}
 
 RPN::~RPN() {}
 
 RPN&	RPN::operator=(RPN const &rhs) 
 {	
 	if (this != &rhs)
-		_stack = rhs._stack;
-		
+	{	
+		while (!_stack.empty())
+			_stack.pop();
+			
+		std::stack<int> stack_tmp = rhs._stack;
+
+		while (!stack_tmp.empty())
+		{
+        	_stack.push(rhs._stack.top());
+        	stack_tmp.pop();
+    	}
+	}
+	
 	return (*this);
 }
 
 void RPN::perform_operation(char sign)
 {
-	int	n1, n2;
-
 	if (_stack.size() < 2)
 		throw (std::invalid_argument("Error: not enough numbers"));
+		
+	int	n1, n2;
 	
 	n1 = _stack.top();
 	_stack.pop();
@@ -42,7 +64,7 @@ void RPN::perform_operation(char sign)
 	if (sign == '/' && n2 == 0)
 		throw (std::invalid_argument("Error: division by 0"));
 	
-	switch (sign) //default 
+	switch (sign)
 	{
 		case '+':
 			_stack.push(n2 + n1);

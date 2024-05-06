@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 19:01:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:53:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ Base *generate(void)
 	int random_number = rand() % 3;
 	std::cout << "Random number: " << random_number << std::endl;
 
-	switch (random_number)
+	switch (random_number) //default 
 	{
-		
 	case 0:
 		std::cout << "Creation: A" << std::endl;
 		base = new (A);
@@ -36,6 +35,7 @@ Base *generate(void)
 		base = new (C);
 		break;
 	}
+	
 	return (base);
 }
 
@@ -51,7 +51,7 @@ void identify(Base *p)
 		std::cout << "Identify(Base *p): NULL" << std::endl;
 }
 
-void identify(Base &p)
+void identify(Base &p) 
 {
 	try 
 	{
@@ -59,14 +59,15 @@ void identify(Base &p)
 		std::cout << "Identify(Base &p): A" << std::endl;
 		return;
 	} 
-	catch(const std::exception &e) {}
+	catch (const std::exception &e) {}
+	
 	try 
 	{
 		(void)dynamic_cast<B &>(p);
 		std::cout <<"Identify(Base &p): B" << std::endl;
 		return;
 	} 
-	catch(const std::exception &e) {}
+	catch (const std::exception &e) {}
 	
 	try 
 	{
@@ -74,19 +75,22 @@ void identify(Base &p)
 		std::cout << "Identify(Base &p): C" << std::endl;
 		return;
 	} 
-	catch(const std::exception &e)
-	{std::cout  << "Identify(Base &p): NULL" << std::endl; }
+	catch (const std::exception &e)
+	{std::cerr  << "Identify(Base &p): NULL" << std::endl; }
 }
 
 int main() 
 {
 	Base *new_base = generate();
+	
 	identify(new_base);
 	identify(*new_base);
+	
 	delete (new_base);
     
 	new_base = NULL;
 
   	identify(new_base);
+	
  	return (EXIT_SUCCESS);
 }

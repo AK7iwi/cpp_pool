@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/29 16:26:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:08:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class RPN
 		
 	private:
 		std::stack<int>		_stack;
-		// int					_result;
-    	
 };
 
 bool 		is_valid_char(char c);

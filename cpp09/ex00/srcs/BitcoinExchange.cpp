@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 19:48:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:27:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &cpy) :
 	_value(cpy._value)
 {
 	_database.clear();
-	for (std::map<std::string, float>::const_iterator it = cpy._database.begin(); it != cpy._database.end(); ++it) 
-    	_database.insert(std::make_pair(it->first, it->second));
+	_database.insert(cpy._database.begin(), cpy._database.end());
 }
 
-BitcoinExchange::~BitcoinExchange() 
-{}
+BitcoinExchange::~BitcoinExchange() {}
 
 BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs) 
 {	
@@ -40,7 +38,7 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return (*this);
 }
 
-static float find_date_in_db_and_get_btc_price(std::string const &date, std::map<std::string, float> &database)
+static float get_btc_price(std::string const &date, std::map<std::string, float> &database)
 {
 	float price;
 	std::map<std::string, float>::const_iterator it = database.find(date);
@@ -100,6 +98,7 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 		
 	if (error)
 		throw (std::runtime_error("Error: invalid date"));
+		
 	_date = date;
 }
 
@@ -115,6 +114,7 @@ void	BitcoinExchange::is_valid_value(std::string const &value)
 		throw (std::runtime_error("Error: too large a number"));
 	else if (value_f < 0)
 		throw (std::runtime_error("Error: negative number"));
+		
 	_value = value_f;
 }
 
@@ -140,17 +140,19 @@ static std::map<std::string, float> cpy_csv(std::ifstream &data)
 {
 	std::map<std::string, float> database;
 	std::string line;
-	std::getline(data, line); //check
+	std::getline(data, line);
 	while (std::getline(data, line))
 	{
 		std::istringstream	iss(line);
 		std::string			date;
 		float				value;
+		
 		if (!std::getline(iss, date, ',') || !(iss >> value))
 			throw (std::runtime_error("Error: bad data => "));
 		else
 			database[date] = value;
 	}
+	
 	return (database);
 }
 
@@ -175,12 +177,13 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 			else
 			{
 				parse_line(line);
-				btc_price = find_date_in_db_and_get_btc_price(_date ,_database);
+				btc_price = get_btc_price(_date ,_database);
 				std::cout << _date << " => " << _value << " = " << btc_price * _value << std::endl; 
 			}
 		}
 		catch (std::exception &e)
 		{std::cerr << e.what() << std::endl;}
 	}
+	
 	input_file.close();
 }

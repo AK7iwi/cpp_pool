@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:21:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:45:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ Intern::Intern(Intern const &cpy)
 Intern::~Intern() {};
 
 Intern		&Intern::operator=(Intern const &rhs)
-{
-	if (this != &rhs)
-	{}
-	return (*this);
-}
+{return (*this);}
 
 static AForm *new_shrubbery(std::string form_target) 
 {return (new ShrubberyCreationForm(form_target));}

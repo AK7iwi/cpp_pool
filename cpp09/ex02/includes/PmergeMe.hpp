@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 15:05:55 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:11:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class PmergeMe
 		void sort(char **argv);
 		
 	private:
-		std::vector<std::pair<int, int> >		_vector;
-		std::deque<std::pair<int, int> >		_deque;
+		std::vector<std::pair<int, int>>		_vector;
+		std::deque<std::pair<int, int>>			_deque;
 		int 									_nb_value;
 		double									_duration_vector;
 		double									_duration_deque;

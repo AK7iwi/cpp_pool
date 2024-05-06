@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:46:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:47:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/05 21:47:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ class  PresidentialPardonForm : public AForm
 
 	private:
 		std::string     _target;
-    	
 };
