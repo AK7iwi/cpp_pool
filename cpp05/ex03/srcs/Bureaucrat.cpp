@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:12:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:33:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ void	Bureaucrat::sign_form(AForm &form)
 	}
 	catch (AForm::grade_too_low_exception &e) 
 	{
-		std::cout 	<< _name
+		std::cerr 	<< _name
 					<< " couldn't signed "
 					<< form.get_name()
-					<< " because form grade is too low"
+					<< " because " 
+					<< e.too_low()
 					<< std::endl;
 	}
 }

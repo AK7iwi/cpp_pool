@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/06 16:27:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:49:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 		_date = rhs._date;
 		_value = rhs._value;
 		_database.clear();
-		for (std::map<std::string, float>::const_iterator it = rhs._database.begin(); it != rhs._database.end(); ++it)
-   			 _database.insert(std::make_pair( it->first, it->second));
+		_database.insert(rhs._database.begin(), rhs._database.end());
 	}
 	
 	return (*this);
@@ -76,7 +75,7 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 	year = strtol(year_str.c_str(), NULL, 10);
 
 	if (!is_digit(day_str) || !is_digit(month_str) || !is_digit(year_str))
-		throw (std::runtime_error("Error: non-digit character in the date"));
+		throw (std::invalid_argument("Error: non-digit character in the date"));
 	else if (day < 1 || day > 31)
 		error |= 1;
 	else if (month < 1 || month > 12)
@@ -86,10 +85,8 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 	else if (month == 2)
 	{
 		if (is_leap(year))
-		{
 			if (day > 29)
 				error |= 1;
-		}
 		else if (day > 28)
 			error |= 1;
 	}
@@ -97,23 +94,23 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 		error |= 1;
 		
 	if (error)
-		throw (std::runtime_error("Error: invalid date"));
+		throw (std::invalid_argument("Error: invalid date"));
 		
 	_date = date;
 }
 
 void	BitcoinExchange::is_valid_value(std::string const &value) 
 {
-	if (!is_int(value) && !is_double(value) && !is_float(value))
-		throw (std::runtime_error("Error: invalid value"));
+	if (!is_int(value) && !is_double(value) && !is_float(value)) //char
+		throw (std::invalid_argument("Error: invalid value"));
 
 	float value_f;
 	std::istringstream(value) >> value_f;
 	
 	if (value_f > 1000)
-		throw (std::runtime_error("Error: too large a number"));
+		throw (std::out_of_range("Error: too large a number"));
 	else if (value_f < 0)
-		throw (std::runtime_error("Error: negative number"));
+		throw (std::out_of_range("Error: negative number"));
 		
 	_value = value_f;
 }

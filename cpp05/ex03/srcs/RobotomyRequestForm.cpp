@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:13:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:38:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 		return (true);
 	} 
 	catch (AForm::grade_too_high_exception &e) 
-	{std::cout << e.too_high();} 
+	{std::cerr << e.too_high();} 
 	catch (AForm::form_is_not_signed &e) 
-	{std::cout << e.not_signed();}
+	{std::cerr << e.not_signed();}
 	
 	return (false);
 }

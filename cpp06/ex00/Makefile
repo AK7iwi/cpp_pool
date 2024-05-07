@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= Converter
-SRCS			= srcs/main.cpp srcs/ScalarConverter.cpp
+SRCS			= srcs/main.cpp srcs/ScalarConverter.cpp srcs/type.cpp srcs/convert.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 

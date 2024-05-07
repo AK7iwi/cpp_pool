@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/06 16:23:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:55:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,7 +187,7 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 	{	
 		buffer = atol(argv[i]);
 		if (buffer > INT_MAX)
-			throw (std::invalid_argument("Error: `int` overflow"));
+			throw (std::overflow_error("Error: `int` overflow"));
 
 		pair.first = buffer;
 		
@@ -195,7 +195,7 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 		{	
 			buffer = atol(argv[i + 1]);
 			if (buffer > INT_MAX)
-				throw (std::invalid_argument("Error: `int` overflow"));
+				throw (std::overflow_error("Error: `int` overflow"));
 			pair.second = buffer;
 		}
 		else
@@ -236,7 +236,7 @@ void	PmergeMe::_sort_deque(char **argv)
 
 void PmergeMe::_parse_nb_sequence(char **argv)
 {
-	for (int i = 1; argv[i]; i++)
+	for (int i = 1; argv[i]; i++) //delete the scoop?
 	{
 		for (int j = 0; argv[i][j]; j++)
 			if (!isdigit(argv[i][j]) && argv[i][j] != ' ') // int min/ max

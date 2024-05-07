@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 22:02:21 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:20:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Span&	Span::operator=(Span const &rhs)
 void Span::add_number(int num) 
 {	
     if (_numbers.size() >= _N)
-        throw (std::out_of_range("Span is full"));
+        throw (std::length_error("Span is full"));
 		
     _numbers.push_back(num);
 }
@@ -48,7 +48,7 @@ void Span::add_number(int num)
 int Span::shortest_span() const 
 {
 	 if (_numbers.size() <= 1)
-        throw (std::runtime_error("Not enough numbers to calculate span"));
+        throw (std::invalid_argument("Not enough numbers to calculate span"));
 		
     std::vector<int> sorted = _numbers;
     std::sort(sorted.begin(), sorted.end());
@@ -67,7 +67,7 @@ int Span::shortest_span() const
 int Span::longest_span() const 
 {
 	if (_numbers.size() <= 1)
-        throw (std::runtime_error("Not enough numbers to calculate span"));
+        throw (std::invalid_argument("Not enough numbers to calculate span"));
 		
 	return (*std::max_element(_numbers.begin(), _numbers.end()) - *std::min_element(_numbers.begin(), _numbers.end()));
 }

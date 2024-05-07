@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 22:08:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:43:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <stack>
 #include <exception>
+#include <stdlib.h>
 
 class RPN 
 {

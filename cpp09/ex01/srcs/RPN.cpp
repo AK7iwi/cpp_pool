@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/06 16:04:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:51:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void RPN::perform_operation(char sign)
 	_stack.pop();
 	
 	if (sign == '/' && n2 == 0)
-		throw (std::invalid_argument("Error: division by 0"));
+		throw (std::runtime_error("Error: division by 0"));
 	
 	switch (sign)
 	{

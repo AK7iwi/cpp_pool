@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:46:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:00:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Form
 		Form(Form const &cpy);
 		~Form();
 		Form& operator=(Form const &rhs);
-		
+	
 		void		be_signed(Bureaucrat &bureaucrat);
 		std::string	get_name() const;
 		uint8_t		get_signed_status() const;
