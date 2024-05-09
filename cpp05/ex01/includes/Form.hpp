@@ -6,15 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:00:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/09 20:37:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Bureaucrat.hpp"
-#include <iostream>
-#include <stdexcept>
-#include <stdint.h>
 
 class Bureaucrat;
 

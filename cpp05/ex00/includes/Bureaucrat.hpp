@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 17:44:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:06:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
+
 #include <iostream>
 #include <stdexcept>
 #include <stdint.h>
@@ -19,26 +21,35 @@
 class Bureaucrat 
 {
 	public:
+		/*Constructors & operators*/
+
 		Bureaucrat(std::string const name, int const grade);
 		Bureaucrat(Bureaucrat const &cpy);
 		~Bureaucrat();
 		Bureaucrat& operator=(Bureaucrat const &rhs);
 
-		void		increment_grade();
-		void		decrement_grade();
-		uint8_t		get_grade() const;
-		std::string	get_name() const;
+		/*Grade methods*/
+
+		void				increment_grade();
+		void				decrement_grade();
 		
+		/*Getters*/
+		
+		std::string	 inline	get_name() const;
+		uint8_t		 inline	get_grade() const;
+		
+		/*Exceptions*/
+
 		class grade_too_high_exception : public std::exception
 		{
 			public:
-				std::string	too_high() const throw();
+				std::string too_high() const throw();
 		};
 
 		class grade_too_low_exception : public std::exception
 		{
 			public:
-				std::string	too_low() const throw();
+				std::string too_low() const throw();
 		};
 		
 	private:
@@ -46,4 +57,8 @@ class Bureaucrat
     	uint8_t 			_grade;
 };
 
+/*Operator*/
+
 std::ostream& operator<<(std::ostream &os, Bureaucrat const &cpy);
+
+#endif /* BUREAUCRAT_H */

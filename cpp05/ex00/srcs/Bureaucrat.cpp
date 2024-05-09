@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:09:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:27:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+/*Constructors & operators*/
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)
@@ -46,7 +48,9 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     return (os);
 }
 
-void Bureaucrat::increment_grade() 
+/*Grade methods*/
+
+void	Bureaucrat::increment_grade() 
 {
     if (_grade > 1)
         _grade--;
@@ -54,7 +58,7 @@ void Bureaucrat::increment_grade()
         throw (grade_too_high_exception());
 }
 
-void Bureaucrat::decrement_grade() 
+void	Bureaucrat::decrement_grade() 
 {
     if (_grade < 150)
         _grade++;
@@ -62,11 +66,15 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
-std::string Bureaucrat::get_name() const
+/*Getters*/
+
+std::string inline	Bureaucrat::get_name() const
 {return (_name);}
 
-uint8_t Bureaucrat::get_grade() const
+uint8_t inline		Bureaucrat::get_grade() const
 {return (_grade);}
+
+/*Exceptions*/
 
 std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
 {return ("Bureaucrat grade is too high");}

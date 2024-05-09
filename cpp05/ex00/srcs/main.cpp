@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 19:06:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/09 23:22:00 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 {
 	try 
 	{
-		std::cout<< "Test #1 : Create Bureaucrat A with grade 0" << std::endl;
+		std::cout << "Test #1 : Create Bureaucrat A with grade 0" << std::endl;
 		Bureaucrat A("A", 0);
 	}
 	catch (Bureaucrat::grade_too_high_exception &e) 
@@ -70,7 +70,7 @@ int main(void)
 	catch (Bureaucrat::grade_too_high_exception &e) 
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception &e) 
-	{std::cerr  << e.too_low()  << std::endl;}
+	{std::cerr << e.too_low()  << std::endl;}
 	
 	try 
 	{
@@ -80,11 +80,23 @@ int main(void)
 		std::cout << "Test #12 : Create Bureaucrat F via copy of Bureaucrat E" << std::endl;
 		Bureaucrat F(E);
 		std::cout << F << std::endl;
+		std::cout << "Test #13 : Create Bureaucrat F via assignement of Bureaucrat E" << std::endl;
+		Bureaucrat G = F;
+		std::cout << G << std::endl;
 	} 
 	catch (Bureaucrat::grade_too_high_exception &e) 
-	{std::cerr  << e.too_high() << std::endl;} 
+	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception &e) 
 	{std::cerr << e.too_low() << std::endl;}
+
+	try 
+	{
+		std::cout << "Test #14 : Test the catch" << std::endl;
+		Bureaucrat H("H", 160);
+		std::cout << H << std::endl;
+	} 
+	catch (std::exception &e) 
+	{std::cerr << "Catch OK" << std::endl;}
 	
 	return (EXIT_SUCCESS);
 }
