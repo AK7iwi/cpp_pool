@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 18:26:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/04 21:02:59 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:24:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(const std::string &name) : 
+ClapTrap::ClapTrap(std::string const &name) : 
 	_name(name), 
 	_hit_points(10), 
 	_energy_points(10), 

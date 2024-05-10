@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/09 23:27:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:04:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ void	Bureaucrat::decrement_grade()
 
 /*Getters*/
 
-std::string inline	Bureaucrat::get_name() const
+std::string inline	Bureaucrat::get_name() const 
 {return (_name);}
 
-uint8_t inline		Bureaucrat::get_grade() const
+uint8_t 	inline	Bureaucrat::get_grade() const  
 {return (_grade);}
 
 /*Exceptions*/

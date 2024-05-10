@@ -6,29 +6,42 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/09 20:37:55 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:07:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_H
+#define FORM_H
+
 #include "Bureaucrat.hpp"
+#include <iostream>
+#include <stdint.h>
 
 class Bureaucrat;
 
 class Form 
 {
 	public:
+		/*Constructors & operators*/
+	
 		Form(std::string const name, int const grade_to_sign, int const grade_to_execute);
 		Form(Form const &cpy);
 		~Form();
 		Form& operator=(Form const &rhs);
+		
+		/*Satus methods*/
 	
-		void		be_signed(Bureaucrat &bureaucrat);
-		std::string	get_name() const;
-		uint8_t		get_signed_status() const;
-		uint8_t		get_grade_to_sign() const;
-		uint8_t		get_grade_to_execute() const;
+		void			be_signed(Bureaucrat const &bureaucrat);
+		
+		/*Getters*/
+		
+		std::string		get_name() 				const;
+		uint8_t	inline  get_signed_status() 	const;
+		uint8_t inline 	get_grade_to_sign() 	const;
+		uint8_t	inline 	get_grade_to_execute() 	const;
 
+		/*Exceptions*/
+		
 		class grade_too_high_exception : public std::exception 
 		{
 			public:
@@ -42,10 +55,14 @@ class Form
 		};
 	
 	private:
-    	std::string	const 	_name;
+    	std::string	const	_name;
     	bool 				_signed_status;
-    	int	const 			_grade_to_sign;
-   		int const  			_grade_to_execute;
+    	int			const 	_grade_to_sign;
+   		int 		const  	_grade_to_execute;
 };
 
+/*Operator*/
+
 std::ostream	&operator<<(std::ostream &os, Form const &rhs);
+
+#endif /* FORM_H */

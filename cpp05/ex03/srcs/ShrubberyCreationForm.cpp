@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:38:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+/*Constructors & operators*/
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
 	AForm("ShrubberyForm", 145, 137),

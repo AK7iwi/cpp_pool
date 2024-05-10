@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:38:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+/*Constructors & operators*/
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
 	AForm("RobotomyForm", 72, 45), 

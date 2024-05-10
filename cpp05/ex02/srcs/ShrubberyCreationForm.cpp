@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:37:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+/*Constructors & operators*/
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
 	AForm("ShrubberyForm", 145, 137),
@@ -30,7 +32,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
+void 	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	try 
 	{
@@ -48,14 +50,11 @@ bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 		outFile << "      ||      "			<< std::endl;
 		outFile << "      ||      "			<< std::endl;
 		outFile << "      ||      "			<< std::endl;
-
-		return (true);	
-	} 
-	catch (AForm::grade_too_high_exception &e) 
-	{std::cerr << e.too_high();} 
-	catch (AForm::form_is_not_signed &e) 
-	{std::cerr << e.not_signed();}
 	
-	return (false);
+	} 
+	catch (AForm::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high();} 
+	catch (AForm::form_is_not_signed const &e) 
+	{std::cerr << e.not_signed();}
 }
 

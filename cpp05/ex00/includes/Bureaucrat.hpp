@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/09 23:06:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:21:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Bureaucrat
 		
 		/*Getters*/
 		
-		std::string	 inline	get_name() const;
+		std::string	 inline	get_name() 	const;
 		uint8_t		 inline	get_grade() const;
 		
 		/*Exceptions*/
@@ -52,13 +52,14 @@ class Bureaucrat
 				std::string too_low() const throw();
 		};
 		
-	private:
+	private:	
     	std::string	const 	_name;
     	uint8_t 			_grade;
+		
 };
 
 /*Operator*/
 
-std::ostream& operator<<(std::ostream &os, Bureaucrat const &cpy);
+std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
 
 #endif /* BUREAUCRAT_H */

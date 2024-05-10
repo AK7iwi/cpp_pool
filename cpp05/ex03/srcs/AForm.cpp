@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:12:11 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+/*Constructors & operators*/
 
 AForm::AForm(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 

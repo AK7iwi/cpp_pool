@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 18:03:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:54:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class AForm;
 class Bureaucrat 
 {
 	public:
+		/*Constructors & operators*/
+
 		Bureaucrat(std::string const name, int const grade);
 		Bureaucrat(Bureaucrat const &cpy);
 		~Bureaucrat();

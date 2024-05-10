@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:40:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:44:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	main()
 		c.execute_form(d);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception &e) 
+	catch (Bureaucrat::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception &e) 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
 	
 	try 
@@ -51,9 +51,9 @@ int	main()
 		c.execute_form(d);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception &e) 
+	catch (Bureaucrat::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception &e) 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
 
 	try 
@@ -70,9 +70,9 @@ int	main()
 		c.execute_form(d);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception &e) 
+	catch (Bureaucrat::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception &e) 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
 
 	return (EXIT_SUCCESS);

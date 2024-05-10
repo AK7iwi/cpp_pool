@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/09 20:39:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:24:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+/*Constructors & operators*/
 
 Form::Form(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
@@ -49,12 +51,15 @@ std::ostream& operator<<(std::ostream &os, Form const &rhs)
 		<< (int)rhs.get_grade_to_sign()
 		<< " for sign it, and grade "
 		<< (int)rhs.get_grade_to_execute()
-		<< " for execute it" << std::endl;
+		<< " for execute it" 
+		<< std::endl;
 		
 	return (os);
 }
 
-void		Form::be_signed(Bureaucrat &bureaucrat) 
+/*Satus methods*/
+
+void	Form::be_signed(Bureaucrat const &bureaucrat) 
 {
 	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (Form::grade_too_low_exception());
@@ -62,17 +67,21 @@ void		Form::be_signed(Bureaucrat &bureaucrat)
 	_signed_status = true;
 }
 
-std::string Form::get_name() const 
+/*Getters*/
+
+std::string 	Form::get_name() const 
 {return (_name);}
 
-uint8_t Form::get_signed_status() const
+uint8_t inline 	Form::get_signed_status() const
 {return (_signed_status);}
 
-uint8_t Form::get_grade_to_sign() const
+uint8_t inline  Form::get_grade_to_sign() const
 {return (_grade_to_sign);}
 
-uint8_t Form::get_grade_to_execute() const
+uint8_t inline	Form::get_grade_to_execute() const
 {return (_grade_to_execute);}
+
+/*Exceptions*/
 
 std::string	Form::grade_too_high_exception::too_high() const throw() 
 {return ("Form grade is too high");}

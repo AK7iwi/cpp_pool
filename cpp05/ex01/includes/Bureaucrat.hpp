@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 18:01:12 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:07:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
+
 #include "Form.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -22,16 +24,28 @@ class Form;
 class Bureaucrat 
 {
 	public:
+		/*Constructors & operators*/
+		
 		Bureaucrat(std::string const name, int const grade);
 		Bureaucrat(Bureaucrat const &cpy);
 		~Bureaucrat();
 		Bureaucrat& operator=(Bureaucrat const &rhs);
 
-		void		sign_form(Form &form); 
-		void		increment_grade();
-		void		decrement_grade();
-		uint8_t		get_grade() const;
-		std::string	get_name() const;
+		/*Form methods*/
+
+		void				sign_form(Form &form); 
+
+		/*Grade methods*/
+		
+		void				increment_grade();
+		void				decrement_grade();
+
+		/*Getters*/
+		
+		std::string	inline	get_name() const;
+		uint8_t				get_grade() const;
+
+		/*Exceptions*/
 
 		class grade_too_high_exception : public std::exception 
 		{
@@ -50,4 +64,8 @@ class Bureaucrat
     	uint8_t 			_grade;
 };
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat const &cpy);
+/*Operator*/
+
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
+
+#endif /* BUREAUCRAT_H */

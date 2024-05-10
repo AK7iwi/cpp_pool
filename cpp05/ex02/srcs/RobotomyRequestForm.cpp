@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:38:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+
+/*Constructors & operators*/
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
 	AForm("RobotomyForm", 72, 45), 
@@ -30,7 +32,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 	return (*this);
 }
 
-bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const 
+void	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	try 
 	{
@@ -44,13 +46,9 @@ bool	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 					<< _target
 					<< (rand % 2 ? " has been robotomized successfully" : " Robotomy failed.")
 					<< std::endl;
-					
-		return (true);
 	} 
-	catch (AForm::grade_too_high_exception &e) 
+	catch (AForm::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high();} 
-	catch (AForm::form_is_not_signed &e) 
+	catch (AForm::form_is_not_signed const &e) 
 	{std::cerr << e.not_signed();}
-	
-	return (false);
 }

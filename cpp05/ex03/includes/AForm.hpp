@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/11 21:47:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:54:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ class Bureaucrat;
 class AForm 
 {
 	public:
+
+		/*Constructors & operators*/
+
 		AForm(std::string const name, int const grade_to_sign, int const grade_to_execute);
 		AForm(AForm const &cpy);
 		virtual ~AForm();

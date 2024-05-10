@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:33:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+/*Constructors & operators*/
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)

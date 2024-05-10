@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:37:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:49:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+/*Constructors & operators*/
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
 	AForm("PresidentialForm", 25, 5), 
@@ -30,7 +32,7 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const 
+void	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	try 
 	{
@@ -40,12 +42,9 @@ bool	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 					<< " has been pardoned by Zaphod Beeblebrox."
 					<< std::endl;
 					
-		return (true);
 	} 
-	catch (AForm::grade_too_high_exception &e) 
+	catch (AForm::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high();} 
-	catch (AForm::form_is_not_signed &e) 
+	catch (AForm::form_is_not_signed const &e) 
 	{std::cerr << e.not_signed();}
-	
-	return (false);
 }

@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 11:47:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:25:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+
+/*Constructors & operators*/
 
 AForm::AForm(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
@@ -54,34 +56,34 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 	return (os);
 }
 
-void	AForm::be_signed(Bureaucrat &bureaucrat) 
+/*Satus methods*/
+
+void	AForm::be_signed(Bureaucrat const &bureaucrat) 
 {
 	if (bureaucrat.get_grade() > _grade_to_sign)
-		throw (AForm::grade_too_low_exception());
+		throw (grade_too_low_exception());
 		
 	_signed_status = true;
 }
 
-bool	AForm::execute(Bureaucrat const &bureaucrat) const //pas bool
+void 	AForm::execute(Bureaucrat const &bureaucrat) const
 {
 	if (bureaucrat.get_grade() > _grade_to_execute)
 		throw (grade_too_high_exception());
 	else if (!_signed_status)
 		throw (form_is_not_signed());
-		
-	return (true);
 }
 
-std::string AForm::get_name() const
+std::string 	AForm::get_name() const
 {return (_name);}
 
-uint8_t AForm::get_signed_status() const
+uint8_t inline	AForm::get_signed_status() const
 {return (_signed_status);}
 
-uint8_t AForm::get_grade_to_sign() const
+uint8_t inline 	AForm::get_grade_to_sign() const
 {return (_grade_to_sign);}
 
-uint8_t AForm::get_grade_to_execute() const
+uint8_t inline 	AForm::get_grade_to_execute() const
 {return (_grade_to_execute);}
 
 std::string	AForm::grade_too_high_exception::too_high() const throw()

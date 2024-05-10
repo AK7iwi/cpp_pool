@@ -6,12 +6,14 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:03:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:48:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
+/*Constructors & operators*/
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)
@@ -47,27 +49,31 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     return (os);
 }
 
-void	Bureaucrat::sign_form(Form &form) 
+/*Form methods*/
+
+void	Bureaucrat::sign_form(Form &form)
 {
 	try
 	{
 		form.be_signed(*this);
 		
-		std::cout	<< _name
+		std::cout	<< (*this).get_name()
 					<< " signed "
 					<< form.get_name()
 					<< std::endl;
 	}
-	catch (Form::grade_too_low_exception &e)
+	catch (Form::grade_too_low_exception const &e)
 	{
-		std::cerr 	<< _name
+		std::cerr 	<< (*this).get_name()
 					<< " couldn't signed "
 					<< form.get_name()
-					<< " because " 
+					<< " because "
 					<< e.too_low()
 					<< std::endl;
 	}
 }
+
+/*Grade methods*/
 
 void Bureaucrat::increment_grade() 
 {
@@ -85,11 +91,15 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
-std::string Bureaucrat::get_name() const
+/*Getters*/
+
+std::string inline	Bureaucrat::get_name() const
 {return (_name);}
 
-uint8_t Bureaucrat::get_grade() const
+uint8_t				Bureaucrat::get_grade() const 
 {return (_grade);}
+
+/*Exceptions*/
 
 std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
 {return ("Bureaucrat grade is too high");}

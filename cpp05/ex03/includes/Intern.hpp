@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:46:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:54:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 class Intern 
 {
 	public:
+		/*Constructors & operators*/
+		
 		Intern();
 		Intern(Intern const &cpy);
 		virtual ~Intern();

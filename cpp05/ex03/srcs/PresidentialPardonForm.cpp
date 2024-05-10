@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 12:37:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/10 18:50:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+/*Constructors & operators*/
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
 	AForm("PresidentialForm", 25, 5),
