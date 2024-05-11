@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:54:49 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int8_t	what_form(std::string form_name)
 	return (-1);
 }
 
-AForm	*Intern::make_form(std::string form_name, std::string form_target) 
+AForm	*Intern::make_form(std::string form_name, std::string form_target)  //try/ catch?
 {
 	AForm *(*f[3])(std::string form_target) = 
 	{ 

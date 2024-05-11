@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:49:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:52:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm
 		
 	return (*this);
 }
+
+/*Execute method*/
 
 void	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const 
 {

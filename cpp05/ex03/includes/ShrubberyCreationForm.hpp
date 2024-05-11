@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:42:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:55:07 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:55:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class  ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm const &rhs);
 
-		bool	execute(Bureaucrat const &bureaucrat) const;
+		/*Execute method*/
+		
+		void	execute(Bureaucrat const &bureaucrat) const;
 
 	private:
 		std::string	_target;

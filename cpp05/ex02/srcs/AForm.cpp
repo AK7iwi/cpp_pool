@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:25:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:51:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void 	AForm::execute(Bureaucrat const &bureaucrat) const
 	else if (!_signed_status)
 		throw (form_is_not_signed());
 }
+
+/*Getters*/
 
 std::string 	AForm::get_name() const
 {return (_name);}

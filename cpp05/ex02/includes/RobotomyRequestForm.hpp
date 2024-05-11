@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:54:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:51:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class  RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 		RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);
 
+		/*Execute method*/
+		
 		void	execute(Bureaucrat const &bureaucrat) const;
 
 	private:

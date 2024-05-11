@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:56:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
+/*Execute method*/
+
+void	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	try 
 	{
@@ -49,15 +51,11 @@ bool	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 		outFile << "/\\O\\/\\/*/\\/O/\\"	<< std::endl;
 		outFile << "      ||      "			<< std::endl;
 		outFile << "      ||      "			<< std::endl;
-		outFile << "      ||      "			<< std::endl;
-
-		return (true);	
+		outFile << "      ||      "			<< std::endl;	
 	} 
-	catch (AForm::grade_too_high_exception &e) 
+	catch (AForm::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high();} 
-	catch (AForm::form_is_not_signed &e) 
+	catch (AForm::form_is_not_signed const &e) 
 	{std::cerr << e.not_signed();}
-	
-	return (false);
 }
 

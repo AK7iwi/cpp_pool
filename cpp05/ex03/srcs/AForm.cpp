@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:14 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:48:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 		
 	return (os);
 }
+
+/*Satus methods*/
 
 void	AForm::be_signed(Bureaucrat &bureaucrat) 
 {

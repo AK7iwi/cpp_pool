@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:52:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 		
 	return (*this);
 }
+
+/*Execute method*/
 
 void 	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {

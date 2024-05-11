@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:54:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:57:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
+
 #include "AForm.hpp"
 #include <iostream>
 #include <stdexcept>
@@ -29,12 +31,22 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat& operator=(Bureaucrat const &rhs);
 
+		/*Form methods*/
+
 		void		sign_form(AForm &form);
-		void 		execute_form(AForm const &form); 
+		void 		execute_form(AForm const &form);
+
+		/*Grade methods*/
+
 		void		increment_grade();
 		void		decrement_grade();
-		std::string	get_name() const;
-		uint8_t		get_grade() const;
+
+		/*Getters*/
+		
+		std::string	inline	get_name() const;
+		uint8_t				get_grade() const;
+		
+		/*Exceptions*/
 
 		class grade_too_high_exception : public std::exception 
 		{
@@ -53,4 +65,8 @@ class Bureaucrat
     	uint8_t 			_grade;
 };
 
+/*Operator*/
+
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &cpy);
+
+#endif /* BUREAUCRAT_H */

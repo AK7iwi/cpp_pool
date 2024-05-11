@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:52:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 		
 	return (*this);
 }
+
+/*Execute method*/
 
 void	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const 
 {

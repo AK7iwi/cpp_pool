@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:16:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:50:59 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class AForm
 
 		/*Satus methods*/
 		
-		virtual void 	execute(Bureaucrat const &bureaucrat) const = 0;
+		virtual void 	execute(Bureaucrat &bureaucrat) const = 0;
 		void			be_signed(Bureaucrat const &bureaucrat);
 		
 		/*Getters*/
