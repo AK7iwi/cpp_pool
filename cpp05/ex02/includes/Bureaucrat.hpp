@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 17:43:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:18:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ class Bureaucrat
 		};
 
 	private:
-    	std::string	const 	_name;
+    	std::string	const	_name;
     	uint8_t 			_grade;
 };
 

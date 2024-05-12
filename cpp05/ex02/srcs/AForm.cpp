@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/11 19:51:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:39:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 	return (os);
 }
 
-/*Satus methods*/
+/*Status methods*/
 
 void	AForm::be_signed(Bureaucrat const &bureaucrat) 
 {
@@ -87,6 +87,8 @@ uint8_t inline 	AForm::get_grade_to_sign() const
 
 uint8_t inline 	AForm::get_grade_to_execute() const
 {return (_grade_to_execute);}
+
+/*Exceptions*/
 
 std::string	AForm::grade_too_high_exception::too_high() const throw()
 {return ("Form grade is too high");}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:29:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     return (os);
 }
 
+/*Form methods*/
+
 void	Bureaucrat::sign_form(AForm &form) 
 {
 	try
@@ -72,22 +74,26 @@ void	Bureaucrat::sign_form(AForm &form)
 
 void		Bureaucrat::execute_form(AForm const &form) 
 {
-	if (form.execute(*this)) 
+	try
 	{
-		std::cout	<< _name
+		form.execute(*this);
+		
+		std::cout	<< (*this).get_name()
 					<< " executed "
 					<< form.get_name()
 					<< std::endl;
-	} 
-	else 
+	}
+	catch (AForm::grade_too_low_exception const &e)
 	{
-		std::cout	<< std::endl
-					<< _name
+		std::cerr	<< std::endl
+					<< (*this).get_name()
 					<< " can't execute "
 					<< form.get_name()
 					<< std::endl;
 	}
 }
+
+/*Grade methods*/
 
 void Bureaucrat::increment_grade() 
 {
@@ -105,11 +111,15 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
-std::string Bureaucrat::get_name() const
+/*Getters*/
+
+std::string inline	Bureaucrat::get_name() const
 {return (_name);}
 
-uint8_t Bureaucrat::get_grade() const
+uint8_t 			Bureaucrat::get_grade() const
 {return (_grade);}
+
+/*Exceptions*/
 
 std::string	Bureaucrat::grade_too_high_exception::too_high() const throw() 
 {return ("Bureaucrat grade is too high");}

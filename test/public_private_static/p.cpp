@@ -4,11 +4,9 @@ Test::Test() :
 	public_flag(0), private_flag(0)  
 {}
 
-Test::Test(Test const &cpy)
-{
-	public_flag = cpy.public_flag;
-	private_flag = cpy.private_flag;
-}
+Test::Test(Test const &cpy) : 
+	public_flag(cpy.public_flag),
+	private_flag(cpy.private_flag) {}
 
 Test::~Test() {}
 

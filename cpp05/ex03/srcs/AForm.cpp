@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/11 19:48:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:42:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 	return (os);
 }
 
-/*Satus methods*/
+/*Status methods*/
 
 void	AForm::be_signed(Bureaucrat &bureaucrat) 
 {
@@ -67,27 +67,29 @@ void	AForm::be_signed(Bureaucrat &bureaucrat)
 	_signed_status = true;
 }
 
-bool	AForm::execute(Bureaucrat const &bureaucrat) const 
+void	AForm::execute(Bureaucrat const &bureaucrat) const 
 {
 	if (bureaucrat.get_grade() > _grade_to_execute)
 		throw (grade_too_high_exception());
 	else if (!_signed_status)
 		throw (form_is_not_signed());
-		
-	return (true);
 }
+
+/*Getters*/
 
 std::string AForm::get_name() const
 {return (_name);}
 
-uint8_t AForm::get_signed_status() const
+uint8_t inline AForm::get_signed_status() const
 {return (_signed_status);}
 
-uint8_t AForm::get_grade_to_sign() const
+uint8_t inline AForm::get_grade_to_sign() const
 {return (_grade_to_sign);}
 
-uint8_t AForm::get_grade_to_execute() const
+uint8_t inline AForm::get_grade_to_execute() const
 {return (_grade_to_execute);}
+
+/*Exceptions*/
 
 std::string	AForm::grade_too_high_exception::too_high() const throw()
 {return ("Form grade is too high");}
