@@ -11,8 +11,7 @@ class Test
         ~Test();
 		Test&	operator=(Test const &rhs);
 
-	private :
-		bool 	const	_flag;
+		int 	const	_flag;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:32:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/13 20:28:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &cpy
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
 PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs) 
-{return (*this);}
+{
+	(void)rhs;
+	return (*this);
+}
 
 /*Execute method*/
 

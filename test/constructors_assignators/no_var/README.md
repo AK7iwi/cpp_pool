@@ -1,0 +1,1 @@
+Constructors and assignators if only const variable

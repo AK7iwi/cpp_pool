@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= Test
-SRCS			= main.cpp p.cpp utils.cpp 
+SRCS			= main.cpp a.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 

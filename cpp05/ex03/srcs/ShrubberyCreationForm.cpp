@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:37:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/13 20:28:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cpy) :
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) 
-{return (*this);}
+{
+	(void)rhs;
+	return (*this);
+}
 
 /*Execute method*/
 
