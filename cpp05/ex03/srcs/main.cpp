@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 18:49:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:07:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 
 int	main()
 {
+	try
+	{
+		
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	Bureaucrat	a("BOSS1", 1);
 	Intern		b;
 

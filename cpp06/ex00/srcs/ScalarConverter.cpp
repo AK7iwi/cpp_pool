@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 13:47:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:48:27 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ ScalarConverter::ScalarConverter(ScalarConverter const &cpy)
 ScalarConverter::~ScalarConverter() {}
 
 ScalarConverter& ScalarConverter::operator=(ScalarConverter const &rhs)
-{return (*this);}
+{
+	(void)rhs;
+	return (*this);
+}
 
 static void display(std::string const &literal)
 {

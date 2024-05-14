@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/13 20:48:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:12:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Intern::Intern(Intern const &cpy)
 
 Intern::~Intern() {};
 
-Intern		&Intern::operator=(Intern const &rhs)
+Intern	&Intern::operator=(Intern const &rhs)
 {
 	(void)rhs;
 	return (*this);
@@ -56,7 +56,7 @@ static int8_t	what_form(std::string form_name)
 	return (-1);
 }
 
-AForm	*Intern::make_form(std::string form_name, std::string form_target)  //try/ catch?
+AForm	*Intern::make_form(std::string form_name, std::string form_target) 
 {
 	AForm *(*f[3])(std::string form_target) = 
 	{ 
@@ -67,7 +67,8 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)  //try/
 	
 	AForm *new_form = NULL;
 	int8_t id = what_form(form_name);
-
+		
+	//try id != -1
 	if (id != -1) 
 	{
 		new_form = f[id](form_target);

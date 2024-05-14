@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 15:06:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:04:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Base *generate(void)
 	return (base);
 }
 
-void identify(Base *p)
+void identify(Base *p) //try_catch
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "Identify(Base *p): A" << std::endl;
@@ -64,7 +64,7 @@ void identify(Base &p)
 	try 
 	{
 		(void)dynamic_cast<B &>(p);
-		std::cout <<"Identify(Base &p): B" << std::endl;
+		std::cout << "Identify(Base &p): B" << std::endl;
 		return ;
 	} 
 	catch (std::exception const &e) {}
@@ -73,7 +73,7 @@ void identify(Base &p)
 	{
 		(void)dynamic_cast<C &>(p);
 		std::cout << "Identify(Base &p): C" << std::endl;
-		return ;
+		return ; //test this return
 	} 
 	catch (std::exception const &e)
 	{std::cout  << "Identify(Base &p): NULL" << std::endl;}
