@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 17:12:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:33:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,14 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)
 	AForm *new_form = NULL;
 	int8_t id = what_form(form_name);
 		
-	//try id != -1
-	if (id != -1) 
-	{
-		new_form = f[id](form_target);
+	if (id == -1)
+		throw (std::out_of_range("Invalid form_name"));
+	
+	new_form = f[id](form_target);
 		
-		std::cout	<< "Intern creates : "
-					<< new_form->get_name()
-					<< std::endl;
-	} 
-	else 
-		std::cout	<< "Invalid form_name" << std::endl;
+	std::cout	<< "Intern creates : "
+				<< new_form->get_name()
+				<< std::endl;
 	
 	return (new_form);
 }

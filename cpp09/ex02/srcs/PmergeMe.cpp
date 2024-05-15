@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 15:55:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:31:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,6 +258,6 @@ void PmergeMe::sort(char **argv)
 		_print_time_vector();
 		_print_time_deque();
 	}
-	catch (std::exception &e)
+	catch (std::exception const &e)
 	{std::cerr <<  e.what() << std::endl;}
 }
