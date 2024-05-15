@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:20:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:43:16 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ class Bureaucrat
 
 		/*Form methods*/
 
-		void				sign_form(AForm &form);
-		void 				execute_form(AForm const &form);
+		void				sign_form(AForm &form) const;
+		void 				execute_form(AForm const &form) const;
 
 		/*Grade methods*/
 
@@ -67,6 +67,6 @@ class Bureaucrat
 
 /*Operator*/
 
-std::ostream &operator<<(std::ostream &os, Bureaucrat const &cpy);
+std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
 
 #endif /* BUREAUCRAT_H */

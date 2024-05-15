@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:37:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:39:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
 {
     os  << bureaucrat.get_name() 
 		<< ", bureaucrat grade " 
-		<< (int)bureaucrat.get_grade();
+		<< (int)bureaucrat.get_grade()
+		<< std::endl;
 		
     return (os);
 }
 
 /*Form methods*/
 
-void	Bureaucrat::sign_form(Form &form)
+void	Bureaucrat::sign_form(Form &form) const
 {
 	try
 	{

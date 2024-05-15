@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 17:07:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:33:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ class Form
 
 /*Operator*/
 
-std::ostream	&operator<<(std::ostream &os, Form const &rhs);
+std::ostream	&operator<<(std::ostream &os, Form const &form);
 
 #endif /* FORM_H */

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:32:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:04:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define ROBOTOMY_REQUEST_FORM_H
 
 #include <AForm.hpp>
-#include <cstdlib>
-#include <ctime>
 
 class  RobotomyRequestForm : public AForm
 {

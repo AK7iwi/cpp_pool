@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 18:44:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:53:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ int	main()
 {
 	try 
 	{
-		Bureaucrat c("Bob", 1);
-		std::cout << c << std::endl;
+		std::cout << "Test PPF: " << std::endl;
+		
+		Bureaucrat Bob("Bob", 1);
+		std::cout << Bob << std::endl;
 
-		PresidentialPardonForm d("PPF");
-		std::cout << d << std::endl;
+		PresidentialPardonForm PPF("PPF");
+		std::cout << PPF << std::endl;
 
-		c.sign_form(d);
-		std::cout << d << std::endl;
+		Bob.sign_form(PPF);
+		std::cout << PPF << std::endl;
 
-		c.execute_form(d);
+		Bob.execute_form(PPF);
 
 	} 
 	catch (Bureaucrat::grade_too_high_exception const &e) 
@@ -39,17 +41,18 @@ int	main()
 	
 	try 
 	{
-		Bureaucrat c("Bobette", 1);
-		std::cout << c << std::endl;
+		std::cout << "Test RBF: " << std::endl;
+		
+		Bureaucrat Bobette("Bobette", 1);
+		std::cout << Bobette << std::endl;
 
-		RobotomyRequestForm d("RBF");
-		std::cout << d << std::endl;
+		RobotomyRequestForm RBF("RBF");
+		std::cout << RBF << std::endl;
 
-		c.sign_form(d);
-		std::cout << d << std::endl;
+		Bobette.sign_form(RBF);
+		std::cout << RBF << std::endl;
 
-		c.execute_form(d);
-
+		Bobette.execute_form(RBF);
 	} 
 	catch (Bureaucrat::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high() << std::endl;} 
@@ -58,16 +61,18 @@ int	main()
 
 	try 
 	{
-		Bureaucrat c("Booba", 1);
-		std::cout << c << std::endl;
+		std::cout << "Test SCF: " << std::endl;
+		
+		Bureaucrat Booba("Booba", 1);
+		std::cout << Booba << std::endl;
 
-		ShrubberyCreationForm d("SCF");
-		std::cout << d << std::endl;
+		ShrubberyCreationForm SCF("SCF");
+		std::cout << SCF << std::endl;
 
-		c.sign_form(d);
-		std::cout << d << std::endl;
+		Booba.sign_form(SCF);
+		std::cout << SCF << std::endl;
 
-		c.execute_form(d);
+		Booba.execute_form(SCF);
 
 	} 
 	catch (Bureaucrat::grade_too_high_exception const &e) 

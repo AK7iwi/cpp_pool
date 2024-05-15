@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:52:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:13:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int main(void)
 		std::cout << "Test #12 : Create Bureaucrat F via copy of Bureaucrat E" << std::endl;
 		Bureaucrat F(E);
 		std::cout << F << std::endl;
-		std::cout << "Test #13 : Create Bureaucrat F via assignement of Bureaucrat E" << std::endl;
+		std::cout << "Test #13 : Create Bureaucrat G via assignement of Bureaucrat F" << std::endl;
 		Bureaucrat G = F;
 		std::cout << G << std::endl;
 	} 
@@ -138,8 +138,8 @@ int main(void)
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Form::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low()  << std::endl;}
-	
-	try 
+
+	try
 	{
 		std::cout << "\nTest #19 : Create Form E with sign_grade 1 and exec_grade 1" << std::endl;
 		Form E("E", 1, 1);
@@ -147,18 +147,33 @@ int main(void)
 		std::cout <<"Test #20 : Create Form F via copy of Form E" << std::endl;
 		Form F(E);
 		std::cout << F << std::endl;
-		std::cout << "Test #21 : Create Bureaucrat G with grade 10" << std::endl;
-		Bureaucrat G("G", 10);
+		std::cout << "Test #21 : Create Form G via assignement of Form F" << std::endl;
+		Form G = F;
 		std::cout << G << std::endl;
-		std::cout << "Test #22 : Create Form H with sign_grade 50 and exec_grade 50" << std::endl;
-		Form H("H", 50, 50);
-		std::cout << H << std::endl;
-		std::cout << "Test #23 : Bureaucrat G try to sign Form H" << std::endl;
-		G.sign_form(H);
-		std::cout << H << std::endl;
-		std::cout << "Test #24 : Bureaucrat G try to sign Form E" << std::endl;
-		std::cout << E << std::endl;
-		G.sign_form(E);
+	}
+	catch (Form::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Form::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low()  << std::endl;}
+
+	
+	try 
+	{
+		std::cout << "\nTest #22 : Create Form I with sign_grade 1 and exec_grade 1" << std::endl;
+		Form I("I", 1, 1);
+		std::cout << I << std::endl;
+		std::cout << "Test #23 : Create Form J with sign_grade 50 and exec_grade 50" << std::endl;
+		Form J("J", 50, 50);
+		std::cout << J << std::endl;
+		std::cout << "Test #24 : Create Bureaucrat K with grade 10" << std::endl;
+		Bureaucrat K("K", 10);
+		std::cout << K << std::endl;
+		std::cout << "Test #25 : Bureaucrat K try to sign Form I" << std::endl;
+		K.sign_form(I);
+		std::cout << I << std::endl;
+		std::cout << "Test #26 : Bureaucrat H try to sign Form J" << std::endl;
+		K.sign_form(J);
+		std::cout << J << std::endl;
 	} 
 	catch (Form::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high() << std::endl;}
@@ -167,21 +182,21 @@ int main(void)
 	
 	try 
 	{
-		std::cout << "\nTest #25 : Create Bureaucrat I with grade 100" << std::endl;
-		Bureaucrat I("I", 100);
-		std::cout << I << std::endl;
-		std::cout << "Test #26 : Create Form J with sign_grade 99 and exec_grade 100" << std::endl;
-		Form J("J", 99, 100);
-		std::cout << J << std::endl;
-		std::cout << "Test #27 : Bureaucrat I try to sign Form J" << std::endl;
-		I.sign_form(J);
-		std::cout << J << std::endl;
-		std::cout << "Test #28 : Bureaucrat I increment grade" << std::endl;
-		I.increment_grade();
-		std::cout << I << std::endl;
-		std::cout << "Test #29 : Bureaucrat I try to sign Form J" << std::endl;
-		I.sign_form(J);
-		std::cout << J << std::endl;
+		std::cout << "\nTest #27 : Create Bureaucrat L with grade 100" << std::endl;
+		Bureaucrat L("L", 100);
+		std::cout << L << std::endl;
+		std::cout << "Test #28 : Create Form M with sign_grade 99 and exec_grade 100" << std::endl;
+		Form M("M", 99, 100);
+		std::cout << M << std::endl;
+		std::cout << "Test #29 : Bureaucrat L try to sign Form M" << std::endl;
+		L.sign_form(M);
+		std::cout << M << std::endl;
+		std::cout << "Test #30 : Bureaucrat L increment grade" << std::endl;
+		L.increment_grade();
+		std::cout << L << std::endl;
+		std::cout << "Test #31 : Bureaucrat L try to sign Form M" << std::endl;
+		L.sign_form(M);
+		std::cout << M << std::endl;
 	} 
 	catch (Form::grade_too_high_exception const &e) 
 	{std::cerr << e.too_high();} 

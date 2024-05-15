@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:37:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:39:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Bureaucrat
 
 		/*Form methods*/
 		
-		void				sign_form(Form &form); 
+		void				sign_form(Form &form) const; 
 
 		/*Grade methods*/
 		

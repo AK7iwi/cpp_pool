@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 22:04:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:55:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,19 @@ int	main()
 	{
 		std:: cout << "Test1: " << std::endl;
 		
-		Bureaucrat	a("BOSS1", 1);
-		Intern		b;
+		Bureaucrat	BOSS1("BOSS1", 1);
+		Intern		I1;
 
-		AForm *new_form1 = b.make_form("shrubbery creation", "hello");
+		AForm *new_form1 = I1.make_form("shrubbery creation", "hello");
 
-		a.sign_form(*new_form1);
-		a.execute_form(*new_form1);
+		BOSS1.sign_form(*new_form1);
+		BOSS1.execute_form(*new_form1);
 		delete (new_form1);
 	}
+	catch (Bureaucrat::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low() << std::endl;}
 	catch (std::exception const  &e)
 	{std::cerr << e.what() << std::endl;}
 
@@ -39,12 +43,16 @@ int	main()
 	{
 		std:: cout << "Test2: " << std::endl;
 
-		Bureaucrat	c("BOSS2", 1);
-		Intern		d;
+		Bureaucrat	BOOS2("BOSS2", 1);
+		Intern		I2;
 
-		AForm *new_form2 = d.make_form("creation", "hello");
+		AForm *new_form2 = 	I2.make_form("creation", "hello");
 		(void)new_form2;
 	}
+	catch (Bureaucrat::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low() << std::endl;}
 	catch (std::exception const  &e)
 	{std::cerr << e.what() << std::endl;}
 	
@@ -53,16 +61,40 @@ int	main()
 	{
 		std:: cout << "Test3: " << std::endl;
 
-		Bureaucrat	e("BOSS3", 1);
-		Intern		f;
+		Bureaucrat	BOSS3("BOSS3", 1);
+		Intern		I3;
 
-		AForm *new_form3 = f.make_form("robotomy request", "Bender");
+		AForm *new_form3 = I3.make_form("robotomy request", "Bender");
 
-		e.sign_form(*new_form3);
-		e.execute_form(*new_form3);
+		BOSS3.sign_form(*new_form3);
+		BOSS3.execute_form(*new_form3);
 		delete (new_form3);
 	}
-	catch (std::exception const &e)
+	catch (Bureaucrat::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const  &e)
+	{std::cerr << e.what() << std::endl;}
+
+	try
+	{
+		std:: cout << "Test4: " << std::endl;
+
+		Bureaucrat	BOSS4("BOSS4", 0);
+		Intern		I4;
+
+		AForm *new_form4 = I4.make_form("robotomy request", "Bender");
+
+		BOSS4.sign_form(*new_form4);
+		BOSS4.execute_form(*new_form4);
+		delete (new_form4);
+	}
+	catch (Bureaucrat::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const  &e)
 	{std::cerr << e.what() << std::endl;}
 
 	return (EXIT_SUCCESS);

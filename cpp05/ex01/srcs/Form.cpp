@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 17:24:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:34:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Form::Form(std::string const name, int const grade_to_sign, int const grade_to_e
     _name(name), 
 	_signed_status(false), 
 	_grade_to_sign(grade_to_sign), 
-	_grade_to_execute(grade_to_execute) 
+	_grade_to_execute(grade_to_execute)
 {
     if (_grade_to_sign < 1 || _grade_to_execute < 1)
         throw (grade_too_high_exception());
@@ -42,16 +42,11 @@ Form&	Form::operator=(Form const &rhs)
 	return (*this);
 }
 
-std::ostream& operator<<(std::ostream &os, Form const &rhs) 
+std::ostream& operator<<(std::ostream &os, Form const &form) 
 {
 	os	<< "Form " 
-		<< rhs.get_name()
-		<< (!rhs.get_signed_status() ? " is not signed, " : " is signed, ")
-		<< "Bureaucrat need grade "
-		<< (int)rhs.get_grade_to_sign()
-		<< " for sign it, and grade "
-		<< (int)rhs.get_grade_to_execute()
-		<< " for execute it" 
+		<< form.get_name()
+		<< (!form.get_signed_status() ? " is not signed, " : " is signed")
 		<< std::endl;
 		
 	return (os);

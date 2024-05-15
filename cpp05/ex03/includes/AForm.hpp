@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/11 19:55:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:33:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class AForm
 		/*Satus methods*/
 		
 		virtual void	execute(Bureaucrat const &bureaucrat) const = 0;
-		void			be_signed(Bureaucrat &bureaucrat);
+		void			be_signed(Bureaucrat const &bureaucrat);
 
 		/*Getters*/
 		
@@ -71,6 +71,6 @@ class AForm
 
 /*Operator*/
 
-std::ostream	&operator<<(std::ostream &os, AForm const &rhs);
+std::ostream	&operator<<(std::ostream &os, AForm const &form);
 
 #endif /* AFORM_H */

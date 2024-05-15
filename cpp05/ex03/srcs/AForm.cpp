@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:42:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:35:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,11 @@ AForm&	AForm::operator=(AForm const &rhs)
 	return (*this);
 }
 
-std::ostream	&operator<<(std::ostream &os, AForm const &rhs) 
+std::ostream	&operator<<(std::ostream &os, AForm const &form) 
 {
 	os	<< "AForm " 
-		<< rhs.get_name()
-		<< (!rhs.get_signed_status() ? " is not signed, " : " is signed, ")
-		<< "Bureaucrat need grade " 
-		<< (int)rhs.get_grade_to_sign()
-		<< " For sign it, and grade " 
-		<< (int)rhs.get_grade_to_execute()
-		<< " for execute it" 
+		<< form.get_name()
+		<< (!form.get_signed_status() ? " is not signed, " : " is signed")
 		<< std::endl;
 		
 	return (os);
@@ -59,7 +54,7 @@ std::ostream	&operator<<(std::ostream &os, AForm const &rhs)
 
 /*Status methods*/
 
-void	AForm::be_signed(Bureaucrat &bureaucrat) 
+void	AForm::be_signed(Bureaucrat const &bureaucrat) 
 {
 	if (bureaucrat.get_grade() > _grade_to_sign)
 		throw (AForm::grade_too_low_exception());

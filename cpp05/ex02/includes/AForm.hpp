@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:05:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:33:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ class AForm
 
 /*Operator*/
 
-std::ostream	&operator<<(std::ostream &os, AForm const &rhs);
+std::ostream	&operator<<(std::ostream &os, AForm const &form);
 
 #endif /* AFORM_H */

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:33:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:39:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static inline AForm *new_presidential(std::string formTarget)
 
 /*Form methods*/
 
-static int8_t	what_form(std::string form_name) 
+static int8_t	what_form(std::string const form_name) 
 {
 	std::string	form_name_list[3] = 
 	{
@@ -56,7 +56,7 @@ static int8_t	what_form(std::string form_name)
 	return (-1);
 }
 
-AForm	*Intern::make_form(std::string form_name, std::string form_target) 
+AForm	*Intern::make_form(std::string const form_name, std::string const form_target) 
 {
 	AForm *(*f[3])(std::string form_target) = 
 	{ 
@@ -69,7 +69,7 @@ AForm	*Intern::make_form(std::string form_name, std::string form_target)
 	int8_t id = what_form(form_name);
 		
 	if (id == -1)
-		throw (std::out_of_range("Invalid form_name"));
+		throw (std::out_of_range("Invalid Form name"));
 	
 	new_form = f[id](form_target);
 		
