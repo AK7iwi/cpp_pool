@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:39:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 18:04:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ Intern	&Intern::operator=(Intern const &rhs)
 
 /*Getters*/
 
-static inline AForm *new_shrubbery(std::string form_target) 
+static inline AForm *new_shrubbery(std::string const form_target) 
 {return (new ShrubberyCreationForm(form_target));}
 
-static inline AForm *new_robotomy(std::string form_target) 
+static inline AForm *new_robotomy(std::string const form_target) 
 {return (new RobotomyRequestForm(form_target));}
 
-static inline AForm *new_presidential(std::string formTarget) 
+static inline AForm *new_presidential(std::string const formTarget) 
 {return (new PresidentialPardonForm(formTarget));}
 
 /*Form methods*/

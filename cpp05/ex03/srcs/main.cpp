@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:55:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/15 18:03:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main()
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const  &e)
+	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
 
 	try
@@ -53,7 +53,7 @@ int	main()
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const  &e)
+	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
 	
 
@@ -74,7 +74,7 @@ int	main()
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const  &e)
+	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
 
 	try
