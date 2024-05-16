@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/10 14:19:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:41:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int main(void)
 {
+	/*Test catch error*/
+	
 	try 
 	{
 		std::cout << "Test #1 : Create Bureaucrat A with grade 0" << std::endl;
@@ -72,6 +74,8 @@ int main(void)
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low()  << std::endl;}
 	
+	/*Test cpy/assignement*/
+	
 	try 
 	{
 		std::cout << "\nTest #11 : Create Bureaucrat E with grade 100"  << std::endl;
@@ -88,6 +92,8 @@ int main(void)
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
+
+	/*Test catch with the general class exception */
 
 	try 
 	{

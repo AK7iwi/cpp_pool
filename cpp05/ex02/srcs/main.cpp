@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:53:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:46:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,31 @@
 
 int	main() 
 {
+	/*Test catch error*/
+	
+	try 
+	{
+		std::cout << "Test PPF error: " << std::endl;
+		
+		Bureaucrat Bob("Bob", 0);
+		std::cout << Bob << std::endl;
+
+		PresidentialPardonForm PPF("PPF");
+		std::cout << PPF << std::endl;
+
+		Bob.sign_form(PPF);
+		std::cout << PPF << std::endl;
+
+		Bob.execute_form(PPF);
+
+	} 
+	catch (Bureaucrat::grade_too_high_exception const &e) 
+	{std::cerr << e.too_high() << std::endl;} 
+	catch (Bureaucrat::grade_too_low_exception const &e) 
+	{std::cerr << e.too_low() << std::endl;}
+	
+	/*Test the PresidentialPardonForm*/
+	
 	try 
 	{
 		std::cout << "Test PPF: " << std::endl;
@@ -39,6 +64,8 @@ int	main()
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
 	
+	/*Test the RobotomyRequestForm*/
+	
 	try 
 	{
 		std::cout << "Test RBF: " << std::endl;
@@ -58,6 +85,8 @@ int	main()
 	{std::cerr << e.too_high() << std::endl;} 
 	catch (Bureaucrat::grade_too_low_exception const &e) 
 	{std::cerr << e.too_low() << std::endl;}
+
+	/*Test the ShrubberyCreationForm*/
 
 	try 
 	{

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:35:01 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:46:53 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ std::ostream	&operator<<(std::ostream &os, AForm const &form)
 {
 	os	<< "AForm " 
 		<< form.get_name()
-		<< (!form.get_signed_status() ? " is not signed, " : " is signed ")
+		<< (!form.get_signed_status() ? " is not signed" : " is signed")
 		<< std::endl;
 		
 	return (os);
