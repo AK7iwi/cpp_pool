@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:03:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:50:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ void	Bureaucrat::sign_form(AForm &form) const
 		std::cerr 	<< (*this).get_name()
 					<< " couldn't signed "
 					<< form.get_name()
-					<< " because "
-					<< e.what()
+					<< " because grade is too low"
 					<< std::endl;
 	}
 }
