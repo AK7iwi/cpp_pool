@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 15:11:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:49:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ class Bureaucrat
 		class grade_too_high_exception : public std::exception
 		{
 			public:
-				std::string too_high() const throw();
+				const char* what() const throw();
 		};
 
 		class grade_too_low_exception : public std::exception
 		{
 			public:
-				std::string too_low() const throw();
+				const char* what() const throw();
 		};
 		
 	private:	

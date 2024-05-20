@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/16 13:46:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:05:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ int	main()
 		Bob.execute_form(PPF);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	/*Test the PresidentialPardonForm*/
 	
@@ -59,10 +57,8 @@ int	main()
 		Bob.execute_form(PPF);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	/*Test the RobotomyRequestForm*/
 	
@@ -81,10 +77,8 @@ int	main()
 
 		Bobette.execute_form(RBF);
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	/*Test the ShrubberyCreationForm*/
 
@@ -104,10 +98,8 @@ int	main()
 		Booba.execute_form(SCF);
 
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	return (EXIT_SUCCESS);
 }

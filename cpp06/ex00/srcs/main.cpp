@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:08:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 13:35:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/16 14:47:08 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 		ScalarConverter::convert("nanf");
 		
 	}
-	catch (std::exception &e)
+	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
 		
     return (EXIT_SUCCESS);

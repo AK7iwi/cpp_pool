@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/16 14:02:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:05:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,7 @@ int	main()
 		BOSS1.execute_form(*new_form1);
 		delete (new_form1);
 	}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const  &e)
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	/*Test invalid form name*/
@@ -53,11 +49,7 @@ int	main()
 		AForm *new_form2 = 	I2.make_form("creation", "hello");
 		(void)new_form2;
 	}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const &e)
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 	
 	/*Test shrubbery creation*/
@@ -75,11 +67,7 @@ int	main()
 		BOSS3.execute_form(*new_form3);
 		delete (new_form3);
 	}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const &e)
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	/*Test robotomy request*/
@@ -97,11 +85,7 @@ int	main()
 		BOSS4.execute_form(*new_form4);
 		delete (new_form4);
 	}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const &e)
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	try
@@ -117,11 +101,7 @@ int	main()
 		BOSS5.execute_form(*new_form5);
 		delete (new_form5);
 	}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
-	catch (std::exception const &e)
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	return (EXIT_SUCCESS);

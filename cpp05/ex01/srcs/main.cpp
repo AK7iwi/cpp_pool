@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/16 13:40:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:00:10 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,16 @@ int main(void)
 		std::cout <<"Test #1 : Create Bureaucrat A with grade 0" << std::endl;
 		Bureaucrat A("A", 0);
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e)
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
 		std::cout <<"\nTest #2 : Create Bureaucrat B with grade 151" << std::endl;
 		Bureaucrat B("B", 151);
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e)
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
@@ -51,10 +47,8 @@ int main(void)
 		std::cout << "Test #6 : Bureaucrat C increment grade" << std::endl;
 		C.increment_grade();
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
@@ -70,10 +64,8 @@ int main(void)
 		std::cout << "Test #10 : Bureaucrat D decrement grade" << std::endl;
 		D.decrement_grade();
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	/*Bureaucrat test cpy/assignement*/
 	
@@ -89,10 +81,8 @@ int main(void)
 		Bureaucrat G = F;
 		std::cout << G << std::endl;
 	} 
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	/*Test catch with the general class exception */
 	
@@ -112,40 +102,32 @@ int main(void)
 		std::cout << "\nTest #15 : Create Form A with sign_grade 1 and exec_grade 0" << std::endl;
 		Form A("A", 1, 0);
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
 		std::cout << "\nTest #16 : Create Form B with sign_grade 0 and exec_grade 1" << std::endl;
 		Form B("B", 0, 1);
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low()  << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
 		std::cout << "\nTest #17 : Create Form C with sign_grade 151 and exec_grade 150" << std::endl;
 		Form C("C", 151, 150);
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
 		std::cout << "\nTest #18 : Create Form D with sign_grade 150 and exec_grade 151" << std::endl;
 		Form D("D", 150, 151);
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low()  << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	/*Form test cpy/assignement*/
 	
@@ -161,10 +143,8 @@ int main(void)
 		Form G = F;
 		std::cout << G << std::endl;
 	}
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low()  << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 
 	/*Main test*/
 	
@@ -186,14 +166,8 @@ int main(void)
 		K.sign_form(J);
 		std::cout << J << std::endl;
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;}
-	catch (Form::grade_too_low_exception const &e)
-	{std::cerr << e.too_low() << std::endl;}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	try 
 	{
@@ -213,14 +187,8 @@ int main(void)
 		L.sign_form(M);
 		std::cout << M << std::endl;
 	} 
-	catch (Form::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high();} 
-	catch (Form::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low();}
-	catch (Bureaucrat::grade_too_high_exception const &e) 
-	{std::cerr << e.too_high() << std::endl;} 
-	catch (Bureaucrat::grade_too_low_exception const &e) 
-	{std::cerr << e.too_low() << std::endl;}
+	catch (std::exception const &e) 
+	{std::cerr << e.what() << std::endl;}
 	
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 17:48:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/16 14:48:06 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static bool find_and_display_type(std::string const &literal)
 	return (false);
 }
 
-void ScalarConverter::convert(std::string const &literal)
+void ScalarConverter::convert(std::string const &literal) //sup &
 {	
 	if (!find_and_display_type(literal))
 		throw (std::invalid_argument("Error: unknow(wrong input)"));

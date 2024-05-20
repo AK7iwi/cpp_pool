@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/16 13:47:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:03:54 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ uint8_t inline AForm::get_grade_to_execute() const
 
 /*Exceptions*/
 
-std::string	AForm::grade_too_high_exception::too_high() const throw()
+const char*	AForm::grade_too_high_exception::what() const throw() 
 {return ("Form grade is too high");}
 
-std::string	AForm::grade_too_low_exception::too_low() const throw()
+const char*	AForm::grade_too_low_exception::what() const throw() 
 {return ("Form grade is too low");}
 
-std::string		AForm::form_is_not_signed::not_signed() const throw()
+const char*	AForm::form_is_not_signed::what() const throw()
 {return ("Form is not signed");}

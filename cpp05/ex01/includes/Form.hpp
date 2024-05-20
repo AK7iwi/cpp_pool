@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:33:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:57:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ class Form
 
 		/*Exceptions*/
 		
-		class grade_too_high_exception : public std::exception 
+		class grade_too_high_exception : public std::exception
 		{
 			public:
-				std::string	too_high() const throw();
+				const char* what() const throw();
 		};
 
-		class grade_too_low_exception : public std::exception 
+		class grade_too_low_exception : public std::exception
 		{
 			public:
-				std::string	too_low() const throw();
+				const char* what() const throw();
 		};
 	
 	private:

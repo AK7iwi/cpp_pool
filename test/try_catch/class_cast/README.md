@@ -1,1 +1,0 @@
-Test on try/catch if invalid class cast
