@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:56:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:46:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void display(std::string const &literal)
 	if (limit_type(literal))
 		return ;
 		
-	const char *lit_as_char = literal.c_str();
+	char const* lit_as_char = literal.c_str();
 	double lit_as_double = strtod(lit_as_char, NULL);
 	
 	std::cout << "Char: ";
@@ -68,7 +68,7 @@ static bool find_and_display_type(std::string const &literal)
 
 /* Convert method */
 
-void ScalarConverter::convert(std::string const &literal) 
+void ScalarConverter::convert(std::string const &literal)
 {	
 	if (!find_and_display_type(literal))
 		throw (std::invalid_argument("Error: unknow(wrong input)"));

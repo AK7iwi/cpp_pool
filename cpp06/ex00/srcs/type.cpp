@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:42:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:57:28 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:47:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Type methods */
 
-bool limit_type(std::string const &literal)
+bool 	limit_type(std::string const &literal)
 {
 	if (literal == "+inf" || literal == "-inf" || literal == "+inff" || literal == "-inff")
 	{
@@ -48,10 +48,10 @@ bool limit_type(std::string const &literal)
 	return (false);
 }
 
-bool is_char(std::string const &literal) //inline
+bool	is_char(std::string const &literal)
 {return (literal.size() == 1 && !isdigit(literal[0]));}
 
-bool is_int(std::string const &literal)
+bool 		is_int(std::string const &literal)
 {
 	int i = 0;
 
@@ -68,7 +68,7 @@ bool is_int(std::string const &literal)
 	return (true);
 }
 
-bool is_double(std::string const &literal)
+bool 	is_double(std::string const &literal)
 {
 	if (literal == "-inf" || literal == "+inf" || literal == "nan")
 		return (true);
@@ -94,7 +94,7 @@ bool is_double(std::string const &literal)
 	return (point == 1 && isdigit(literal[i - 1]));
 }
 
-bool is_float(std::string const &literal)
+bool 	is_float(std::string const &literal)
 {
 	if (literal == "-inff" || literal == "+inff" || literal == "nanf")
 		return (true);
