@@ -6,12 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:39:43 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:09:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_H
-#define INTERN_H
+#ifndef INTERN_HPP
+#define INTERN_HPP
 
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -33,4 +33,4 @@ class Intern
 		AForm	*make_form(std::string const form_name, std::string const form_target);
 };
 
-#endif /* INTERN_H */
+#endif /* INTERN_HPP */

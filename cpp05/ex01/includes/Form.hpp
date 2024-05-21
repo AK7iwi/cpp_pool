@@ -6,12 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 14:57:03 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:09:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_H
-#define FORM_H
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include "Bureaucrat.hpp"
 #include <iostream>
@@ -65,4 +65,4 @@ class Form
 
 std::ostream	&operator<<(std::ostream &os, Form const &form);
 
-#endif /* FORM_H */
+#endif /* FORM_HPP */

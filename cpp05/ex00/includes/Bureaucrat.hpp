@@ -6,12 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 14:49:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:08:32 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-#define BUREAUCRAT_H
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <stdexcept>
@@ -62,4 +62,4 @@ class Bureaucrat
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat);
 
-#endif /* BUREAUCRAT_H */
+#endif /* BUREAUCRAT_HPP */

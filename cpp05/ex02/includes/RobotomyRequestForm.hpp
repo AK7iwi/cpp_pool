@@ -6,12 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 17:04:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:09:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMY_REQUEST_FORM_H
-#define ROBOTOMY_REQUEST_FORM_H
+#ifndef ROBOTOMY_REQUEST_FORM_HPP
+#define ROBOTOMY_REQUEST_FORM_HPP
 
 #include <AForm.hpp>
 
@@ -34,4 +34,4 @@ class  RobotomyRequestForm : public AForm
     	
 };
 
-#endif /* ROBOTOMY_REQUEST_FORM_H */
+#endif /* ROBOTOMY_REQUEST_FORM_HPP */

@@ -6,12 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:42:58 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/12 19:36:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:10:13 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRY_CREATION_FORM_H
-#define SHRUBERRY_CREATION_FORM_H
+#ifndef SHRUBERRY_CREATION_FORM_HPP
+#define SHRUBERRY_CREATION_FORM_HPP
 
 #include <AForm.hpp>
 #include <fstream>
@@ -34,4 +34,4 @@ class  ShrubberyCreationForm : public AForm
 		std::string	const	_target;
 };
 
-#endif /* SHRUBERRY_CREATION_FORM_H */
+#endif /* SHRUBERRY_CREATION_FORM_HPP */
