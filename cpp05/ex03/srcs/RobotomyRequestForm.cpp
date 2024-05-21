@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:07:00 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:56:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,14 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 
 void	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const 
 {
-	try 
-	{
-		AForm::execute(bureaucrat);
+	AForm::execute(bureaucrat);
 		
-		std::srand(std::time(NULL));
-		int rand = std::rand();
+	std::srand(std::time(NULL));
+	int rand = std::rand();
 		
-		std::cout 	<< "*drilling noise*" 
-					<< std::endl
-					<< _target
-					<< (rand % 2 ? " has been robotomized successfully" : " Robotomy failed.")
-					<< std::endl;
-	} 
-	catch (std::exception const &e) 
-	{std::cerr << e.what() << std::endl;}
+	std::cout 	<< "*drilling noise*" 
+				<< std::endl
+				<< _target
+				<< (rand % 2 ? " has been robotomized successfully" : " Robotomy failed.")
+				<< std::endl;
 }

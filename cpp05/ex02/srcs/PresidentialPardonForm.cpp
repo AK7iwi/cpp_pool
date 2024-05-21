@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:06:40 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:55:40 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,9 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm
 
 void	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const 
 {
-	try 
-	{
-		AForm::execute(bureaucrat);
+	AForm::execute(bureaucrat);
 		
-		std::cout	<< _target
-					<< " has been pardoned by Zaphod Beeblebrox."
-					<< std::endl;
-					
-	} 
-	catch (std::exception const &e) 
-	{std::cerr << e.what() << std::endl;}
+	std::cout	<< _target
+				<< " has been pardoned by Zaphod Beeblebrox."
+				<< std::endl;
 }

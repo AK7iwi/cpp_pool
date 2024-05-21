@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:06:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:17:14 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,20 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 void 	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {
-	try 
-	{
-		AForm::execute(bureaucrat);
+	AForm::execute(bureaucrat);
 		
-		std::ofstream	outFile((_target + "_shruberry").c_str());
+	std::ofstream	out_file((_target + "_shruberry").c_str());
 
-		outFile << "      /\\      "		<< std::endl;
-		outFile << "     /\\*\\     "		<< std::endl;
-		outFile << "    /\\O\\*\\    "		<< std::endl;
-		outFile << "   /*/\\/\\/\\   "		<< std::endl;
-		outFile << "  /\\O\\/\\*\\/\\  "	<< std::endl;
-		outFile << " /\\*\\/\\*\\/\\/\\ "	<< std::endl;
-		outFile << "/\\O\\/\\/*/\\/O/\\"	<< std::endl;
-		outFile << "      ||      "			<< std::endl;
-		outFile << "      ||      "			<< std::endl;
-		outFile << "      ||      "			<< std::endl;
+	out_file << "      /\\      "		<< std::endl;
+	out_file << "     /\\*\\     "		<< std::endl;
+	out_file << "    /\\O\\*\\    "		<< std::endl;
+	out_file << "   /*/\\/\\/\\   "		<< std::endl;
+	out_file << "  /\\O\\/\\*\\/\\  "	<< std::endl;
+	out_file << " /\\*\\/\\*\\/\\/\\ "	<< std::endl;
+	out_file << "/\\O\\/\\/*/\\/O/\\"	<< std::endl;
+	out_file << "      ||      "		<< std::endl;
+	out_file << "      ||      "		<< std::endl;
+	out_file << "      ||      "		<< std::endl;
 	
-	} 
-	catch (std::exception const &e) 
-	{std::cerr << e.what() << std::endl;}
 }
 

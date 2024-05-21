@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:50:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:02:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,14 @@ void		Bureaucrat::execute_form(AForm const &form) const
 					<< form.get_name()
 					<< std::endl;
 	}
-	catch (AForm::grade_too_low_exception const &e)
+	catch (std::exception const &e)
 	{
 		std::cerr	<< std::endl
 					<< (*this).get_name()
 					<< " can't execute "
 					<< form.get_name()
+					<< " because "
+					<< e.what()
 					<< std::endl;
 	}
 }
