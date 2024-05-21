@@ -6,11 +6,12 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:16:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 19:00:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:17:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 #include <iostream>
 #include <string>
 #include <stdlib.h>
@@ -35,3 +36,5 @@ class Serializer
 		static uintptr_t serialize(Data *ptr);
 		static Data *deserialize(uintptr_t raw);
 };
+
+#endif /*SERIALIZER_HPP*/

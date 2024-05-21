@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:44:33 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 13:50:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:57:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+/* Convert methods */
 
 void to_char(const char *lit_as_char, double lit_as_double)
 {

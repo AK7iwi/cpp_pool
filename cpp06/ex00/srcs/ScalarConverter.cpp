@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:29:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/16 14:48:06 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:56:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+/* Constructors & operators */
 
 ScalarConverter::ScalarConverter() {}
 
@@ -24,6 +26,8 @@ ScalarConverter& ScalarConverter::operator=(ScalarConverter const &rhs)
 	(void)rhs;
 	return (*this);
 }
+
+/* Display methods */
 
 static void display(std::string const &literal)
 {
@@ -62,12 +66,14 @@ static bool find_and_display_type(std::string const &literal)
 	return (false);
 }
 
-void ScalarConverter::convert(std::string const &literal) //sup &
+/* Convert method */
+
+void ScalarConverter::convert(std::string const &literal) 
 {	
 	if (!find_and_display_type(literal))
 		throw (std::invalid_argument("Error: unknow(wrong input)"));
 		
 	display(literal);
 	
-	std::cout << std::endl;
+	std::cout << std::endl << std::endl;
 }

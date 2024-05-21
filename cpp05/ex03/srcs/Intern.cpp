@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/15 18:04:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:02 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 Intern::Intern() {};
 
@@ -27,7 +27,7 @@ Intern	&Intern::operator=(Intern const &rhs)
 	return (*this);
 }
 
-/*Getters*/
+/* Getters */
 
 static inline AForm *new_shrubbery(std::string const form_target) 
 {return (new ShrubberyCreationForm(form_target));}
@@ -38,7 +38,7 @@ static inline AForm *new_robotomy(std::string const form_target)
 static inline AForm *new_presidential(std::string const formTarget) 
 {return (new PresidentialPardonForm(formTarget));}
 
-/*Form methods*/
+/* Form methods */
 
 static int8_t	what_form(std::string const form_name) 
 {

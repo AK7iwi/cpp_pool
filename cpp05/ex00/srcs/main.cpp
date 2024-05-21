@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:08 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 14:54:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:40:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	/*Test catch error*/
+	/* Test catch error */
 	
 	try 
 	{
@@ -66,7 +66,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 	
-	/*Test cpy/assignement*/
+	/* Test cpy/assignement */
 	
 	try 
 	{
@@ -83,7 +83,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Test catch with the general class exception */
+	/* Test catch with the general class exception */
 
 	try 
 	{

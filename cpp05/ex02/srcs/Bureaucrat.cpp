@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 13:00:22 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:10:36 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,9 @@ uint8_t 			Bureaucrat::get_grade() const
 
 /*Exceptions*/
 
-const char* Bureaucrat::grade_too_high_exception::what() const throw() 
+char const* Bureaucrat::grade_too_high_exception::what() const throw() 
 {return ("Bureaucrat grade is too high");}
 
-const char*	Bureaucrat::grade_too_low_exception::what() const throw() 
+char const*	Bureaucrat::grade_too_low_exception::what() const throw() 
 {return ("Bureaucrat grade is too low");}
 

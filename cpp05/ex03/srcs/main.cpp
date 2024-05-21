@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:22:57 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:05:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int	main()
 {
-	/*Test catch error*/
+	/* Test catch error */
 	
 	try
 	{
@@ -37,7 +37,7 @@ int	main()
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Test invalid form name*/
+	/* Test invalid form name */
 	
 	try
 	{
@@ -52,7 +52,7 @@ int	main()
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 	
-	/*Test shrubbery creation*/
+	/* Test shrubbery creation */
 	
 	try
 	{
@@ -70,7 +70,7 @@ int	main()
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Test robotomy request*/
+	/* Test robotomy request */
 
 	try
 	{

@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 13:17:27 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
 	AForm("ShrubberyForm", 145, 137),
@@ -30,7 +30,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-/*Execute method*/
+/* Execute method */
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const 
 {

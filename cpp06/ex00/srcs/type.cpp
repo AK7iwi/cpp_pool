@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:42:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 13:59:39 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:57:28 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+/* Type methods */
 
 bool limit_type(std::string const &literal)
 {
@@ -46,7 +48,7 @@ bool limit_type(std::string const &literal)
 	return (false);
 }
 
-bool is_char(std::string const &literal)
+bool is_char(std::string const &literal) //inline
 {return (literal.size() == 1 && !isdigit(literal[0]));}
 
 bool is_int(std::string const &literal)

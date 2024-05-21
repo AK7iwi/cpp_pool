@@ -6,12 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:06:04 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:59:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_H
-#define AFORM_H
+#ifndef SCALAR_CONVERTER_HPP
+#define SCALAR_CONVERTER_HPP
+
 #include <iostream>
 #include <iomanip>
 #include <stdint.h>
@@ -25,15 +26,19 @@
 class ScalarConverter
 {
 	public:
+		/* Constructors & operators */
+		
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const &cpy);
 		~ScalarConverter();
 		ScalarConverter& operator=(ScalarConverter const &rhs);
 
+		/* Convert method */
+		
 		static void convert(std::string const &literal);
 };
 
-/*type.cpp*/
+/* type.cpp */
 
 bool is_char(std::string const &literal);
 bool is_int(std::string const &literal);
@@ -41,11 +46,11 @@ bool is_double(std::string const &literal);
 bool is_float(std::string const &literal);
 bool limit_type(std::string const &literal);
 
-/*convert.cpp*/
+/* convert.cpp */
 
 void to_char(const char *lit_as_char, double lit_as_double);
 void to_int(const char *lit_as_char, double lit_as_double);
 void to_float(const char *lit_as_char, double lit_as_double);
 void to_double(const char *lit_as_char, double lit_as_double);
 
-#endif /* */
+#endif /* SCALAR_CONVERTER_HPP */

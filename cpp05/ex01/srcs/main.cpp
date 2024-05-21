@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:04:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:00:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:43:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-	/*Bureaucrat test catch error*/
+	/* Bureaucrat test catch error */
 
 	try 
 	{
@@ -67,7 +67,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Bureaucrat test cpy/assignement*/
+	/* Bureaucrat test cpy/assignement */
 	
 	try 
 	{
@@ -84,7 +84,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Test catch with the general class exception */
+	/* Test catch with the general class exception */
 	
 	try 
 	{
@@ -95,7 +95,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << "Catch OK" << std::endl;}
 	
-	/*Form test catch error*/
+	/* Form test catch error */
 	
 	try 
 	{
@@ -129,7 +129,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Form test cpy/assignement*/
+	/* Form test cpy/assignement */
 	
 	try
 	{
@@ -146,7 +146,7 @@ int main(void)
 	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
-	/*Main test*/
+	/* Main test */
 	
 	try 
 	{

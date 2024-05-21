@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 12:56:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
 	AForm("RobotomyForm", 72, 45), 
@@ -30,7 +30,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const &r
 	return (*this);
 }
 
-/*Execute method*/
+/* Execute method */
 
 void	RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const 
 {

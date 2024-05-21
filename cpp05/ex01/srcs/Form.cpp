@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 14:58:31 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:06:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 Form::Form(std::string const name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
@@ -52,7 +52,7 @@ std::ostream& operator<<(std::ostream &os, Form const &form)
 	return (os);
 }
 
-/*Satus methods*/
+/* Status methods */
 
 void	Form::be_signed(Bureaucrat const &bureaucrat) 
 {
@@ -62,7 +62,7 @@ void	Form::be_signed(Bureaucrat const &bureaucrat)
 	_signed_status = true;
 }
 
-/*Getters*/
+/* Getters */
 
 std::string 	Form::get_name() const 
 {return (_name);}
@@ -76,10 +76,10 @@ uint8_t inline  Form::get_grade_to_sign() const
 uint8_t inline	Form::get_grade_to_execute() const
 {return (_grade_to_execute);}
 
-/*Exceptions*/
+/* Exceptions */
 
-const char*	Form::grade_too_high_exception::what() const throw() 
+char const*	Form::grade_too_high_exception::what() const throw() 
 {return ("Form grade is too high");}
 
-const char*	Form::grade_too_low_exception::what() const throw() 
+char const*	Form::grade_too_low_exception::what() const throw() 
 {return ("Form grade is too low");}

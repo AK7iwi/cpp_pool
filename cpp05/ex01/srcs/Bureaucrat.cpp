@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/20 15:49:59 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:05:12 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
 	_name(name)
@@ -49,7 +49,7 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
     return (os);
 }
 
-/*Form methods*/
+/* Form methods */
 
 void	Bureaucrat::sign_form(Form &form) const
 {
@@ -72,7 +72,7 @@ void	Bureaucrat::sign_form(Form &form) const
 	}
 }
 
-/*Grade methods*/
+/* Grade methods */
 
 void Bureaucrat::increment_grade() 
 {
@@ -90,7 +90,7 @@ void Bureaucrat::decrement_grade()
         throw (grade_too_low_exception());
 }
 
-/*Getters*/
+/* Getters */
 
 std::string inline	Bureaucrat::get_name() const
 {return (_name);}
@@ -98,10 +98,10 @@ std::string inline	Bureaucrat::get_name() const
 uint8_t				Bureaucrat::get_grade() const 
 {return (_grade);}
 
-/*Exceptions*/
+/* Exceptions */
 
-const char* Bureaucrat::grade_too_high_exception::what() const throw() 
+char const* Bureaucrat::grade_too_high_exception::what() const throw() 
 {return ("Bureaucrat grade is too high");}
 
-const char*	Bureaucrat::grade_too_low_exception::what() const throw() 
+char const*	Bureaucrat::grade_too_low_exception::what() const throw() 
 {return ("Bureaucrat grade is too low");}

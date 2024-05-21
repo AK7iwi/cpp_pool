@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:44 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 12:56:34 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:31 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-/*Constructors & operators*/
+/* Constructors & operators */
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) :
 	AForm("PresidentialForm", 25, 5),
@@ -30,7 +30,7 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm
 	return (*this);
 }
 
-/*Execute method*/
+/* Execute method */
 
 void	PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const 
 {

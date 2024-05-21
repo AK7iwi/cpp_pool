@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 09:42:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:09:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:45:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@
 class Intern 
 {
 	public:
-		/*Constructors & operators*/
+		/* Constructors & operators */
 		
 		Intern();
 		Intern(Intern const &cpy);
 		virtual ~Intern();
 		Intern& operator=(Intern const &rhs);
 
-		/*Form methods*/
+		/* Form methods */
 		
 		AForm	*make_form(std::string const form_name, std::string const form_target);
 };
