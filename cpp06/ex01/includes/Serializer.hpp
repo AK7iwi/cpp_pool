@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:16:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/22 16:12:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:21:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,4 @@ class Serializer
 		Serializer& operator=(Serializer const &rhs);	
 };
 
-#endif /*SERIALIZER_HPP*/
+#endif /* SERIALIZER_HPP */

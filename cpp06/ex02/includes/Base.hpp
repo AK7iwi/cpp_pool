@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/22 14:09:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:21:55 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,4 @@ class B : public Base {};
 
 class C : public Base {};
 
-#endif /*BASE_HPP*/
+#endif /* BASE_HPP */
