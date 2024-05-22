@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:30:11 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/22 13:56:29 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:12:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@
 class ScalarConverter
 {
 	public:
+		/* Convert method */
+		
+		static void convert(std::string const &literal);
+
+	private:
+
 		/* Constructors & operators */
 		
 		ScalarConverter();
 		ScalarConverter(ScalarConverter const &cpy);
 		~ScalarConverter();
 		ScalarConverter& operator=(ScalarConverter const &rhs);
-
-		/* Convert method */
-		
-		static void convert(std::string const &literal);
 };
 
 /* type.cpp */
