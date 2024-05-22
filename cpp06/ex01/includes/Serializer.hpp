@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:16:56 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 16:55:18 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:17:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
-#include <string>
 #include <stdlib.h>
 
 #define uintptr_t unsigned long
+
+/* Data */
 
 struct Data
 {
@@ -29,13 +30,20 @@ struct Data
 class Serializer
 {
 	public:
+		/* Constructors & operators */
+		
 		Serializer();
 		Serializer(Serializer const &cpy);
 		~Serializer();
 		Serializer& operator=(Serializer const &rhs);
 		
-		static uintptr_t	serialize(Data const *ptr);
-		static Data*		deserialize(uintptr_t const raw);
+		/* Serialize method */
+		
+		static uintptr_t serialize(Data const *ptr);
+
+		/* Deserialize method */
+		
+		static Data*	deserialize(uintptr_t raw);
 };
 
 #endif /*SERIALIZER_HPP*/

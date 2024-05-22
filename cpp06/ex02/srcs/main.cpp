@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:47 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:04:23 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:26:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base *generate(void)
+Base *generate()
 {
 	Base *base = NULL;
 
@@ -24,22 +24,22 @@ Base *generate(void)
 	{
 		case 0:
 			std::cout << "Creation: A" << std::endl;
-			base = new (A);
+			base = new A();
 			break ;
 		case 1:
 			std::cout << "Creation: B" << std::endl;
-			base = new (B);
+			base = new B();
 			break ;
 		case 2:
 			std::cout << "Creation: C" << std::endl;
-			base = new (C);
+			base = new C();
 			break ;
 	}
 	
 	return (base);
 }
 
-void identify(Base *p) //try_catch
+void identify(Base *p) 
 {
 	if (dynamic_cast<A *>(p))
 		std::cout << "Identify(Base *p): A" << std::endl;
@@ -73,7 +73,6 @@ void identify(Base &p)
 	{
 		(void)dynamic_cast<C &>(p);
 		std::cout << "Identify(Base &p): C" << std::endl;
-		return ; //test this return
 	} 
 	catch (std::exception const &e)
 	{std::cout  << "Identify(Base &p): NULL" << std::endl;}

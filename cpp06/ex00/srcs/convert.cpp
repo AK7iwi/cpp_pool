@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:44:33 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 16:45:32 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:56:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Convert methods */
 
-void to_char(char const *lit_as_char, double const lit_as_double)
+void to_char(char const *lit_as_char, double lit_as_double)
 {
 	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< lit_as_char[0] << std::endl;
@@ -26,7 +26,7 @@ void to_char(char const *lit_as_char, double const lit_as_double)
 		std::cout	<< static_cast<char>(lit_as_double) << std::endl;
 }
 
-void to_int(char const *lit_as_char, double const lit_as_double)
+void to_int(char const *lit_as_char, double lit_as_double)
 {
 	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< static_cast<int>(lit_as_char[0]) << std::endl;
@@ -36,7 +36,7 @@ void to_int(char const *lit_as_char, double const lit_as_double)
 		std::cout	<< static_cast<int>(lit_as_double) << std::endl;
 }
 
-void to_float(char const *lit_as_char, double const lit_as_double)
+void to_float(char const *lit_as_char, double lit_as_double)
 {
 	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< std::fixed 
@@ -54,7 +54,7 @@ void to_float(char const *lit_as_char, double const lit_as_double)
 					<< std::endl;
 }
 
-void to_double(char const *lit_as_char, double const lit_as_double)
+void to_double(char const *lit_as_char, double lit_as_double)
 {
 	if (!isdigit(lit_as_char[0]) && !lit_as_char[1])
 		std::cout	<< std::fixed

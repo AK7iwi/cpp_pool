@@ -6,13 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:16:41 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 18:58:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:41:57 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-int main(void)
+int main()
 {
 	Data data = {42, 42.42, "fourty two"};	
 	uintptr_t data_serialized = Serializer::serialize(&data);

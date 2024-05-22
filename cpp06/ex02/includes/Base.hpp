@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 06:37:40 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 16:53:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 14:09:45 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 #define BASE_HPP
 
 #include <iostream>
-#include <ctime>
 #include <cstdlib>
 
 class Base
 {
 	public:
+		/* Destructor */
+		
 		virtual ~Base();
 };
+
+/* Inherited method */
 
 class A : public Base {};
 
