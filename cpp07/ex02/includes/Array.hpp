@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:49 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 21:58:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:06:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
+
 #include <iostream>
 #include <exception>
 #include <stdlib.h>
@@ -56,7 +58,7 @@ class Array
         	return (*this);
     	}
 
-    	T& operator[](unsigned int index) 
+    	T& operator[](unsigned int const index) 
 		{
         	if (index >= _array_size)
             	throw (std::out_of_range("Index out of bounds"));
@@ -64,10 +66,12 @@ class Array
         	return (_elements[index]);
     	}
 
-    	unsigned int size() const
+    	unsigned int inline size() const
 		{return _array_size;}
 
 	private:
     	T*				_elements;
  		unsigned int	_array_size;
 };
+
+#endif /* ARRAY_HPP */

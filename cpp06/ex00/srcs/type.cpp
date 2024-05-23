@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:42:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 16:47:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:51:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ bool 	limit_type(std::string const &literal)
 		 			<< "Float: +inff" 
 					<< std::endl
 					<< "Double: +inf" 
-					<< std::endl
 					<< std::endl;
-					
+
 		return (true);
 	}
 	else if (literal == "nan" || literal == "nanf")
@@ -39,9 +38,8 @@ bool 	limit_type(std::string const &literal)
 					<< "Float: nanf" 
 					<< std::endl
 					<< "Double: nan" 
-					<< std::endl
 					<< std::endl;
-					
+				
 		return (true);
 	}
 	

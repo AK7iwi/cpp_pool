@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 07:08:14 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/22 16:17:41 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/22 16:52:07 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	try
 	{
 		if (argc != 2)
-			throw (std::invalid_argument("Error: Need at least 1 argument"));
+			throw (std::invalid_argument("Error: Need at least 1 argument\n"));
 			
 		std::string lit = argv[1];
    		ScalarConverter::convert(lit);
