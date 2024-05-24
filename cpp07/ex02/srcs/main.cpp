@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/23 14:59:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:51:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,17 @@ int main()
             std::cout << assigned_array[i] << " ";
         std::cout << std::endl;
 
+		/* Testing operator */
+		
+		std::cout << "Accessing fourth element: ";
+        std::cout << int_array[3] << std::endl;
+		
 		/* Testing out of bounds access */
 		
         std::cout << "Accessing out of bounds element: ";
-        std::cout << int_array[10] << std::endl; /* This should throw an exception */
+        std::cout << int_array[10] << std::endl;
     } 
-	catch (std::exception &e) 
+	catch (std::exception const &e) 
 	{std::cerr  << e.what() << std::endl;} 
 
     return (EXIT_SUCCESS);

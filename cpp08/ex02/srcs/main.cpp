@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 20:06:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:17:44 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	std::cout << "\nTests with MutantStack:" << std::endl;
+	std::cout << "Tests with MutantStack:" << std::endl;
 	
 	MutantStack<int> mstack;
 	mstack.push(5);
@@ -31,6 +31,7 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
+	
 	while (it != ite)
 	{
 		std::cout << "*it = " << *it << std::endl;
@@ -56,6 +57,7 @@ int main()
 	std::list<int>::iterator ite2 = mlist.end();
 	++it2;
 	--it2;
+	
 	while (it2!= ite2) 
 	{
 		std::cout << "*it = " << *it2 << std::endl;

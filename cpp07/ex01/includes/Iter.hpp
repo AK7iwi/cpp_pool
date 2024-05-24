@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:03:30 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/23 14:55:48 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:39:33 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-/* Iter method */
+/* Template iter method */
 
 template<typename T, typename Func>
 void iter(T* const array, uint16_t const length, Func const &func)
@@ -26,7 +26,7 @@ void iter(T* const array, uint16_t const length, Func const &func)
         func(array[i]);
 }
 
-/* Print method */
+/* Template print method */
 
 template<typename T>
 void print_element(T const &element) 

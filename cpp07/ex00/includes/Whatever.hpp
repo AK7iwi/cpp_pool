@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 08:49:29 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/23 14:04:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/23 16:39:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-/* Swap method */
+/* Template swap method */
 
 template <typename T>
 void	swap(T &a, T &b) 
@@ -26,7 +26,7 @@ void	swap(T &a, T &b)
 	b = tmp;
 }
 
-/* Comparison method */
+/* Template comparison method */
 
 template <typename T>
 T const& min(T const &a, T const &b)

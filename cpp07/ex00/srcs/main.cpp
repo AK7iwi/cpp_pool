@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 08:49:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/23 14:09:49 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/23 15:58:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main()
 	std::cout << "Max(g, h) = " << ::max(g, h) << std::endl;
 	
 	/* String value test */
+	
 	std::string i = "Chaine1", j = "Chaine2";
 	
 	std::cout << "\nBefore swap: i = " << i << ", j = " << j << std::endl;

@@ -6,15 +6,19 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:09 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 22:00:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:53:01 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef EASY_FIND_HPP
+#define EASY_FIND_HPP
+
 #include <iostream>
 #include <stdexcept>
 #include <algorithm>
 #include <vector>
+
+/* Template find method */
 
 template<typename T>
 typename T::iterator easyfind(T &container, int value)
@@ -25,3 +29,5 @@ typename T::iterator easyfind(T &container, int value)
 		
 	return (it);
 }
+
+#endif /* EASY_FIND_HPP */

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 23:33:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 19:29:13 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:46:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main()
 		std::vector<int>::iterator it = easyfind(vec, 10);
 		std::cout  << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
-	catch (std::exception &e) 
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	try 
@@ -35,7 +35,7 @@ int	main()
 		std::vector<int>::iterator it = easyfind(vec, 15);
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
-	catch (std::exception &e)
+	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
 		
 	try 
@@ -44,16 +44,16 @@ int	main()
 		std::vector<int>::iterator it = easyfind(vec, 30);
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
-	catch (std::exception &e) 
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 
 	try 
 	{
 		std::cout << "\nSearch -12" << std::endl;
-		std::vector<int>::iterator it = easyfind(vec, -1);
+		std::vector<int>::iterator it = easyfind(vec, -12);
 		std::cout << "Value " << *it << " found at pos " << std::distance(vec.begin(), it) << std::endl;
 	} 
-	catch (std::exception &e) 
+	catch (std::exception const &e) 
 	{std::cerr << e.what() << std::endl;}
 	
 	return (EXIT_SUCCESS);

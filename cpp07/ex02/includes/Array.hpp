@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 21:10:49 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/23 15:06:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:50:17 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ template<typename T>
 class Array
 {
 	public:
+	/* Constructors & operators */
+	
     	Array() : 
 			_elements(new T[0]), 
 			_array_size(0) {}
@@ -58,13 +60,15 @@ class Array
         	return (*this);
     	}
 
-    	T& operator[](unsigned int const index) 
+    	T& operator[](unsigned int index) const
 		{
         	if (index >= _array_size)
             	throw (std::out_of_range("Index out of bounds"));
 				
         	return (_elements[index]);
     	}
+
+		/* Size method */
 
     	unsigned int inline size() const
 		{return _array_size;}

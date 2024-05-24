@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 15:20:57 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 15:00:46 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+/* Constructors & operators */
 
 Span::Span(unsigned int size)
 {
@@ -37,6 +39,8 @@ Span&	Span::operator=(Span const &rhs)
 	return (*this);
 }
 
+/* Add method */
+
 void Span::add_number(int num) 
 {	
     if (_numbers.size() >= _N)
@@ -44,6 +48,8 @@ void Span::add_number(int num)
 		
     _numbers.push_back(num);
 }
+
+/* Span method */
 
 int Span::shortest_span() const 
 {
