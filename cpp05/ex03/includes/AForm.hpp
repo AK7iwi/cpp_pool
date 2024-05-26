@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:11:09 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:54:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AForm
 	public:
 		/* Constructors & operators */
 
-		AForm(std::string const name, int const grade_to_sign, int const grade_to_execute);
+		AForm(std::string const &name, int const grade_to_sign, int const grade_to_execute);
 		AForm(AForm const &cpy);
 		virtual ~AForm();
 		AForm& operator=(AForm const &rhs);

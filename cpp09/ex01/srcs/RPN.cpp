@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/14 21:33:02 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:45:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,8 @@ void RPN::calcule(std::string const &operation)
 	try
 	{
 		parse_operation(operation);
-		std::cout 	<< _stack.top() 
-					<< std::endl;
+		std::cout << _stack.top() << std::endl;
     }
-	catch (std::exception &e)
-	{std::cerr <<  e.what() << std::endl;}
+	catch (std::exception const &e)
+	{std::cerr << e.what() << std::endl;}
 }

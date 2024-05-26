@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   type.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:36:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 19:49:16 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:35:51 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-bool is_leap(long const &year) //less conditions 
+/* Type methods */
+
+bool is_leap(long const year)
 {
-  if (year % 400 == 0)
-    return (true);
-  else if (year % 100 == 0)
-    return (false);
-  else if(year % 4 == 0)
-    return (true);
-  else
-    return (false);
+	if (year % 400 == 0)
+		return (true);
+	else if (year % 100 == 0)
+		return (false);
+
+	return (year % 4 == 0);
 }
 
 bool is_digit(std::string const &digit)

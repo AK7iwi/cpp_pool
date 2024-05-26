@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:17:50 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/03 20:11:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/25 16:27:15 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	if (argc != 2)
-		return (std::cout << "Need at least one argument" << std::endl, EXIT_FAILURE); 
+		return (std::cout << "Need one file " << std::endl, EXIT_FAILURE); 
 			
 	std::ifstream input_file(argv[1]);
 	BitcoinExchange Exchange;

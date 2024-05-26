@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/06 16:43:42 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:00:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef PMERGE_ME_HPP
+#define PMERGE_ME_HPP
+
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -21,6 +23,8 @@
 class PmergeMe 
 {
 	public:
+		/* Constructors & operators */
+		
 		PmergeMe();
         PmergeMe(PmergeMe const &cpy);
         ~PmergeMe();
@@ -56,3 +60,5 @@ class PmergeMe
 		void	_print_time_vector();
 		void	_print_time_deque();
 };
+
+#endif /* PMERGE_ME_HPP */

@@ -9,7 +9,8 @@ class Test
         ~Test();
 		Test&	operator=(Test const &rhs);
 
-		//static methode 
+		/* Need to add static method */
+		
 		int 	public_flag;
 		
 		void 	public_fct_pu();

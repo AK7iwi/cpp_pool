@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/04/28 16:28:10 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/25 17:14:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BITCOIN_EXCHANGE_HPP
+#define BITCOIN_EXCHANGE_HPP
+
 #include <iostream>
 #include <map>
 #include <algorithm>
@@ -25,25 +27,36 @@
 class BitcoinExchange 
 {
 	public:
+		/* Constructors & operators */
+	
 		BitcoinExchange();
         BitcoinExchange(BitcoinExchange const &cpy);
         ~BitcoinExchange();
 		BitcoinExchange&	operator=(BitcoinExchange const &rhs);
 
-		void	is_valid_value(std::string const &value);
-		void 	is_valid_date(std::string const &date);
-		void	parse_line(std::string &line);
+		/* Exchange method */
+		
 		void	exchange(std::ifstream &filename);
 		
 	private:
 		std::string 					_date;
 		float							_value;
-		std::map<std::string, float>	_database;  
+		std::map<std::string, float>	_database;
+
+		/* Parse method */
+		
+		void	is_valid_value(std::string const &value);
+		void 	is_valid_date(std::string const &date);
+		void	parse_line(std::string const &line);
 };
+
+/* type.cpp */
 
 bool 	is_leap(long const &year);
 bool 	is_digit(std::string const &digit);
 bool 	is_int(std::string const &literal);
 bool 	is_double(std::string const &literal);
 bool 	is_float(std::string const &literal);
+
+#endif /* BITCOIN_EXCHANGE_HPP */
 

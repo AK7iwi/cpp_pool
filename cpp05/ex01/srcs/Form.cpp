@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:36 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:06:15 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:53:25 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Constructors & operators */
 
-Form::Form(std::string const name, int const grade_to_sign, int const grade_to_execute) :
+Form::Form(std::string const &name, int const grade_to_sign, int const grade_to_execute) :
     _name(name), 
 	_signed_status(false), 
 	_grade_to_sign(grade_to_sign), 

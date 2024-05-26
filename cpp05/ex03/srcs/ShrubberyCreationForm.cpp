@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:43:20 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:47:45 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:07:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Constructors & operators */
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : 
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) : 
 	AForm("ShrubberyForm", 145, 137),
 	_target(target)	{}
 
@@ -38,6 +38,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &bureaucrat) const
 		
 	std::ofstream	out_file((_target + "_shruberry").c_str());
 
+	out_file << "       K      "		<< std::endl;
 	out_file << "      /\\      "		<< std::endl;
 	out_file << "     /\\*\\     "		<< std::endl;
 	out_file << "    /\\O\\*\\    "		<< std::endl;

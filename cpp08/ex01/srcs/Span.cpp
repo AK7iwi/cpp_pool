@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/24 15:00:46 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:08:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Constructors & operators */
 
-Span::Span(unsigned int size)
+Span::Span(unsigned int const size)
 {
 	 if (size <= 1) 
         throw (std::out_of_range("Not enough numbers to calculate span"));
@@ -41,7 +41,7 @@ Span&	Span::operator=(Span const &rhs)
 
 /* Add method */
 
-void Span::add_number(int num) 
+void Span::add_number(int const num) 
 {	
     if (_numbers.size() >= _N)
         throw (std::length_error("Span is full"));

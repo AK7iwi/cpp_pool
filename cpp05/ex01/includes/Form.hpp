@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 06:00:25 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:05:54 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:53:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
 	public:
 		/* Constructors & operators */
 	
-		Form(std::string const name, int const grade_to_sign, int const grade_to_execute);
+		Form(std::string const &name, int const grade_to_sign, int const grade_to_execute);
 		Form(Form const &cpy);
 		~Form();
 		Form& operator=(Form const &rhs);

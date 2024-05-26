@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:19 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/24 15:00:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:07:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class Span
 	public:
 		/* Constructors & operators */
 		
-    	Span(unsigned int size);
+    	Span(unsigned int const size);
 		Span(Span const &cpy);
 		~Span();
 		Span& operator=(Span const &rhs);
 		
 		/* Add method */
 
-    	void add_number(int num);
+    	void add_number(int const num);
 
 		/* Span method */
 		

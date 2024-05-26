@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/06 16:43:20 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:52:41 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef RPN_HPP
+#define RPN_HPP
+
 #include <iostream>
 #include <stack>
 #include <exception>
@@ -19,6 +21,8 @@
 class RPN 
 {
 	public:
+		/* Constructors & operators */
+		
 		RPN();
         RPN(RPN const &cpy);
         ~RPN();
@@ -32,5 +36,9 @@ class RPN
 		std::stack<int>		_stack;
 };
 
+//private inline method?
+
 bool 		is_valid_char(char c);
 bool		is_operator(char c);
+
+#endif /* RPN_HPP */

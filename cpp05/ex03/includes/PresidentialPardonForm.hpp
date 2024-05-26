@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:46:05 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:45:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:56:29 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class  PresidentialPardonForm : public AForm
 	public:
 		/* Constructors & operators */
 	
-		PresidentialPardonForm(std::string	target);
+		PresidentialPardonForm(std::string const &target);
 		PresidentialPardonForm(PresidentialPardonForm const &cpy);
 		~PresidentialPardonForm();
 		PresidentialPardonForm& operator=(PresidentialPardonForm const &rhs);

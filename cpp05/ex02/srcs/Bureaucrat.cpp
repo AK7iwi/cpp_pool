@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:27:52 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 15:10:36 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:58:39 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Constructors & operators*/
 
-Bureaucrat::Bureaucrat(std::string const name, int const grade) : 
+Bureaucrat::Bureaucrat(std::string const &name, int const grade) : 
 	_name(name)
 {
 	if (grade < 1)

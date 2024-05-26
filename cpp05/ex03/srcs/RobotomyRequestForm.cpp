@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:44:21 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:47:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:57:04 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Constructors & operators */
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) :
+RobotomyRequestForm::RobotomyRequestForm(std::string const &target) :
 	AForm("RobotomyForm", 72, 45), 
 	_target(target) {}
 

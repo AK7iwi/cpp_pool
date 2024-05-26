@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:45:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/21 14:44:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:56:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class  RobotomyRequestForm : public AForm
 	public:
 		/* Constructors & operators */
 		
-		RobotomyRequestForm(std::string	target);
+		RobotomyRequestForm(std::string	const &target);
 		RobotomyRequestForm(RobotomyRequestForm const &cpy);
 		~RobotomyRequestForm();
 		RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);

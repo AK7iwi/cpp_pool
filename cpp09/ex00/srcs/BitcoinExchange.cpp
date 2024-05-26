@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/07 15:49:52 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/25 16:25:50 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+/* Constructors & operators */
 
 BitcoinExchange::BitcoinExchange() {}
 
@@ -37,6 +39,8 @@ BitcoinExchange&	BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	return (*this);
 }
 
+/* Get price method */
+
 static float get_btc_price(std::string const &date, std::map<std::string, float> &database)
 {
 	float price;
@@ -56,6 +60,8 @@ static float get_btc_price(std::string const &date, std::map<std::string, float>
 		
 	return (price);
 }
+
+/* Parse methods */
 
 void BitcoinExchange::is_valid_date(std::string const &date)
 {
@@ -85,8 +91,10 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 	else if (month == 2)
 	{
 		if (is_leap(year))
+		{
 			if (day > 29)
 				error |= 1;
+		}
 		else if (day > 28)
 			error |= 1;
 	}
@@ -101,7 +109,7 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 
 void	BitcoinExchange::is_valid_value(std::string const &value) 
 {
-	if (!is_int(value) && !is_double(value) && !is_float(value)) //char
+	if (!is_int(value) && !is_double(value) && !is_float(value)) 
 		throw (std::invalid_argument("Error: invalid value"));
 
 	float value_f;
@@ -115,7 +123,7 @@ void	BitcoinExchange::is_valid_value(std::string const &value)
 	_value = value_f;
 }
 
-void	BitcoinExchange::parse_line(std::string &line)
+void	BitcoinExchange::parse_line(std::string const &line)
 {
 	std::istringstream	iss(line);
 	std::string			date, value_str;
@@ -133,10 +141,13 @@ void	BitcoinExchange::parse_line(std::string &line)
 	is_valid_value(value_str);
 }
 
+/* Copy CSV file method */
+
 static std::map<std::string, float> cpy_csv(std::ifstream &data)
 {
 	std::map<std::string, float> database;
 	std::string line;
+	
 	std::getline(data, line);
 	while (std::getline(data, line))
 	{
@@ -152,6 +163,8 @@ static std::map<std::string, float> cpy_csv(std::ifstream &data)
 	
 	return (database);
 }
+
+/* Exchange method */
 
 void BitcoinExchange::exchange(std::ifstream &input_file)
 {
@@ -178,7 +191,7 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 				std::cout << _date << " => " << _value << " = " << btc_price * _value << std::endl; 
 			}
 		}
-		catch (std::exception &e)
+		catch (std::exception const &e)
 		{std::cerr << e.what() << std::endl;}
 	}
 	

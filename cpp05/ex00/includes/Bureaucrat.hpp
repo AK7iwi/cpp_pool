@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 00:28:04 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/22 13:25:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:50:26 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Bureaucrat
 	public:
 		/* Constructors & operators */
 
-		Bureaucrat(std::string const &name, int grade);
+		Bureaucrat(std::string const &name, int const grade);
 		Bureaucrat(Bureaucrat const &cpy);
 		~Bureaucrat();
 		Bureaucrat& operator=(Bureaucrat const &rhs);

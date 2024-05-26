@@ -2,7 +2,7 @@ CC				= c++
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
 NAME 			= btc
-SRCS			= srcs/main.cpp srcs/BitcoinExchange.cpp srcs/utils.cpp
+SRCS			= srcs/main.cpp srcs/BitcoinExchange.cpp srcs/type.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 
