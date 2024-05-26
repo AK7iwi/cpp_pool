@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/25 17:14:25 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 20:59:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class BitcoinExchange
 
 /* type.cpp */
 
-bool 	is_leap(long const &year);
+bool 	is_leap(long const year);
 bool 	is_digit(std::string const &digit);
 bool 	is_int(std::string const &literal);
 bool 	is_double(std::string const &literal);

@@ -35,4 +35,3 @@ class Test
 void utils_fct2_l(int flag);
 void utils_fct2_pu(int flag);
 void utils_fct2_pr(int flag);
-

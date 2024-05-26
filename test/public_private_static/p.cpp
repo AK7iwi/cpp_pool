@@ -1,8 +1,8 @@
 #include "p.hpp"
 
 Test::Test() : 
-	public_flag(0), private_flag(0)  
-{}
+	public_flag(0),
+	private_flag(0) {}
 
 Test::Test(Test const &cpy) : 
 	public_flag(cpy.public_flag),

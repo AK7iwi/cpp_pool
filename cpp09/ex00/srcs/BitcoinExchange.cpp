@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/25 16:25:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/26 20:59:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,7 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 	_database = cpy_csv(data_file);
 	data_file.close();
 
+	std::getline(input_file, line);
 	while (getline(input_file, line)) 
 	{
 		try
