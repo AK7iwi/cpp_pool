@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/28 18:58:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 21:44:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 RPN::RPN() {}
 
-RPN::RPN(RPN const &cpy) //cpy in bad order 
+RPN::RPN(RPN const &cpy)
 {
 	while (!_stack.empty())
 		_stack.pop();
@@ -30,7 +30,7 @@ RPN::RPN(RPN const &cpy) //cpy in bad order
 
 RPN::~RPN() {}
 
-RPN&	RPN::operator=(RPN const &rhs) //assignement in reverse order 
+RPN&	RPN::operator=(RPN const &rhs) 
 {	
 	if (this != &rhs)
 	{	
@@ -98,13 +98,17 @@ void RPN::parse_operation(std::string const &operation)
 
 	for (int i = 0; operation[i]; i++)
 	{
-		if (operation[i] == ' ')
-			continue;
-		else if (!is_valid_char(operation[i]))
+		// loop for is_digit
+			//count raw_num++;
+		// loop for is_operator
+			// count raw_operator;
+		// if (raw_num != raw_operator + 1)
+			//OK
+		if (!is_valid_char(operation[i]))
 			throw (std::invalid_argument("Error: invalid character"));
 		else if (is_operator(operation[i]))
 			perform_operation(operation[i]);
-		else
+		else if (operation[i] !=  ' ')
 			_stack.push(operation[i] - 48);
 	}
 }
