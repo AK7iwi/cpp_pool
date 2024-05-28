@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/26 20:59:56 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:32:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ static float get_btc_price(std::string const &date, std::map<std::string, float>
 	if (it == database.end())
 	{
 		previous_date = database.lower_bound(date);
-		previous_date--;
     	if (previous_date == database.begin())
-			throw (std::runtime_error("Error: Unknow date"));
+			throw (std::runtime_error("Error: Unknow date(Bitcoin wasn't born)"));
+		previous_date--;
 		price = previous_date->second;
 	}
 	else 
@@ -67,10 +67,9 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
 	long		day, month, year;
-	bool 		error = 0;
 	
 	if (date.length() != 10 || date[4] != '-' || date[7] != '-')
-    	error |= 1;
+    	throw (std::invalid_argument("Error: invalid format date"));
 		
   	day_str = date.substr(8, 2);
   	month_str = date.substr(5, 2);
@@ -81,27 +80,22 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 	year = strtol(year_str.c_str(), NULL, 10);
 
 	if (!is_digit(day_str) || !is_digit(month_str) || !is_digit(year_str))
-		throw (std::invalid_argument("Error: non-digit character in the date"));
-	else if (day < 1 || day > 31)
-		error |= 1;
-	else if (month < 1 || month > 12)
-		error |= 1;
-	else if (year < 2009 || year > 2050)
-		error |= 1;
+		throw (std::invalid_argument("Error: non digit character in date"));
+	else if ((day < 1 || day > 31) 
+			|| (month < 1 || month > 12) 
+			|| (year < 2009 || year > 2024)) //actual year
+		throw (std::invalid_argument("Error: invalid date"));
 	else if (month == 2)
 	{
 		if (is_leap(year))
 		{
 			if (day > 29)
-				error |= 1;
+				throw (std::invalid_argument("Error: invalid date"));
 		}
 		else if (day > 28)
-			error |= 1;
+			throw (std::invalid_argument("Error: invalid date"));
 	}
 	else if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
-		error |= 1;
-		
-	if (error)
 		throw (std::invalid_argument("Error: invalid date"));
 		
 	_date = date;
@@ -172,8 +166,13 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 	std::string 	line;
 	float 			btc_price;
     
-    if (!input_file.is_open() || !data_file.is_open())
-		throw (std::invalid_argument("Error: could to open input file"));
+	try
+	{
+    	if (!input_file.is_open() || !data_file.is_open())
+			throw (std::invalid_argument("Error: could to open input file"));
+	}
+	catch (std::exception const &e)
+	{std::cerr << e.what() << std::endl;}
 
 	_database = cpy_csv(data_file);
 	data_file.close();
@@ -189,7 +188,12 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 			{
 				parse_line(line);
 				btc_price = get_btc_price(_date ,_database);
-				std::cout << _date << " => " << _value << " = " << btc_price * _value << std::endl; 
+				std::cout	<< _date 
+							<< " => " 
+							<< _value 
+							<< " = " 
+							<< btc_price * _value 
+							<< std::endl; 
 			}
 		}
 		catch (std::exception const &e)

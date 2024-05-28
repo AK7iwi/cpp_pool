@@ -1,8 +1,8 @@
 CC				= c++ 
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I./includes -std=c++98 
-NAME 			= RPN
-SRCS			= srcs/main.cpp srcs/RPN.cpp
+NAME 			= Test
+SRCS			= main.cpp a.cpp utils.cpp
 
 OBJS 			= $(SRCS:.cpp=.o)
 

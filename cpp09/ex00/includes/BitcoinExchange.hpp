@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/26 20:59:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 12:58:23 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 #include <iostream>
 #include <map>
-#include <algorithm>
 #include <stdexcept>
 #include <fstream>
 #include <sstream>
 #include <stdint.h>
 #include <cstdlib>
 #include <cstring>
-#include <iomanip>
 
 class BitcoinExchange 
 {

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:20:13 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/24 17:08:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:52:09 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ Span::Span(unsigned int const size)
 	_N = size;
 }
 
-Span::Span(Span const &cpy) : 
+Span::Span(Span const &cpy) : //bad cpy const
 	_N(cpy._N), 
 	_numbers(cpy._numbers) {}
 
 Span::~Span() {}
 
-Span&	Span::operator=(Span const &rhs) 
+Span&	Span::operator=(Span const &rhs) //bad assignator 
 {	
 	if (this != &rhs)
 	{

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/24 15:08:37 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:52:37 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class MutantStack : public std::stack<T>
 		/* Constructors & operators */
 		
 		MutantStack() {};
-		MutantStack(MutantStack const &cpy) :
+		MutantStack(MutantStack const &cpy) : //bad cpy const
 			MutantStack::stack(cpy) {}
 		~MutantStack() {};
-		MutantStack& operator=(MutantStack const &rhs)
+		MutantStack& operator=(MutantStack const &rhs) // bad operator 
 		{
 			if (this != &rhs)
 				std::stack<T>::operator=(rhs);

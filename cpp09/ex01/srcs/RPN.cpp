@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/26 17:45:35 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:58:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 RPN::RPN() {}
 
-RPN::RPN(RPN const &cpy)
+RPN::RPN(RPN const &cpy) //cpy in bad order 
 {
 	while (!_stack.empty())
 		_stack.pop();
@@ -30,7 +30,7 @@ RPN::RPN(RPN const &cpy)
 
 RPN::~RPN() {}
 
-RPN&	RPN::operator=(RPN const &rhs) 
+RPN&	RPN::operator=(RPN const &rhs) //assignement in reverse order 
 {	
 	if (this != &rhs)
 	{	
@@ -49,21 +49,23 @@ RPN&	RPN::operator=(RPN const &rhs)
 	return (*this);
 }
 
-void RPN::perform_operation(char sign)
+/* Operation method */
+
+void RPN::perform_operation(char const sign)
 {
 	if (_stack.size() < 2)
 		throw (std::invalid_argument("Error: not enough numbers"));
 		
-	int	n1, n2;
+	uint8_t	n1, n2;
 	
 	n1 = _stack.top();
 	_stack.pop();
 	n2 = _stack.top();
 	_stack.pop();
 	
-	if (sign == '/' && n2 == 0)
+	if (sign == '/' && n1 == 0)
 		throw (std::runtime_error("Error: division by 0"));
-	
+		
 	switch (sign)
 	{
 		case '+':
@@ -80,6 +82,14 @@ void RPN::perform_operation(char sign)
 			break;
 	}	
 }
+
+/* Parse method */
+
+static bool inline is_valid_char(char const c)
+{return ((c == ' ' || c == '+' || c == '-' || c == '/' || c == '*') || (c >= '0' && c <= '9'));}
+
+static bool inline is_operator(char const c)
+{return (c == '+' || c == '-' || c == '/' || c == '*');}
 
 void RPN::parse_operation(std::string const &operation)
 {
@@ -98,6 +108,8 @@ void RPN::parse_operation(std::string const &operation)
 			_stack.push(operation[i] - 48);
 	}
 }
+
+/* Calcul method */
 
 void RPN::calcule(std::string const &operation)
 {
