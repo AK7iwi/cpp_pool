@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:42 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/28 18:31:17 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:11:18 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <exception>
 #include <stdlib.h>
 #include <stdint.h>
+#include <sstream>
 
 class RPN 
 {
@@ -31,18 +32,18 @@ class RPN
 
 		/* Calcul method */
 		
-		void 	calcule(std::string const  &operation);
+		void	calcule(std::string const  &operation);
 		
 	private:
 		std::stack<int>		_stack;
 		
 		/* Parse method */
 		
-		void	parse_operation(std::string const &operation);
+		void	_parse_operation(std::string const &operation);
 		
 		/* Operation method */
 		
-		void 	perform_operation(char const sign);
+		void 	_perform_operation(char const sign);
 };
 
 

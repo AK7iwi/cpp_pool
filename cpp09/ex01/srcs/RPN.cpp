@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 18:58:34 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/28 21:44:47 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:17:52 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ RPN&	RPN::operator=(RPN const &rhs)
 
 /* Operation method */
 
-void RPN::perform_operation(char const sign)
+void RPN::_perform_operation(char const sign)
 {
 	if (_stack.size() < 2)
 		throw (std::invalid_argument("Error: not enough numbers"));
 		
-	uint8_t	n1, n2;
+	int	n1, n2;
 	
 	n1 = _stack.top();
 	_stack.pop();
@@ -85,41 +85,44 @@ void RPN::perform_operation(char const sign)
 
 /* Parse method */
 
-static bool inline is_valid_char(char const c)
-{return ((c == ' ' || c == '+' || c == '-' || c == '/' || c == '*') || (c >= '0' && c <= '9'));}
+static bool inline _is_operator(char c)
+{return (std::string("+-*/").find(c) != std::string::npos);}
 
-static bool inline is_operator(char const c)
-{return (c == '+' || c == '-' || c == '/' || c == '*');}
+static bool inline _is_valid_char(char c) 
+{return (std::isdigit(c) || std::isspace(c) || _is_operator(c));}
 
-void RPN::parse_operation(std::string const &operation)
+void RPN::_parse_operation(std::string const &operation)
 {
 	if (operation.empty())
 		throw (std::invalid_argument("Error: string is empty"));
 
 	for (int i = 0; operation[i]; i++)
 	{
-		// loop for is_digit
-			//count raw_num++;
-		// loop for is_operator
-			// count raw_operator;
-		// if (raw_num != raw_operator + 1)
-			//OK
-		if (!is_valid_char(operation[i]))
-			throw (std::invalid_argument("Error: invalid character"));
-		else if (is_operator(operation[i]))
-			perform_operation(operation[i]);
-		else if (operation[i] !=  ' ')
+		if (!_is_valid_char(operation[i]))
+			throw std::invalid_argument("Error: Invalid character");
+	}
+
+	for (int i = 0; operation[i]; i++)
+	{
+		if (operation[i] == ' ')
+			continue;
+		else if (_is_operator(operation[i]))
+			_perform_operation(operation[i]);
+		else
 			_stack.push(operation[i] - 48);
 	}
-}
 
+	if (_stack.size() != 1)
+		throw std::invalid_argument("Error");
+}
+	
 /* Calcul method */
 
 void RPN::calcule(std::string const &operation)
-{
+{	
 	try
 	{
-		parse_operation(operation);
+		_parse_operation(operation);
 		std::cout << _stack.top() << std::endl;
     }
 	catch (std::exception const &e)
