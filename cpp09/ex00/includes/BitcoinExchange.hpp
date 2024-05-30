@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/28 12:58:23 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:27:38 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ class BitcoinExchange
 
 		/* Parse method */
 		
-		void	is_valid_value(std::string const &value);
-		void 	is_valid_date(std::string const &date);
-		void	parse_line(std::string const &line);
+		void	_is_valid_value(std::string const &value);
+		void 	_is_valid_date(std::string const &date);
+		void	_parse_line(std::string const &line);
 };
 
 /* type.cpp */

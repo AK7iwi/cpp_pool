@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:25:10 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/28 17:32:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/30 15:28:11 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static float get_btc_price(std::string const &date, std::map<std::string, float>
 
 /* Parse methods */
 
-void BitcoinExchange::is_valid_date(std::string const &date)
+void BitcoinExchange::_is_valid_date(std::string const &date)
 {
 	std::string day_str, month_str, year_str;
 	long		day, month, year;
@@ -101,7 +101,7 @@ void BitcoinExchange::is_valid_date(std::string const &date)
 	_date = date;
 }
 
-void	BitcoinExchange::is_valid_value(std::string const &value) 
+void	BitcoinExchange::_is_valid_value(std::string const &value) 
 {
 	if (!is_int(value) && !is_double(value) && !is_float(value)) 
 		throw (std::invalid_argument("Error: invalid value"));
@@ -117,7 +117,7 @@ void	BitcoinExchange::is_valid_value(std::string const &value)
 	_value = value_f;
 }
 
-void	BitcoinExchange::parse_line(std::string const &line)
+void	BitcoinExchange::_parse_line(std::string const &line)
 {
 	std::istringstream	iss(line);
 	std::string			date, value_str;
@@ -131,8 +131,8 @@ void	BitcoinExchange::parse_line(std::string const &line)
     value_str.erase(0, value_str.find_first_not_of(" \t"));
     value_str.erase(value_str.find_last_not_of(" \t") + 1);
 
-	is_valid_date(date);
-	is_valid_value(value_str);
+	_is_valid_date(date);
+	_is_valid_value(value_str);
 }
 
 /* Copy CSV file method */
@@ -186,7 +186,7 @@ void BitcoinExchange::exchange(std::ifstream &input_file)
 				throw (std::runtime_error("Error: empty line"));
 			else
 			{
-				parse_line(line);
+				_parse_line(line);
 				btc_price = get_btc_price(_date ,_database);
 				std::cout	<< _date 
 							<< " => " 

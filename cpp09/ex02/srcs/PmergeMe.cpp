@@ -6,11 +6,13 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/25 15:27:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/30 16:57:48 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+/* Constructors & operators */
 
 PmergeMe::PmergeMe() {}
 
@@ -43,6 +45,19 @@ PmergeMe&	PmergeMe::operator=(PmergeMe const &rhs)
 	return (*this);
 }
 
+std::vector<int> generate_jacobsthal_numbers(int n) 
+{
+    std::vector<int> jacobsthal_numbers;
+    if (n >= 0)
+        jacobsthal_numbers.push_back(0); // J(0)
+    if (n >= 1) 
+        jacobsthal_numbers.push_back(1); // J(1)
+    for (int i = 2; i <= n; ++i)
+        jacobsthal_numbers.push_back(jacobsthal_numbers[i - 1] + 2 * jacobsthal_numbers[i - 2]);
+	
+    return (jacobsthal_numbers);
+}
+
 template <typename T, typename G>
 void	PmergeMe::_insert_sort(T &c, G &second_c)
 {
@@ -57,18 +72,26 @@ void	PmergeMe::_insert_sort(T &c, G &second_c)
 };
 
 template <typename T>
-int	 PmergeMe::_search_index(T &c, int value, int left, int right)
+int PmergeMe::_search_index(T &c, int value, int left, int right) 
 {
-	if (abs(left - right) <= 1)
-		return (left);
+    if (abs(left - right) <= 1)
+        return (left);
+
+    // Generate Jacobsthal numbers up to the maximum index needed
 	
-	int	mid = (left + right) / 2 - 1;
-	
-	if (value > c[mid].first)
-		return (_search_index(c, value, mid + 1, right));
-	else
-		return (_search_index(c, value, left, mid));
-};
+    std::vector<int> jacobsthal_numbers = generate_jacobsthal_numbers(right - left);
+
+    int jacob_index = jacobsthal_numbers.size() - 1;
+    while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= right - left)
+        --jacob_index;
+
+    int mid = left + jacobsthal_numbers[jacob_index];
+
+    if (value > c[mid].first)
+        return (_search_index(c, value, mid + 1, right));
+    else
+        return (_search_index(c, value, left, mid));
+}
 
 template <typename T>
 void	PmergeMe::_insert(T &c, int value, int index)
@@ -105,6 +128,8 @@ std::deque<int>	PmergeMe::_create_deque_from_pair()
 			
 	return (res);
 }
+
+/* Merge sort method: sort the Pair Sequence by its greater value */
 
 template <typename T>
 void	PmergeMe::_merge_sort(T &c, int beg, int end)
@@ -177,6 +202,8 @@ void	PmergeMe::_sort_pair(T &c)
 			std::swap(it->first, it->second);
 };
 
+/* Fill container with pair */
+
 template <typename T>
 void	PmergeMe::_fill_container(char **argv, T &c)
 {
@@ -204,9 +231,11 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 	}
 }
 
+/* Sort vector method */
+
 void	PmergeMe::_sort_vector(char **argv)
 {
-	std::clock_t	start_vector = std::clock();
+	std::clock_t start_vector = std::clock();
 
 	_fill_container(argv, _vector);
 	_sort_pair(_vector);
@@ -219,9 +248,11 @@ void	PmergeMe::_sort_vector(char **argv)
 	_duration_vector = ((double)end_vector / CLOCKS_PER_SEC * 1000) - ((double)start_vector / CLOCKS_PER_SEC * 1000);
 }
 
+/* Sort deque method */
+
 void	PmergeMe::_sort_deque(char **argv)
 {
-	std::clock_t	start_deque = std::clock();
+	std::clock_t start_deque = std::clock();
 
 	_fill_container(argv, _deque);
 	_sort_pair(_deque);
@@ -236,10 +267,10 @@ void	PmergeMe::_sort_deque(char **argv)
 
 void PmergeMe::_parse_nb_sequence(char **argv)
 {
-	for (int i = 1; argv[i]; i++) //delete the scoop?
+	for (int i = 1; argv[i]; i++)
 	{
 		for (int j = 0; argv[i][j]; j++)
-			if (!isdigit(argv[i][j]) && argv[i][j] != ' ') // int min/ max
+			if ((!isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+'))
 				throw (std::invalid_argument("Error: invalid character in input"));
 				
 		_nb_value = i;
