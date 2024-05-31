@@ -6,18 +6,22 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:27:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/05 20:02:51 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:35:30 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void PmergeMe::_print_before_sort(char **argv)
+/* Print methods */
+
+void	PmergeMe::_print_time(double const time, char const *container)
 {
-	std::cout << "Before: ";
-	for (int i = 1; argv[i]; i++)
-		std::cout << argv[i] << " ";
-	std::cout << std::endl;
+	std::cout	<< "Time to process with "
+				<< container 
+				<< ": "
+				<< time 
+				<< " us"
+				<< std::endl;
 }
 
 void	PmergeMe::_print_after_sort()
@@ -28,18 +32,10 @@ void	PmergeMe::_print_after_sort()
 	std::cout << std::endl;
 }
 
-void	PmergeMe::_print_time_vector() 
+void PmergeMe::_print_before_sort(char **argv)
 {
-	std::cout	<< "Time to process with std::vector : " 
-				<< _duration_vector 
-				<< " us"
-				<< std::endl;
-}
-
-void	PmergeMe::_print_time_deque()
-{
-	std::cout	<<  "Time to process with std::deque : " 
-				<< _duration_deque 
-				<< " us" 
-				<< std::endl;
+	std::cout << "Before: ";
+	for (int i = 1; argv[i]; i++)
+		std::cout << argv[i] << " ";
+	std::cout << std::endl;
 }
