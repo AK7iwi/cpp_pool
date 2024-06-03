@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/31 17:56:26 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:10:20 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ class PmergeMe
 		
 	private:
 		std::vector<std::pair<int, int> >		_vector;
+		std::vector<int> 						_second_vector;
 		std::deque<std::pair<int, int> >		_deque;
+		std::deque<int> 						_second_deque;
 		int 									_nb_value;
 		double									_duration_vector;
 		double									_duration_deque;
@@ -43,7 +45,9 @@ class PmergeMe
 		
 		void 	_print_time(double const time, char const *container); 
 		void	_print_after_sort();
-		void 	_print_before_sort(char **argv); 
+		void 	_print_before_sort(char **argv);
+		template <typename T> void _print_s_container(T &c);
+		template <typename T> void _print_b_container(T &c);
 		
 		/* Template insert sort methods */
 
@@ -55,7 +59,7 @@ class PmergeMe
 		/* Create container from pair methods */
 		//to template 
 		
-		template <typename T> T _create_container_from_pair(T const &c) ;
+		template <typename T, typename G> void	_create_container_from_pair(T &c, G &second_c) ;
 		// std::vector<int>	_create_vector_from_pair(void);
 		// std::deque<int>		_create_deque_from_pair(void);
 		

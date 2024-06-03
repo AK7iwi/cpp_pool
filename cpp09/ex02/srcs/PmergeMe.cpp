@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/31 17:56:30 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:23:58 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	PmergeMe::_insert(T &c, int value, int index)
 
     if (value > c[index].first)
         insert_position = c.begin() + index + 1;
+	
     c.insert(insert_position, pair);
 };
 
@@ -109,16 +110,12 @@ void	PmergeMe::_insert_sort(T &c, G &second_c)
 	}
 };
 
-template <typename T>
-T 	PmergeMe::_create_container_from_pair(T const &c) 
-{
-    T result;
-	
-    for (typename T::const_iterator it = c.begin(); it != c.end(); ++it)
-        if (it->second != -1)
-            result.push_back(it->second);
-		
-    return (result);
+template <typename T, typename G>
+void 	PmergeMe::_create_container_from_pair(T &c, G &second_c) 
+{	
+    for (typename T::const_iterator it = c.begin(); it != c.end(); it++)
+		if (it->second != -1)
+    		second_c.push_back(it->first);
 }
 
 // std::vector<int> PmergeMe::_create_vector_from_pair()
@@ -151,13 +148,13 @@ void	PmergeMe::_merge(T &c, int left, int mid, int right)
 	int	sub_array_one = mid - left + 1; 
 	int	sub_array_two = right - mid;
  
-	int *left_array = new int[sub_array_one];
+	int *left_array = new int[sub_array_one]; //use vector
 	int *right_array = new int[sub_array_two];
  
 	for (int i = 0; i < sub_array_one; i++)
-		left_array[i] = c[left + i].first;
+		left_array[i] = c[left + i].second;
 	for (int j = 0; j < sub_array_two; j++)
-		right_array[j] = c[mid + 1 + j].first;
+		right_array[j] = c[mid + 1 + j].second;
  
 	int index_of_sub_array_one = 0;
 	int index_of_sub_array_two = 0;
@@ -167,12 +164,12 @@ void	PmergeMe::_merge(T &c, int left, int mid, int right)
 	{
 		if (left_array[index_of_sub_array_one] <= right_array[index_of_sub_array_two])
 		{
-			c[index_of_merged_array].first = left_array[index_of_sub_array_one];
+			c[index_of_merged_array].second = left_array[index_of_sub_array_one];
 			index_of_sub_array_one++;
 		}
 		else
 		{
-			c[index_of_merged_array].first = right_array[index_of_sub_array_two];
+			c[index_of_merged_array].second = right_array[index_of_sub_array_two];
 			index_of_sub_array_two++;
 		}
 		index_of_merged_array++;
@@ -180,14 +177,14 @@ void	PmergeMe::_merge(T &c, int left, int mid, int right)
 
 	while (index_of_sub_array_one < sub_array_one)
 	{
-		c[index_of_merged_array].first = left_array[index_of_sub_array_one];
+		c[index_of_merged_array].second = left_array[index_of_sub_array_one];
 		index_of_sub_array_one++;
 		index_of_merged_array++;
 	}
 
 	while (index_of_sub_array_two < sub_array_two)
 	{
-		c[index_of_merged_array].first = right_array[index_of_sub_array_two];
+		c[index_of_merged_array].second = right_array[index_of_sub_array_two];
 		index_of_sub_array_two++;
 		index_of_merged_array++;
 	}
@@ -210,13 +207,14 @@ void	PmergeMe::_merge_sort(T &c, int beg, int end)
 
 /* Sort pair method */
 
-template <class T> //template <typename T>
+template <typename T>
 void	PmergeMe::_sort_pair(T &c)
 {
 	for (typename T::iterator it = c.begin(); it != c.end(); it++)
-		if (it->second > it->first && it->second != -1)
+		if (it->first > it->second && it->second != -1)
 			std::swap(it->first, it->second);
 };
+
 
 /* Fill container with pair */
 
@@ -224,7 +222,7 @@ template <typename T>
 void	PmergeMe::_fill_container(char **argv, T &c)
 {
 	std::pair<int, int>	pair;
-	int					buffer;
+	int					buffer; //uint16_t
 
 	for (int i = 1; i <= _nb_value; i += 2)
 	{	
@@ -234,7 +232,7 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 
 		pair.first = buffer;
 		
-		if (i + 1 < _nb_value)
+		if (i + 1 <= _nb_value)
 		{	
 			buffer = atol(argv[i + 1]);
 			if (buffer > INT_MAX)
@@ -243,8 +241,29 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 		}
 		else
 			pair.second = -1;
+		
 		c.push_back(pair);
 	}
+}
+
+template <typename T>
+void PmergeMe::_print_s_container(T &c)
+{
+	std::cout << "Container S: ";
+	for (typename T::const_iterator it = c.begin(); it != c.end(); it++)
+    	std::cout << *it << " ";
+
+	std::cout << std::endl;
+}
+
+template <typename T>
+void PmergeMe::_print_b_container(T &c)
+{
+	std::cout << "Container B: ";
+	for (typename T::const_iterator it = c.begin(); it != c.end(); it++)
+		std::cout << it->first << " " << it->second << " ";
+	
+	std::cout << std::endl;
 }
 
 /* Sort vector method */
@@ -253,12 +272,24 @@ void	PmergeMe::_sort_vector(char **argv)
 {
 	std::clock_t start_vector = std::clock();
 
+	std::cout << "Before: "; 
+	_print_b_container(_vector);
 	_fill_container(argv, _vector);
+	std::cout << "Fill container: ";
+	_print_b_container(_vector);
 	_sort_pair(_vector);
-	_merge_sort(_vector, 0, _vector.size() - 1);
+	std::cout << "Sort pair: ";
+	_print_b_container(_vector);
 	
-	std::vector<int> second_vector = _create_container_from_pair(_vector);
-	_insert_sort(_vector, second_vector);
+	_merge_sort(_vector, 0, _vector.size() - 1);
+	std::cout << "Merge sort: ";
+	_print_b_container(_vector);
+	_create_container_from_pair(_vector, _second_vector);
+	std::cout << "Create container: ";
+	_print_b_container(_vector);
+	_insert_sort(_vector, _second_vector);
+	std::cout << "Insert sort: ";
+	_print_b_container(_vector);
 
 	std::clock_t end_vector = std::clock();
 	_duration_vector = ((double)end_vector / CLOCKS_PER_SEC * 1000) - ((double)start_vector / CLOCKS_PER_SEC * 1000);
@@ -273,9 +304,9 @@ void	PmergeMe::_sort_deque(char **argv)
 	_fill_container(argv, _deque);
 	_sort_pair(_deque);
 	_merge_sort(_deque, 0, _deque.size() - 1);
-
-	std::deque<int> second_deque = _create_container_from_pair(_deque);
-	_insert_sort(_deque, second_deque);
+	
+	_create_container_from_pair(_deque, _second_deque);
+	_insert_sort(_deque, _second_deque);
 
 	std::clock_t end_deque = std::clock();	
 	_duration_deque = ((double)end_deque / CLOCKS_PER_SEC * 1000) - ((double)start_deque / CLOCKS_PER_SEC * 1000);
@@ -304,10 +335,10 @@ void PmergeMe::sort(char **argv)
 		_parse_nb_sequence(argv);
 		_print_before_sort(argv);
 		_sort_vector(argv);
-		_sort_deque(argv);
+		// _sort_deque(argv);
 		_print_after_sort();
 		_print_time(_duration_vector, "vector");
-		_print_time(_duration_deque, "deque");
+		// _print_time(_duration_deque, "deque");
 	}
 	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 18:14:35 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/24 15:17:44 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:46:56 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main()
 	std::cout << "Tests with MutantStack:" << std::endl;
 	
 	MutantStack<int> mstack;
+	
 	mstack.push(5);
 	mstack.push(17);
 	std::cout << "Top: " << mstack.top() << std::endl;
