@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:27:53 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/03 12:57:33 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/03 21:33:47 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	PmergeMe::_print_after_sort()
 {	
 	std::cout << "After: ";
 	for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
-		std::cout << it->first << " ";
+		std::cout << it->second << " ";
 	std::cout << std::endl;
 }
 
