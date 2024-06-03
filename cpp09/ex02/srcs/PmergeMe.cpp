@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/03 17:23:58 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:12:35 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,28 +118,6 @@ void 	PmergeMe::_create_container_from_pair(T &c, G &second_c)
     		second_c.push_back(it->first);
 }
 
-// std::vector<int> PmergeMe::_create_vector_from_pair()
-// {
-// 	std::vector<int>	res;
-	
-// 	for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
-// 		if (it->second != -1)
-// 			res.push_back(it->second);
-			
-// 	return (res);
-// }
-
-// std::deque<int>	PmergeMe::_create_deque_from_pair()
-// {
-// 	std::deque<int>		res;
-	
-// 	for (std::deque<std::pair<int, int> >::iterator it = _deque.begin(); it != _deque.end(); it++)
-// 		if (it->second != -1)
-// 			res.push_back(it->second);
-			
-// 	return (res);
-// }
-
 /* Merge sort method: sort the Pair Sequence by its greater value */
 
 template <typename T>
@@ -148,8 +126,8 @@ void	PmergeMe::_merge(T &c, int left, int mid, int right)
 	int	sub_array_one = mid - left + 1; 
 	int	sub_array_two = right - mid;
  
-	int *left_array = new int[sub_array_one]; //use vector
-	int *right_array = new int[sub_array_two];
+	std::vector<int> left_array(sub_array_one);
+    std::vector<int> right_array(sub_array_two);
  
 	for (int i = 0; i < sub_array_one; i++)
 		left_array[i] = c[left + i].second;
@@ -189,8 +167,11 @@ void	PmergeMe::_merge(T &c, int left, int mid, int right)
 		index_of_merged_array++;
 	}
 
-	delete[] left_array;
-	delete[] right_array;
+	// for (int i = left; i < right; i += 2)
+    // {
+    //     if (i + 1 <= right)
+    //         std::swap(c[i], c[i + 1]);
+    // }
 }
 
 template <typename T>
