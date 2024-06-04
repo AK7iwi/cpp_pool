@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/04 10:37:50 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:14:05 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void PmergeMe::_insert(T &c, int value, unsigned long index)
 std::vector<int> _generate_jacobsthal_numbers(int n) 
 {
     std::vector<int> jacobsthal_numbers;
+	
     if (n >= 0)
         jacobsthal_numbers.push_back(0); // J(0)
     if (n >= 1) 
@@ -71,27 +72,56 @@ std::vector<int> _generate_jacobsthal_numbers(int n)
     return (jacobsthal_numbers);
 }
 
+// template <typename T>
+// int PmergeMe::_search_index(T &c, int value, int left, int right) 
+// {
+//     if (abs(left - right) <= 1)
+//         return (left);
+
+//     std::vector<int> jacobsthal_numbers = _generate_jacobsthal_numbers(right - left);
+
+//     int jacob_index = jacobsthal_numbers.size() - 1;
+//     while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= right - left)
+//         --jacob_index;
+
+//     int mid = left + jacobsthal_numbers[jacob_index];
+
+//     if (mid >= right)
+//         return (left);
+    
+//     if (value > c[mid])
+//         return (_search_index(c, value, mid + 1, right));
+//     else
+//         return (_search_index(c, value, left, mid));
+// }
+
 template <typename T>
 int PmergeMe::_search_index(T &c, int value, int left, int right) 
 {
     if (abs(left - right) <= 1)
-        return (left);
+        return left;
 
     std::vector<int> jacobsthal_numbers = _generate_jacobsthal_numbers(right - left);
 
+    // Ensure jacobsthal_numbers has at least one valid number to prevent invalid access
+    if (jacobsthal_numbers.empty())
+        return left;
+
     int jacob_index = jacobsthal_numbers.size() - 1;
-    while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= right - left)
+    while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= (right - left))
         --jacob_index;
 
+    // Calculate mid safely
     int mid = left + jacobsthal_numbers[jacob_index];
 
-    if (mid >= right)
-        return (left);
-    
+    // Ensure mid is within bounds
+    if (mid >= right || mid < left)
+        return left;
+
     if (value > c[mid])
-        return (_search_index(c, value, mid + 1, right));
+        return _search_index(c, value, mid + 1, right);
     else
-        return (_search_index(c, value, left, mid));
+        return _search_index(c, value, left, mid);
 }
 
 template <typename T, typename G>
@@ -312,15 +342,19 @@ void PmergeMe::_parse_nb_sequence(char **argv)
 
 void PmergeMe::sort(char **argv)
 {
+	std::string container;
+
 	try
 	{
 		_parse_nb_sequence(argv);
 		_print_before_sort(argv);
 		_sort_vector(argv);
-		// _sort_deque(argv);
+		_sort_deque(argv);
 		_print_after_sort(_main_vector);
-		_print_time(_duration_vector, "vector");
-		_print_time(_duration_deque, "deque");
+		container = "vector";
+		_print_time(_duration_vector, container);
+		container = "deque";
+		_print_time(_duration_deque, container);
 	}
 	catch (std::exception const &e)
 	{std::cerr << e.what() << std::endl;}
