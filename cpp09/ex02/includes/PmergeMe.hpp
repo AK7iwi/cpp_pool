@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/04 10:37:08 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:54:24 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,14 @@ class PmergeMe
 		
 		/* Print methods */
 		
-		template <typename T> void _print_b_container(T &c);
 		template <typename T> void _print_after_sort(T &c);
-		// void 	_print_time(double const time, char const *container);
+		
 		void	_print_time(double const time, std:: string &container);
 		void 	_print_before_sort(char **argv);
 		
 		/* Template insert sort methods */
 
 		template <typename T> void				_insert(T &vector, int value, unsigned long index);
-		// std::vector<int> 					_generate_jacobsthal_numbers(int n);
 		template <typename T> int				_search_index(T &c, int value, int left, int right);
 		template <typename T, typename G> void	_insert_sort(T &c, G &second_c);
 		
@@ -80,8 +78,7 @@ class PmergeMe
 		
 		/* Sort containers methods */
 		
-		void	_sort_vector(char **argv);
-		void	_sort_deque(char **argv);
+		template <typename T, typename G> void _sort_container(char **argv, T &container, G &main_container, G &pend_container, double &duration);
 		
 		/* Parse method */
 		

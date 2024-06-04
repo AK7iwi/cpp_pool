@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/04 12:14:05 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:54:19 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,40 +72,17 @@ std::vector<int> _generate_jacobsthal_numbers(int n)
     return (jacobsthal_numbers);
 }
 
-// template <typename T>
-// int PmergeMe::_search_index(T &c, int value, int left, int right) 
-// {
-//     if (abs(left - right) <= 1)
-//         return (left);
-
-//     std::vector<int> jacobsthal_numbers = _generate_jacobsthal_numbers(right - left);
-
-//     int jacob_index = jacobsthal_numbers.size() - 1;
-//     while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= right - left)
-//         --jacob_index;
-
-//     int mid = left + jacobsthal_numbers[jacob_index];
-
-//     if (mid >= right)
-//         return (left);
-    
-//     if (value > c[mid])
-//         return (_search_index(c, value, mid + 1, right));
-//     else
-//         return (_search_index(c, value, left, mid));
-// }
-
 template <typename T>
 int PmergeMe::_search_index(T &c, int value, int left, int right) 
 {
     if (abs(left - right) <= 1)
-        return left;
+        return (left);
 
     std::vector<int> jacobsthal_numbers = _generate_jacobsthal_numbers(right - left);
 
     // Ensure jacobsthal_numbers has at least one valid number to prevent invalid access
     if (jacobsthal_numbers.empty())
-        return left;
+        return (left);
 
     int jacob_index = jacobsthal_numbers.size() - 1;
     while (jacob_index > 0 && jacobsthal_numbers[jacob_index] >= (right - left))
@@ -116,12 +93,12 @@ int PmergeMe::_search_index(T &c, int value, int left, int right)
 
     // Ensure mid is within bounds
     if (mid >= right || mid < left)
-        return left;
+        return (left);
 
     if (value > c[mid])
-        return _search_index(c, value, mid + 1, right);
+        return (_search_index(c, value, mid + 1, right));
     else
-        return _search_index(c, value, left, mid);
+        return (_search_index(c, value, left, mid));
 }
 
 template <typename T, typename G>
@@ -259,16 +236,6 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 }
 
 template <typename T>
-void PmergeMe::_print_b_container(T &c)
-{
-	std::cout << "Container B: ";
-	for (typename T::const_iterator it = c.begin(); it != c.end(); it++)
-		std::cout << it->first << " " << it->second << " ";
-	
-	std::cout << std::endl;
-}
-
-template <typename T>
 void PmergeMe::_print_after_sort(T &c)
 {
 	std::cout << "After: ";
@@ -280,48 +247,20 @@ void PmergeMe::_print_after_sort(T &c)
 
 /* Sort vector method */
 
-void	PmergeMe::_sort_vector(char **argv)
+template <typename T, typename G>
+void PmergeMe::_sort_container(char **argv, T &container, G &main_container, G &pend_container, double &duration) 
 {
-	std::clock_t start_vector = std::clock();
+    std::clock_t start_time = std::clock();
+        
+    _fill_container(argv, container);
+    _sort_pair(container);
+    _merge_sort(container, 0, container.size() - 1);
+    _create_main_container(container, main_container);
+    _create_pend_container(container, pend_container);
+    _insert_sort(main_container, pend_container);
 
-	// _print_b_container(_vector);
-	_fill_container(argv, _vector);
-	// _print_b_container(_vector);
-	_sort_pair(_vector);
-	// std::cout << "Sort pair: ";
-	// _print_b_container(_vector);
-	_merge_sort(_vector, 0, _vector.size() - 1);
-	// std::cout << "Merge sort: ";
-	// _print_b_container(_vector);
-	_create_main_container(_vector, _main_vector);
-	_create_pend_container(_vector, _pend_vector);
-	// std::cout << "Create Main container: ";
-	// _print_after_sort(_main_vector);
-	// std::cout << "Create Pend container: ";
-	// _print_after_sort(_pend_vector);
-	_insert_sort(_main_vector, _pend_vector);
-	// std::cout << "Insert sort: ";
-	// _print_after_sort(_main_vector);
-
-	std::clock_t end_vector = std::clock();
-	_duration_vector = ((double)end_vector / CLOCKS_PER_SEC * 1000) - ((double)start_vector / CLOCKS_PER_SEC * 1000);
-}
-
-/* Sort deque method */
-
-void	PmergeMe::_sort_deque(char **argv)
-{
-	std::clock_t start_deque = std::clock();
-
-	_fill_container(argv, _deque);
-	_sort_pair(_deque);
-	_merge_sort(_deque, 0, _deque.size() - 1);
-	_create_main_container(_deque, _main_deque);
-	_create_pend_container(_deque, _pend_deque);
-	_insert_sort(_main_deque, _pend_deque);
-
-	std::clock_t end_deque = std::clock();	
-	_duration_deque = ((double)end_deque / CLOCKS_PER_SEC * 1000) - ((double)start_deque / CLOCKS_PER_SEC * 1000);
+    std::clock_t end_time = std::clock();
+    duration = ((double)end_time / CLOCKS_PER_SEC * 1000) - ((double)start_time / CLOCKS_PER_SEC * 1000);
 }
 
 /* Parse method */
@@ -348,8 +287,8 @@ void PmergeMe::sort(char **argv)
 	{
 		_parse_nb_sequence(argv);
 		_print_before_sort(argv);
-		_sort_vector(argv);
-		_sort_deque(argv);
+		_sort_container(argv, _vector, _main_vector, _pend_vector, _duration_vector);
+		_sort_container(argv, _deque, _main_deque, _pend_deque, _duration_deque);
 		_print_after_sort(_main_vector);
 		container = "vector";
 		_print_time(_duration_vector, container);
