@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:54 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/05/30 15:27:38 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/05 10:00:03 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class BitcoinExchange
 		BitcoinExchange&	operator=(BitcoinExchange const &rhs);
 
 		/* Exchange method */
-		
+
 		void	exchange(std::ifstream &filename);
 		
 	private:

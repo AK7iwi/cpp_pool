@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:31 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/04 12:54:24 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:40:21 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ class PmergeMe
 		/* Print methods */
 		
 		template <typename T> void _print_after_sort(T &c);
-		
 		void	_print_time(double const time, std:: string &container);
 		void 	_print_before_sort(char **argv);
 		
@@ -83,7 +82,6 @@ class PmergeMe
 		/* Parse method */
 		
 		void 	_parse_nb_sequence(char **argv);
-		
 };
 
 #endif /* PMERGE_ME_HPP */

@@ -6,7 +6,7 @@
 /*   By: mfeldman <mfeldman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:27:27 by mfeldman          #+#    #+#             */
-/*   Updated: 2024/06/04 12:54:19 by mfeldman         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:00:43 by mfeldman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,8 +199,7 @@ void	PmergeMe::_sort_pair(T &c)
 	for (typename T::iterator it = c.begin(); it != c.end(); it++)
 		if (it->first > it->second && it->first != -1)
 			std::swap(it->first, it->second);
-};
-
+}
 
 /* Fill container with pair */
 
@@ -208,7 +207,7 @@ template <typename T>
 void	PmergeMe::_fill_container(char **argv, T &c)
 {
 	std::pair<int, int>	pair;
-	int					buffer; //uint16_t
+	int					buffer;
 
 	for (int i = 1; i <= _nb_value; i += 2)
 	{	
@@ -234,6 +233,8 @@ void	PmergeMe::_fill_container(char **argv, T &c)
 		c.push_back(pair);
 	}
 }
+
+/* Print after sort method */
 
 template <typename T>
 void PmergeMe::_print_after_sort(T &c)
